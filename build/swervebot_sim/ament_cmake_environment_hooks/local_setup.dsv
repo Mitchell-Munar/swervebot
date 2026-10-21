@@ -1,0 +1,2 @@
+source;share/swervebot_sim/environment/ament_prefix_path.sh
+source;share/swervebot_sim/environment/path.sh

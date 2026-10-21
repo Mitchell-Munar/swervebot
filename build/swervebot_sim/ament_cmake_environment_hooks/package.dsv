@@ -1,0 +1,5 @@
+source;share/swervebot_sim/local_setup.bash
+source;share/swervebot_sim/local_setup.dsv
+source;share/swervebot_sim/local_setup.fish
+source;share/swervebot_sim/local_setup.sh
+source;share/swervebot_sim/local_setup.zsh

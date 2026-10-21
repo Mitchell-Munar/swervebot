@@ -1,0 +1,16 @@
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/ament_index/resource_index/package_run_dependencies/swervebot_bringup
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/ament_index/resource_index/parent_prefix_path/swervebot_bringup
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/environment/ament_prefix_path.sh
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/environment/ament_prefix_path.dsv
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/environment/path.sh
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/environment/path.dsv
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/local_setup.bash
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/local_setup.fish
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/local_setup.sh
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/local_setup.zsh
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/local_setup.dsv
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/package.dsv
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/ament_index/resource_index/packages/swervebot_bringup
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/cmake/swervebot_bringupConfig.cmake
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/cmake/swervebot_bringupConfig-version.cmake
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/package.xml

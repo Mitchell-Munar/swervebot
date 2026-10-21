@@ -1,0 +1,133 @@
+[0.022s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers
+[0.130s] -- The C compiler identification is GNU 15.2.0
+[0.220s] -- The CXX compiler identification is GNU 15.2.0
+[0.230s] -- Detecting C compiler ABI info
+[0.360s] -- Detecting C compiler ABI info - done
+[0.383s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.384s] -- Detecting C compile features
+[0.385s] -- Detecting C compile features - done
+[0.412s] -- Detecting CXX compiler ABI info
+[0.582s] -- Detecting CXX compiler ABI info - done
+[0.611s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.612s] -- Detecting CXX compile features
+[0.614s] -- Detecting CXX compile features - done
+[0.639s] -- Found ament_cmake: 2.8.8 (/opt/ros/lyrical/share/ament_cmake/cmake)
+[0.952s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.988s] -- Found controller_interface: 6.10.1 (/opt/ros/lyrical/share/controller_interface/cmake)
+[1.025s] -- Found rosidl_generator_c: 5.2.1 (/opt/ros/lyrical/share/rosidl_generator_c/cmake)
+[1.032s] -- Found rosidl_generator_cpp: 5.2.1 (/opt/ros/lyrical/share/rosidl_generator_cpp/cmake)
+[1.044s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.053s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.246s] -- Found rmw_implementation_cmake: 7.10.2 (/opt/ros/lyrical/share/rmw_implementation_cmake/cmake)
+[1.248s] -- Found rmw_fastrtps_cpp: 9.4.10 (/opt/ros/lyrical/share/rmw_fastrtps_cpp/cmake)
+[1.269s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.512s] -- Found nav_msgs: 5.9.3 (/opt/ros/lyrical/share/nav_msgs/cmake)
+[1.547s] -- Found angles: 1.16.1 (/opt/ros/lyrical/share/angles/cmake)
+[1.551s] -- Found tf2: 0.45.10 (/opt/ros/lyrical/share/tf2/cmake)
+[1.556s] -- Found tf2_geometry_msgs: 0.45.10 (/opt/ros/lyrical/share/tf2_geometry_msgs/cmake)
+[1.606s] -- Found generate_parameter_library: 1.3.0 (/opt/ros/lyrical/share/generate_parameter_library/cmake)
+[1.610s] -- Found tcb_span: 2.0.3 (/opt/ros/lyrical/share/tcb_span/cmake)
+[1.616s] -- Found ament_lint_auto: 0.20.6 (/opt/ros/lyrical/share/ament_lint_auto/cmake)
+[1.729s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.729s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include>
+[1.729s] -- Configured cppcheck exclude dirs and/or files: 
+[1.730s] -- Added test 'lint_cmake' to check CMake code style
+[1.730s] -- Added test 'uncrustify' to check C / C++ code style
+[1.731s] -- Configured uncrustify additional arguments: 
+[1.731s] -- Added test 'xmllint' to check XML markup files
+[1.734s] -- Configuring done (1.7s)
+[1.754s] -- Generating done (0.0s)
+[1.786s] -- Build files have been written to: /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers
+[1.797s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers
+[1.798s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers -- -j14 -l14
+[1.890s] [ 33%] [1m[34mRunning `/opt/ros/lyrical/bin/generate_parameter_library_cpp /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/include/swervebot_controllers/swerve_controller_parameters.hpp /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/config/swerve_controller_parameters.yaml `[0m
+[2.440s] [ 33%] Built target swerve_controller_parameters
+[2.485s] [ 66%] [32mBuilding CXX object CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o[0m
+[2.765s] In file included from [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp:19[m[K,
+[2.765s]                  from [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:1[m[K:
+[2.766s] [01m[K/opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_buffer.hpp:46:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please refer to the guidelines for replacement options: control.ros.org/rolling/doc/realtime_tools/doc/index.html#guidelines [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+[2.766s]    46 | #[01;35m[Kwarning[m[K This header is obsolete, please refer to the guidelines for replacement options: \
+[2.766s]       |  [01;35m[K^~~~~~~[m[K
+[4.771s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp:61:29:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class T> class realtime_tools::RealtimeBuffer[m[K’ is deprecated: refer to the guidelines for replacement options: control.ros.org/rolling/doc/realtime_tools/doc/index.html#guidelines [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[4.771s]    61 |             realtime_tools::[01;35m[KRealtimeBuffer[m[K<std::shared_ptr<geometry_msgs::msg::Twist>> rt_cmd_vel_ptr_;
+[4.771s]       |                             [01;35m[K^~~~~~~~~~~~~~[m[K
+[4.772s] [01m[K/opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_buffer.hpp:56:77:[m[K [01;36m[Knote: [m[Kdeclared here
+[4.772s]    56 |   "control.ros.org/rolling/doc/realtime_tools/doc/index.html#guidelines")]] [01;36m[KRealtimeBuffer[m[K
+[4.772s]       |                                                                             [01;36m[K^~~~~~~~~~~~~~[m[K
+[4.782s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp:66:29:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class T> class realtime_tools::RealtimeBuffer[m[K’ is deprecated: refer to the guidelines for replacement options: control.ros.org/rolling/doc/realtime_tools/doc/index.html#guidelines [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[4.783s]    66 |             realtime_tools::[01;35m[KRealtimeBuffer[m[K<std::shared_ptr<std_msgs::msg::Bool>> rt_drive_mode_ptr_;
+[4.783s]       |                             [01;35m[K^~~~~~~~~~~~~~[m[K
+[4.783s] [01m[K/opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_buffer.hpp:56:77:[m[K [01;36m[Knote: [m[Kdeclared here
+[4.783s]    56 |   "control.ros.org/rolling/doc/realtime_tools/doc/index.html#guidelines")]] [01;36m[KRealtimeBuffer[m[K
+[4.783s]       |                                                                             [01;36m[K^~~~~~~~~~~~~~[m[K
+[5.485s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:[m[K In member function ‘[01m[Kvirtual controller_interface::return_type swervebot_controllers::SwerveController::[01;32m[Kupdate[m[K(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[5.485s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:246:75:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass hardware_interface::LoanedStateInterface[m[K’ has no member named ‘[01m[Kas_double[m[K’
+[5.485s]   246 |             double current_steer_pos = actuator_position_states_[i].get().[01;31m[Kas_double[m[K();
+[5.485s]       |                                                                           [01;31m[K^~~~~~~~~[m[K
+[5.485s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:250:59:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kbool hardware_interface::LoanedCommandInterface::[01;32m[Kset_value[m[K(const T&, unsigned int) [35m[K[with T = double][m[K[m[K’, declared with attribute ‘[01m[Knodiscard[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-result-Wunused-result]8;;[m[K]
+[5.486s]   250 |             [01;35m[Kactuator_position_commands_[i].get().set_value(target_angles[i])[m[K;
+[5.486s]       |             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~[m[K
+[5.486s] In file included from [01m[K/opt/ros/lyrical/include/controller_interface/controller_interface/controller_interface_base.hpp:29[m[K,
+[5.486s]                  from [01m[K/opt/ros/lyrical/include/controller_interface/controller_interface/controller_interface.hpp:21[m[K,
+[5.486s]                  from [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp:9[m[K:
+[5.486s] [01m[K/opt/ros/lyrical/include/hardware_interface/hardware_interface/loaned_command_interface.hpp:101:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[5.487s]   101 |   [[nodiscard]] bool [01;36m[Kset_value[m[K(const T & value, unsigned int max_tries = 10)
+[5.487s]       |                      [01;36m[K^~~~~~~~~[m[K
+[5.487s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:251:56:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kbool hardware_interface::LoanedCommandInterface::[01;32m[Kset_value[m[K(const T&, unsigned int) [35m[K[with T = double][m[K[m[K’, declared with attribute ‘[01m[Knodiscard[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wno-unused-result-Wunused-result]8;;[m[K]
+[5.487s]   251 |             [01;35m[Kwheel_velocity_commands_[i].get().set_value(target_velocities[i])[m[K;
+[5.487s]       |             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[5.487s] [01m[K/opt/ros/lyrical/include/hardware_interface/hardware_interface/loaned_command_interface.hpp:101:22:[m[K [01;36m[Knote: [m[Kdeclared here
+[5.487s]   101 |   [[nodiscard]] bool [01;36m[Kset_value[m[K(const T & value, unsigned int max_tries = 10)
+[5.488s]       |                      [01;36m[K^~~~~~~~~[m[K
+[5.488s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:264:75:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass hardware_interface::LoanedStateInterface[m[K’ has no member named ‘[01m[Kas_double[m[K’
+[5.488s]   264 |             double current_steer_pos = actuator_position_states_[i].get().[01;31m[Kas_double[m[K();
+[5.488s]       |                                                                           [01;31m[K^~~~~~~~~[m[K
+[5.488s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:265:72:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass hardware_interface::LoanedStateInterface[m[K’ has no member named ‘[01m[Kas_double[m[K’
+[5.488s]   265 |             double current_wheel_vel = wheel_velocity_states_[i].get().[01;31m[Kas_double[m[K();
+[5.488s]       |                                                                        [01;31m[K^~~~~~~~~[m[K
+[5.488s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:293:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing std::__shared_ptr_access<realtime_tools::RealtimePublisher<nav_msgs::msg::Odometry_<std::allocator<void> > >, __gnu_cxx::_S_atomic, false, false>::element_type = class realtime_tools::RealtimePublisher<nav_msgs::msg::Odometry_<std::allocator<void> > >[m[K’ {aka ‘[01m[Kclass realtime_tools::RealtimePublisher<nav_msgs::msg::Odometry_<std::allocator<void> > >[m[K’} has no member named ‘[01m[Ktrylock[m[K’
+[5.488s]   293 |         if (rt_odom_pub_->[01;31m[Ktrylock[m[K())
+[5.488s]       |                           [01;31m[K^~~~~~~[m[K
+[5.488s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:295:45:[m[K [01;31m[Kerror: [m[K‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> > realtime_tools::RealtimePublisher<nav_msgs::msg::Odometry_<std::allocator<void> > >::msg_[m[K’ is private within this context
+[5.488s]   295 |             auto & odom_msg = rt_odom_pub_->[01;31m[Kmsg_[m[K;
+[5.489s]       |                                             [01;31m[K^~~~[m[K
+[5.489s] In file included from [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp:20[m[K:
+[5.489s] [01m[K/opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_publisher.hpp:270:12:[m[K [01;36m[Knote: [m[Kdeclared private here
+[5.489s]   270 |   MessageT [01;36m[Kmsg_[m[K;
+[5.489s]       |            [01;36m[K^~~~[m[K
+[5.489s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:296:37:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[K[01;32m[Kstd_msgs::msg::Header_<std::allocator<void> >::_stamp_type[m[K’ {aka ‘[01m[K[01;32m[Kbuiltin_interfaces::msg::Time_<std::allocator<void> >[m[K’}[m[K and ‘[01m[K[01;34m[Ktime_t(time_t*) noexcept[m[K’ {aka ‘[01m[K[01;34m[Klong int(long int*) noexcept[m[K’}[m[K)
+[5.489s]   296 |             odom_msg.header.stamp = [01;31m[Ktime[m[K;
+[5.489s]       |                                     [01;31m[K^~~~[m[K
+[5.489s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:296:37:[m[K [01;36m[Knote: [m[Kthere are 2 candidates
+[5.489s] In file included from [01m[K/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/time.hpp:7[m[K,
+[5.489s]                  from [01m[K/opt/ros/lyrical/include/rclcpp/rclcpp/time.hpp:18[m[K,
+[5.490s]                  from [01m[K/opt/ros/lyrical/include/rclcpp/rclcpp/clock.hpp:24[m[K,
+[5.490s]                  from [01m[K/opt/ros/lyrical/include/realtime_tools/realtime_tools/async_function_handler.hpp:35[m[K,
+[5.490s]                  from [01m[K/opt/ros/lyrical/include/controller_interface/controller_interface/controller_interface_base.hpp:24[m[K:
+[5.490s] [01m[K/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:37:8:[m[K [01;36m[Knote: [m[Kcandidate 1: ‘[01m[Kconstexpr builtin_interfaces::msg::Time_<std::allocator<void> >& builtin_interfaces::msg::Time_<std::allocator<void> >::[01;32m[Koperator=[m[K(const builtin_interfaces::msg::Time_<std::allocator<void> >&)[m[K’
+[5.490s]    37 | struct [01;36m[KTime_[m[K
+[5.490s]       |        [01;36m[K^~~~~[m[K
+[5.490s] [01m[K/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:37:8:[m[K [01;36m[Knote: [m[Kno known conversion for argument 1 from ‘[01m[K[01;32m[Ktime_t(time_t*) noexcept[m[K’ {aka ‘[01m[K[01;32m[Klong int(long int*) noexcept[m[K’} to ‘[01m[K[01;34m[Kconst builtin_interfaces::msg::Time_<std::allocator<void> >&[m[K[m[K’
+[5.490s] [01m[K/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:37:8:[m[K [01;36m[Knote: [m[Kcandidate 2: ‘[01m[Kconstexpr builtin_interfaces::msg::Time_<std::allocator<void> >& builtin_interfaces::msg::Time_<std::allocator<void> >::[01;32m[Koperator=[m[K(builtin_interfaces::msg::Time_<std::allocator<void> >&&)[m[K’
+[5.490s] [01m[K/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:37:8:[m[K [01;36m[Knote: [m[Kno known conversion for argument 1 from ‘[01m[K[01;32m[Ktime_t(time_t*) noexcept[m[K’ {aka ‘[01m[K[01;32m[Klong int(long int*) noexcept[m[K’} to ‘[01m[K[01;34m[Kbuiltin_interfaces::msg::Time_<std::allocator<void> >&&[m[K[m[K’
+[5.490s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:315:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing std::__shared_ptr_access<realtime_tools::RealtimePublisher<nav_msgs::msg::Odometry_<std::allocator<void> > >, __gnu_cxx::_S_atomic, false, false>::element_type = class realtime_tools::RealtimePublisher<nav_msgs::msg::Odometry_<std::allocator<void> > >[m[K’ {aka ‘[01m[Kclass realtime_tools::RealtimePublisher<nav_msgs::msg::Odometry_<std::allocator<void> > >[m[K’} has no member named ‘[01m[KunlockAndPublish[m[K’
+[5.490s]   315 |             rt_odom_pub_->[01;31m[KunlockAndPublish[m[K();
+[5.491s]       |                           [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[5.491s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:322:35:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[K[01;32m[Kstd_msgs::msg::Header_<std::allocator<void> >::_stamp_type[m[K’ {aka ‘[01m[K[01;32m[Kbuiltin_interfaces::msg::Time_<std::allocator<void> >[m[K’}[m[K and ‘[01m[K[01;34m[Ktime_t(time_t*) noexcept[m[K’ {aka ‘[01m[K[01;34m[Klong int(long int*) noexcept[m[K’}[m[K)
+[5.491s]   322 |             tf_msg.header.stamp = [01;31m[Ktime[m[K;
+[5.491s]       |                                   [01;31m[K^~~~[m[K
+[5.491s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:322:35:[m[K [01;36m[Knote: [m[Kthere are 2 candidates
+[5.491s] [01m[K/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:37:8:[m[K [01;36m[Knote: [m[Kcandidate 1: ‘[01m[Kconstexpr builtin_interfaces::msg::Time_<std::allocator<void> >& builtin_interfaces::msg::Time_<std::allocator<void> >::[01;32m[Koperator=[m[K(const builtin_interfaces::msg::Time_<std::allocator<void> >&)[m[K’
+[5.491s]    37 | struct [01;36m[KTime_[m[K
+[5.491s]       |        [01;36m[K^~~~~[m[K
+[5.491s] [01m[K/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:37:8:[m[K [01;36m[Knote: [m[Kno known conversion for argument 1 from ‘[01m[K[01;32m[Ktime_t(time_t*) noexcept[m[K’ {aka ‘[01m[K[01;32m[Klong int(long int*) noexcept[m[K’} to ‘[01m[K[01;34m[Kconst builtin_interfaces::msg::Time_<std::allocator<void> >&[m[K[m[K’
+[5.491s] [01m[K/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:37:8:[m[K [01;36m[Knote: [m[Kcandidate 2: ‘[01m[Kconstexpr builtin_interfaces::msg::Time_<std::allocator<void> >& builtin_interfaces::msg::Time_<std::allocator<void> >::[01;32m[Koperator=[m[K(builtin_interfaces::msg::Time_<std::allocator<void> >&&)[m[K’
+[5.491s] [01m[K/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:37:8:[m[K [01;36m[Knote: [m[Kno known conversion for argument 1 from ‘[01m[K[01;32m[Ktime_t(time_t*) noexcept[m[K’ {aka ‘[01m[K[01;32m[Klong int(long int*) noexcept[m[K’} to ‘[01m[K[01;34m[Kbuiltin_interfaces::msg::Time_<std::allocator<void> >&&[m[K[m[K’
+[5.492s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:[m[K At global scope:
+[5.492s] [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:346:2:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion at end of input
+[5.492s]   346 | )
+[5.492s]       |  [01;31m[K^[m[K
+[7.983s] gmake[2]: *** [CMakeFiles/swerve_controller.dir/build.make:79: CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o] Error 1
+[7.984s] gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/swerve_controller.dir/all] Error 2
+[7.984s] gmake: *** [Makefile:146: all] Error 2
+[7.987s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers -- -j14 -l14

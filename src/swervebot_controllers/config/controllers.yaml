@@ -1,0 +1,46 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100 # Hz
+    use_sim_time: true
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    swerve_controller:
+      type: swerve_controller/SwerveController
+
+swerve_controller:
+  ros__parameters:
+    # Robot Geometry (meters)
+    wheel_base: 0.26
+    track_width: 0.24
+    wheel_offset: 0.045
+    wheel_radius: 0.075
+
+    # Joint names matching the URDF exactly
+    wheel_names:
+      - wheel_front_left_joint
+      - wheel_front_right_joint
+      - wheel_back_left_joint
+      - wheel_back_right_joint
+    actuator_names:
+      - actuator_front_left_joint
+      - actuator_front_right_joint
+      - actuator_back_left_joint
+      - actuator_back_right_joint
+
+    # Interfaces
+    wheel_command_interfaces: ["velocity"]
+    wheel_state_interfaces: ["velocity", "position"]
+    actuator_command_interfaces: ["position"]
+    actuator_state_interfaces: ["position", "velocity"]
+
+    # Limits
+    max_linear_velocity: 2.0 # m/s
+    max_angular_velocity: 4.0 # rad/s
+    max_steering_velocity: 10.0 # rad/s
+
+    # ODOM
+    enable_odom_tf: true
+    odom_frame_id: "odom"
+    base_frame_id: "base_footprint"

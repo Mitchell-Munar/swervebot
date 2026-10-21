@@ -1,0 +1,44 @@
+[0.024s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_sim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_sim -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim
+[0.119s] -- The C compiler identification is GNU 15.2.0
+[0.215s] -- The CXX compiler identification is GNU 15.2.0
+[0.223s] -- Detecting C compiler ABI info
+[0.319s] -- Detecting C compiler ABI info - done
+[0.334s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.334s] -- Detecting C compile features
+[0.335s] -- Detecting C compile features - done
+[0.355s] -- Detecting CXX compiler ABI info
+[0.478s] -- Detecting CXX compiler ABI info - done
+[0.501s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.502s] -- Detecting CXX compile features
+[0.503s] -- Detecting CXX compile features - done
+[0.519s] -- Found ament_cmake: 2.8.8 (/opt/ros/lyrical/share/ament_cmake/cmake)
+[0.803s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.847s] -- Found ament_lint_auto: 0.20.6 (/opt/ros/lyrical/share/ament_lint_auto/cmake)
+[0.989s] -- Added test 'lint_cmake' to check CMake code style
+[0.990s] -- Added test 'xmllint' to check XML markup files
+[0.992s] -- Configuring done (1.0s)
+[0.996s] -- Generating done (0.0s)
+[0.998s] -- Build files have been written to: /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_sim
+[1.005s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_sim' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_sim -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim
+[1.005s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_sim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_sim -- -j14 -l14
+[1.057s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_sim' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_sim -- -j14 -l14
+[1.058s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_sim': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_sim
+[1.067s] -- Install configuration: ""
+[1.067s] -- Execute custom install script
+[1.067s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/ament_index/resource_index/package_run_dependencies/swervebot_sim
+[1.078s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/ament_index/resource_index/parent_prefix_path/swervebot_sim
+[1.087s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/environment/ament_prefix_path.sh
+[1.097s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/environment/ament_prefix_path.dsv
+[1.110s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/environment/path.sh
+[1.121s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/environment/path.dsv
+[1.137s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/local_setup.bash
+[1.148s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/local_setup.fish
+[1.158s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/local_setup.sh
+[1.167s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/local_setup.zsh
+[1.182s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/local_setup.dsv
+[1.191s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/package.dsv
+[1.203s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/ament_index/resource_index/packages/swervebot_sim
+[1.212s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/cmake/swervebot_simConfig.cmake
+[1.221s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/cmake/swervebot_simConfig-version.cmake
+[1.231s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/package.xml
+[1.245s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_sim' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_sim

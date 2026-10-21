@@ -1,0 +1,85 @@
+swerve_controller:
+  # Joint List Parameters
+  wheel_names: {
+    type: string_array,
+    description: "Names of the wheel joints"
+  }
+  actuator_names: {
+    type: string_array,
+    description: "Names of the actuator joints"
+  }
+
+  # Interface Parameters
+  wheel_command_interfaces: {
+    type: string_array,
+    default_value: ["velocity"],
+    description: "Command interface for the wheel joints"
+  }
+  wheel_state_interfaces: {
+    type: string_array,
+    default_value: ["velocity"],
+    description: "State interface for the wheel joints"
+  }
+  actuator_command_interfaces: {
+    type: string_array,
+    default_value: ["position"],
+    description: "Command interface for the actuator joints"
+  }
+  actuator_state_interfaces: {
+    type: string_array,
+    default_value: ["position"],
+    description: "State interface for the actuator joints"
+  }
+
+  # Hardware Variables
+  wheel_base: {
+    type: double,
+    default_value: 0.25,
+    description: "Distance between turn axis in the forward direction in meters",
+    validation: {
+      gt<>: 0.0
+    }
+  }
+
+  track_width: {
+    type: double,
+    default_value: 0.25,
+    description: "Distance between turn axis in the horizontal direction in meters",
+    validation: {
+      gt<>: 0.0
+    }
+  }
+
+  wheel_radius: {
+    type: double,
+    default_value: 0.05,
+    description: "Radius of the wheels in meters",
+    validation: {
+      gt<>: 0.0
+    }
+  }
+
+  wheel_offset: {
+    type: double,
+    default_value: 0.05,
+    description: "distance of wheel to turn axis in meters",
+  }
+
+  # Odometry & TF Parameters
+  enable_odom_tf: {
+    type: bool,
+    default_value: true,
+    description: "Publish odom to base_footprint transform"
+  }
+
+  odom_frame_id: {
+    type: string,
+    default_value: "odom",
+    description: "Odometry frame id"
+  }
+
+  base_frame_id: {
+    type: string,
+    default_value: "base_footprint",
+    description: "Base robot frame id"
+  }

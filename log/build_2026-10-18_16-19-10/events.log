@@ -1,0 +1,171 @@
+[0.000000] (-) TimerEvent: {}
+[0.000384] (-) JobUnselected: {'identifier': 'swervebot_bringup'}
+[0.000843] (-) JobUnselected: {'identifier': 'swervebot_description'}
+[0.001422] (-) JobUnselected: {'identifier': 'swervebot_sim'}
+[0.001705] (swervebot_controllers) JobQueued: {'identifier': 'swervebot_controllers', 'dependencies': OrderedDict()}
+[0.001763] (swervebot_controllers) JobStarted: {'identifier': 'swervebot_controllers'}
+[0.016505] (swervebot_controllers) JobProgress: {'identifier': 'swervebot_controllers', 'progress': 'cmake'}
+[0.018095] (swervebot_controllers) JobProgress: {'identifier': 'swervebot_controllers', 'progress': 'build'}
+[0.019469] (swervebot_controllers) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers', '--', '-j14', '-l14'], 'cwd': '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/lyrical/lib', 'PROFILEHOME': '', 'EGL_PLATFORM': 'wayland', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'KDE_FULL_SESSION': 'true', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/lyrical/share', 'LANGUAGE': '', 'USER': 'Mitchell', 'PAM_KWALLET5_LOGIN': '/run/user/1000/kwallet5.socket', 'LC_TIME': 'en_US.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/lyrical/opt/gz_sim_vendor/share/gz:/opt/ros/lyrical/opt/gz_gui_vendor/share/gz:/opt/ros/lyrical/opt/gz_transport_vendor/share/gz:/opt/ros/lyrical/opt/sdformat_vendor/share/gz:/opt/ros/lyrical/opt/gz_rendering_vendor/share/gz:/opt/ros/lyrical/opt/gz_plugin_vendor/share/gz:/opt/ros/lyrical/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/lyrical/opt/gz_msgs_vendor/share/gz:/opt/ros/lyrical/opt/gz_common_vendor/share/gz', 'XDG_SEAT': 'seat0', 'XDG_SESSION_TYPE': 'wayland', 'KONSOLE_VERSION': '251203', 'QT_WAYLAND_RECONNECT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/lyrical/opt/gz_sim_vendor/lib:/opt/ros/lyrical/opt/gz_sensors_vendor/lib:/opt/ros/lyrical/opt/gz_gui_vendor/lib:/opt/ros/lyrical/opt/gz_transport_vendor/lib:/opt/ros/lyrical/opt/zenoh_cpp_vendor/lib:/opt/ros/lyrical/opt/gz_physics_vendor/lib:/opt/ros/lyrical/opt/sdformat_vendor/lib:/opt/ros/lyrical/opt/gz_rendering_vendor/lib:/opt/ros/lyrical/opt/gz_plugin_vendor/lib:/opt/ros/lyrical/opt/gz_fuel_tools_vendor/lib:/opt/ros/lyrical/opt/gz_msgs_vendor/lib:/opt/ros/lyrical/opt/gz_common_vendor/lib:/opt/ros/lyrical/opt/gz_math_vendor/lib:/opt/ros/lyrical/opt/gz_utils_vendor/lib:/opt/ros/lyrical/opt/rviz_ogre_vendor/lib:/opt/ros/lyrical/lib/x86_64-linux-gnu:/opt/ros/lyrical/opt/gz_tools_vendor/lib:/opt/ros/lyrical/opt/gz_ogre_next_vendor/lib:/opt/ros/lyrical/opt/gz_dartsim_vendor/lib:/opt/ros/lyrical/opt/gz_cmake_vendor/lib:/opt/ros/lyrical/lib', 'HOME': '/home/mmunar', 'KDE_APPLICATIONS_AS_SCOPE': '1', 'DESKTOP_SESSION': 'plasma', 'IM_CONFIG_ENTRY': 'profile', 'ROS_PYTHON_VERSION': '3', 'SHELL_SESSION_ID': '97d5fdbc424f4a96b919cd78ede1cd56', 'GTK_RC_FILES': '/etc/gtk/gtkrc:/home/mmunar/.gtkrc:/home/mmunar/.config/gtkrc', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'KDE_SESSION_VERSION': '6', 'LC_MONETARY': 'en_US.UTF-8', 'KONSOLE_DBUS_SESSION': '/Sessions/2', 'MANAGERPID': '1854', 'SYSTEMD_EXEC_PID': '2218', 'SSH_ASKPASS': '/usr/bin/ksshaskpass', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'KONSOLE_DBUS_ACTIVATION_COOKIE': 'N2dugOTU4/tF4P1O8QsScluPYYJJJcF4d5jsXAu3S6I=', 'KONSOLE_DBUS_WINDOW': '/Windows/2', '_colcon_cd_root': '/opt/ros/lyrical/', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'WAYLAND_DISPLAY': 'wayland-0', 'XKB_DEFAULT_LAYOUT': 'us', 'ROS_DISTRO': 'lyrical', 'LOGNAME': 'Mitchell', 'WINDOWID': '100445751911216', 'MANAGERPIDFDID': '8452', 'JOURNAL_STREAM': '10:28463', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/plasma-plasmashell.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'COLORFGBG': '15;0', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'GTK2_RC_FILES': '/etc/gtk-2.0/gtkrc:/home/mmunar/.gtkrc-2.0:/home/mmunar/.config/gtkrc-2.0', 'PATH': '/opt/ros/lyrical/opt/gz_msgs_vendor/bin:/opt/ros/lyrical/opt/gz_tools_vendor/bin:/opt/ros/lyrical/opt/gz_ogre_next_vendor/bin:/opt/ros/lyrical/bin:/home/mmunar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/mmunar/.local/share/JetBrains/Toolbox/scripts', 'SESSION_MANAGER': 'local/MunarThinkpad:@/tmp/.ICE-unix/2179,unix/MunarThinkpad:/tmp/.ICE-unix/2179', 'INVOCATION_ID': '5cb1936a0732460290eeac48bba7f03e', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session1', 'XDG_MENU_PREFIX': 'plasma-', 'LC_ADDRESS': 'en_US.UTF-8', 'XKB_DEFAULT_MODEL': 'pc105', 'XDG_RUNTIME_DIR': '/run/user/1000', 'ICEAUTHORITY': '/run/user/1000/iceauth_CkuWRj', 'SSH_ASKPASS_REQUIRE': 'prefer', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'KDE', 'LC_TELEPHONE': 'en_US.UTF-8', 'XDG_SESSION_DESKTOP': 'KDE', 'XAUTHORITY': '/run/user/1000/xauth_NWiyPS', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/openssh_agent', 'AMENT_PREFIX_PATH': '/opt/ros/lyrical', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'QT_ACCESSIBILITY': '1', '_JAVA_AWT_WM_NONREPARENTING': '1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'force_s3tc_enable': 'true', 'KONSOLE_DBUS_SERVICE': ':1.80', 'LC_MEASUREMENT': 'en_US.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'XDG_VTNR': '2', 'PWD': '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/home/mmunar/.config/kdedefaults:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/lyrical/opt/gz_sim_vendor/lib/python:/opt/ros/lyrical/opt/gz_transport_vendor/lib/python:/opt/ros/lyrical/opt/sdformat_vendor/lib/python:/opt/ros/lyrical/opt/gz_msgs_vendor/lib/python:/opt/ros/lyrical/opt/gz_math_vendor/lib/python:/opt/ros/lyrical/lib/python3.14/site-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'KDE_SESSION_UID': '1000', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/lyrical/opt/gz_sim_vendor:/opt/ros/lyrical/opt/gz_sensors_vendor:/opt/ros/lyrical/opt/gz_gui_vendor:/opt/ros/lyrical/opt/gz_transport_vendor:/opt/ros/lyrical/opt/gz_physics_vendor:/opt/ros/lyrical/opt/sdformat_vendor:/opt/ros/lyrical/opt/gz_rendering_vendor:/opt/ros/lyrical/opt/gz_plugin_vendor:/opt/ros/lyrical/opt/gz_fuel_tools_vendor:/opt/ros/lyrical/opt/gz_msgs_vendor:/opt/ros/lyrical/opt/gz_common_vendor:/opt/ros/lyrical/opt/gz_math_vendor:/opt/ros/lyrical/opt/gz_utils_vendor:/opt/ros/lyrical/opt/gz_tools_vendor:/opt/ros/lyrical/opt/gz_ogre_next_vendor:/opt/ros/lyrical/opt/gz_dartsim_vendor:/opt/ros/lyrical/opt/gz_cmake_vendor:/opt/ros/lyrical'}), 'shell': False}
+[0.099645] (-) TimerEvent: {}
+[0.121159] (swervebot_controllers) StdoutLine: {'line': b'[ 33%] Built target swerve_controller_parameters\n'}
+[0.185728] (swervebot_controllers) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o\x1b[0m\n'}
+[0.199788] (-) TimerEvent: {}
+[0.300334] (-) TimerEvent: {}
+[0.400820] (-) TimerEvent: {}
+[0.431845] (swervebot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp:19\x1b[m\x1b[K,\n'}
+[0.432169] (swervebot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:1\x1b[m\x1b[K:\n'}
+[0.432232] (swervebot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_buffer.hpp:46:2:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K#warning This header is obsolete, please refer to the guidelines for replacement options: control.ros.org/rolling/doc/realtime_tools/doc/index.html#guidelines [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wcpp\x07-Wcpp\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[0.432282] (swervebot_controllers) StderrLine: {'line': b'   46 | #\x1b[01;35m\x1b[Kwarning\x1b[m\x1b[K This header is obsolete, please refer to the guidelines for replacement options: \\\n'}
+[0.432321] (swervebot_controllers) StderrLine: {'line': b'      |  \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.500958] (-) TimerEvent: {}
+[0.601419] (-) TimerEvent: {}
+[0.701881] (-) TimerEvent: {}
+[0.802962] (-) TimerEvent: {}
+[0.903454] (-) TimerEvent: {}
+[1.004171] (-) TimerEvent: {}
+[1.104753] (-) TimerEvent: {}
+[1.205363] (-) TimerEvent: {}
+[1.305915] (-) TimerEvent: {}
+[1.406504] (-) TimerEvent: {}
+[1.507105] (-) TimerEvent: {}
+[1.607672] (-) TimerEvent: {}
+[1.708272] (-) TimerEvent: {}
+[1.808854] (-) TimerEvent: {}
+[1.909432] (-) TimerEvent: {}
+[2.010023] (-) TimerEvent: {}
+[2.110615] (-) TimerEvent: {}
+[2.211201] (-) TimerEvent: {}
+[2.298395] (swervebot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp:61:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> class realtime_tools::RealtimeBuffer\x1b[m\x1b[K\xe2\x80\x99 is deprecated: refer to the guidelines for replacement options: control.ros.org/rolling/doc/realtime_tools/doc/index.html#guidelines [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wdeprecated-declarations\x07-Wdeprecated-declarations\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.298946] (swervebot_controllers) StderrLine: {'line': b'   61 |             realtime_tools::\x1b[01;35m\x1b[KRealtimeBuffer\x1b[m\x1b[K<std::shared_ptr<geometry_msgs::msg::Twist>> rt_cmd_vel_ptr_;\n'}
+[2.299184] (swervebot_controllers) StderrLine: {'line': b'      |                             \x1b[01;35m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.299286] (swervebot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_buffer.hpp:56:77:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.299379] (swervebot_controllers) StderrLine: {'line': b'   56 |   "control.ros.org/rolling/doc/realtime_tools/doc/index.html#guidelines")]] \x1b[01;36m\x1b[KRealtimeBuffer\x1b[m\x1b[K\n'}
+[2.299486] (swervebot_controllers) StderrLine: {'line': b'      |                                                                             \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.310302] (swervebot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp:66:29:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktemplate<class T> class realtime_tools::RealtimeBuffer\x1b[m\x1b[K\xe2\x80\x99 is deprecated: refer to the guidelines for replacement options: control.ros.org/rolling/doc/realtime_tools/doc/index.html#guidelines [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wdeprecated-declarations\x07-Wdeprecated-declarations\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.310467] (swervebot_controllers) StderrLine: {'line': b'   66 |             realtime_tools::\x1b[01;35m\x1b[KRealtimeBuffer\x1b[m\x1b[K<std::shared_ptr<std_msgs::msg::Bool>> rt_drive_mode_ptr_;\n'}
+[2.310557] (swervebot_controllers) StderrLine: {'line': b'      |                             \x1b[01;35m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.310639] (swervebot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_buffer.hpp:56:77:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[2.310716] (swervebot_controllers) StderrLine: {'line': b'   56 |   "control.ros.org/rolling/doc/realtime_tools/doc/index.html#guidelines")]] \x1b[01;36m\x1b[KRealtimeBuffer\x1b[m\x1b[K\n'}
+[2.310811] (swervebot_controllers) StderrLine: {'line': b'      |                                                                             \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.311250] (-) TimerEvent: {}
+[2.411586] (-) TimerEvent: {}
+[2.512096] (-) TimerEvent: {}
+[2.612591] (-) TimerEvent: {}
+[2.713153] (-) TimerEvent: {}
+[2.813681] (-) TimerEvent: {}
+[2.914188] (-) TimerEvent: {}
+[3.014659] (-) TimerEvent: {}
+[3.115173] (-) TimerEvent: {}
+[3.215662] (-) TimerEvent: {}
+[3.316214] (-) TimerEvent: {}
+[3.416727] (-) TimerEvent: {}
+[3.517241] (-) TimerEvent: {}
+[3.617737] (-) TimerEvent: {}
+[3.718219] (-) TimerEvent: {}
+[3.818715] (-) TimerEvent: {}
+[3.919227] (-) TimerEvent: {}
+[4.019721] (-) TimerEvent: {}
+[4.120225] (-) TimerEvent: {}
+[4.220734] (-) TimerEvent: {}
+[4.321242] (-) TimerEvent: {}
+[4.421749] (-) TimerEvent: {}
+[4.522276] (-) TimerEvent: {}
+[4.622820] (-) TimerEvent: {}
+[4.723356] (-) TimerEvent: {}
+[4.823879] (-) TimerEvent: {}
+[4.924414] (-) TimerEvent: {}
+[5.024899] (-) TimerEvent: {}
+[5.125372] (-) TimerEvent: {}
+[5.225856] (-) TimerEvent: {}
+[5.326360] (-) TimerEvent: {}
+[5.426875] (-) TimerEvent: {}
+[5.527367] (-) TimerEvent: {}
+[5.627892] (-) TimerEvent: {}
+[5.728378] (-) TimerEvent: {}
+[5.828898] (-) TimerEvent: {}
+[5.929409] (-) TimerEvent: {}
+[6.029922] (-) TimerEvent: {}
+[6.130451] (-) TimerEvent: {}
+[6.231004] (-) TimerEvent: {}
+[6.331534] (-) TimerEvent: {}
+[6.432076] (-) TimerEvent: {}
+[6.532579] (-) TimerEvent: {}
+[6.633103] (-) TimerEvent: {}
+[6.733635] (-) TimerEvent: {}
+[6.834306] (-) TimerEvent: {}
+[6.934901] (-) TimerEvent: {}
+[7.035457] (-) TimerEvent: {}
+[7.136044] (-) TimerEvent: {}
+[7.236683] (-) TimerEvent: {}
+[7.337320] (-) TimerEvent: {}
+[7.437913] (-) TimerEvent: {}
+[7.538496] (-) TimerEvent: {}
+[7.639100] (-) TimerEvent: {}
+[7.739759] (-) TimerEvent: {}
+[7.840364] (-) TimerEvent: {}
+[7.940920] (-) TimerEvent: {}
+[8.041485] (-) TimerEvent: {}
+[8.142049] (-) TimerEvent: {}
+[8.242620] (-) TimerEvent: {}
+[8.343216] (-) TimerEvent: {}
+[8.443826] (-) TimerEvent: {}
+[8.544411] (-) TimerEvent: {}
+[8.645010] (-) TimerEvent: {}
+[8.745548] (-) TimerEvent: {}
+[8.846111] (-) TimerEvent: {}
+[8.946666] (-) TimerEvent: {}
+[9.047395] (-) TimerEvent: {}
+[9.147916] (-) TimerEvent: {}
+[9.248422] (-) TimerEvent: {}
+[9.348905] (-) TimerEvent: {}
+[9.449471] (-) TimerEvent: {}
+[9.550015] (-) TimerEvent: {}
+[9.650568] (-) TimerEvent: {}
+[9.751137] (-) TimerEvent: {}
+[9.851638] (-) TimerEvent: {}
+[9.903906] (swervebot_controllers) StdoutLine: {'line': b'[100%] \x1b[1m\x1b[32mLinking CXX shared library libswerve_controller.so\x1b[0m\n'}
+[9.951838] (-) TimerEvent: {}
+[10.052401] (-) TimerEvent: {}
+[10.152912] (-) TimerEvent: {}
+[10.253483] (-) TimerEvent: {}
+[10.330140] (swervebot_controllers) StdoutLine: {'line': b'[100%] Built target swerve_controller\n'}
+[10.351048] (swervebot_controllers) CommandEnded: {'returncode': 0}
+[10.353897] (swervebot_controllers) JobProgress: {'identifier': 'swervebot_controllers', 'progress': 'install'}
+[10.354020] (-) TimerEvent: {}
+[10.373772] (swervebot_controllers) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers'], 'cwd': '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/lyrical/lib', 'PROFILEHOME': '', 'EGL_PLATFORM': 'wayland', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'KDE_FULL_SESSION': 'true', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/lyrical/share', 'LANGUAGE': '', 'USER': 'Mitchell', 'PAM_KWALLET5_LOGIN': '/run/user/1000/kwallet5.socket', 'LC_TIME': 'en_US.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/lyrical/opt/gz_sim_vendor/share/gz:/opt/ros/lyrical/opt/gz_gui_vendor/share/gz:/opt/ros/lyrical/opt/gz_transport_vendor/share/gz:/opt/ros/lyrical/opt/sdformat_vendor/share/gz:/opt/ros/lyrical/opt/gz_rendering_vendor/share/gz:/opt/ros/lyrical/opt/gz_plugin_vendor/share/gz:/opt/ros/lyrical/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/lyrical/opt/gz_msgs_vendor/share/gz:/opt/ros/lyrical/opt/gz_common_vendor/share/gz', 'XDG_SEAT': 'seat0', 'XDG_SESSION_TYPE': 'wayland', 'KONSOLE_VERSION': '251203', 'QT_WAYLAND_RECONNECT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/lyrical/opt/gz_sim_vendor/lib:/opt/ros/lyrical/opt/gz_sensors_vendor/lib:/opt/ros/lyrical/opt/gz_gui_vendor/lib:/opt/ros/lyrical/opt/gz_transport_vendor/lib:/opt/ros/lyrical/opt/zenoh_cpp_vendor/lib:/opt/ros/lyrical/opt/gz_physics_vendor/lib:/opt/ros/lyrical/opt/sdformat_vendor/lib:/opt/ros/lyrical/opt/gz_rendering_vendor/lib:/opt/ros/lyrical/opt/gz_plugin_vendor/lib:/opt/ros/lyrical/opt/gz_fuel_tools_vendor/lib:/opt/ros/lyrical/opt/gz_msgs_vendor/lib:/opt/ros/lyrical/opt/gz_common_vendor/lib:/opt/ros/lyrical/opt/gz_math_vendor/lib:/opt/ros/lyrical/opt/gz_utils_vendor/lib:/opt/ros/lyrical/opt/rviz_ogre_vendor/lib:/opt/ros/lyrical/lib/x86_64-linux-gnu:/opt/ros/lyrical/opt/gz_tools_vendor/lib:/opt/ros/lyrical/opt/gz_ogre_next_vendor/lib:/opt/ros/lyrical/opt/gz_dartsim_vendor/lib:/opt/ros/lyrical/opt/gz_cmake_vendor/lib:/opt/ros/lyrical/lib', 'HOME': '/home/mmunar', 'KDE_APPLICATIONS_AS_SCOPE': '1', 'DESKTOP_SESSION': 'plasma', 'IM_CONFIG_ENTRY': 'profile', 'ROS_PYTHON_VERSION': '3', 'SHELL_SESSION_ID': '97d5fdbc424f4a96b919cd78ede1cd56', 'GTK_RC_FILES': '/etc/gtk/gtkrc:/home/mmunar/.gtkrc:/home/mmunar/.config/gtkrc', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'KDE_SESSION_VERSION': '6', 'LC_MONETARY': 'en_US.UTF-8', 'KONSOLE_DBUS_SESSION': '/Sessions/2', 'MANAGERPID': '1854', 'SYSTEMD_EXEC_PID': '2218', 'SSH_ASKPASS': '/usr/bin/ksshaskpass', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'KONSOLE_DBUS_ACTIVATION_COOKIE': 'N2dugOTU4/tF4P1O8QsScluPYYJJJcF4d5jsXAu3S6I=', 'KONSOLE_DBUS_WINDOW': '/Windows/2', '_colcon_cd_root': '/opt/ros/lyrical/', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'WAYLAND_DISPLAY': 'wayland-0', 'XKB_DEFAULT_LAYOUT': 'us', 'ROS_DISTRO': 'lyrical', 'LOGNAME': 'Mitchell', 'WINDOWID': '100445751911216', 'MANAGERPIDFDID': '8452', 'JOURNAL_STREAM': '10:28463', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/plasma-plasmashell.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'COLORFGBG': '15;0', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'GTK2_RC_FILES': '/etc/gtk-2.0/gtkrc:/home/mmunar/.gtkrc-2.0:/home/mmunar/.config/gtkrc-2.0', 'PATH': '/opt/ros/lyrical/opt/gz_msgs_vendor/bin:/opt/ros/lyrical/opt/gz_tools_vendor/bin:/opt/ros/lyrical/opt/gz_ogre_next_vendor/bin:/opt/ros/lyrical/bin:/home/mmunar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/mmunar/.local/share/JetBrains/Toolbox/scripts', 'SESSION_MANAGER': 'local/MunarThinkpad:@/tmp/.ICE-unix/2179,unix/MunarThinkpad:/tmp/.ICE-unix/2179', 'INVOCATION_ID': '5cb1936a0732460290eeac48bba7f03e', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session1', 'XDG_MENU_PREFIX': 'plasma-', 'LC_ADDRESS': 'en_US.UTF-8', 'XKB_DEFAULT_MODEL': 'pc105', 'XDG_RUNTIME_DIR': '/run/user/1000', 'ICEAUTHORITY': '/run/user/1000/iceauth_CkuWRj', 'SSH_ASKPASS_REQUIRE': 'prefer', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'KDE', 'LC_TELEPHONE': 'en_US.UTF-8', 'XDG_SESSION_DESKTOP': 'KDE', 'XAUTHORITY': '/run/user/1000/xauth_NWiyPS', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/openssh_agent', 'AMENT_PREFIX_PATH': '/opt/ros/lyrical', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'QT_ACCESSIBILITY': '1', '_JAVA_AWT_WM_NONREPARENTING': '1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'force_s3tc_enable': 'true', 'KONSOLE_DBUS_SERVICE': ':1.80', 'LC_MEASUREMENT': 'en_US.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'XDG_VTNR': '2', 'PWD': '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/home/mmunar/.config/kdedefaults:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/lyrical/opt/gz_sim_vendor/lib/python:/opt/ros/lyrical/opt/gz_transport_vendor/lib/python:/opt/ros/lyrical/opt/sdformat_vendor/lib/python:/opt/ros/lyrical/opt/gz_msgs_vendor/lib/python:/opt/ros/lyrical/opt/gz_math_vendor/lib/python:/opt/ros/lyrical/lib/python3.14/site-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'KDE_SESSION_UID': '1000', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/lyrical/opt/gz_sim_vendor:/opt/ros/lyrical/opt/gz_sensors_vendor:/opt/ros/lyrical/opt/gz_gui_vendor:/opt/ros/lyrical/opt/gz_transport_vendor:/opt/ros/lyrical/opt/gz_physics_vendor:/opt/ros/lyrical/opt/sdformat_vendor:/opt/ros/lyrical/opt/gz_rendering_vendor:/opt/ros/lyrical/opt/gz_plugin_vendor:/opt/ros/lyrical/opt/gz_fuel_tools_vendor:/opt/ros/lyrical/opt/gz_msgs_vendor:/opt/ros/lyrical/opt/gz_common_vendor:/opt/ros/lyrical/opt/gz_math_vendor:/opt/ros/lyrical/opt/gz_utils_vendor:/opt/ros/lyrical/opt/gz_tools_vendor:/opt/ros/lyrical/opt/gz_ogre_next_vendor:/opt/ros/lyrical/opt/gz_dartsim_vendor:/opt/ros/lyrical/opt/gz_cmake_vendor:/opt/ros/lyrical'}), 'shell': False}
+[10.387297] (swervebot_controllers) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[10.387737] (swervebot_controllers) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[10.387991] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/include/swervebot_controllers/swerve_controller_parameters.hpp\n'}
+[10.388146] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers//swerve_controller_plugin.xml\n'}
+[10.388330] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/config/controllers.yaml\n'}
+[10.388512] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/config/swerve_controller_parameters.yaml\n'}
+[10.388671] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp\n'}
+[10.388842] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/swerve_controller_plugin.xml\n'}
+[10.389065] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/library_path.sh\n'}
+[10.389273] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/library_path.dsv\n'}
+[10.389450] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/package_run_dependencies/swervebot_controllers\n'}
+[10.389609] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/parent_prefix_path/swervebot_controllers\n'}
+[10.389797] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/ament_prefix_path.sh\n'}
+[10.389977] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/ament_prefix_path.dsv\n'}
+[10.390116] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/path.sh\n'}
+[10.390248] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/path.dsv\n'}
+[10.390380] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.bash\n'}
+[10.390511] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.fish\n'}
+[10.390641] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.sh\n'}
+[10.390799] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.zsh\n'}
+[10.391016] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.dsv\n'}
+[10.391220] (swervebot_controllers) StdoutLine: {'line': b'-- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/package.dsv\n'}
+[10.412807] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/packages/swervebot_controllers\n'}
+[10.413269] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/controller_interface__pluginlib__plugin/swervebot_controllers\n'}
+[10.413489] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[10.413687] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[10.413879] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[10.414103] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/swervebot_controllersConfig.cmake\n'}
+[10.414289] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/swervebot_controllersConfig-version.cmake\n'}
+[10.414597] (swervebot_controllers) StdoutLine: {'line': b'-- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/package.xml\n'}
+[10.414895] (swervebot_controllers) StdoutLine: {'line': b'-- Installing: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/lib/libswerve_controller.so\n'}
+[10.429315] (swervebot_controllers) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/lib/libswerve_controller.so" to ""\n'}
+[10.432217] (swervebot_controllers) CommandEnded: {'returncode': 0}
+[10.448944] (swervebot_controllers) JobEnded: {'identifier': 'swervebot_controllers', 'rc': 0}
+[10.450275] (-) EventReactorShutdown: {}

@@ -1,0 +1,7 @@
+<library path="swerve_controller">
+  <class name="swervebot_controllers/SwerveController"
+         type="swervebot_controllers::SwerveController"
+         base_class_type="controller_interface::ControllerInterface">
+    <description>Custom 4-wheel swerve drive controller with multiple drive modes.</description>
+  </class>
+</library>

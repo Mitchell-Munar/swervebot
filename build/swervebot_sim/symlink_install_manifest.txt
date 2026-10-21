@@ -1,0 +1,16 @@
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/ament_index/resource_index/package_run_dependencies/swervebot_sim
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/ament_index/resource_index/parent_prefix_path/swervebot_sim
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/environment/ament_prefix_path.sh
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/environment/ament_prefix_path.dsv
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/environment/path.sh
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/environment/path.dsv
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/local_setup.bash
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/local_setup.fish
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/local_setup.sh
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/local_setup.zsh
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/local_setup.dsv
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/package.dsv
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/ament_index/resource_index/packages/swervebot_sim
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/cmake/swervebot_simConfig.cmake
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/cmake/swervebot_simConfig-version.cmake
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/package.xml

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- Include the properties file to access the defined properties -->
+    <xacro:include filename="$(find swervebot_description)/description/swervebot_properties.xacro" />
+    <xacro:include filename="$(find swervebot_description)/description/inertia.xacro" />
+
+    <xacro:macro name="swervebot_base" >
+
+        <link name="base_footprint" />
+
+        <joint name="base_footprint_joint" type="fixed">
+            <parent link="base_footprint" />
+            <child link="base_link" />
+            <origin xyz="0 0 ${chassis_ground_clearance + (chassis_height/2)}" rpy="0 0 0" />
+        </joint>
+
+        <link name="base_link" />
+
+        <joint name="chassis_joint" type="fixed">
+            <parent link="base_link" />
+            <child link="chassis" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+        </joint>
+
+        <link name="chassis">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="${chassis_length} ${chassis_width} ${chassis_height}" />
+                </geometry>
+                <material name="chassis_material">
+                    <color rgba="${chassis_color}" />
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="${chassis_length} ${chassis_width} ${chassis_height}" />
+                </geometry>
+            </collision>
+
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <mass value="${chassis_mass}" />
+                <xacro:box_inertia_values m="${chassis_mass}" x="${chassis_length}" y="${chassis_width}" z="${chassis_height}" />
+            </inertial>
+        </link>
+    </xacro:macro>
+</robot>

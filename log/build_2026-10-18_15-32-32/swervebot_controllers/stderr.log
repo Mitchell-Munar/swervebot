@@ -1,0 +1,18 @@
+In file included from [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp:12[m[K,
+                 from [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:1[m[K:
+[01m[K/opt/ros/lyrical/include/tf2_ros/tf2_ros/transform_broadcaster.h:41:4:[m[K [01;35m[Kwarning: [m[K#warning TRANSFORM_BROADCASTER_HEADER_DEPRECATION [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   41 |   #[01;35m[Kwarning[m[K TRANSFORM_BROADCASTER_HEADER_DEPRECATION
+      |    [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp:19[m[K:
+[01m[K/opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_buffer.hpp:46:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please refer to the guidelines for replacement options: control.ros.org/rolling/doc/realtime_tools/doc/index.html#guidelines [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   46 | #[01;35m[Kwarning[m[K This header is obsolete, please refer to the guidelines for replacement options: \
+      |  [01;35m[K^~~~~~~[m[K
+[01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp:1:[m[K [01;31m[Kerror: [m[Kunterminated #ifndef
+    1 | #ifndef SWERVEBOT_CONTROLLERS__SWERVE_CONTROLLER_HPP_
+[01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:11:10:[m[K [01;31m[Kfatal error: [m[Kangles/angles.h: No such file or directory
+   11 | #include [01;31m[K<angles/angles.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/swerve_controller.dir/build.make:79: CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:188: CMakeFiles/swerve_controller.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="swervebot">
+    <!-- Include subsystem files -->
+    <xacro:include filename="$(find swervebot_description)/description/swervebot_properties.xacro" />
+    <xacro:include filename="$(find swervebot_description)/description/swervebot_base.xacro" />
+    <xacro:include filename="$(find swervebot_description)/description/swervebot_module.xacro"/>
+    <xacro:include filename="$(find swervebot_description)/description/swervebot_ros2_control.xacro"/>
+
+    <xacro:arg name="use_sim" default="false"/>
+    <xacro:arg name="use_mock_hardware" default="false"/>
+
+    <!-- Execute/Instantiate the macros -->
+    <xacro:swervebot_base />
+
+    <xacro:add_all_swerve_modules/>
+
+    <xacro:robot_control
+        use_mock_hardware="$(arg use_mock_hardware)"
+        use_sim="$(arg use_sim)"
+    />
+</robot>

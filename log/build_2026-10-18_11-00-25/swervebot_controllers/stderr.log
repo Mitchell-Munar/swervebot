@@ -1,0 +1,14 @@
+[01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kswervebot_controllers/swerve_controller.hpp: No such file or directory
+    1 | #include [01;31m[K"swervebot_controllers/swerve_controller.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+[01m[K/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kswervebot_controllers/swerve_controller.hpp: No such file or directory
+    1 | #include [01;31m[K"swervebot_controllers/swerve_controller.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/swerve_controller_lib.dir/build.make:79: CMakeFiles/swerve_controller_lib.dir/src/swerve_controller.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/swerve_controller.dir/build.make:79: CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:191: CMakeFiles/swerve_controller_lib.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:223: CMakeFiles/swerve_controller.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

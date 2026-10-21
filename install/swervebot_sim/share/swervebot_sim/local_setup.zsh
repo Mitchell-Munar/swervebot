@@ -1,0 +1,1 @@
+/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_sim/ament_cmake_environment_hooks/local_setup.zsh

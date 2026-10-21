@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

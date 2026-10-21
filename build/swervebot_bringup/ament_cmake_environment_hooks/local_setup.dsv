@@ -1,0 +1,2 @@
+source;share/swervebot_bringup/environment/ament_prefix_path.sh
+source;share/swervebot_bringup/environment/path.sh

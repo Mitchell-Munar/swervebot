@@ -1,0 +1,58 @@
+[0.018s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers -DCMAKE_INSTALL_PREFIX=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers
+[0.243s] -- The C compiler identification is GNU 15.2.0
+[0.383s] -- The CXX compiler identification is GNU 15.2.0
+[0.399s] -- Detecting C compiler ABI info
+[0.556s] -- Detecting C compiler ABI info - done
+[0.579s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.580s] -- Detecting C compile features
+[0.581s] -- Detecting C compile features - done
+[0.597s] -- Detecting CXX compiler ABI info
+[0.700s] -- Detecting CXX compiler ABI info - done
+[0.733s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.734s] -- Detecting CXX compile features
+[0.735s] -- Detecting CXX compile features - done
+[0.762s] -- Found ament_cmake: 2.8.8 (/opt/ros/lyrical/share/ament_cmake/cmake)
+[1.152s] -- Found controller_interface: 6.10.1 (/opt/ros/lyrical/share/controller_interface/cmake)
+[1.189s] -- Found rosidl_generator_c: 5.2.1 (/opt/ros/lyrical/share/rosidl_generator_c/cmake)
+[1.196s] -- Found rosidl_generator_cpp: 5.2.1 (/opt/ros/lyrical/share/rosidl_generator_cpp/cmake)
+[1.210s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.221s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.393s] -- Found rmw_implementation_cmake: 7.10.2 (/opt/ros/lyrical/share/rmw_implementation_cmake/cmake)
+[1.395s] -- Found rmw_fastrtps_cpp: 9.4.10 (/opt/ros/lyrical/share/rmw_fastrtps_cpp/cmake)
+[1.419s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.675s] -- Found nav_msgs: 5.9.3 (/opt/ros/lyrical/share/nav_msgs/cmake)
+[1.691s] -- Found angles: 1.16.1 (/opt/ros/lyrical/share/angles/cmake)
+[1.694s] -- Found tf2: 0.45.10 (/opt/ros/lyrical/share/tf2/cmake)
+[1.697s] -- Found tf2_geometry_msgs: 0.45.10 (/opt/ros/lyrical/share/tf2_geometry_msgs/cmake)
+[1.750s] -- Found generate_parameter_library: 1.3.0 (/opt/ros/lyrical/share/generate_parameter_library/cmake)
+[1.753s] -- Found tcb_span: 2.0.3 (/opt/ros/lyrical/share/tcb_span/cmake)
+[1.759s] -- Found ament_lint_auto: 0.20.6 (/opt/ros/lyrical/share/ament_lint_auto/cmake)
+[1.835s] Error parsing '/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/package.xml':
+[1.835s] Traceback (most recent call last):
+[1.836s]   File "/opt/ros/lyrical/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 150, in <module>
+[1.836s]     main()
+[1.836s]     ~~~~^^
+[1.836s]   File "/opt/ros/lyrical/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 53, in main
+[1.836s]     raise e
+[1.836s]   File "/opt/ros/lyrical/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 49, in main
+[1.836s]     package = parse_package_string(
+[1.837s]         args.package_xml.read(), filename=args.package_xml.name)
+[1.837s]   File "/home/mmunar/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/site-packages/catkin_pkg/package.py", line 786, in parse_package_string
+[1.837s]     raise InvalidPackage('Error(s):%s' % (''.join(['\n- %s' % e for e in errors])), filename)
+[1.837s] catkin_pkg.package.InvalidPackage: Error(s) in package '/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/package.xml':
+[1.837s] Error(s):
+[1.837s] - The generic dependency on 'generate_parameter_library' is redundant with: build_depend
+[1.850s] [31mCMake Error at /opt/ros/lyrical/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):
+[1.850s]   execute_process(/home/mmunar/.local/bin/python3.14
+[1.850s]   /opt/ros/lyrical/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py
+[1.850s]   /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/package.xml
+[1.850s]   /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_core/package.cmake)
+[1.850s]   returned error code 1
+[1.850s] Call Stack (most recent call first):
+[1.850s]   /opt/ros/lyrical/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)
+[1.850s]   /opt/ros/lyrical/share/ament_lint_auto/cmake/ament_lint_auto_find_test_dependencies.cmake:31 (ament_package_xml)
+[1.850s]   CMakeLists.txt:65 (ament_lint_auto_find_test_dependencies)
+[1.850s] 
+[1.850s] [0m
+[1.850s] -- Configuring incomplete, errors occurred!
+[1.870s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers -DCMAKE_INSTALL_PREFIX=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers

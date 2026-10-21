@@ -1,0 +1,22 @@
+[0.035s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers -- -j14 -l14
+[0.122s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers -- -j14 -l14
+[0.124s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers
+[0.141s] -- Install configuration: ""
+[0.144s] -- Execute custom install script
+[0.145s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/package_run_dependencies/swervebot_controllers
+[0.145s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/parent_prefix_path/swervebot_controllers
+[0.145s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/ament_prefix_path.sh
+[0.146s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/ament_prefix_path.dsv
+[0.146s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/path.sh
+[0.146s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/path.dsv
+[0.147s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.bash
+[0.147s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.fish
+[0.147s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.sh
+[0.147s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.zsh
+[0.147s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.dsv
+[0.147s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/package.dsv
+[0.161s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/packages/swervebot_controllers
+[0.162s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/swervebot_controllersConfig.cmake
+[0.162s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/swervebot_controllersConfig-version.cmake
+[0.162s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/package.xml
+[0.198s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers
