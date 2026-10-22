@@ -33,9 +33,9 @@ generate_parameter_library(
   "config/swerve_controller_parameters.yaml"
 )
 
-# --- CONSOLIDATED SINGLE TARGET ---
-# We use 'swerve_controller' since it matches your export statements below.
 add_library(swerve_controller SHARED ${CMAKE_CURRENT_SOURCE_DIR}/src/swerve_controller.cpp)
+
+target_compile_features(swerve_controller PUBLIC cxx_std_17)
 
 add_dependencies(swerve_controller swerve_controller_parameters)
 
@@ -44,11 +44,11 @@ target_include_directories(swerve_controller PUBLIC
   $<INSTALL_INTERFACE:include>
 )
 
-# Link EVERYTHING to our single controller target
+# Link the plugin and the generated parameter library.
 target_link_libraries(swerve_controller PUBLIC
   swerve_controller_parameters
   ${controller_interface_TARGETS}
-  ${hardware_interface_TARGETS}   # Added missing hardware interface
+  ${hardware_interface_TARGETS}
   ${geometry_msgs_TARGETS}
   ${nav_msgs_TARGETS}
   ${rclcpp_TARGETS}
@@ -58,18 +58,24 @@ target_link_libraries(swerve_controller PUBLIC
   tf2_ros::tf2_ros
   ${tf2_geometry_msgs_TARGETS}
   angles::angles
+  tf2::tf2
 )
 
 pluginlib_export_plugin_description_file(controller_interface plugin.xml)
 
 if(BUILD_TESTING)
+  find_package(ament_cmake_gtest REQUIRED)
+  find_package(launch_testing_ament_cmake REQUIRED)
+  ament_add_gtest(test_swerve_controller test/test_swerve_controller.cpp)
+  target_link_libraries(test_swerve_controller swerve_controller)
+  add_launch_test(test/test_mock_connection.py TIMEOUT 90)
   find_package(ament_lint_auto REQUIRED)
   set(ament_cmake_copyright_FOUND TRUE)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-# 1. Install local asset folders 
+# 1. Install local asset folders
 install(
   DIRECTORY config launch
   DESTINATION share/${PROJECT_NAME}
@@ -83,7 +89,7 @@ install(
 
 # 3. Install your compiled Shared Library (.so plugin binary)
 install(
-  TARGETS swerve_controller
+  TARGETS swerve_controller swerve_controller_parameters
   EXPORT export_${PROJECT_NAME}
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
@@ -92,11 +98,12 @@ install(
 
 # 4. Install the plugin XML file so the controller_manager can discover it
 install(
-  FILES plugin.xml
+  FILES plugin.xml README.md
   DESTINATION share/${PROJECT_NAME}
 )
 
-# Ensure internal include mapping handles dependencies perfectly
+# Export the public controller headers and their dependencies.
+ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
 ament_export_include_directories(include)
 ament_export_libraries(swerve_controller)
 ament_export_dependencies(

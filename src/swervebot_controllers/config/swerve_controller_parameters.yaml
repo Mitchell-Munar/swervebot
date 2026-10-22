@@ -1,31 +1,37 @@
 swerve_controller:
   # Joint List Parameters
   wheel_names: {
+    read_only: true,
     type: string_array,
     description: "Names of the wheel joints"
   }
   actuator_names: {
+    read_only: true,
     type: string_array,
     description: "Names of the actuator joints"
   }
 
   # Interface Parameters
   wheel_command_interfaces: {
+    read_only: true,
     type: string_array,
     default_value: ["velocity"],
     description: "Command interface for the wheel joints"
   }
   wheel_state_interfaces: {
+    read_only: true,
     type: string_array,
     default_value: ["velocity"],
     description: "State interface for the wheel joints"
   }
   actuator_command_interfaces: {
+    read_only: true,
     type: string_array,
     default_value: ["position"],
     description: "Command interface for the actuator joints"
   }
   actuator_state_interfaces: {
+    read_only: true,
     type: string_array,
     default_value: ["position"],
     description: "State interface for the actuator joints"
@@ -33,6 +39,7 @@ swerve_controller:
 
   # Hardware Variables
   wheel_base: {
+    read_only: true,
     type: double,
     default_value: 0.25,
     description: "Distance between turn axis in the forward direction in meters",
@@ -42,6 +49,7 @@ swerve_controller:
   }
 
   track_width: {
+    read_only: true,
     type: double,
     default_value: 0.25,
     description: "Distance between turn axis in the horizontal direction in meters",
@@ -51,6 +59,7 @@ swerve_controller:
   }
 
   wheel_radius: {
+    read_only: true,
     type: double,
     default_value: 0.05,
     description: "Radius of the wheels in meters",
@@ -60,6 +69,7 @@ swerve_controller:
   }
 
   wheel_offset: {
+    read_only: true,
     type: double,
     default_value: 0.05,
     description: "distance of wheel to turn axis in meters",
@@ -67,19 +77,29 @@ swerve_controller:
 
   # Odometry & TF Parameters
   enable_odom_tf: {
+    read_only: true,
     type: bool,
     default_value: true,
     description: "Publish odom to base_footprint transform"
   }
 
   odom_frame_id: {
+    read_only: true,
     type: string,
     default_value: "odom",
     description: "Odometry frame id"
   }
 
   base_frame_id: {
+    read_only: true,
     type: string,
     default_value: "base_footprint",
     description: "Base robot frame id"
+  }
+  cmd_vel_timeout: {
+    read_only: true,
+    type: double,
+    default_value: 0.5,
+    description: "Maximum command age in monotonic seconds before stopping (up to 3600)",
+    validation: {gt<>: 0.0, lt_eq<>: 3600.0}
   }

@@ -1,9 +1,11 @@
 import os
+
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.substitutions import Command
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
+
 
 def generate_launch_description():
     # Get the path to the URDF file
@@ -15,7 +17,7 @@ def generate_launch_description():
 
     # Process the URDF file using xacro
     urdf_content = ParameterValue(
-        Command(['xacro ', urdf_file]), 
+        Command(['xacro ', urdf_file]),
         value_type=str
     )
 

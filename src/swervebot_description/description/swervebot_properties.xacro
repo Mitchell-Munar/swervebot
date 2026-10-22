@@ -38,8 +38,8 @@
   <!--   ~ LIMITS ~    -->
   <!-- Actuator Limits -->
   <!--  (In radians)   -->
-  <xacro:property name="actuator_pos_min" value="-3.14159"/>
-  <xacro:property name="actuator_pos_max" value="-3.14159"/>
+  <xacro:property name="actuator_pos_min" value="-1.5708"/>
+  <xacro:property name="actuator_pos_max" value="1.5708"/>
 
   <!-- Material & Visual Properties -->
   <xacro:property name="wheel_color" value="0.1 0.1 0.1 1.0"/>

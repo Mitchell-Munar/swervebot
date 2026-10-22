@@ -25,7 +25,7 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-# 1. Install local asset folders 
+# 1. Install local asset folders
 install(
   DIRECTORY config description launch
   DESTINATION share/${PROJECT_NAME}

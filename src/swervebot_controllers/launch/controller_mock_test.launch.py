@@ -1,9 +1,8 @@
 from launch import LaunchDescription
-from launch.actions import TimerAction
 from launch.substitutions import Command, PathJoinSubstitution
 from launch_ros.actions import Node
-from launch_ros.substitutions import FindPackageShare
 from launch_ros.parameter_descriptions import ParameterValue
+from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
@@ -58,45 +57,22 @@ def generate_launch_description():
         output='screen',
     )
 
-    # Start the joint state broadcaster after the manager starts
-    joint_state_broadcaster_spawner = TimerAction(
-        period=2.0,
-        actions=[
-            Node(
-                package='controller_manager',
-                executable='spawner',
-                arguments=[
-                    'joint_state_broadcaster',
-                    '--controller-manager',
-                    '/controller_manager',
-                ],
-                output='screen',
-            )
+    # Spawners wait for manager services instead of assuming a fixed startup duration.
+    spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=[
+            'joint_state_broadcaster', 'swerve_controller',
+            '--controller-manager', '/controller_manager',
+            '--controller-manager-timeout', '30',
+            '--param-file', controller_config,
+            '--activate-as-group',
         ],
-    )
-
-    # Start the custom controller after the broadcaster
-    swerve_controller_spawner = TimerAction(
-        period=4.0,
-        actions=[
-            Node(
-                package='controller_manager',
-                executable='spawner',
-                arguments=[
-                    'swerve_controller',
-                    '--controller-manager',
-                    '/controller_manager',
-                    '--param-file',
-                    controller_config,
-                ],
-                output='screen',
-            )
-        ],
+        output='screen',
     )
 
     return LaunchDescription([
         robot_state_publisher,
         controller_manager,
-        joint_state_broadcaster_spawner,
-        swerve_controller_spawner,
+        spawner,
     ])
