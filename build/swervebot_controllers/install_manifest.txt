@@ -1,1 +1,3 @@
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/lib/libswerve_controller.so
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/export_swervebot_controllersExport.cmake
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/export_swervebot_controllersExport-noconfig.cmake

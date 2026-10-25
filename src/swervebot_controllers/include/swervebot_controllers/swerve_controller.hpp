@@ -1,6 +1,7 @@
 #ifndef SWERVEBOT_CONTROLLERS__SWERVE_CONTROLLER_HPP_
 #define SWERVEBOT_CONTROLLERS__SWERVE_CONTROLLER_HPP_
 
+#include <array>
 #include <atomic>
 #include <cstdint>
 #include <functional>
@@ -19,8 +20,6 @@
 
 namespace swervebot_controllers
 {
-enum class SwerveMode { NORMAL = 0, CRABWALK = 1, ZERO_TURN = 2 };
-
 class SwerveController : public controller_interface::ControllerInterface
 {
 public:
@@ -38,7 +37,9 @@ private:
   // Only fixed-size values cross the executor/update boundary. No ROS messages or shared pointers.
   struct Command
   {
-    double vx = 0.0, vy = 0.0, omega = 0.0;
+    double vx = 0.0, omega = 0.0;
+    bool unsupported = false;
+    uint64_t policy_revision = 0;
     int64_t received_ns = 0, activation_ns = 0;
   };
   struct Telemetry
@@ -54,11 +55,13 @@ private:
 
   std::shared_ptr<swerve_controller::ParamListener> param_listener_;
   swerve_controller::Params params_;
-  SwerveMode current_mode_ = SwerveMode::NORMAL;
+  // Bit 0 selects ignore/stop; the remaining bits invalidate commands after policy changes.
+  std::atomic<uint64_t> policy_state_{0};
+  rclcpp_lifecycle::LifecycleNode::PostSetParametersCallbackHandle::SharedPtr policy_callback_;
   std::vector<std::reference_wrapper<hardware_interface::LoanedCommandInterface>>
   wheel_velocity_commands_, actuator_position_commands_;
   std::vector<std::reference_wrapper<hardware_interface::LoanedStateInterface>>
-  wheel_velocity_states_, actuator_position_states_;
+  wheel_velocity_states_, actuator_position_states_, actuator_velocity_states_;
 
   rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_sub_;
   realtime_tools::RealtimeThreadSafeBox<Command> command_box_;
@@ -67,6 +70,7 @@ private:
   std::atomic<bool> active_{false};
   std::atomic<int64_t> activation_ns_{0};
   int64_t timeout_ns_ = 0;
+  std::array<double, 4> steering_velocity_limits_{};
 
   // Serializes executor publication with lifecycle publisher/configuration changes, never update().
   std::mutex publication_mutex_;

@@ -9,6 +9,8 @@
     <xacro:arg name="use_sim" default="false"/>
     <xacro:arg name="use_mock_hardware" default="false"/>
 
+    <xacro:arg name="controller_config" default="$(find swervebot_controllers)/config/controllers.yaml"/>
+
     <!-- Execute/Instantiate the macros -->
     <xacro:swervebot_base />
 
@@ -17,5 +19,6 @@
     <xacro:robot_control
         use_mock_hardware="$(arg use_mock_hardware)"
         use_sim="$(arg use_sim)"
+        controller_config="$(arg controller_config)"
     />
 </robot>

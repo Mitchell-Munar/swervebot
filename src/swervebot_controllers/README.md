@@ -3,7 +3,7 @@
 This controller accepts one `geometry_msgs/msg/Twist` on relative topic `cmd_vel`.
 With the supplied launch file, this is `/cmd_vel`. It claims four wheel velocity
 command interfaces (rad/s), four steering position command interfaces (radians),
-and the corresponding velocity/position feedback interfaces. Module order is
+and twelve feedback interfaces: wheel velocity plus steering position and velocity. Module order is
 front-left, front-right, back-left, back-right in both joint-name arrays.
 
 ## Run with mock hardware
@@ -37,7 +37,8 @@ feedback and failed writes return an update error after attempting to stop every
 wheel. A failed hardware write cannot guarantee that the affected actuator stops;
 the hardware driver must provide its own watchdog.
 
-Generated parameters are read-only after declaration. Edit the parameter YAML and
+Geometry and other generated parameters are read-only after declaration;
+`unsupported_command_policy` is the live exception (see below). Edit the parameter YAML and
 reload the controller to apply changes. Only wheel velocity and steering position
 command interfaces are supported. The state-interface lists may include position
 and velocity, but the controller only claims the feedback it actually reads.
@@ -57,7 +58,15 @@ ROS/DDS networking must be available to run these tests. Use the system Python
 interpreter that has the ROS test dependencies. If CMake selects an unrelated local
 Python, rebuild with `--cmake-args -DPython3_EXECUTABLE=/usr/bin/python3`.
 
-This verifies the connection using mock hardware. Kinematics accuracy, additional
-drive modes, physical hardware communication, Gazebo, and bringup remain deferred.
-Steering command bounds are ±90°; the existing continuous URDF joint model still
-needs finite-travel modeling when the physical servo specifications are available.
+Normal mode accepts `linear.x` and `angular.z` with coordinated four-wheel steering.
+The generated `unsupported_command_policy` defaults to `stop`; `ignore` discards
+unsupported components for manual inputs. Yaw-only commands never turn in place.
+Change it live with `ros2 param set /swerve_controller unsupported_command_policy ignore`.
+An actual policy change requires a fresh Twist. Steering velocity feedback is
+required to compensate the lateral wheel offsets, and `max_steering_velocity`
+limits steering position steps without querying parameters inside update().
+
+This verifies the connection using mock hardware. Additional drive modes, physical
+hardware communication, and bringup remain deferred.
+Use `swervebot_sim` for the Gazebo motion tests.
+Steering joints and command bounds both use ±90° travel.

@@ -5,7 +5,9 @@
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/config/swerve_controller_parameters.yaml
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/launch/controller_mock_test.launch.py
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/include/swervebot_controllers/swerve_kinematics.hpp
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/plugin.xml
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/README.md
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/library_path.sh
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/library_path.dsv
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/package_run_dependencies/swervebot_controllers
@@ -23,6 +25,7 @@
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/packages/swervebot_controllers
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/controller_interface__pluginlib__plugin/swervebot_controllers
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/ament_cmake_export_dependencies-extras.cmake
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/ament_cmake_export_targets-extras.cmake
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/ament_cmake_export_include_directories-extras.cmake
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/ament_cmake_export_libraries-extras.cmake
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/swervebot_controllersConfig.cmake

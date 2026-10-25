@@ -3,7 +3,7 @@
     <!-- Include the properties file to access the defined properties -->
     <xacro:include filename="$(find swervebot_description)/description/swervebot_properties.xacro" />
 
-    <xacro:macro name="robot_control" params="use_mock_hardware use_sim">
+    <xacro:macro name="robot_control" params="use_mock_hardware use_sim controller_config">
 
         <ros2_control name="SwerveBotSystem" type="system">
             <!-- Mock Hardware -->
@@ -111,11 +111,33 @@
             </joint>        
         </ros2_control>
 
+        <!-- Model poses are diagnostics, never a second publisher of odom -> base TF. -->
+        <xacro:if value="${use_sim}">
+            <gazebo>
+                <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+                    <!-- Fix the topic explicitly; URDF conversion may change scoped names. -->
+                    <topic>/model/swervebot/pose</topic>
+                    <publish_link_pose>false</publish_link_pose>
+                    <publish_sensor_pose>false</publish_sensor_pose>
+                    <publish_collision_pose>false</publish_collision_pose>
+                    <publish_visual_pose>false</publish_visual_pose>
+                    <publish_model_pose>true</publish_model_pose>
+                    <publish_nested_model_pose>false</publish_nested_model_pose>
+                    <use_pose_vector_msg>true</use_pose_vector_msg>
+                    <update_frequency>50</update_frequency>
+                </plugin>
+            </gazebo>
+        </xacro:if>
+
         <!-- Gazebo ROS 2 Control Plugin -->
         <xacro:if value="${use_sim}">
             <gazebo>
-                <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimControl">
-                    <parameters>$(find swervebot_controllers)/config/controllers.yaml</parameters>
+                <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+                    <parameters>${controller_config}</parameters>
+                    <controller_manager_name>controller_manager</controller_manager_name>
+                    <hardware_init_timeout>30.0</hardware_init_timeout>
+                    <!-- Gain maps position error to joint velocity at the controller rate. -->
+                    <position_proportional_gain>0.1</position_proportional_gain>
                 </plugin>
             </gazebo>
         </xacro:if>

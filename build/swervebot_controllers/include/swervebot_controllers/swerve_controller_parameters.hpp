@@ -67,7 +67,7 @@ template <typename T, size_t capacity>
         std::vector<std::string> wheel_command_interfaces = {"velocity"};
         std::vector<std::string> wheel_state_interfaces = {"velocity"};
         std::vector<std::string> actuator_command_interfaces = {"position"};
-        std::vector<std::string> actuator_state_interfaces = {"position"};
+        std::vector<std::string> actuator_state_interfaces = {"position", "velocity"};
         double wheel_base = 0.25;
         double track_width = 0.25;
         double wheel_radius = 0.05;
@@ -75,6 +75,9 @@ template <typename T, size_t capacity>
         bool enable_odom_tf = true;
         std::string odom_frame_id = "odom";
         std::string base_frame_id = "base_footprint";
+        double cmd_vel_timeout = 0.5;
+        std::string unsupported_command_policy = "stop";
+        double max_steering_velocity = 10.0;
         // for detecting if the parameter struct has been updated
         rclcpp::Time __stamp;
     };
@@ -84,6 +87,8 @@ template <typename T, size_t capacity>
         double wheel_radius = 0.05;
         double wheel_offset = 0.05;
         bool enable_odom_tf = true;
+        double cmd_vel_timeout = 0.5;
+        double max_steering_velocity = 10.0;
     };
 
   class ParamListener{
@@ -167,6 +172,8 @@ template <typename T, size_t capacity>
       output.wheel_radius = params.wheel_radius;
       output.wheel_offset = params.wheel_offset;
       output.enable_odom_tf = params.enable_odom_tf;
+      output.cmd_vel_timeout = params.cmd_vel_timeout;
+      output.max_steering_velocity = params.max_steering_velocity;
 
       return output;
     }
@@ -233,6 +240,10 @@ template <typename T, size_t capacity>
             RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
         }
         if (param.get_name() == (prefix_ + "wheel_offset")) {
+            if(auto validation_result = gt_eq<double>(param, 0.0);
+              !validation_result) {
+                return rsl::to_parameter_result_msg(validation_result);
+            }
             updated_params.wheel_offset = param.as_double();
             RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
         }
@@ -246,6 +257,34 @@ template <typename T, size_t capacity>
         }
         if (param.get_name() == (prefix_ + "base_frame_id")) {
             updated_params.base_frame_id = param.as_string();
+            RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
+        }
+        if (param.get_name() == (prefix_ + "cmd_vel_timeout")) {
+            if(auto validation_result = gt<double>(param, 0.0);
+              !validation_result) {
+                return rsl::to_parameter_result_msg(validation_result);
+            }
+            if(auto validation_result = lt_eq<double>(param, 3600.0);
+              !validation_result) {
+                return rsl::to_parameter_result_msg(validation_result);
+            }
+            updated_params.cmd_vel_timeout = param.as_double();
+            RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
+        }
+        if (param.get_name() == (prefix_ + "unsupported_command_policy")) {
+            if(auto validation_result = one_of<std::string>(param, {"stop", "ignore"});
+              !validation_result) {
+                return rsl::to_parameter_result_msg(validation_result);
+            }
+            updated_params.unsupported_command_policy = param.as_string();
+            RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
+        }
+        if (param.get_name() == (prefix_ + "max_steering_velocity")) {
+            if(auto validation_result = gt<double>(param, 0.0);
+              !validation_result) {
+                return rsl::to_parameter_result_msg(validation_result);
+            }
+            updated_params.max_steering_velocity = param.as_double();
             RCLCPP_DEBUG_STREAM(logger_, param.get_name() << ": " << param.get_type_name() << " = " << param.value_to_string());
         }
       }
@@ -264,49 +303,49 @@ template <typename T, size_t capacity>
       if (!parameters_interface_->has_parameter(prefix_ + "wheel_names")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "Names of the wheel joints";
-          descriptor.read_only = false;
+          descriptor.read_only = true;
           auto parameter = rclcpp::ParameterType::PARAMETER_STRING_ARRAY;
           parameters_interface_->declare_parameter(prefix_ + "wheel_names", parameter, descriptor);
       }
       if (!parameters_interface_->has_parameter(prefix_ + "actuator_names")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "Names of the actuator joints";
-          descriptor.read_only = false;
+          descriptor.read_only = true;
           auto parameter = rclcpp::ParameterType::PARAMETER_STRING_ARRAY;
           parameters_interface_->declare_parameter(prefix_ + "actuator_names", parameter, descriptor);
       }
       if (!parameters_interface_->has_parameter(prefix_ + "wheel_command_interfaces")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "Command interface for the wheel joints";
-          descriptor.read_only = false;
+          descriptor.read_only = true;
           auto parameter = to_parameter_value(updated_params.wheel_command_interfaces);
           parameters_interface_->declare_parameter(prefix_ + "wheel_command_interfaces", parameter, descriptor);
       }
       if (!parameters_interface_->has_parameter(prefix_ + "wheel_state_interfaces")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "State interface for the wheel joints";
-          descriptor.read_only = false;
+          descriptor.read_only = true;
           auto parameter = to_parameter_value(updated_params.wheel_state_interfaces);
           parameters_interface_->declare_parameter(prefix_ + "wheel_state_interfaces", parameter, descriptor);
       }
       if (!parameters_interface_->has_parameter(prefix_ + "actuator_command_interfaces")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "Command interface for the actuator joints";
-          descriptor.read_only = false;
+          descriptor.read_only = true;
           auto parameter = to_parameter_value(updated_params.actuator_command_interfaces);
           parameters_interface_->declare_parameter(prefix_ + "actuator_command_interfaces", parameter, descriptor);
       }
       if (!parameters_interface_->has_parameter(prefix_ + "actuator_state_interfaces")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "State interface for the actuator joints";
-          descriptor.read_only = false;
+          descriptor.read_only = true;
           auto parameter = to_parameter_value(updated_params.actuator_state_interfaces);
           parameters_interface_->declare_parameter(prefix_ + "actuator_state_interfaces", parameter, descriptor);
       }
       if (!parameters_interface_->has_parameter(prefix_ + "wheel_base")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "Distance between turn axis in the forward direction in meters";
-          descriptor.read_only = false;
+          descriptor.read_only = true;
           descriptor.floating_point_range.resize(1);
           descriptor.floating_point_range.at(0).from_value = std::nextafter(0.0, std::numeric_limits<double>::infinity());
           descriptor.floating_point_range.at(0).to_value = std::numeric_limits<double>::max();
@@ -316,7 +355,7 @@ template <typename T, size_t capacity>
       if (!parameters_interface_->has_parameter(prefix_ + "track_width")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "Distance between turn axis in the horizontal direction in meters";
-          descriptor.read_only = false;
+          descriptor.read_only = true;
           descriptor.floating_point_range.resize(1);
           descriptor.floating_point_range.at(0).from_value = std::nextafter(0.0, std::numeric_limits<double>::infinity());
           descriptor.floating_point_range.at(0).to_value = std::numeric_limits<double>::max();
@@ -326,7 +365,7 @@ template <typename T, size_t capacity>
       if (!parameters_interface_->has_parameter(prefix_ + "wheel_radius")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "Radius of the wheels in meters";
-          descriptor.read_only = false;
+          descriptor.read_only = true;
           descriptor.floating_point_range.resize(1);
           descriptor.floating_point_range.at(0).from_value = std::nextafter(0.0, std::numeric_limits<double>::infinity());
           descriptor.floating_point_range.at(0).to_value = std::numeric_limits<double>::max();
@@ -335,31 +374,61 @@ template <typename T, size_t capacity>
       }
       if (!parameters_interface_->has_parameter(prefix_ + "wheel_offset")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
-          descriptor.description = "distance of wheel to turn axis in meters";
-          descriptor.read_only = false;
+          descriptor.description = "Lateral wheel offset magnitude; positive outward on each side (meters)";
+          descriptor.read_only = true;
+          descriptor.floating_point_range.resize(1);
+          descriptor.floating_point_range.at(0).from_value = 0.0;
+          descriptor.floating_point_range.at(0).to_value = std::numeric_limits<double>::max();
           auto parameter = to_parameter_value(updated_params.wheel_offset);
           parameters_interface_->declare_parameter(prefix_ + "wheel_offset", parameter, descriptor);
       }
       if (!parameters_interface_->has_parameter(prefix_ + "enable_odom_tf")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "Publish odom to base_footprint transform";
-          descriptor.read_only = false;
+          descriptor.read_only = true;
           auto parameter = to_parameter_value(updated_params.enable_odom_tf);
           parameters_interface_->declare_parameter(prefix_ + "enable_odom_tf", parameter, descriptor);
       }
       if (!parameters_interface_->has_parameter(prefix_ + "odom_frame_id")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "Odometry frame id";
-          descriptor.read_only = false;
+          descriptor.read_only = true;
           auto parameter = to_parameter_value(updated_params.odom_frame_id);
           parameters_interface_->declare_parameter(prefix_ + "odom_frame_id", parameter, descriptor);
       }
       if (!parameters_interface_->has_parameter(prefix_ + "base_frame_id")) {
           rcl_interfaces::msg::ParameterDescriptor descriptor;
           descriptor.description = "Base robot frame id";
-          descriptor.read_only = false;
+          descriptor.read_only = true;
           auto parameter = to_parameter_value(updated_params.base_frame_id);
           parameters_interface_->declare_parameter(prefix_ + "base_frame_id", parameter, descriptor);
+      }
+      if (!parameters_interface_->has_parameter(prefix_ + "cmd_vel_timeout")) {
+          rcl_interfaces::msg::ParameterDescriptor descriptor;
+          descriptor.description = "Maximum command age in monotonic seconds before stopping (up to 3600)";
+          descriptor.read_only = true;
+          descriptor.floating_point_range.resize(1);
+          descriptor.floating_point_range.at(0).from_value = std::nextafter(0.0, std::numeric_limits<double>::infinity());
+          descriptor.floating_point_range.at(0).to_value = 3600.0;
+          auto parameter = to_parameter_value(updated_params.cmd_vel_timeout);
+          parameters_interface_->declare_parameter(prefix_ + "cmd_vel_timeout", parameter, descriptor);
+      }
+      if (!parameters_interface_->has_parameter(prefix_ + "unsupported_command_policy")) {
+          rcl_interfaces::msg::ParameterDescriptor descriptor;
+          descriptor.description = "Normal mode: stop rejects unsupported commands; ignore discards unsupported components. Changes require a fresh Twist.";
+          descriptor.read_only = false;
+          auto parameter = to_parameter_value(updated_params.unsupported_command_policy);
+          parameters_interface_->declare_parameter(prefix_ + "unsupported_command_policy", parameter, descriptor);
+      }
+      if (!parameters_interface_->has_parameter(prefix_ + "max_steering_velocity")) {
+          rcl_interfaces::msg::ParameterDescriptor descriptor;
+          descriptor.description = "Upper steering slew rate (rad/s); URDF velocity limits may reduce it";
+          descriptor.read_only = true;
+          descriptor.floating_point_range.resize(1);
+          descriptor.floating_point_range.at(0).from_value = std::nextafter(0.0, std::numeric_limits<double>::infinity());
+          descriptor.floating_point_range.at(0).to_value = std::numeric_limits<double>::max();
+          auto parameter = to_parameter_value(updated_params.max_steering_velocity);
+          parameters_interface_->declare_parameter(prefix_ + "max_steering_velocity", parameter, descriptor);
       }
       // get parameters and fill struct fields
       rclcpp::Parameter param;
@@ -404,6 +473,10 @@ template <typename T, size_t capacity>
       updated_params.wheel_radius = param.as_double();
       param = parameters_interface_->get_parameter(prefix_ + "wheel_offset");
       RCLCPP_DEBUG_STREAM(logger_, (prefix_ + "wheel_offset") << ": " << param.get_type_name() << " = " << param.value_to_string());
+      if(auto validation_result = gt_eq<double>(param, 0.0);
+        !validation_result) {
+          throw rclcpp::exceptions::InvalidParameterValueException(fmt::format("Invalid value set during initialization for parameter 'wheel_offset': {}", validation_result.error()));
+      }
       updated_params.wheel_offset = param.as_double();
       param = parameters_interface_->get_parameter(prefix_ + "enable_odom_tf");
       RCLCPP_DEBUG_STREAM(logger_, (prefix_ + "enable_odom_tf") << ": " << param.get_type_name() << " = " << param.value_to_string());
@@ -414,6 +487,31 @@ template <typename T, size_t capacity>
       param = parameters_interface_->get_parameter(prefix_ + "base_frame_id");
       RCLCPP_DEBUG_STREAM(logger_, (prefix_ + "base_frame_id") << ": " << param.get_type_name() << " = " << param.value_to_string());
       updated_params.base_frame_id = param.as_string();
+      param = parameters_interface_->get_parameter(prefix_ + "cmd_vel_timeout");
+      RCLCPP_DEBUG_STREAM(logger_, (prefix_ + "cmd_vel_timeout") << ": " << param.get_type_name() << " = " << param.value_to_string());
+      if(auto validation_result = gt<double>(param, 0.0);
+        !validation_result) {
+          throw rclcpp::exceptions::InvalidParameterValueException(fmt::format("Invalid value set during initialization for parameter 'cmd_vel_timeout': {}", validation_result.error()));
+      }
+      if(auto validation_result = lt_eq<double>(param, 3600.0);
+        !validation_result) {
+          throw rclcpp::exceptions::InvalidParameterValueException(fmt::format("Invalid value set during initialization for parameter 'cmd_vel_timeout': {}", validation_result.error()));
+      }
+      updated_params.cmd_vel_timeout = param.as_double();
+      param = parameters_interface_->get_parameter(prefix_ + "unsupported_command_policy");
+      RCLCPP_DEBUG_STREAM(logger_, (prefix_ + "unsupported_command_policy") << ": " << param.get_type_name() << " = " << param.value_to_string());
+      if(auto validation_result = one_of<std::string>(param, {"stop", "ignore"});
+        !validation_result) {
+          throw rclcpp::exceptions::InvalidParameterValueException(fmt::format("Invalid value set during initialization for parameter 'unsupported_command_policy': {}", validation_result.error()));
+      }
+      updated_params.unsupported_command_policy = param.as_string();
+      param = parameters_interface_->get_parameter(prefix_ + "max_steering_velocity");
+      RCLCPP_DEBUG_STREAM(logger_, (prefix_ + "max_steering_velocity") << ": " << param.get_type_name() << " = " << param.value_to_string());
+      if(auto validation_result = gt<double>(param, 0.0);
+        !validation_result) {
+          throw rclcpp::exceptions::InvalidParameterValueException(fmt::format("Invalid value set during initialization for parameter 'max_steering_velocity': {}", validation_result.error()));
+      }
+      updated_params.max_steering_velocity = param.as_double();
 
 
       updated_params.__stamp = clock_.now();

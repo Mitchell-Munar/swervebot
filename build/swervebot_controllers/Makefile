@@ -223,6 +223,19 @@ swerve_controller/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/swerve_controller.dir/build.make CMakeFiles/swerve_controller.dir/build
 .PHONY : swerve_controller/fast
 
+#=============================================================================
+# Target rules for targets named test_swerve_controller
+
+# Build rule for target.
+test_swerve_controller: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_swerve_controller
+.PHONY : test_swerve_controller
+
+# fast build rule for target.
+test_swerve_controller/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_swerve_controller.dir/build.make CMakeFiles/test_swerve_controller.dir/build
+.PHONY : test_swerve_controller/fast
+
 src/swerve_controller.o: src/swerve_controller.cpp.o
 .PHONY : src/swerve_controller.o
 
@@ -247,6 +260,30 @@ src/swerve_controller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/swerve_controller.dir/build.make CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.s
 .PHONY : src/swerve_controller.cpp.s
 
+test/test_swerve_controller.o: test/test_swerve_controller.cpp.o
+.PHONY : test/test_swerve_controller.o
+
+# target to build an object file
+test/test_swerve_controller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_swerve_controller.dir/build.make CMakeFiles/test_swerve_controller.dir/test/test_swerve_controller.cpp.o
+.PHONY : test/test_swerve_controller.cpp.o
+
+test/test_swerve_controller.i: test/test_swerve_controller.cpp.i
+.PHONY : test/test_swerve_controller.i
+
+# target to preprocess a source file
+test/test_swerve_controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_swerve_controller.dir/build.make CMakeFiles/test_swerve_controller.dir/test/test_swerve_controller.cpp.i
+.PHONY : test/test_swerve_controller.cpp.i
+
+test/test_swerve_controller.s: test/test_swerve_controller.cpp.s
+.PHONY : test/test_swerve_controller.s
+
+# target to generate assembly for a file
+test/test_swerve_controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_swerve_controller.dir/build.make CMakeFiles/test_swerve_controller.dir/test/test_swerve_controller.cpp.s
+.PHONY : test/test_swerve_controller.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -264,9 +301,13 @@ help:
 	@echo "... uninstall"
 	@echo "... swerve_controller"
 	@echo "... swerve_controller_parameters"
+	@echo "... test_swerve_controller"
 	@echo "... src/swerve_controller.o"
 	@echo "... src/swerve_controller.i"
 	@echo "... src/swerve_controller.s"
+	@echo "... test/test_swerve_controller.o"
+	@echo "... test/test_swerve_controller.i"
+	@echo "... test/test_swerve_controller.s"
 .PHONY : help
 
 

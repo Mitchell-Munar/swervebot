@@ -1,0 +1,23 @@
+# Profile metadata
+profile_name: "game_controller"
+
+# Map physical axes (joystick sticks and analog triggers) to logical functions
+axes:
+  throttle: 1       # For speed
+  steering: 2       # For turning
+  # Example alternative for flight sticks / single-stick mode:
+  # strafe_lateral: 0 # Left stick horizontal
+
+# Map physical buttons to logical states or triggers
+buttons:
+  toggle_ackermann: 0     # Toggle On
+  toggle_crab_walk: 1  # Toggle On
+  hold_zero_turn: 9    # (press and hold)
+  emergency_stop: 10   # (press and hold)
+
+# Controller scaling and tuning parameters
+settings:
+  deadzone: 0.1       # Ignore stick drift below 8% displacement
+  linear_scale_max: 1.5  # Max linear speed in m/s
+  angular_scale_max: 1.0 # Max angular speed in rad/s
+  invert_steering: false

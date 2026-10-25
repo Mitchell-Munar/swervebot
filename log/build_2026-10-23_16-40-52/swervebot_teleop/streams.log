@@ -1,0 +1,30 @@
+[0.551s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_teleop': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/python3.14/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/swervebot_teleop build --build-base /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/build install --record /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/install.log --install-scripts $base/lib/swervebot_teleop --single-version-externally-managed install_data
+[0.778s] running egg_info
+[0.787s] writing ../../build/swervebot_teleop/swervebot_teleop.egg-info/PKG-INFO
+[0.788s] writing dependency_links to ../../build/swervebot_teleop/swervebot_teleop.egg-info/dependency_links.txt
+[0.788s] writing entry points to ../../build/swervebot_teleop/swervebot_teleop.egg-info/entry_points.txt
+[0.788s] writing requirements to ../../build/swervebot_teleop/swervebot_teleop.egg-info/requires.txt
+[0.788s] writing top-level names to ../../build/swervebot_teleop/swervebot_teleop.egg-info/top_level.txt
+[0.809s] reading manifest file '../../build/swervebot_teleop/swervebot_teleop.egg-info/SOURCES.txt'
+[0.810s] writing manifest file '../../build/swervebot_teleop/swervebot_teleop.egg-info/SOURCES.txt'
+[0.810s] running build
+[0.810s] running build_py
+[0.810s] copying swervebot_teleop/__init__.py -> /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/build/lib/swervebot_teleop
+[0.810s] copying swervebot_teleop/teleop_node.py -> /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/build/lib/swervebot_teleop
+[0.810s] copying swervebot_teleop/py.typed -> /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/build/lib/swervebot_teleop
+[0.811s] running install
+[0.813s] running install_lib
+[0.823s] copying /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/build/lib/swervebot_teleop/teleop_node.py -> /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/python3.14/site-packages/swervebot_teleop
+[0.823s] byte-compiling /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/python3.14/site-packages/swervebot_teleop/teleop_node.py to teleop_node.cpython-314.pyc
+[0.824s] running install_data
+[0.825s] copying resource/swervebot_teleop -> /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/share/ament_index/resource_index/packages
+[0.825s] copying package.xml -> /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/share/swervebot_teleop
+[0.825s] copying config/game_controller.yaml -> /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/share/swervebot_teleop/config
+[0.825s] copying launch/teleop.launch.py -> /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/share/swervebot_teleop/launch
+[0.825s] running install_egg_info
+[0.835s] removing '/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/python3.14/site-packages/swervebot_teleop-0.0.0-py3.14.egg-info' (and everything under it)
+[0.836s] Copying ../../build/swervebot_teleop/swervebot_teleop.egg-info to /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/python3.14/site-packages/swervebot_teleop-0.0.0-py3.14.egg-info
+[0.836s] running install_scripts
+[0.888s] Installing teleop_node script to /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/swervebot_teleop
+[0.888s] writing list of installed files to '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/install.log'
+[0.925s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_teleop' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/python3.14/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/swervebot_teleop build --build-base /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/build install --record /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/install.log --install-scripts $base/lib/swervebot_teleop --single-version-externally-managed install_data

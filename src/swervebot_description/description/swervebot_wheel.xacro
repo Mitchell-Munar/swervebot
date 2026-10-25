@@ -9,8 +9,10 @@
         <joint name="${name}_joint" type="continuous">
             <parent link="${parent_link}" />
             <child link="${name}" />
-            <origin xyz="${x} ${y} ${z}" rpy="${pi/2} 0 0" />
+            <origin xyz="${x} ${y} ${z}" rpy="${-pi/2} 0 0" />
+            <!-- Rotate local +z onto body +y: positive wheel rotation rolls body +x. -->
             <axis xyz="0 0 1" />
+            <limit effort="${wheel_effort_limit}" velocity="${wheel_velocity_limit}"/>
         </joint>
 
         <link name="${name}">

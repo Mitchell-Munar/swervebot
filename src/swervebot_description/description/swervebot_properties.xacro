@@ -33,13 +33,19 @@
   <xacro:property name="actuator_offset_z" value="-0.025"/>
 
   <!-- Chassis Ground Clearance -->
-  <xacro:property name="chassis_ground_clearance" value="0.1" />
+  <xacro:property name="chassis_ground_clearance" value="${wheel_radius - actuator_offset_z - wheel_offset_z - chassis_height/2}" />
 
   <!--   ~ LIMITS ~    -->
   <!-- Actuator Limits -->
   <!--  (In radians)   -->
-  <xacro:property name="actuator_pos_min" value="-1.5708"/>
-  <xacro:property name="actuator_pos_max" value="1.5708"/>
+  <xacro:property name="actuator_pos_min" value="${-pi/2}"/>
+  <xacro:property name="actuator_pos_max" value="${pi/2}"/>
+
+  <!-- Simulation design limits, not measured physical actuator specifications. -->
+  <xacro:property name="actuator_velocity_limit" value="10.0"/>
+  <xacro:property name="actuator_effort_limit" value="10.0"/>
+  <xacro:property name="wheel_velocity_limit" value="30.0"/>
+  <xacro:property name="wheel_effort_limit" value="10.0"/>
 
   <!-- Material & Visual Properties -->
   <xacro:property name="wheel_color" value="0.1 0.1 0.1 1.0"/>

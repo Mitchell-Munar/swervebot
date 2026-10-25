@@ -33,7 +33,7 @@ swerve_controller:
   actuator_state_interfaces: {
     read_only: true,
     type: string_array,
-    default_value: ["position"],
+    default_value: ["position", "velocity"],
     description: "State interface for the actuator joints"
   }
 
@@ -72,7 +72,8 @@ swerve_controller:
     read_only: true,
     type: double,
     default_value: 0.05,
-    description: "distance of wheel to turn axis in meters",
+    description: "Lateral wheel offset magnitude; positive outward on each side (meters)",
+    validation: {gt_eq<>: 0.0}
   }
 
   # Odometry & TF Parameters
@@ -102,4 +103,19 @@ swerve_controller:
     default_value: 0.5,
     description: "Maximum command age in monotonic seconds before stopping (up to 3600)",
     validation: {gt<>: 0.0, lt_eq<>: 3600.0}
+  }
+
+  unsupported_command_policy: {
+    type: string,
+    default_value: "stop",
+    description: "Normal mode: stop rejects unsupported commands; ignore discards unsupported components. Changes require a fresh Twist.",
+    validation: {one_of<>: [["stop", "ignore"]]}
+  }
+
+  max_steering_velocity: {
+    read_only: true,
+    type: double,
+    default_value: 10.0,
+    description: "Upper steering slew rate (rad/s); URDF velocity limits may reduce it",
+    validation: {gt<>: 0.0}
   }

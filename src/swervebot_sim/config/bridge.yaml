@@ -1,0 +1,14 @@
+# One-way bridges: joint commands and joint states go directly through gz_ros2_control.
+- ros_topic_name: /clock
+  gz_topic_name: /world/swervebot_empty/clock
+  ros_type_name: rosgraph_msgs/msg/Clock
+  gz_type_name: gz.msgs.Clock
+  direction: GZ_TO_ROS
+  qos_profile: CLOCK
+
+# Independent model pose for diagnostics/tests. Never bridge this onto /tf or /odom.
+- ros_topic_name: /simulation/ground_truth
+  gz_topic_name: /model/swervebot/pose
+  ros_type_name: tf2_msgs/msg/TFMessage
+  gz_type_name: gz.msgs.Pose_V
+  direction: GZ_TO_ROS

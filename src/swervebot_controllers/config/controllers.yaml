@@ -37,6 +37,9 @@ swerve_controller:
 
     # Stop when cmd_vel is no longer refreshed.
     cmd_vel_timeout: 0.5
+    max_steering_velocity: 10.0
+    # May also be changed live using ros2 param set /swerve_controller ...
+    unsupported_command_policy: "stop"
 
     # ODOM
     enable_odom_tf: true

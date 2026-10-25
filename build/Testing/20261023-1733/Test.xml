@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20261023-1733-Experimental"
+	Name="MunarThinkpad"
+	Generator="ctest-4.2.3"
+	CompilerName="/usr/bin/c++"
+	CompilerVersion="15.2.0"
+	OSName="Linux"
+	Hostname="MunarThinkpad"
+	OSRelease="7.0.0-38-generic"
+	OSVersion="#38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  4 09:10:14 UTC 2026"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="181"
+	ModelName="Intel(R) Core(TM) Ultra 7 255U"
+	ProcessorCacheSize="12288"
+	NumberOfLogicalCPU="14"
+	NumberOfPhysicalCPU="12"
+	TotalVirtualMemory="511"
+	TotalPhysicalMemory="31572"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="1986.56"
+	>
+	<Testing>
+		<StartDateTime>Oct 25 10:27 CDT</StartDateTime>
+		<StartTestTime>1792942055</StartTestTime>
+		<TestList/>
+		<EndDateTime>Oct 25 10:27 CDT</EndDateTime>
+		<EndTestTime>1792942055</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

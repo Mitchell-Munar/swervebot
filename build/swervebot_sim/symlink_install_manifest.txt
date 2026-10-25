@@ -1,3 +1,7 @@
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/launch/simulation.launch.py
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/worlds/empty.sdf
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/config/bridge.yaml
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/README.md
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/ament_index/resource_index/package_run_dependencies/swervebot_sim
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/ament_index/resource_index/parent_prefix_path/swervebot_sim
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_sim/share/swervebot_sim/environment/ament_prefix_path.sh

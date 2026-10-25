@@ -331,7 +331,7 @@ ament_cmake_symlink_install_directory("/home/mmunar/Code/ROS2/swerve_bot/src/swe
 # install(DIRECTORY "include/" "DESTINATION" "include")
 ament_cmake_symlink_install_directory("/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers" DIRECTORY "include/" "DESTINATION" "include")
 
-# install(FILES "plugin.xml" "DESTINATION" "share/swervebot_controllers")
+# install(FILES "plugin.xml" "README.md" "DESTINATION" "share/swervebot_controllers")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_symlink_install_files_1_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(FILES "/opt/ros/lyrical/lib/python3.14/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/swervebot_controllers/environment")
@@ -385,14 +385,17 @@ include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cma
 # install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/swervebot_controllers/cmake")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_symlink_install_files_18_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/swervebot_controllers/cmake")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/swervebot_controllers/cmake")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_symlink_install_files_19_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/swervebot_controllers/cmake")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/swervebot_controllers/cmake")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_symlink_install_files_20_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_core/swervebot_controllersConfig.cmake" "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_core/swervebot_controllersConfig-version.cmake" "DESTINATION" "share/swervebot_controllers/cmake")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/swervebot_controllers/cmake")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_symlink_install_files_21_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/package.xml" "DESTINATION" "share/swervebot_controllers")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_core/swervebot_controllersConfig.cmake" "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_core/swervebot_controllersConfig-version.cmake" "DESTINATION" "share/swervebot_controllers/cmake")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_symlink_install_files_22_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/package.xml" "DESTINATION" "share/swervebot_controllers")
+include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/ament_cmake_symlink_install_files_23_${CMAKE_INSTALL_CONFIG_NAME}.cmake")

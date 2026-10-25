@@ -6,11 +6,14 @@
 
     <xacro:macro name="swervebot_actuator" params="name x y z parent_link">
 
-        <joint name="${name}_joint" type="continuous">
+        <joint name="${name}_joint" type="revolute">
             <parent link="${parent_link}" />
             <child link="${name}" />
             <origin xyz="${x} ${y} ${z}" rpy="0 0 0" />
             <axis xyz="0 0 1" />
+            <!-- Mechanical travel must agree with the ros2_control command bounds. -->
+            <limit lower="${actuator_pos_min}" upper="${actuator_pos_max}"
+                   velocity="${actuator_velocity_limit}" effort="${actuator_effort_limit}"/>
         </joint>
 
         <link name="${name}">

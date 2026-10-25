@@ -12,6 +12,7 @@
 #include "tf2/LinearMath/Quaternion.hpp"
 
 #include "swervebot_controllers/swerve_controller.hpp"
+#include "swervebot_controllers/swerve_kinematics.hpp"
 
 namespace swervebot_controllers
 {
@@ -37,6 +38,19 @@ controller_interface::CallbackReturn SwerveController::on_init()
 {
   try {
     param_listener_ = std::make_shared<swerve_controller::ParamListener>(get_node());
+    // Only a committed parameter change can affect RT behavior. Validation remains generated.
+    policy_callback_ = get_node()->add_post_set_parameters_callback(
+      [this](const std::vector<rclcpp::Parameter> & parameters) {
+        for (const auto & parameter : parameters) {
+          if (parameter.get_name() == "unsupported_command_policy") {
+            const uint64_t ignore = parameter.as_string() == "ignore" ? 1 : 0;
+            auto previous = policy_state_.load();
+            while ((previous & 1) != ignore &&
+            !policy_state_.compare_exchange_weak(previous,
+            ((previous + 2) & ~uint64_t{1}) | ignore)) {}
+          }
+        }
+      });
   } catch (const rclcpp::exceptions::InvalidParameterValueException & e) {
     RCLCPP_ERROR(get_node()->get_logger(), "Invalid controller parameter value: %s", e.what());
     return controller_interface::CallbackReturn::ERROR;
@@ -79,12 +93,15 @@ controller_interface::CallbackReturn SwerveController::on_configure(const rclcpp
     if (params_.wheel_command_interfaces != std::vector<std::string>{"velocity"} ||
       params_.actuator_command_interfaces != std::vector<std::string>{"position"} ||
       !supported_states(params_.wheel_state_interfaces, "velocity") ||
-      !supported_states(params_.actuator_state_interfaces, "position"))
+      !supported_states(params_.actuator_state_interfaces, "position") ||
+      std::find(params_.actuator_state_interfaces.begin(), params_.actuator_state_interfaces.end(),
+        "velocity") == params_.actuator_state_interfaces.end())
     {
       throw std::invalid_argument("Unsupported command/state interface configuration");
     }
     if (!std::isfinite(params_.wheel_base) || !std::isfinite(params_.track_width) ||
-      !std::isfinite(params_.wheel_radius) || !std::isfinite(params_.cmd_vel_timeout) ||
+      !std::isfinite(params_.wheel_radius) || !std::isfinite(params_.wheel_offset) ||
+      !std::isfinite(params_.cmd_vel_timeout) || !std::isfinite(params_.max_steering_velocity) ||
       params_.cmd_vel_timeout > 3600.0 || params_.odom_frame_id.empty() ||
       params_.base_frame_id.empty())
     {
@@ -94,6 +111,18 @@ controller_interface::CallbackReturn SwerveController::on_configure(const rclcpp
     RCLCPP_ERROR(get_node()->get_logger(), "Cannot configure controller: %s", e.what());
     return controller_interface::CallbackReturn::ERROR;
   }
+  // Cache joint limits outside update(); the tighter controller/URDF rate wins.
+  const auto & joint_limits = get_hard_joint_limits();
+  for (size_t i = 0; i < 4; ++i) {
+    steering_velocity_limits_[i] = params_.max_steering_velocity;
+    const auto found = joint_limits.find(params_.actuator_names[i]);
+    if (found != joint_limits.end() && found->second.has_velocity_limits) {
+      steering_velocity_limits_[i] = std::min(
+        steering_velocity_limits_[i], found->second.max_velocity);
+    }
+  }
+  policy_state_.store((policy_state_.load() & ~uint64_t{1}) |
+    (params_.unsupported_command_policy == "ignore" ? 1 : 0));
   timeout_ns_ = static_cast<int64_t>(params_.cmd_vel_timeout * 1e9);
   // Executor callbacks own message allocation. Only primitive values enter the RT mailbox.
   cmd_vel_sub_ = get_node()->create_subscription<geometry_msgs::msg::Twist>(
@@ -102,15 +131,20 @@ controller_interface::CallbackReturn SwerveController::on_configure(const rclcpp
       if (!active_.load()) {return;}
       Command command;
       command.activation_ns = activation;
+      command.policy_revision = policy_state_.load();
       command.received_ns = steady_now();
-      if (std::isfinite(msg.linear.x) && std::isfinite(msg.linear.y) &&
-      std::isfinite(msg.angular.z))
-      {
-        command.vx = msg.linear.x;
-        command.vy = msg.linear.y;
-        command.omega = msg.angular.z;
+      constexpr double epsilon = 1e-6;
+      const bool finite = std::isfinite(msg.linear.x) && std::isfinite(msg.linear.y) &&
+      std::isfinite(msg.linear.z) && std::isfinite(msg.angular.x) &&
+      std::isfinite(msg.angular.y) && std::isfinite(msg.angular.z);
+      if (finite) {
+        command.vx = std::abs(msg.linear.x) < epsilon ? 0.0 : msg.linear.x;
+        command.omega = std::abs(msg.angular.z) < epsilon ? 0.0 : msg.angular.z;
+        command.unsupported = std::abs(msg.linear.y) >= epsilon ||
+        std::abs(msg.linear.z) >= epsilon || std::abs(msg.angular.x) >= epsilon ||
+        std::abs(msg.angular.y) >= epsilon || (command.vx == 0.0 && command.omega != 0.0);
       }
-      // Invalid input replaces the previous command with a stop, never a stale moving command.
+      // Nonfinite input always replaces the previous command with a stop, in either policy.
       command_box_.set(command);
     });
   odom_pub_ = get_node()->create_publisher<nav_msgs::msg::Odometry>("odom", 10);
@@ -134,8 +168,12 @@ const
 
 controller_interface::InterfaceConfiguration SwerveController::state_interface_configuration() const
 {
-  // Only the feedback used by update() is claimed. The broadcaster can also read these states.
-  return command_interface_configuration();
+  auto config = command_interface_configuration();
+  // Steering rate is needed to compensate wheel motion about an offset steering pivot.
+  for (const auto & name : params_.actuator_names) {
+    config.names.push_back(name + "/velocity");
+  }
+  return config;
 }
 
 void SwerveController::clear_references()
@@ -144,6 +182,7 @@ void SwerveController::clear_references()
   actuator_position_commands_.clear();
   wheel_velocity_states_.clear();
   actuator_position_states_.clear();
+  actuator_velocity_states_.clear();
 }
 
 bool SwerveController::stop_wheels()
@@ -179,7 +218,9 @@ controller_interface::CallbackReturn SwerveController::on_activate(const rclcpp_
       !bind(state_interfaces_, wheel_velocity_states_, params_.wheel_names[i] + "/velocity") ||
       !bind(command_interfaces_, actuator_position_commands_,
         params_.actuator_names[i] + "/position") ||
-      !bind(state_interfaces_, actuator_position_states_, params_.actuator_names[i] + "/position"))
+      !bind(state_interfaces_, actuator_position_states_,
+        params_.actuator_names[i] + "/position") ||
+      !bind(state_interfaces_, actuator_velocity_states_, params_.actuator_names[i] + "/velocity"))
     {
       (void)stop_wheels();
       clear_references();
@@ -188,6 +229,10 @@ controller_interface::CallbackReturn SwerveController::on_activate(const rclcpp_
   }
   bool ready = stop_wheels();
   for (auto & state : wheel_velocity_states_) {
+    const auto value = state.get().get_optional(1);
+    ready = value && std::isfinite(*value) && ready;
+  }
+  for (auto & state : actuator_velocity_states_) {
     const auto value = state.get().get_optional(1);
     ready = value && std::isfinite(*value) && ready;
   }
@@ -250,12 +295,14 @@ controller_interface::return_type SwerveController::update(
   const rclcpp::Time & time, const rclcpp::Duration & period)
 {
   if (!active_.load()) {return controller_interface::return_type::OK;}
-  std::array<double, 4> steering{}, wheels{};
+  std::array<double, 4> steering{}, wheels{}, steering_rates{};
   // Validate all feedback before any calculation or command write; optional reads never throw.
   for (size_t i = 0; i < 4; ++i) {
     const auto angle = actuator_position_states_[i].get().get_optional(1);
     const auto velocity = wheel_velocity_states_[i].get().get_optional(1);
-    if (!angle || !velocity || !std::isfinite(*angle) || !std::isfinite(*velocity) ||
+    const auto rate = actuator_velocity_states_[i].get().get_optional(1);
+    if (!angle || !velocity || !rate || !std::isfinite(*angle) || !std::isfinite(*velocity) ||
+      !std::isfinite(*rate) ||
       std::abs(*angle) > M_PI_2)
     {
       (void)stop_wheels();
@@ -263,15 +310,18 @@ controller_interface::return_type SwerveController::update(
     }
     steering[i] = *angle;
     wheels[i] = *velocity;
+    steering_rates[i] = *rate;
   }
   if (const auto command = command_box_.try_get()) {last_command_ = *command;}
   const int64_t now = steady_now();
-  const bool fresh = last_command_.activation_ns == activation_ns_.load() &&
+  const uint64_t policy = policy_state_.load();
+  const bool fresh = last_command_.policy_revision == policy &&
+    last_command_.activation_ns == activation_ns_.load() &&
     last_command_.received_ns > activation_ns_.load() &&
     now >= last_command_.received_ns && now - last_command_.received_ns < timeout_ns_;
-  const double vx = fresh ? last_command_.vx : 0.0;
-  const double vy = fresh ? last_command_.vy : 0.0;
-  const double omega = fresh ? last_command_.omega : 0.0;
+  const bool accepted = fresh && ((policy & 1) || !last_command_.unsupported);
+  const double vx = accepted ? last_command_.vx : 0.0;
+  const double omega = accepted && vx != 0.0 ? last_command_.omega : 0.0;
   // Module positions relative to robot center (FL, FR, BL, BR)
   double l = params_.wheel_base;
   double w = params_.track_width;
@@ -282,44 +332,28 @@ controller_interface::return_type SwerveController::update(
   double target_velocities[4];
 
   for (size_t i = 0; i < 4; ++i) {
-    double v_xi = 0.0;
-    double v_yi = 0.0;
+    // Body axes are x forward, y left, z up. v_pivot = v_body + omega cross r_pivot.
+    const double pivot_x = vx - omega * r_y[i];
+    const double pivot_y = omega * r_x[i];
+    target_angles[i] = std::atan2(pivot_y, pivot_x);
+    double unused_speed = 0.0;
+    optimizeSteeringAngle(target_angles[i], unused_speed, steering[i]);
+    // Bound each position step by rate*dt, rather than relying on simulator command clipping.
+    // A nanoradian of headroom avoids simulator clipping from floating-point boundary rounding.
+    const double step = std::max(
+      steering_velocity_limits_[i] * std::max(period.seconds(), 0.0) - 1e-9, 0.0);
+    target_angles[i] = std::clamp(target_angles[i], steering[i] - step, steering[i] + step);
 
-    // Chassis translation plus omega cross module-offset gives each wheel velocity.
-    switch (current_mode_) {
-      case SwerveMode::NORMAL:
-        v_xi = vx - omega * r_y[i];
-        v_yi = vy + omega * r_x[i];
-        break;
-      case SwerveMode::CRABWALK:
-        v_xi = vx;
-        v_yi = vy;
-        break;
-      case SwerveMode::ZERO_TURN:
-        v_xi = -omega * r_y[i];
-        v_yi = omega * r_x[i];
-        break;
-    }
-
-    // atan2 chooses steering direction; dividing linear speed by radius gives rad/s.
-    if (current_mode_ == SwerveMode::CRABWALK) {
-      target_angles[i] = std::atan2(vy, vx);
-      target_velocities[i] = std::hypot(vx, vy) / params_.wheel_radius;
-    } else if (current_mode_ == SwerveMode::ZERO_TURN) {
-      target_angles[i] = std::atan2(r_y[i], r_x[i]) + M_PI_2;
-      target_velocities[i] = omega * std::hypot(r_x[i], r_y[i]) / params_.wheel_radius;
-    } else {
-      target_angles[i] = std::atan2(v_yi, v_xi);
-      target_velocities[i] = std::hypot(v_xi, v_yi) / params_.wheel_radius;
-    }
-
-    // Get current steering angle from state reference vector
-    double current_steer_pos = steering[i];
-    optimizeSteeringAngle(target_angles[i], target_velocities[i], current_steer_pos);
-
-    // A stopped chassis holds the measured steering position instead of snapping to zero.
-    if (vx == 0.0 && vy == 0.0 && omega == 0.0) {
+    // The wheel center is offset along local y: left +offset, right -offset.
+    // Its rolling velocity includes -offset*(body yaw rate + measured steering rate).
+    // Project onto the actual wheel direction while steering catches up to reduce scrub.
+    const double offset = (i % 2 == 0 ? 1.0 : -1.0) * params_.wheel_offset;
+    target_velocities[i] = (pivot_x * std::cos(steering[i]) +
+      pivot_y * std::sin(steering[i]) - offset * (omega + steering_rates[i])) /
+      params_.wheel_radius;
+    if (vx == 0.0 && omega == 0.0) {
       target_angles[i] = steering[i];
+      target_velocities[i] = 0.0;
     }
     if (!std::isfinite(target_angles[i]) || !std::isfinite(target_velocities[i])) {
       (void)stop_wheels();
@@ -338,31 +372,15 @@ controller_interface::return_type SwerveController::update(
     }
   }
 
-  // Resolve measured wheel velocities into chassis velocity for odometry.
-  double sum_vxi = 0.0;
-  double sum_vyi = 0.0;
-  double sum_cross_prod = 0.0;
-  double sum_r_squared = 0.0;
-
-  for (size_t i = 0; i < 4; ++i) {
-    double current_steer_pos = steering[i];
-    double current_wheel_vel = wheels[i];
-    double linear_wheel_speed = current_wheel_vel * params_.wheel_radius;
-
-    double v_xi = linear_wheel_speed * std::cos(current_steer_pos);
-    double v_yi = linear_wheel_speed * std::sin(current_steer_pos);
-
-    sum_vxi += v_xi;
-    sum_vyi += v_yi;
-
-    sum_cross_prod += (v_yi * r_x[i] - v_xi * r_y[i]);
-    sum_r_squared += (r_x[i] * r_x[i] + r_y[i] * r_y[i]);
+  // Solve the measured contact constraints, including the same lateral offsets as IK.
+  std::array<double, 3> velocity{};
+  if (!estimate_chassis_velocity(r_x, r_y, params_.wheel_radius, params_.wheel_offset,
+      steering, wheels, steering_rates, velocity))
+  {
+    (void)stop_wheels();
+    return controller_interface::return_type::ERROR;
   }
-
-  // Least-squares forward kinematics calculation
-  double robot_vx = sum_vxi / 4.0;
-  double robot_vy = sum_vyi / 4.0;
-  double robot_omega = (sum_r_squared > 0.0) ? (sum_cross_prod / sum_r_squared) : 0.0;
+  const double robot_vx = velocity[0], robot_vy = velocity[1], robot_omega = velocity[2];
 
   // Integrate position over time period
   double dt = period.seconds();

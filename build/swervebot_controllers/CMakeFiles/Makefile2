@@ -65,11 +65,13 @@ CMAKE_BINARY_DIR = /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers
 # The main recursive "all" target.
 all: CMakeFiles/swerve_controller_parameters.dir/all
 all: CMakeFiles/swerve_controller.dir/all
+all: CMakeFiles/test_swerve_controller.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/swerve_controller_parameters.dir/codegen
 codegen: CMakeFiles/swerve_controller.dir/codegen
+codegen: CMakeFiles/test_swerve_controller.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -81,6 +83,7 @@ clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/swervebot_controllers_uninstall.dir/clean
 clean: CMakeFiles/swerve_controller_parameters.dir/clean
 clean: CMakeFiles/swerve_controller.dir/clean
+clean: CMakeFiles/test_swerve_controller.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -210,6 +213,39 @@ CMakeFiles/swerve_controller.dir/codegen: CMakeFiles/swerve_controller_parameter
 CMakeFiles/swerve_controller.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/swerve_controller.dir/build.make CMakeFiles/swerve_controller.dir/clean
 .PHONY : CMakeFiles/swerve_controller.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_swerve_controller.dir
+
+# All Build rule for target.
+CMakeFiles/test_swerve_controller.dir/all: CMakeFiles/swerve_controller_parameters.dir/all
+CMakeFiles/test_swerve_controller.dir/all: CMakeFiles/swerve_controller.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_swerve_controller.dir/build.make CMakeFiles/test_swerve_controller.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_swerve_controller.dir/build.make CMakeFiles/test_swerve_controller.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/CMakeFiles --progress-num=4,5 "Built target test_swerve_controller"
+.PHONY : CMakeFiles/test_swerve_controller.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_swerve_controller.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_swerve_controller.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/CMakeFiles 0
+.PHONY : CMakeFiles/test_swerve_controller.dir/rule
+
+# Convenience name for target.
+test_swerve_controller: CMakeFiles/test_swerve_controller.dir/rule
+.PHONY : test_swerve_controller
+
+# codegen rule for target.
+CMakeFiles/test_swerve_controller.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_swerve_controller.dir/build.make CMakeFiles/test_swerve_controller.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/CMakeFiles --progress-num=4,5 "Finished codegen for target test_swerve_controller"
+.PHONY : CMakeFiles/test_swerve_controller.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_swerve_controller.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_swerve_controller.dir/build.make CMakeFiles/test_swerve_controller.dir/clean
+.PHONY : CMakeFiles/test_swerve_controller.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

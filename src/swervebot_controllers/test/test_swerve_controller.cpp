@@ -16,6 +16,7 @@
 #include "rclcpp/executors/single_threaded_executor.hpp"
 
 #include "swervebot_controllers/swerve_controller.hpp"
+#include "swervebot_controllers/swerve_kinematics.hpp"
 
 namespace
 {
@@ -110,6 +111,7 @@ protected:
     std::vector<rclcpp::Parameter> parameters{
       {"wheel_names", std::vector<std::string>{"w0", "w1", "w2", "w3"}},
       {"actuator_names", std::vector<std::string>{"a0", "a1", "a2", "a3"}},
+      {"wheel_base", 0.26}, {"track_width", 0.24}, {"wheel_offset", 0.045},
       {"wheel_radius", 0.075}, {"cmd_vel_timeout", 0.15}};
     for (const auto & parameter : extra) {
       const auto old = std::find_if(parameters.begin(), parameters.end(), [&](const auto & item) {
@@ -139,10 +141,15 @@ protected:
         commands[index] = std::make_shared<hardware_interface::CommandInterface>(
           joint, interface, "double", "0");
         states[index] = std::make_shared<hardware_interface::StateInterface>(
-          joint, interface, "double", kind == 0 ? "0" : "0.25");
+          joint, interface, "double", "0");
         if (!(missing && i == 2 && kind == 1)) {command_loans.emplace_back(commands[index]);}
         state_loans.emplace_back(states[index]);
       }
+    }
+    for (size_t i = 0; i < 4; ++i) {
+      steering_rates[i] = std::make_shared<hardware_interface::StateInterface>(
+        "a" + std::to_string(i), "velocity", "double", "0");
+      state_loans.emplace_back(steering_rates[i]);
     }
     controller->assign_interfaces(std::move(command_loans), std::move(state_loans));
   }
@@ -158,7 +165,7 @@ protected:
     return controller->update(rclcpp::Time(1, 0), rclcpp::Duration::from_seconds(0.01));
   }
 
-  void send(double vx, double vy = 0.0)
+  void send(double vx, double vy = 0.0, double omega = 0.0)
   {
     const auto deadline = std::chrono::steady_clock::now() + std::chrono::seconds(3);
     while (publisher->get_subscription_count() == 0 &&
@@ -171,6 +178,7 @@ protected:
     geometry_msgs::msg::Twist command;
     command.linear.x = vx;
     command.linear.y = vy;
+    command.angular.z = omega;
     // Spin repeatedly so delivery is observed before inspecting the command interfaces.
     for (int i = 0; i < 10; ++i) {
       publisher->publish(command);
@@ -190,6 +198,7 @@ protected:
   rclcpp::executors::SingleThreadedExecutor executor;
   std::array<hardware_interface::CommandInterface::SharedPtr, 8> commands;
   std::array<hardware_interface::StateInterface::SharedPtr, 8> states;
+  std::array<hardware_interface::StateInterface::SharedPtr, 4> steering_rates;
 };
 
 TEST_F(SwerveControllerTest, BindsInterfacesAndWritesCommands)
@@ -197,7 +206,7 @@ TEST_F(SwerveControllerTest, BindsInterfacesAndWritesCommands)
   initialize();
   ASSERT_EQ(controller->on_configure(state), CallbackReturn::SUCCESS);
   EXPECT_EQ(controller->command_interface_configuration().names.size(), 8u);
-  EXPECT_EQ(controller->state_interface_configuration().names.size(), 8u);
+  EXPECT_EQ(controller->state_interface_configuration().names.size(), 12u);
   bind();
   activate();
   send(0.075);
@@ -207,8 +216,8 @@ TEST_F(SwerveControllerTest, BindsInterfacesAndWritesCommands)
   }
   send(0.075, 0.075);
   for (size_t i = 0; i < 4; ++i) {
-    EXPECT_NEAR(command(2 * i), std::sqrt(2.0), 1e-9);
-    EXPECT_NEAR(command(2 * i + 1), M_PI_4, 1e-9);
+    EXPECT_DOUBLE_EQ(command(2 * i), 0.0);
+    EXPECT_DOUBLE_EQ(command(2 * i + 1), 0.0);
   }
 }
 
@@ -223,7 +232,7 @@ TEST_F(SwerveControllerTest, StopsOnTimeoutAndHoldsSteering)
   ASSERT_EQ(update(), return_type::OK);
   for (size_t i = 0; i < 4; ++i) {
     EXPECT_DOUBLE_EQ(command(2 * i), 0.0);
-    EXPECT_DOUBLE_EQ(command(2 * i + 1), 0.25);
+    EXPECT_DOUBLE_EQ(command(2 * i + 1), 0.0);
   }
 }
 
@@ -261,7 +270,7 @@ TEST_F(SwerveControllerTest, RejectsNonfiniteCommandAndStops)
     EXPECT_DOUBLE_EQ(command(2 * i), 0.0);
                                                                         }
   send(0.0);
-  EXPECT_DOUBLE_EQ(command(1), 0.25);
+  EXPECT_DOUBLE_EQ(command(1), 0.0);
 }
 
 TEST_F(SwerveControllerTest, MissingInterfaceFailsActivationAndCanRetry)
@@ -388,4 +397,118 @@ TEST_F(SwerveControllerTest, ThrowingLimiterReturnsErrorAndStopsOtherWheels)
     EXPECT_DOUBLE_EQ(command(i), 0.0);
                                                                    }
   commands[2]->set_on_set_command_limiter([](double value, bool &) {return value;});
+}
+
+TEST_F(SwerveControllerTest, CoordinatedArcsRespectOffsetsAndReverse)
+{
+  initialize();
+  ASSERT_EQ(controller->on_configure(state), CallbackReturn::SUCCESS);
+  bind();
+  activate();
+  for (const double vx : {0.3, -0.3}) {
+    for (const double omega : {0.4, -0.4}) {
+      send(vx, 0.0, omega);
+      for (size_t tick = 0; tick < 35; ++tick) {
+        for (size_t i = 0; i < 4; ++i) {
+          ASSERT_TRUE(states[2 * i + 1]->set_value(command(2 * i + 1)));
+        }
+        ASSERT_EQ(update(), return_type::OK);
+      }
+      for (size_t i = 0; i < 4; ++i) {
+        const double x = i < 2 ? 0.13 : -0.13;
+        const double y = i % 2 == 0 ? 0.12 : -0.12;
+        const double offset = i % 2 == 0 ? 0.045 : -0.045;
+        const double angle = command(2 * i + 1);
+        EXPECT_LE(std::abs(angle), M_PI_2);
+        // Once steering reaches its target, each contact rolls around the common turn center.
+        ASSERT_TRUE(states[2 * i + 1]->set_value(angle));
+        ASSERT_TRUE(steering_rates[i]->set_value(0.2));
+        const double expected = ((vx - omega * y) * std::cos(angle) +
+          omega * x * std::sin(angle) - offset * (omega + 0.2)) / 0.075;
+        ASSERT_EQ(update(), return_type::OK);
+        EXPECT_NEAR(command(2 * i), expected, 1e-10);
+      }
+      EXPECT_NEAR(command(1), -command(5), 1e-10);
+      EXPECT_NEAR(command(3), -command(7), 1e-10);
+    }
+  }
+}
+
+TEST_F(SwerveControllerTest, LivePolicyChangesRequireNewCommands)
+{
+  initialize();
+  ASSERT_EQ(controller->on_configure(state), CallbackReturn::SUCCESS);
+  bind();
+  activate();
+  send(0.075);
+  EXPECT_TRUE(controller->get_node()->set_parameters_atomically(
+      {{"unsupported_command_policy", "ignore"}}).successful);
+  ASSERT_EQ(update(), return_type::OK);
+  EXPECT_DOUBLE_EQ(command(0), 0.0);
+  send(0.075, 0.3);
+  EXPECT_NEAR(command(0), 1.0, 1e-9);
+  EXPECT_TRUE(controller->get_node()->set_parameters_atomically(
+      {{"unsupported_command_policy", "stop"}}).successful);
+  ASSERT_EQ(update(), return_type::OK);
+  EXPECT_DOUBLE_EQ(command(0), 0.0);
+  send(0.075, 0.3);
+  EXPECT_DOUBLE_EQ(command(0), 0.0);
+  EXPECT_FALSE(controller->get_node()->set_parameters_atomically(
+      {{"unsupported_command_policy", "invalid"}}).successful);
+  // A rejected atomic transaction must never change the active RT policy.
+  EXPECT_FALSE(controller->get_node()->set_parameters_atomically(
+      {{"unsupported_command_policy", "ignore"}, {"wheel_radius", 0.2}}).successful);
+  send(0.075, 0.3);
+  EXPECT_DOUBLE_EQ(command(0), 0.0);
+  send(0.0, 0.0, 0.4);
+  EXPECT_DOUBLE_EQ(command(0), 0.0);
+}
+
+TEST_F(SwerveControllerTest, IgnorePolicyStillStopsYawOnlyAndNonfiniteCommands)
+{
+  initialize({{"unsupported_command_policy", "ignore"}});
+  ASSERT_EQ(controller->on_configure(state), CallbackReturn::SUCCESS);
+  bind();
+  activate();
+  send(0.0, 1.0, 0.5);
+  EXPECT_DOUBLE_EQ(command(0), 0.0);
+  send(0.075, std::numeric_limits<double>::quiet_NaN());
+  EXPECT_DOUBLE_EQ(command(0), 0.0);
+}
+
+TEST(SwerveKinematicsTest, RecoversTwistWithOffsetAndSteeringMotion)
+{
+  const double x[4]{0.13, 0.13, -0.13, -0.13};
+  const double y[4]{0.12, -0.12, 0.12, -0.12};
+  for (const double vx : {0.3, -0.3}) {
+    for (const double yaw : {0.4, -0.4}) {
+      std::array<double, 4> angles{}, rates{}, steering{};
+      for (size_t i = 0; i < 4; ++i) {
+        const double px = vx - yaw * y[i], py = yaw * x[i];
+        angles[i] = std::atan2(py, px);
+        steering[i] = 0.1 * static_cast<double>(i);
+        const double offset = i % 2 == 0 ? 0.045 : -0.045;
+        rates[i] = (px * std::cos(angles[i]) + py * std::sin(angles[i]) -
+          offset * (yaw + steering[i])) / 0.075;
+      }
+      std::array<double, 3> recovered{};
+      ASSERT_TRUE(swervebot_controllers::estimate_chassis_velocity(
+        x, y, 0.075, 0.045, angles, rates, steering, recovered));
+      EXPECT_NEAR(recovered[0], vx, 1e-10);
+      EXPECT_NEAR(recovered[1], 0.0, 1e-10);
+      EXPECT_NEAR(recovered[2], yaw, 1e-10);
+    }
+  }
+}
+
+TEST_F(SwerveControllerTest, SteeringCommandsRespectRateLimit)
+{
+  initialize({{"max_steering_velocity", 1.0}});
+  ASSERT_EQ(controller->on_configure(state), CallbackReturn::SUCCESS);
+  bind();
+  activate();
+  send(0.2, 0.0, 0.3);
+  for (size_t i = 0; i < 4; ++i) {
+    EXPECT_LE(std::abs(command(2 * i + 1)), 0.01 + 1e-12);
+                                                                                        }
 }

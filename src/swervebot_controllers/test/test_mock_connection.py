@@ -1,6 +1,5 @@
 """Exercise the installed controller against GenericSystem without Gazebo."""
 
-import math
 import time
 import unittest
 
@@ -119,11 +118,12 @@ class TestMockConnection(unittest.TestCase):
             self.wait_for(arrived)
 
         drive(0.075, 0.0, 1.0, 0.0)
-        drive(0.075, 0.075, math.sqrt(2.0), math.pi / 4)
+        drive(0.075, 0.075, 0.0, 0.0)
+        drive(0.075, 0.0, 1.0, 0.0)
         # No more publications: the command expires and steering holds its feedback position.
-        self.wait_for(lambda: matches(0.0, math.pi / 4), 2.0)
-        drive(0.075, 0.075, math.sqrt(2.0), math.pi / 4)
-        drive(0.0, 0.0, 0.0, math.pi / 4)
+        self.wait_for(lambda: matches(0.0, 0.0), 2.0)
+        drive(0.075, 0.075, 0.0, 0.0)
+        drive(0.0, 0.0, 0.0, 0.0)
         drive(0.075, 0.0, 1.0, 0.0)
 
         def switch(activate):
