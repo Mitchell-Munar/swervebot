@@ -3,7 +3,14 @@
 
 CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o: /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp \
   include/swervebot_controllers/swerve_controller_parameters.hpp \
+  /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/detail/robot_command__builder.hpp \
+  /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/detail/robot_command__struct.hpp \
+  /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/detail/robot_command__traits.hpp \
+  /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/detail/robot_command__type_support.hpp \
+  /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/robot_command.hpp \
+  /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
   /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp \
+  /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_kinematics.hpp \
   /opt/ros/lyrical/include/angles/angles/angles.h \
   /opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__builder.hpp \
   /opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp \
@@ -27,98 +34,28 @@ CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o: /home/mmunar/Code/
   /opt/ros/lyrical/include/controller_interface/controller_interface/controller_interface.hpp \
   /opt/ros/lyrical/include/controller_interface/controller_interface/controller_interface_base.hpp \
   /opt/ros/lyrical/include/controller_interface/controller_interface/controller_interface_params.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point32__builder.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point32__struct.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point32__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point32__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point__builder.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__builder.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__struct.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/polygon__struct.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/polygon__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/polygon_stamped__builder.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/polygon_stamped__struct.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/polygon_stamped__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/polygon_stamped__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose__builder.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__builder.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__builder.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__struct.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance_stamped__builder.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance_stamped__struct.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance_stamped__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance_stamped__type_support.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion_stamped__builder.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion_stamped__struct.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion_stamped__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion_stamped__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform__builder.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform__type_support.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__builder.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__builder.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__type_support.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__struct.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__builder.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3_stamped__builder.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3_stamped__struct.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3_stamped__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3_stamped__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__builder.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__struct.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench__builder.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench__struct.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench_stamped__builder.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench_stamped__struct.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench_stamped__traits.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench_stamped__type_support.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/point.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/point32.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/point_stamped.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/polygon_stamped.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/pose.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/pose_stamped.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/pose_with_covariance.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/pose_with_covariance_stamped.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/quaternion_stamped.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/transform.hpp \
   /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/twist.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/vector3.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/vector3_stamped.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/velocity_stamped.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/wrench.hpp \
-  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/wrench_stamped.hpp \
   /opt/ros/lyrical/include/hardware_interface/hardware_interface/handle.hpp \
   /opt/ros/lyrical/include/hardware_interface/hardware_interface/hardware_info.hpp \
   /opt/ros/lyrical/include/hardware_interface/hardware_interface/introspection.hpp \
@@ -487,9 +424,8 @@ CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o: /home/mmunar/Code/
   /opt/ros/lyrical/include/rcutils/rcutils/visibility_control_macros.h \
   /opt/ros/lyrical/include/realtime_tools/realtime_tools/async_function_handler.hpp \
   /opt/ros/lyrical/include/realtime_tools/realtime_tools/mutex.hpp \
-  /opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_buffer.hpp \
   /opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_helpers.hpp \
-  /opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_publisher.hpp \
+  /opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_thread_safe_box.hpp \
   /opt/ros/lyrical/include/rmw/rmw/discovery_options.h \
   /opt/ros/lyrical/include/rmw/rmw/domain_id.h \
   /opt/ros/lyrical/include/rmw/rmw/dynamic_message_type_support.h \
@@ -591,36 +527,21 @@ CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o: /home/mmunar/Code/
   /opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__traits.hpp \
   /opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp \
   /opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
-  /opt/ros/lyrical/include/std_msgs/std_msgs/msg/bool.hpp \
-  /opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/bool__builder.hpp \
-  /opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/bool__struct.hpp \
-  /opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/bool__traits.hpp \
-  /opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/bool__type_support.hpp \
   /opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
   /opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/header__traits.hpp \
-  /opt/ros/lyrical/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
   /opt/ros/lyrical/include/tcb_span/span.hpp \
-  /opt/ros/lyrical/include/tf2/tf2/LinearMath/Matrix3x3.hpp \
   /opt/ros/lyrical/include/tf2/tf2/LinearMath/MinMax.hpp \
   /opt/ros/lyrical/include/tf2/tf2/LinearMath/QuadWord.hpp \
   /opt/ros/lyrical/include/tf2/tf2/LinearMath/Quaternion.hpp \
   /opt/ros/lyrical/include/tf2/tf2/LinearMath/Scalar.hpp \
-  /opt/ros/lyrical/include/tf2/tf2/LinearMath/Transform.hpp \
   /opt/ros/lyrical/include/tf2/tf2/LinearMath/Vector3.hpp \
-  /opt/ros/lyrical/include/tf2/tf2/convert.hpp \
-  /opt/ros/lyrical/include/tf2/tf2/exceptions.hpp \
-  /opt/ros/lyrical/include/tf2/tf2/impl/convert.hpp \
-  /opt/ros/lyrical/include/tf2/tf2/time.hpp \
-  /opt/ros/lyrical/include/tf2/tf2/transform_datatypes.hpp \
   /opt/ros/lyrical/include/tf2/tf2/visibility_control.h \
-  /opt/ros/lyrical/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.hpp \
   /opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__builder.hpp \
   /opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__struct.hpp \
   /opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__traits.hpp \
   /opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__type_support.hpp \
   /opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
   /opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/tf_message.hpp \
-  /opt/ros/lyrical/include/tf2_ros/tf2_ros/buffer_interface.hpp \
   /opt/ros/lyrical/include/tf2_ros/tf2_ros/qos.hpp \
   /opt/ros/lyrical/include/tf2_ros/tf2_ros/transform_broadcaster.hpp \
   /opt/ros/lyrical/include/tf2_ros/tf2_ros/visibility_control.hpp \
@@ -907,11 +828,6 @@ CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o: /home/mmunar/Code/
   /usr/include/fmt/core.h \
   /usr/include/fmt/format.h \
   /usr/include/fmt/ranges.h \
-  /usr/include/kdl/frames.hpp \
-  /usr/include/kdl/frames.inl \
-  /usr/include/kdl/utilities/hash_combine.h \
-  /usr/include/kdl/utilities/kdl-config.h \
-  /usr/include/kdl/utilities/utility.h \
   /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/close_range.h \
@@ -1082,7 +998,15 @@ CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o: /home/mmunar/Code/
   /usr/lib/gcc/x86_64-linux-gnu/15/include/stdint.h \
   /usr/lib/gcc/x86_64-linux-gnu/15/include/syslimits.h
 
-libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
+libswerve_controller.so: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_generator_c.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_generator_py.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_c.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_cpp.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_fastrtps_c.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_fastrtps_cpp.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_introspection_c.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_introspection_cpp.so \
+  /lib64/ld-linux-x86-64.so.2 \
   /opt/ros/lyrical/lib/libaction_msgs__rosidl_generator_c.so \
   /opt/ros/lyrical/lib/libaction_msgs__rosidl_generator_py.so \
   /opt/ros/lyrical/lib/libaction_msgs__rosidl_typesupport_c.so \
@@ -1290,6 +1214,8 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /usr/lib/x86_64-linux-gnu/libtinyxml2.so.11.0.0:
 
+/usr/lib/x86_64-linux-gnu/libmvec.so.1:
+
 /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.1.0:
 
 /usr/lib/x86_64-linux-gnu/libc_nonshared.a:
@@ -1300,9 +1226,13 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /usr/lib/gcc/x86_64-linux-gnu/15/libgcc_s.so:
 
+/usr/lib/gcc/x86_64-linux-gnu/15/libgcc.a:
+
 /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o:
 
 /usr/lib/x86_64-linux-gnu/libc.so:
+
+/usr/lib/x86_64-linux-gnu/crtn.o:
 
 /usr/lib/x86_64-linux-gnu/crti.o:
 
@@ -1336,6 +1266,8 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /opt/ros/lyrical/lib/libtrajectory_msgs__rosidl_generator_py.so:
 
+/opt/ros/lyrical/lib/libtrajectory_msgs__rosidl_generator_c.so:
+
 /opt/ros/lyrical/lib/libthread_priority.so:
 
 /opt/ros/lyrical/lib/libtf2_ros.so:
@@ -1349,6 +1281,8 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 /opt/ros/lyrical/lib/libtf2_msgs__rosidl_generator_c.so:
 
 /opt/ros/lyrical/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so:
+
+/opt/ros/lyrical/lib/libstd_msgs__rosidl_typesupport_introspection_c.so:
 
 /opt/ros/lyrical/lib/libstd_msgs__rosidl_typesupport_fastrtps_c.so:
 
@@ -1388,127 +1322,89 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /opt/ros/lyrical/lib/libsensor_msgs__rosidl_typesupport_c.so:
 
+/opt/ros/lyrical/lib/librosidl_typesupport_introspection_cpp.so:
+
 /opt/ros/lyrical/lib/librosidl_typesupport_fastrtps_cpp.so:
 
 /opt/ros/lyrical/lib/librosidl_typesupport_cpp.so:
 
 /opt/ros/lyrical/lib/librosidl_typesupport_c.so:
 
-/opt/ros/lyrical/lib/librosidl_buffer.so:
+/opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__struct.hpp:
 
-/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_typesupport_fastrtps_cpp.so:
+/opt/ros/lyrical/include/tf2/tf2/visibility_control.h:
 
-/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_typesupport_cpp.so:
+/opt/ros/lyrical/include/rclcpp/rclcpp/generic_client.hpp:
 
-/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_generator_py.so:
+/opt/ros/lyrical/include/rclcpp/rclcpp/executors/events_cbg_executor/events_cbg_executor.hpp:
 
-/opt/ros/lyrical/lib/librmw_implementation.so:
+/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:
 
-/opt/ros/lyrical/lib/librealtime_tools.so:
+/opt/ros/lyrical/include/rcpputils/rcpputils/visibility_control.hpp:
 
-/opt/ros/lyrical/lib/librcutils.so:
+/opt/ros/lyrical/include/service_msgs/service_msgs/msg/detail/service_event_info__traits.hpp:
 
-/opt/ros/lyrical/lib/librcpputils.so:
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_fastrtps_c.so:
 
-/opt/ros/lyrical/lib/librclcpp_lifecycle.so:
+/opt/ros/lyrical/include/rsl/rsl/static_string.hpp:
 
-/opt/ros/lyrical/lib/librclcpp_action.so:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__type_support.hpp:
 
-/opt/ros/lyrical/lib/librclcpp.so:
+/opt/ros/lyrical/include/rsl/rsl/export.hpp:
 
-/opt/ros/lyrical/lib/librcl_yaml_param_parser.so:
+/usr/include/c++/15/codecvt:
 
-/opt/ros/lyrical/lib/librcl_logging_interface.so:
-
-/opt/ros/lyrical/lib/librcl_interfaces__rosidl_typesupport_introspection_cpp.so:
-
-/opt/ros/lyrical/lib/librcl_interfaces__rosidl_typesupport_introspection_c.so:
-
-/opt/ros/lyrical/lib/librcl_interfaces__rosidl_typesupport_c.so:
-
-/opt/ros/lyrical/lib/librcl_interfaces__rosidl_generator_py.so:
+/usr/include/c++/15/system_error:
 
 /opt/ros/lyrical/lib/librcl_interfaces__rosidl_generator_c.so:
 
-/opt/ros/lyrical/lib/librcl_action.so:
+/opt/ros/lyrical/include/rosidl_typesupport_introspection_cpp/rosidl_typesupport_introspection_cpp/visibility_control.h:
 
-/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_typesupport_introspection_cpp.so:
+/opt/ros/lyrical/include/rosidl_typesupport_introspection_cpp/rosidl_typesupport_introspection_cpp/identifier.hpp:
 
-/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_typesupport_fastrtps_c.so:
+/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/message_type_support.hpp:
 
-/opt/ros/lyrical/lib/libtype_description_interfaces__rosidl_typesupport_fastrtps_cpp.so:
+/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_runtime_cpp/buffer__traits.hpp:
 
-/opt/ros/lyrical/lib/librcl_lifecycle.so:
+/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:
 
-/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_generator_py.so:
+/usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
 
-/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_generator_c.so:
+/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h:
 
-/opt/ros/lyrical/lib/libpal_statistics.so:
+/opt/ros/lyrical/include/rclcpp/rclcpp/serialization.hpp:
 
-/opt/ros/lyrical/lib/librosidl_typesupport_introspection_c.so:
-
-/opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_introspection_cpp.so:
-
-/opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_introspection_c.so:
-
-/opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_fastrtps_cpp.so:
-
-/opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_fastrtps_c.so:
-
-/opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_cpp.so:
-
-/opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_c.so:
-
-/opt/ros/lyrical/lib/libnav_msgs__rosidl_generator_py.so:
-
-/opt/ros/lyrical/lib/libnav_msgs__rosidl_generator_c.so:
-
-/opt/ros/lyrical/lib/libmock_components.so:
-
-/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_introspection_cpp.so:
-
-/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_fastrtps_cpp.so:
-
-/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_fastrtps_c.so:
-
-/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_cpp.so:
-
-/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_c.so:
-
-/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_generator_py.so:
-
-/opt/ros/lyrical/lib/liblibstatistics_collector.so:
-
-/opt/ros/lyrical/lib/libjoint_limits_helpers.so:
-
-/opt/ros/lyrical/lib/libhardware_interface.so:
-
-/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so:
-
-/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_cpp.so:
-
-/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_c.so:
-
-/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_typesupport_c.so:
-
-/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_generator_py.so:
-
-/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_generator_c.so:
-
-/opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_typesupport_introspection_c.so:
-
-/opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_typesupport_fastrtps_cpp.so:
-
-/opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_typesupport_fastrtps_c.so:
-
-/opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_typesupport_c.so:
+/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/type_hash.h:
 
 /opt/ros/lyrical/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/api/serialization_support_interface.h:
 
 /opt/ros/lyrical/include/rmw/rmw/error_handling.h:
 
-/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/type_hash.h:
+/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/type_description/type_source__struct.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/type_description/type_description__struct.h:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:
+
+/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/type_description/field_type__struct.h:
+
+/usr/include/c++/15/bits/locale_classes.tcc:
+
+/opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/header__traits.hpp:
+
+/opt/ros/lyrical/lib/libtf2.so:
+
+/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/sequence_bound.h:
+
+/opt/ros/lyrical/include/tracetools/tracetools/utils.hpp:
+
+/opt/ros/lyrical/include/hardware_interface/hardware_interface/macros.hpp:
+
+/opt/ros/lyrical/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/dynamic_message_type_support_struct.h:
+
+/opt/ros/lyrical/include/tf2/tf2/LinearMath/QuadWord.hpp:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/guard_condition.hpp:
 
@@ -1516,13 +1412,15 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/c++allocator.h:
 
-/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_typesupport_fastrtps_cpp.so:
-
-/opt/ros/lyrical/include/rmw/rmw/visibility_control.h:
-
 /opt/ros/lyrical/include/rmw/rmw/types.h:
 
+/opt/ros/lyrical/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:
+
+/opt/ros/lyrical/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/visibility_control.h:
+
 /opt/ros/lyrical/include/rmw/rmw/subscription_options.h:
+
+/opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_typesupport_fastrtps_cpp.so:
 
 /opt/ros/lyrical/include/rmw/rmw/subscription_content_filter_options.h:
 
@@ -1536,21 +1434,23 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /usr/include/c++/15/tr1/poly_hermite.tcc:
 
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:
-
-/opt/ros/lyrical/include/rosidl_typesupport_introspection_cpp/rosidl_typesupport_introspection_cpp/identifier.hpp:
-
 /opt/ros/lyrical/include/rmw/rmw/publisher_options.h:
+
+/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/detail/robot_command__traits.hpp:
+
+/opt/ros/lyrical/include/rcutils/rcutils/types/array_list.h:
+
+/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/action_type_support_struct.h:
 
 /opt/ros/lyrical/include/rmw/rmw/macros.h:
 
-/opt/ros/lyrical/include/tf2/tf2/transform_datatypes.hpp:
-
 /opt/ros/lyrical/include/rmw/rmw/init_options.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/parameter_client.hpp:
 
 /opt/ros/lyrical/lib/libcontroller_interface.so:
 
-/opt/ros/lyrical/include/rmw/rmw/events_statuses/message_lost.h:
+/opt/ros/lyrical/include/rmw/rmw/features.h:
 
 /opt/ros/lyrical/include/rmw/rmw/events_statuses/incompatible_qos.h:
 
@@ -1570,13 +1470,9 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /opt/ros/lyrical/include/rmw/rmw/discovery_options.h:
 
-/opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_buffer.hpp:
-
 /opt/ros/lyrical/include/realtime_tools/realtime_tools/mutex.hpp:
 
 /usr/include/linux/types.h:
-
-/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/message_type_support.hpp:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/executors/executor_entities_collector.hpp:
 
@@ -1584,21 +1480,23 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__type_support.hpp:
 
-/opt/ros/lyrical/include/rmw/rmw/features.h:
-
 /opt/ros/lyrical/include/rcutils/rcutils/types/string_array.h:
 
+/usr/include/c++/15/new:
+
 /opt/ros/lyrical/include/rcutils/rcutils/types/char_array.h:
-
-/opt/ros/lyrical/include/rmw/rmw/events_statuses/matched.h:
-
-/usr/include/c++/15/bits/stl_relops.h:
 
 /usr/include/c++/15/cfloat:
 
 /opt/ros/lyrical/include/rcutils/rcutils/types.h:
 
+/opt/ros/lyrical/lib/librcpputils.so:
+
 /opt/ros/lyrical/include/rcutils/rcutils/testing/fault_injection.h:
+
+/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h:
+
+/usr/include/fmt/core.h:
 
 /opt/ros/lyrical/include/rcutils/rcutils/snprintf.h:
 
@@ -1610,15 +1508,21 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /opt/ros/lyrical/include/rcutils/rcutils/sha256.h:
 
-/opt/ros/lyrical/include/rcpputils/rcpputils/visibility_control.hpp:
+/usr/include/c++/15/bits/stl_relops.h:
 
-/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:
+/opt/ros/lyrical/include/rmw/rmw/events_statuses/matched.h:
+
+/opt/ros/lyrical/include/rmw/rmw/events_statuses/message_lost.h:
+
+/opt/ros/lyrical/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h:
 
 /opt/ros/lyrical/include/rcpputils/rcpputils/time.hpp:
 
 /opt/ros/lyrical/include/rcpputils/rcpputils/thread_safety_annotations.hpp:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/message_info.hpp:
+
+/opt/ros/lyrical/lib/librcutils.so:
 
 /opt/ros/lyrical/include/rosidl_buffer/rosidl_buffer/cpu_buffer_impl.hpp:
 
@@ -1628,17 +1532,33 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__type_support.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/twist.hpp:
-
 /opt/ros/lyrical/include/rclcpp_lifecycle/rclcpp_lifecycle/visibility_control.h:
+
+/opt/ros/lyrical/include/rclcpp_lifecycle/rclcpp_lifecycle/state.hpp:
 
 /opt/ros/lyrical/include/rmw/rmw/rmw.h:
 
 /opt/ros/lyrical/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_c.so:
 
+/opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/tf_message.hpp:
+
+/opt/ros/lyrical/include/rclcpp_lifecycle/rclcpp_lifecycle/lifecycle_node_impl.hpp:
+
+/usr/include/c++/15/bits/range_access.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/detail/rmw_implementation_specific_publisher_payload.hpp:
+
 /opt/ros/lyrical/include/rclcpp/rclcpp/wait_set_policies/static_storage.hpp:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/wait_set_policies/dynamic_storage.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/set_parameters_atomically.hpp:
+
+/opt/ros/lyrical/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/uchar.h:
+
+/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/statistics.hpp:
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__traits.hpp:
 
@@ -1646,31 +1566,29 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/src/swerve_controller.cpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion_stamped__struct.hpp:
-
 /opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/duration.hpp:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/typesupport_helpers.hpp:
 
-/opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_typesupport_cpp.so:
-
-/usr/include/c++/15/bits/ostream.h:
-
 /usr/include/c++/15/bits/stl_raw_storage_iter.h:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/polygon_stamped.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/subscription_wait_set_mask.hpp:
+
+/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__type_support.hpp:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__builder.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-macros.h:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/subscription_options.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/subscription_factory.hpp:
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/serialized_message.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/serialization.hpp:
-
-/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/rate.hpp:
 
@@ -1690,25 +1608,35 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/parameter_descriptor_wrapper.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/parameter_client.hpp:
+/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__builder.hpp:
 
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/set_parameters_atomically.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_type_descriptions_interface.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
+/opt/ros/lyrical/include/rcl/rcl/domain_id.h:
+
+/usr/include/strings.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_topics_interface_traits.hpp:
+
+/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_runtime_cpp/service_type_support_decl.hpp:
 
 /opt/ros/lyrical/include/rmw/rmw/events_statuses/offered_deadline_missed.h:
+
+/opt/ros/lyrical/include/rosidl_typesupport_introspection_cpp/rosidl_typesupport_introspection_cpp/service_introspection.hpp:
+
+/opt/ros/lyrical/lib/libjoint_limiter_interface.so:
 
 /opt/ros/lyrical/include/rcutils/rcutils/error_handling.h:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_timers_interface_traits.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_timers_interface.hpp:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/version.h:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/message_memory_strategy.hpp:
 
 /opt/ros/lyrical/include/rmw/rmw/events_statuses/liveliness_changed.h:
+
+/opt/ros/lyrical/include/rcutils/rcutils/types/hash_map.h:
 
 /usr/include/c++/15/bits/stl_queue.h:
 
@@ -1720,15 +1648,25 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /usr/include/c++/15/bits/fs_path.h:
 
+/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h:
+
+/opt/ros/lyrical/lib/librcl_yaml_param_parser.so:
+
 /opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_clock_interface_traits.hpp:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_clock_interface.hpp:
 
 /usr/include/assert.h:
 
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__type_support.hpp:
+
 /opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/get_node_topics_interface.hpp:
 
 /usr/include/c++/15/ext/concurrence.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/get_node_clock_interface.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/dynamic_typesupport/dynamic_serialization_support.hpp:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/rclcpp.hpp:
 
@@ -1748,13 +1686,19 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/node.hpp:
 
+/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp:
+
 /opt/ros/lyrical/include/rcutils/rcutils/time.h:
+
+/opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_thread_safe_box.hpp:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/is_ros_compatible_type.hpp:
 
 /usr/include/c++/15/iomanip:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/intra_process_setting.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/init_options.hpp:
 
@@ -1770,15 +1714,15 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_services_interface.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__builder.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/generic_service.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/generic_client.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_services_interface_traits.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/executors/events_cbg_executor/events_cbg_executor.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/future_return_code.hpp:
+
+/opt/ros/lyrical/include/rcl_lifecycle/rcl_lifecycle/data_types.h:
 
 /opt/ros/lyrical/include/rcpputils/rcpputils/pointer_traits.hpp:
 
@@ -1789,6 +1733,14 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 /opt/ros/lyrical/include/rclcpp/rclcpp/detail/cpp_callback_trampoline.hpp:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/experimental/subscription_intra_process_buffer.hpp:
+
+/opt/ros/lyrical/lib/libstd_msgs__rosidl_generator_c.so:
+
+/opt/ros/lyrical/include/rosidl_buffer/rosidl_buffer/buffer_impl_base.hpp:
+
+/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/detail/robot_command__struct.hpp:
+
+/opt/ros/lyrical/include/tf2/tf2/LinearMath/Quaternion.hpp:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/experimental/ros_message_intra_process_buffer.hpp:
 
@@ -1804,15 +1756,9 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/experimental/create_intra_process_buffer.hpp:
 
-/opt/ros/lyrical/lib/librcl_interfaces__rosidl_typesupport_fastrtps_c.so:
+/opt/ros/lyrical/include/rcl_lifecycle/rcl_lifecycle/visibility_control.h:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/buffers/ring_buffer_implementation.hpp:
-
-/opt/ros/lyrical/lib/libtf2.so:
-
-/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/sequence_bound.h:
-
-/opt/ros/lyrical/include/tracetools/tracetools/utils.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/expand_topic_or_service_name.hpp:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:
 
@@ -1830,7 +1776,19 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /usr/include/c++/15/atomic:
 
+/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/executors.hpp:
+
+/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_fastrtps_c.so:
+
 /opt/ros/lyrical/include/rclcpp/rclcpp/exceptions/exceptions.hpp:
+
+/opt/ros/lyrical/lib/libnav_msgs__rosidl_generator_py.so:
+
+/usr/include/c++/15/bits/stl_algobase.h:
+
+/opt/ros/lyrical/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/api/dynamic_type.h:
 
 /opt/ros/lyrical/include/joint_limits/joint_limits/joint_limits.hpp:
 
@@ -1840,293 +1798,109 @@ libswerve_controller.so: /lib64/ld-linux-x86-64.so.2 \
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/event.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/dynamic_typesupport/dynamic_serialization_support.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/get_node_clock_interface.hpp:
-
 /opt/ros/lyrical/include/rclcpp/rclcpp/dynamic_typesupport/dynamic_message.hpp:
 
 /usr/include/unistd.h:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/detail/template_contains.hpp:
+/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/statistics_names.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/detail/subscription_callback_type_helper.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_base_interface_traits.hpp:
+
+/opt/ros/lyrical/include/hardware_interface/hardware_interface/handle.hpp:
+
+/usr/include/c++/15/bits/allocated_ptr.h:
+
+/usr/include/locale.h:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__traits.hpp:
+
+/opt/ros/lyrical/lib/librosidl_runtime_c.so:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/waitable.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/sigstksz.h:
+
+/usr/include/c++/15/debug/assertions.h:
+
+/opt/ros/lyrical/lib/libtype_description_interfaces__rosidl_typesupport_cpp.so:
+
+/opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
+
+/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics__builder.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/intra_process_manager.hpp:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__struct.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/15/bits/ctype_base.h:
+
+/opt/ros/lyrical/lib/libcontrol_msgs__rosidl_typesupport_fastrtps_c.so:
+
+/usr/include/x86_64-linux-gnu/c++/15/bits/messages_members.h:
+
+/opt/ros/lyrical/include/pal_statistics/pal_statistics/static_circular_buffer.hpp:
+
+/usr/include/c++/15/bits/algorithmfwd.h:
+
+/usr/include/x86_64-linux-gnu/bits/semaphore.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/wait_set.hpp:
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__struct.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/detail/rmw_implementation_specific_publisher_payload.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_base.hpp:
 
-/opt/ros/lyrical/lib/libjoint_limiter_interface.so:
+/opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:
 
-/opt/ros/lyrical/include/rosidl_typesupport_introspection_cpp/rosidl_typesupport_introspection_cpp/service_introspection.hpp:
+/usr/include/c++/15/chrono:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/detail/rmw_implementation_specific_payload.hpp:
+/usr/include/c++/15/math.h:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/exceptions.hpp:
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/transition.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/detail/resolve_intra_process_buffer_type.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/network_flow_endpoint.hpp:
 
-/opt/ros/lyrical/include/rclcpp_lifecycle/rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/publisher.hpp:
+
+/opt/ros/lyrical/include/rmw/rmw/get_topic_names_and_types.h:
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/detail/resolve_enable_topic_statistics.hpp:
+/opt/ros/lyrical/include/rclcpp_lifecycle/rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp:
 
-CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o:
+/opt/ros/lyrical/include/rclcpp/rclcpp/detail/resolve_intra_process_buffer_type.hpp:
 
-/opt/ros/lyrical/include/rmw/rmw/qos_policy_kind.h:
+/opt/ros/lyrical/include/tf2/tf2/LinearMath/Scalar.hpp:
 
-/usr/include/c++/15/bits/parse_numbers.h:
+/opt/ros/lyrical/include/rclcpp/rclcpp/qos.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/create_subscription.hpp:
+/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/string.h:
 
-/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/get_node_services_interface.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/timer.hpp:
+/usr/lib/x86_64-linux-gnu/libcap.so:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.hpp:
+/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_initialization.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/create_service.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/executor.hpp:
 
-/usr/include/c++/15/bits/regex_constants.h:
+/opt/ros/lyrical/include/rmw/rmw/event_callback_type.h:
 
-/usr/include/c++/15/set:
+/opt/ros/lyrical/lib/librcl_interfaces__rosidl_typesupport_introspection_c.so:
 
-/opt/ros/lyrical/lib/libstatistics_msgs__rosidl_typesupport_introspection_c.so:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/subscription.hpp:
-
-/usr/lib/gcc/x86_64-linux-gnu/15/libatomic.so:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_interfaces.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/detail/template_unique.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/wait_set_policies/thread_safe_synchronization.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/wait_result.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/contexts/default_context.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__struct.hpp:
-
-/usr/include/c++/15/pstl/glue_numeric_defs.h:
-
-/opt/ros/lyrical/lib/libstd_msgs__rosidl_generator_c.so:
-
-/opt/ros/lyrical/include/rosidl_buffer/rosidl_buffer/buffer_impl_base.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/context.hpp:
-
-/opt/ros/lyrical/lib/libunique_identifier_msgs__rosidl_typesupport_fastrtps_cpp.so:
-
-/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/any_subscription_callback.hpp:
-
-/usr/include/c++/15/vector:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/any_executable.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/velocity_stamped.hpp:
-
-/usr/include/c++/15/unordered_map:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/get_parameters.hpp:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/parameter_service.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/allocator/allocator_deleter.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__struct.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/detail/resolve_use_intra_process.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose__type_support.hpp:
-
-/opt/ros/lyrical/include/rcl_yaml_param_parser/rcl_yaml_param_parser/visibility_control.h:
-
-/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_typesupport_cpp.so:
-
-/opt/ros/lyrical/include/rcl/rcl/log_level.h:
-
-/usr/include/c++/15/cctype:
-
-/usr/include/c++/15/bits/std_mutex.h:
-
-/usr/include/c++/15/charconv:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/expand_topic_or_service_name.hpp:
-
-/opt/ros/lyrical/include/rcl_lifecycle/rcl_lifecycle/visibility_control.h:
-
-/opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/header__traits.hpp:
-
-/opt/ros/lyrical/include/rcl_lifecycle/rcl_lifecycle/data_types.h:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_services_interface_traits.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/future_return_code.hpp:
-
-/opt/ros/lyrical/include/rclcpp_lifecycle/rclcpp_lifecycle/transition.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/set_parameters.hpp:
-
-/opt/ros/lyrical/include/tf2/tf2/convert.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/type_support_decl.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/topic_statistics_state.hpp:
+include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /opt/ros/lyrical/include/hardware_interface/hardware_interface/loaned_state_interface.hpp:
 
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__type_support.hpp:
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/rosidl_generator_c__visibility_control.h:
 
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__struct.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__type_support.hpp:
+/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_generator_py.so:
 
-/opt/ros/lyrical/include/rcl/rcl/service_introspection.h:
-
-/usr/include/c++/15/ext/alloc_traits.h:
-
-/usr/include/c++/15/bits/locale_facets_nonio.h:
-
-/opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_helpers.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/visibility_control.hpp:
-
-/opt/ros/lyrical/include/rcutils/rcutils/types/uint8_array.h:
-
-/usr/include/c++/15/tr1/ell_integral.tcc:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/parameter_type.hpp:
-
-/usr/include/stdc-predef.h:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__struct.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__builder.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__type_support.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__traits.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
-/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/state__type_support.hpp:
-
-/usr/include/limits.h:
-
-/opt/ros/lyrical/lib/libmessage_filters.so:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/type_adapter.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/create_generic_service.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/15/bits/ctype_inline.h:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__traits.hpp:
-
-/opt/ros/lyrical/include/rcl/rcl/client.h:
-
-/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/type_description/individual_type_description__struct.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__struct.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__builder.hpp:
-
-/usr/include/c++/15/compare:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/wrench.hpp:
-
-/usr/include/c++/15/bits/locale_classes.h:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/create_publisher.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/vector3_stamped.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/parameter.hpp:
-
-/opt/ros/lyrical/include/rcl/rcl/macros.h:
-
-/opt/ros/lyrical/include/rcl/rcl/node_options.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/polygon_stamped__struct.hpp:
-
-/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_typesupport_cpp.so:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_type_descriptions_interface.hpp:
-
-/opt/ros/lyrical/include/rcl/rcl/domain_id.h:
-
-/usr/include/strings.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/pose_with_covariance_stamped.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__traits.hpp:
-
-/opt/ros/lyrical/include/rclcpp_lifecycle/rclcpp_lifecycle/lifecycle_node_impl.hpp:
-
-/usr/include/c++/15/bits/range_access.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/pose_with_covariance.hpp:
-
-/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_names__struct.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/point_stamped.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
-/usr/include/x86_64-linux-gnu/c++/15/bits/messages_members.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/point.hpp:
-
-/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_typesupport_introspection_c.so:
-
-/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/constants.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/pose.hpp:
-
-/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/callback_group.hpp:
-
-/usr/include/c++/15/bits/stl_deque.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion_stamped__builder.hpp:
-
-/opt/ros/lyrical/lib/libsensor_msgs__rosidl_typesupport_fastrtps_c.so:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/create_timer.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/executors/executor_notify_waitable.hpp:
-
-/usr/include/stdint.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench__traits.hpp:
-
-/opt/ros/lyrical/include/hardware_interface/hardware_interface/loaned_command_interface.hpp:
-
-/opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/detail/odometry__type_support.hpp:
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition_event__type_support.h:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_waitables_interface.hpp:
 
@@ -2144,139 +1918,65 @@ CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o:
 
 /opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition_event__functions.h:
 
+/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_typesupport_fastrtps_cpp.so:
+
 /opt/ros/lyrical/include/rclcpp/rclcpp/experimental/executors/events_executor/events_queue.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/dynamic_typesupport/dynamic_message_type.hpp:
 
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__type_support.hpp:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__builder.hpp:
 
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__traits.hpp:
+/usr/include/c++/15/compare:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/subscription_wait_set_mask.hpp:
+/opt/ros/lyrical/include/rsl/rsl/parameter_validators.hpp:
 
-/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__type_support.hpp:
+/opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/detail/odometry__builder.hpp:
 
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__builder.hpp:
+/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_typesupport_c.so:
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls-macros.h:
+/opt/ros/lyrical/include/rsl/rsl/static_vector.hpp:
 
-/usr/include/c++/15/iostream:
+/opt/ros/lyrical/include/rclcpp_lifecycle/rclcpp_lifecycle/transition.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench_stamped__traits.hpp:
+/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
 
-/usr/include/c++/15/bits/memoryfwd.h:
+/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistic__struct.hpp:
 
-/opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp:
+/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_values__traits.hpp:
 
-/usr/include/c++/15/chrono:
+/usr/include/c++/15/bits/basic_ios.h:
 
-/usr/include/c++/15/math.h:
+/opt/ros/lyrical/include/tf2_ros/tf2_ros/transform_broadcaster.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench__builder.hpp:
+/usr/include/c++/15/variant:
 
-/opt/ros/lyrical/lib/librosidl_runtime_c.so:
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/state__traits.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/waitable.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/get_node_timers_interface.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/sigstksz.h:
+/usr/include/c++/15/stop_token:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__type_support.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/create_generic_publisher.hpp:
 
-/usr/lib/x86_64-linux-gnu/libmvec.so.1:
+/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_fastrtps_cpp.so:
 
-/opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/bool__type_support.hpp:
+/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/visibility_control.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3_stamped__builder.hpp:
+/opt/ros/lyrical/include/class_loader/class_loader/visibility_control.hpp:
 
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__traits.hpp:
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp:
 
-/usr/include/c++/15/bits/unordered_set.h:
+/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/received_message_age.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/types.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__type_support.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/vector3.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/sigstack.h:
-
-/usr/include/c++/15/bits/ios_base.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__struct.hpp:
-
-/opt/ros/lyrical/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/dynamic_message_type_support_struct.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp:
-
-/opt/ros/lyrical/include/rcutils/rcutils/types/string_map.h:
-
-/usr/include/fmt/ranges.h:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/node_options.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__type_support.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench_stamped__builder.hpp:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/transition.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/network_flow_endpoint.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/publisher.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_base_interface_traits.hpp:
-
-/opt/ros/lyrical/include/hardware_interface/hardware_interface/handle.hpp:
-
-/usr/include/c++/15/bits/allocated_ptr.h:
-
-/usr/include/locale.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform__builder.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__type_support.hpp:
-
-/opt/ros/lyrical/include/rsl/rsl/static_string.hpp:
-
-/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/statistics_names.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_topics_interface_traits.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion_stamped__type_support.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/quaternion_stamped.hpp:
-
-/opt/ros/lyrical/include/rcl/rcl/wait.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion_stamped__traits.hpp:
-
-/opt/ros/lyrical/include/rmw/rmw/names_and_types.h:
-
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+/usr/include/c++/15/bits/allocator.h:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/os_defines.h:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3_stamped__struct.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__traits.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/subscription_traits.hpp:
-
-/opt/ros/lyrical/include/rcl/rcl/node.h:
-
-/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/buffers/intra_process_buffer.hpp:
-
-/usr/include/c++/15/cstdlib:
+/opt/ros/lyrical/include/hardware_interface/hardware_interface/loaned_command_interface.hpp:
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/list_parameters.hpp:
 
@@ -2286,19 +1986,45 @@ CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o:
 
 /opt/ros/lyrical/include/class_loader/class_loader/class_loader.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose__builder.hpp:
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/state__type_support.hpp:
 
-/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_runtime_cpp/service_type_support_decl.hpp:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__traits.hpp:
 
-/opt/ros/lyrical/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.h:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__type_support.hpp:
 
-/opt/ros/lyrical/include/pal_statistics/pal_statistics/registration_utils.hpp:
+/usr/include/c++/15/sstream:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance_stamped__type_support.hpp:
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp:
 
-/opt/ros/lyrical/include/rcl/rcl/network_flow_endpoints.h:
+/usr/include/c++/15/tr1/gamma.tcc:
 
-/opt/ros/lyrical/include/type_description_interfaces/type_description_interfaces/srv/detail/get_type_description__functions.h:
+/usr/include/limits.h:
+
+/usr/include/c++/15/bits/atomic_base.h:
+
+/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__builder.hpp:
+
+/usr/include/c++/15/bits/hashtable_policy.h:
+
+/usr/include/c++/15/bits/ios_base.h:
+
+/opt/ros/lyrical/include/rmw/rmw/incompatible_qos_events_statuses.h:
+
+/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/time__type_support.hpp:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/wait_set_template.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/timers_manager.hpp:
+
+/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/time.hpp:
+
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition__type_support.hpp:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__traits.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/c++/15/bits/stl_multiset.h:
 
@@ -2308,89 +2034,143 @@ CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o:
 
 /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__traits.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/polygon__struct.hpp:
+/opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_helpers.hpp:
 
-/usr/include/c++/15/bits/regex.h:
+/opt/ros/lyrical/include/rclcpp/rclcpp/visibility_control.hpp:
 
-/opt/ros/lyrical/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/api/dynamic_data.h:
+/opt/ros/lyrical/include/rcutils/rcutils/types/uint8_array.h:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/clock.hpp:
+/usr/include/c++/15/tr1/ell_integral.tcc:
 
-/opt/ros/lyrical/lib/libtf2_msgs__rosidl_typesupport_fastrtps_c.so:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/parameter_type.hpp:
 
-/usr/include/c++/15/bits/postypes.h:
+/usr/include/stdc-predef.h:
 
-/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__type_support.hpp:
+/opt/ros/lyrical/include/class_loader/class_loader/register_macro.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__type_support.hpp:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__struct.hpp:
 
-/usr/include/c++/15/bits/version.h:
+/opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_typesupport_introspection_cpp.so:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/wrench_stamped.hpp:
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose__traits.hpp:
 
-/usr/include/c++/15/bits/hashtable_policy.h:
+/opt/ros/lyrical/include/class_loader/class_loader/meta_object.hpp:
 
-/opt/ros/lyrical/include/rcl_yaml_param_parser/rcl_yaml_param_parser/parser.h:
+/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_names__traits.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/create_generic_subscription.hpp:
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
-/opt/ros/lyrical/include/rcl/rcl/context.h:
+/opt/ros/lyrical/include/class_loader/class_loader/exceptions.hpp:
 
-/opt/ros/lyrical/include/rcl/rcl/publisher.h:
+/opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
 
-/opt/ros/lyrical/lib/libaction_msgs__rosidl_typesupport_introspection_cpp.so:
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
-/usr/include/c++/15/bits/unordered_map.h:
+/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/statistics_values.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/transform.hpp:
+/opt/ros/lyrical/lib/libstd_msgs__rosidl_typesupport_cpp.so:
 
-/usr/include/c++/15/ext/numeric_traits.h:
+/opt/ros/lyrical/lib/libclass_loader.so:
 
-/opt/ros/lyrical/include/rclcpp_lifecycle/rclcpp_lifecycle/state.hpp:
+/opt/ros/lyrical/include/pal_statistics/pal_statistics/pal_statistics_macros.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__builder.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/wait_set_policies/detail/synchronization_policy_common.hpp:
 
-/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:
+/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_values__type_support.hpp:
 
-/opt/ros/lyrical/include/rosidl_buffer/rosidl_buffer/buffer.hpp:
+/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/detail/robot_command__type_support.hpp:
 
-/usr/include/c++/15/future:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:
 
-/usr/include/c++/15/tr1/legendre_function.tcc:
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/transition_event.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
+/usr/lib/gcc/x86_64-linux-gnu/15/include/limits.h:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__type_support.hpp:
+
+/opt/ros/lyrical/include/rcl/rcl/visibility_control.h:
+
+/opt/ros/lyrical/include/rcl/rcl/arguments.h:
+
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/buffers/intra_process_buffer.hpp:
+
+/usr/include/c++/15/cstdlib:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/any_service_callback.hpp:
+
+/opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/detail/odometry__type_support.hpp:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__type_support.hpp:
+
+/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:
 
 /opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__traits.hpp:
 
 /opt/ros/lyrical/include/rcl/rcl/rcl.h:
 
-/opt/ros/lyrical/include/rmw/rmw/event_callback_type.h:
+/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics__traits.hpp:
 
-include/swervebot_controllers/swerve_controller_parameters.hpp:
+/opt/ros/lyrical/include/rmw/rmw/network_flow_endpoint_array.h:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/qos.hpp:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/get_parameters.hpp:
 
-/opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/odometry.hpp:
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
 
-/usr/include/c++/15/bits/atomic_futex.h:
+/opt/ros/lyrical/include/rclcpp/rclcpp/parameter_service.hpp:
 
-/usr/include/c++/15/initializer_list:
+/opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__type_support.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__builder.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/duration.hpp:
 
-/opt/ros/lyrical/include/rcl/rcl/event.h:
+/opt/ros/lyrical/include/rcutils/rcutils/visibility_control.h:
 
-/usr/include/c++/15/pstl/glue_algorithm_defs.h:
+/usr/include/c++/15/bits/deque.tcc:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.hpp:
+/usr/include/c++/15/bits/streambuf.tcc:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
+/opt/ros/lyrical/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:
 
-/opt/ros/lyrical/include/class_loader/class_loader/visibility_control.hpp:
+/opt/ros/lyrical/include/angles/angles/angles.h:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp:
+/usr/include/c++/15/backward/binders.h:
 
-/opt/ros/lyrical/include/hardware_interface/hardware_interface/types/statistics_types.hpp:
+/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_type_support_decl.hpp:
+
+/opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/detail/odometry__traits.hpp:
+
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition__struct.hpp:
+
+/usr/include/c++/15/exception:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/subscription_traits.hpp:
+
+/opt/ros/lyrical/include/rcl/rcl/node.h:
+
+/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/moving_average.hpp:
+
+/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_typesupport_fastrtps_c.so:
+
+/usr/include/c++/15/bits/locale_facets.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/exceptions.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/detail/rmw_implementation_specific_payload.hpp:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__builder.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/qos_overriding_options.hpp:
+
+/opt/ros/lyrical/include/pluginlib/pluginlib/class_list_macros.hpp:
+
+/usr/include/c++/15/bits/shared_ptr_base.h:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/set_parameters.hpp:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
+
+/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_typesupport_cpp.so:
 
 /opt/ros/lyrical/lib/libsensor_msgs__rosidl_typesupport_fastrtps_cpp.so:
 
@@ -2402,307 +2182,13 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /opt/ros/lyrical/include/class_loader/class_loader/class_loader_core.hpp:
 
-/opt/ros/lyrical/include/rcutils/rcutils/visibility_control.h:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__struct.hpp:
 
-/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_typesupport_introspection_cpp.so:
+/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/robot_command.hpp:
 
-/usr/include/c++/15/bits/functional_hash.h:
+/opt/ros/lyrical/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.h:
 
-/opt/ros/lyrical/include/angles/angles/angles.h:
-
-/usr/include/c++/15/backward/binders.h:
-
-/opt/ros/lyrical/lib/libunique_identifier_msgs__rosidl_typesupport_cpp.so:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__builder.hpp:
-
-/usr/include/c++/15/numbers:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/wait_set_template.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/timers_manager.hpp:
-
-/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/time.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__traits.hpp:
-
-/usr/include/stdlib.h:
-
-/usr/lib/x86_64-linux-gnu/libdl.a:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/generic_publisher.hpp:
-
-/usr/include/c++/15/shared_mutex:
-
-/opt/ros/lyrical/include/controller_interface/controller_interface/controller_interface_params.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/intra_process_manager.hpp:
-
-/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__builder.hpp:
-
-/usr/include/c++/15/bits/atomic_base.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__struct.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/15/bits/ctype_base.h:
-
-/opt/ros/lyrical/lib/libtype_description_interfaces__rosidl_typesupport_cpp.so:
-
-/opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
-
-/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics__builder.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__type_support.hpp:
-
-/opt/ros/lyrical/lib/libtrajectory_msgs__rosidl_generator_c.so:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance_stamped__builder.hpp:
-
-/opt/ros/lyrical/include/rcutils/rcutils/types/hash_map.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point32__traits.hpp:
-
-/usr/lib/x86_64-linux-gnu/liborocos-kdl.so:
-
-/opt/ros/lyrical/include/rcl/rcl/graph.h:
-
-/opt/ros/lyrical/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point__builder.hpp:
-
-/opt/ros/lyrical/include/class_loader/class_loader/register_macro.hpp:
-
-/opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_typesupport_introspection_cpp.so:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose__traits.hpp:
-
-/opt/ros/lyrical/include/class_loader/class_loader/meta_object.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__builder.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/polygon_stamped__traits.hpp:
-
-/opt/ros/lyrical/lib/librcl_interfaces__rosidl_typesupport_fastrtps_cpp.so:
-
-/usr/include/c++/15/bits/new_allocator.h:
-
-/opt/ros/lyrical/include/rmw/rmw/incompatible_qos_events_statuses.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp:
-
-/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/time__type_support.hpp:
-
-/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/received_message_age.hpp:
-
-/opt/ros/lyrical/include/rcl_yaml_param_parser/rcl_yaml_param_parser/types.h:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/state__struct.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__type_support.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point32__type_support.hpp:
-
-/opt/ros/lyrical/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so:
-
-/usr/include/x86_64-linux-gnu/c++/15/bits/cpu_defines.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__traits.hpp:
-
-/usr/include/c++/15/bits/stl_heap.h:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/transition_event.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/15/include/limits.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__traits.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/any_service_callback.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/subscription_base.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/parameter_value.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__builder.hpp:
-
-/usr/include/c++/15/bits/exception_ptr.h:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/get_node_parameters_interface.hpp:
-
-/usr/include/c++/15/bits/erase_if.h:
-
-/opt/ros/lyrical/include/controller_interface/controller_interface/controller_interface.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/buffers/buffer_implementation_base.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point32__builder.hpp:
-
-/opt/ros/lyrical/include/rmw/rmw/init.h:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__traits.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/get_node_timers_interface.hpp:
-
-/usr/include/c++/15/stop_token:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/create_generic_publisher.hpp:
-
-/usr/include/c++/15/new:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/polygon__traits.hpp:
-
-/opt/ros/lyrical/include/rmw/rmw/qos_profiles.h:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__type_support.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3_stamped__traits.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/wait_set_policies/detail/synchronization_policy_common.hpp:
-
-/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_values__type_support.hpp:
-
-/usr/include/c++/15/debug/assertions.h:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/polygon_stamped__type_support.hpp:
-
-/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_typesupport_introspection_c.so:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__type_support.hpp:
-
-/opt/ros/lyrical/include/hardware_interface/hardware_interface/macros.hpp:
-
-/usr/include/c++/15/tr1/modified_bessel_func.tcc:
-
-/opt/ros/lyrical/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/types.h:
-
-/opt/ros/lyrical/lib/librosidl_typesupport_introspection_cpp.so:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__builder.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/client.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_topics_interface.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/parameter_descriptor.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__type_support.hpp:
-
-/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/types.hpp:
-
-/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:
-
-/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/collector/collector.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/subscription_factory.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance_stamped__struct.hpp:
-
-/usr/include/c++/15/bits/locale_facets.h:
-
-/usr/include/c++/15/bits/allocator.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance_stamped__traits.hpp:
-
-/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/moving_average.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point__type_support.hpp:
-
-/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/visibility_control.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__type_support.hpp:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition__builder.hpp:
-
-/opt/ros/lyrical/include/rcl/rcl/timer.h:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition__struct.h:
-
-/usr/include/c++/15/cxxabi.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistic__struct.hpp:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition__traits.hpp:
-
-/usr/include/c++/15/climits:
-
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition__type_support.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__traits.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/opt/ros/lyrical/include/rmw/rmw/ret_types.h:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/subscription_intra_process.hpp:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition_event__struct.h:
-
-/opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/bool__struct.hpp:
-
-/usr/include/c++/15/map:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition_event__type_support.h:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/rosidl_generator_c__visibility_control.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__builder.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
-
-/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics__traits.hpp:
-
-/opt/ros/lyrical/include/rmw/rmw/network_flow_endpoint_array.h:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/state__traits.hpp:
-
-/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_values__traits.hpp:
-
-/usr/include/c++/15/bits/basic_ios.h:
-
-/opt/ros/lyrical/include/rmw/rmw/get_topic_names_and_types.h:
-
-/opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/detail/odometry__builder.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/wait_set_policies/sequential_synchronization.hpp:
-
-/opt/ros/lyrical/lib/libstd_msgs__rosidl_typesupport_cpp.so:
-
-/opt/ros/lyrical/lib/libclass_loader.so:
-
-/opt/ros/lyrical/include/pal_statistics/pal_statistics/pal_statistics_macros.hpp:
-
-/opt/ros/lyrical/include/rcl/rcl/event_callback.h:
-
-/opt/ros/lyrical/include/pal_statistics/pal_statistics/pal_statistics_utils.hpp:
-
-/opt/ros/lyrical/include/rcl/rcl/visibility_control.h:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:
-
-/usr/include/c++/15/bits/deque.tcc:
-
-/usr/include/c++/15/bits/streambuf.tcc:
-
-/opt/ros/lyrical/include/pal_statistics/pal_statistics/static_circular_buffer.hpp:
-
-/usr/include/c++/15/bits/algorithmfwd.h:
-
-/usr/include/x86_64-linux-gnu/bits/semaphore.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_kinematics.hpp:
 
 /opt/ros/lyrical/include/rcutils/rcutils/logging_macros.h:
 
@@ -2710,69 +2196,189 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+/opt/ros/lyrical/include/rcl/rcl/event.h:
 
-/opt/ros/lyrical/include/class_loader/class_loader/exceptions.hpp:
+/usr/include/c++/15/pstl/glue_algorithm_defs.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/15/libgcc.a:
+/opt/ros/lyrical/include/rclcpp/rclcpp/context.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__traits.hpp:
+/opt/ros/lyrical/lib/libunique_identifier_msgs__rosidl_typesupport_fastrtps_cpp.so:
 
-/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_names__traits.hpp:
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
-/opt/ros/lyrical/include/rcl/rcl/time.h:
+/opt/ros/lyrical/include/rclcpp/rclcpp/any_subscription_callback.hpp:
+
+/usr/include/c++/15/vector:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/parameter.hpp:
+
+/opt/ros/lyrical/include/rcl/rcl/macros.h:
+
+/opt/ros/lyrical/include/pal_statistics/pal_statistics/registration_utils.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/get_node_parameters_interface.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/subscription_base.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/detail/subscription_callback_type_helper.hpp:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/parameter_value.hpp:
+
+/opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/odometry.hpp:
+
+/usr/include/c++/15/bits/atomic_futex.h:
+
+/usr/include/c++/15/initializer_list:
+
+/opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_fastrtps_c.so:
 
 /opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_names__type_support.hpp:
 
+/opt/ros/lyrical/include/rcl/rcl/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
+
+/opt/ros/lyrical/include/rcl/rcl/publisher.h:
+
+/opt/ros/lyrical/lib/libaction_msgs__rosidl_typesupport_introspection_cpp.so:
+
+/usr/include/c++/15/bits/unordered_map.h:
+
+/opt/ros/lyrical/include/rmw/rmw/qos_profiles.h:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__type_support.hpp:
+
+/opt/ros/lyrical/include/tcb_span/span.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/15/include/stdbool.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/wait_set_policies/sequential_synchronization.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_topics_interface.hpp:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/parameter_descriptor.hpp:
+
+/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_introspection_cpp.so:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/executors/executor_notify_waitable.hpp:
+
+/usr/include/stdint.h:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__struct.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/allocator/allocator_deleter.hpp:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__struct.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/detail/resolve_use_intra_process.hpp:
+
+/opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_fastrtps_cpp.so:
+
+/opt/ros/lyrical/include/rcl_yaml_param_parser/rcl_yaml_param_parser/visibility_control.h:
+
+/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/collector/collector.hpp:
+
+/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__struct.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/wait_result.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/contexts/default_context.hpp:
+
+/usr/include/c++/15/iostream:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/any_executable.hpp:
+
+/usr/include/c++/15/unordered_map:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/timer.hpp:
+
+/usr/include/c++/15/bits/exception_ptr.h:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__builder.hpp:
+
+/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:
+
+/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
+
+/usr/include/c++/15/tr1/legendre_function.tcc:
+
+/opt/ros/lyrical/include/rosidl_buffer/rosidl_buffer/buffer.hpp:
+
+/usr/include/c++/15/future:
+
+/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/type_description/individual_type_description__struct.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__struct.hpp:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp:
+
+/opt/ros/lyrical/lib/librclcpp_lifecycle.so:
+
+/opt/ros/lyrical/include/rmw/rmw/ret_types.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/subscription_intra_process.hpp:
+
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition_event__struct.h:
+
+/usr/include/c++/15/map:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:
+
+/opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__builder.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h:
+
 /opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_values__struct.hpp:
 
-/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/statistics.hpp:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__type_support.hpp:
 
-/opt/ros/lyrical/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/uchar.h:
+/opt/ros/lyrical/include/hardware_interface/hardware_interface/types/statistics_types.hpp:
 
-/usr/include/c++/15/bits/vector.tcc:
+/opt/ros/lyrical/lib/libunique_identifier_msgs__rosidl_typesupport_cpp.so:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/point32.hpp:
+/usr/include/c++/15/numbers:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__builder.hpp:
+
+/opt/ros/lyrical/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/types.h:
+
+/usr/include/c++/15/tr1/modified_bessel_func.tcc:
+
+/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_names__struct.hpp:
 
 /opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/parameter_event.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/qos_overriding_options.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_timers_interface.hpp:
 
-/opt/ros/lyrical/include/pluginlib/pluginlib/class_list_macros.hpp:
+/opt/ros/lyrical/include/pal_statistics/pal_statistics/pal_statistics_utils.hpp:
 
-/usr/include/c++/15/bits/shared_ptr_base.h:
+/opt/ros/lyrical/include/rcl/rcl/event_callback.h:
 
-/opt/ros/lyrical/lib/libaction_msgs__rosidl_generator_c.so:
+/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/15/include/stdint.h:
+/usr/include/c++/15/bits/stl_algo.h:
 
-/opt/ros/lyrical/include/rcl/rcl/logging_rosout.h:
+/usr/lib/x86_64-linux-gnu/liborocos-kdl.so:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__struct.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench_stamped__type_support.hpp:
-
-/usr/include/c++/15/bits/move.h:
-
-/usr/include/c++/15/bits/unique_ptr.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/pose_stamped.hpp:
-
-/usr/include/c++/15/queue:
-
-/opt/ros/lyrical/include/rcl/rcl/allocator.h:
-
-/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_typesupport_fastrtps_c.so:
-
-/opt/ros/lyrical/include/hardware_interface/hardware_interface/introspection.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/polygon_stamped__builder.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/signum-generic.h:
-
-/opt/ros/lyrical/include/rcl/rcl/arguments.h:
+/opt/ros/lyrical/include/rcl/rcl/graph.h:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/logging.hpp:
 
@@ -2794,47 +2400,101 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/c++/15/pstl/execution_defs.h:
 
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__traits.hpp:
+
+/usr/include/stdlib.h:
+
+/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_typesupport_cpp.so:
+
+/opt/ros/lyrical/include/rcl/rcl/log_level.h:
+
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/state__struct.h:
+
+/opt/ros/lyrical/include/rcl_yaml_param_parser/rcl_yaml_param_parser/types.h:
+
+/opt/ros/lyrical/include/controller_interface/controller_interface/controller_interface.hpp:
+
+/usr/include/c++/15/bits/erase_if.h:
+
+/usr/include/c++/15/cctype:
+
+/usr/include/c++/15/bits/std_mutex.h:
+
+/usr/include/c++/15/charconv:
+
+/opt/ros/lyrical/include/rcl/rcl/network_flow_endpoints.h:
+
+/opt/ros/lyrical/include/type_description_interfaces/type_description_interfaces/srv/detail/get_type_description__functions.h:
+
+/opt/ros/lyrical/include/rcl/rcl/node_options.h:
+
 /opt/ros/lyrical/include/rcl/rcl/service.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
-/opt/ros/lyrical/lib/libstd_msgs__rosidl_typesupport_introspection_c.so:
+/opt/ros/lyrical/include/rcl/rcl/client.h:
 
-/opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_publisher.hpp:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__traits.hpp:
+
+/opt/ros/lyrical/lib/libsensor_msgs__rosidl_typesupport_fastrtps_c.so:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/create_timer.hpp:
 
 /opt/ros/lyrical/include/rcl/rcl/error_handling.h:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench__struct.hpp:
-
 /opt/ros/lyrical/include/rcl/rcl/subscription.h:
+
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition__struct.h:
+
+/usr/include/c++/15/cxxabi.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/opt/ros/lyrical/include/rcl/rcl/timer.h:
 
 /opt/ros/lyrical/include/rcl/rcl/types.h:
 
+/opt/ros/lyrical/include/rcl/rcl/wait.h:
+
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__struct.hpp:
+
+/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/type_description/field__struct.h:
 
 /opt/ros/lyrical/include/realtime_tools/realtime_tools/async_function_handler.hpp:
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__traits.hpp:
 
+/opt/ros/lyrical/include/rclcpp/rclcpp/detail/template_contains.hpp:
+
 /opt/ros/lyrical/include/rmw/rmw/topic_endpoint_info_array.h:
 
 /usr/include/wctype.h:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/executors/events_executor/events_executor.hpp:
+
+/opt/ros/lyrical/include/rcl/rcl/init_options.h:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__struct.hpp:
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__traits.hpp:
 
 /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__builder.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/buffers/buffer_implementation_base.hpp:
 
-/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_values__builder.hpp:
+/opt/ros/lyrical/include/rmw/rmw/init.h:
 
-/usr/include/c++/15/bits/stringfwd.h:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__traits.hpp:
+
+/usr/lib/x86_64-linux-gnu/libdl.a:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/generic_publisher.hpp:
+
+/usr/include/c++/15/shared_mutex:
+
+/opt/ros/lyrical/include/controller_interface/controller_interface/controller_interface_params.hpp:
 
 /usr/include/c++/15/bits/charconv.h:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__struct.hpp:
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__struct.hpp:
 
@@ -2848,23 +2508,31 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__traits.hpp:
 
+/opt/ros/lyrical/include/rcutils/rcutils/types/string_map.h:
+
+/usr/include/fmt/ranges.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/node_options.hpp:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__type_support.hpp:
+
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
 /opt/ros/lyrical/include/rmw/rmw/topic_endpoint_info.h:
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/list_parameters_result.hpp:
 
+/opt/ros/lyrical/include/rclcpp/rclcpp/create_generic_service.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/15/bits/ctype_inline.h:
+
 /opt/ros/lyrical/include/rcutils/rcutils/allocator.h:
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__traits.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/executor.hpp:
+/opt/ros/lyrical/include/rclcpp/rclcpp/create_subscription.hpp:
 
-/usr/lib/x86_64-linux-gnu/libcap.so:
-
-/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_initialization.hpp:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3_stamped__type_support.hpp:
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/describe_parameters.hpp:
 
@@ -2874,9 +2542,9 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_logging_interface.hpp:
 
-/opt/ros/lyrical/include/hardware_interface/hardware_interface/lexical_casts.hpp:
-
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__builder.hpp:
+
+/opt/ros/lyrical/include/hardware_interface/hardware_interface/lexical_casts.hpp:
 
 /opt/ros/lyrical/include/rmw/rmw/impl/config.h:
 
@@ -2886,205 +2554,145 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
-/opt/ros/lyrical/include/rcutils/rcutils/types/array_list.h:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__traits.hpp:
 
-/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/action_type_support_struct.h:
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition__builder.hpp:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/executors.hpp:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__type_support.hpp:
 
-/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h:
+/opt/ros/lyrical/include/rcl/rcl/logging_rosout.h:
 
-/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h:
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__builder.hpp:
 
-/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h:
+/opt/ros/lyrical/lib/libaction_msgs__rosidl_generator_c.so:
 
-/usr/include/fmt/core.h:
+/usr/lib/gcc/x86_64-linux-gnu/15/include/stdint.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__traits.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__builder.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/15/bits/cpu_defines.h:
+
+/opt/ros/lyrical/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/topic_statistics_state.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/type_support_decl.hpp:
+
+/opt/ros/lyrical/include/rcl/rcl/service_introspection.h:
+
+/usr/include/c++/15/bits/locale_facets_nonio.h:
+
+/usr/include/c++/15/ext/alloc_traits.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__traits.hpp:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__builder.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
+
+/opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/header__struct.hpp:
+
+/opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_cpp.so:
+
+/usr/include/c++/15/bits/stl_deque.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/callback_group.hpp:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/client.hpp:
+
+/usr/include/c++/15/pstl/glue_numeric_defs.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/wait_set_policies/thread_safe_synchronization.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/detail/template_unique.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/15/libatomic.so:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_interfaces.hpp:
+
+/opt/ros/lyrical/lib/libstatistics_msgs__rosidl_typesupport_introspection_c.so:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/subscription.hpp:
+
+/usr/include/asm-generic/errno.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/create_client.hpp:
+
+/usr/include/c++/15/set:
+
+/opt/ros/lyrical/include/rcl/rcl/context.h:
+
+/opt/ros/lyrical/include/rcl_yaml_param_parser/rcl_yaml_param_parser/parser.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/create_generic_subscription.hpp:
+
+/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_runtime_cpp/action_type_support_decl.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/create_publisher.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/create_service.hpp:
+
+/usr/include/c++/15/bits/regex_constants.h:
+
+CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o:
+
+/opt/ros/lyrical/include/rmw/rmw/qos_policy_kind.h:
+
+/usr/include/c++/15/bits/parse_numbers.h:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/atomic_word.h:
 
 /opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/get_node_services_interface.hpp:
+/opt/ros/lyrical/lib/librcl_logging_interface.so:
 
-/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/string.h:
+/opt/ros/lyrical/include/rclcpp/rclcpp/detail/resolve_enable_topic_statistics.hpp:
 
-/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/type_description/field__struct.h:
+/opt/ros/lyrical/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/api/dynamic_data.h:
 
-/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/type_description/field_type__struct.h:
+/usr/include/c++/15/bits/vector.tcc:
 
-/usr/include/c++/15/bits/locale_classes.tcc:
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
-/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/type_description/type_description__struct.h:
+/usr/include/c++/15/climits:
 
-/opt/ros/lyrical/include/rosidl_runtime_c/rosidl_runtime_c/type_description/type_source__struct.h:
+/opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__type_support.hpp:
 
-/usr/include/c++/15/variant:
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__type_support.hpp:
 
-/opt/ros/lyrical/include/tf2_ros/tf2_ros/transform_broadcaster.hpp:
+/usr/include/c++/15/bits/version.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+/opt/ros/lyrical/include/rclcpp/rclcpp/clock.hpp:
 
-/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_runtime_cpp/action_type_support_decl.hpp:
+/opt/ros/lyrical/lib/libtf2_msgs__rosidl_typesupport_fastrtps_c.so:
 
-/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_runtime_cpp/buffer__traits.hpp:
-
-/opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/detail/odometry__traits.hpp:
-
-/usr/include/c++/15/exception:
-
-/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition__struct.hpp:
-
-/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_type_support_decl.hpp:
-
-/opt/ros/lyrical/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp:
-
-/opt/ros/lyrical/include/rosidl_typesupport_introspection_cpp/rosidl_typesupport_introspection_cpp/visibility_control.h:
-
-/opt/ros/lyrical/include/tf2/tf2/impl/convert.hpp:
-
-/opt/ros/lyrical/include/rsl/rsl/export.hpp:
-
-/usr/include/c++/15/codecvt:
-
-/usr/include/c++/15/system_error:
-
-/opt/ros/lyrical/include/rsl/rsl/parameter_validators.hpp:
-
-/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_typesupport_c.so:
-
-/opt/ros/lyrical/include/rsl/rsl/static_vector.hpp:
-
-/opt/ros/lyrical/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/visibility_control.h:
-
-/opt/ros/lyrical/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:
-
-/opt/ros/lyrical/include/service_msgs/service_msgs/msg/detail/service_event_info__traits.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/create_client.hpp:
-
-/usr/include/asm-generic/errno.h:
-
-/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__builder.hpp:
-
-/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__traits.hpp:
-
-/usr/include/c++/15/bits/stl_algo.h:
-
-/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:
-
-/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:
-
-/opt/ros/lyrical/include/statistics_msgs/statistics_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
-
-/opt/ros/lyrical/include/std_msgs/std_msgs/msg/bool.hpp:
-
-/usr/include/c++/15/bits/this_thread_sleep.h:
-
-/usr/lib/x86_64-linux-gnu/crtn.o:
-
-/opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/bool__builder.hpp:
-
-/opt/ros/lyrical/lib/libcontrol_msgs__rosidl_typesupport_fastrtps_c.so:
-
-/opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/bool__traits.hpp:
-
-/opt/ros/lyrical/include/tracetools/tracetools/config.h:
-
-/opt/ros/lyrical/include/std_msgs/std_msgs/msg/detail/header__struct.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__traits.hpp:
-
-/opt/ros/lyrical/lib/libcontrol_msgs__rosidl_generator_c.so:
-
-/opt/ros/lyrical/include/tcb_span/span.hpp:
-
-/usr/lib/gcc/x86_64-linux-gnu/15/include/stdbool.h:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/executors/events_executor/events_executor.hpp:
-
-/opt/ros/lyrical/include/rcl/rcl/init_options.h:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__struct.hpp:
-
-/opt/ros/lyrical/include/tf2/tf2/LinearMath/Matrix3x3.hpp:
-
-/opt/ros/lyrical/include/tf2/tf2/LinearMath/QuadWord.hpp:
-
-/opt/ros/lyrical/include/tf2/tf2/LinearMath/Quaternion.hpp:
-
-/opt/ros/lyrical/include/tf2/tf2/LinearMath/Scalar.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_base.hpp:
-
-/opt/ros/lyrical/include/tf2/tf2/LinearMath/Transform.hpp:
+/usr/include/c++/15/bits/postypes.h:
 
 /opt/ros/lyrical/include/rmw/rmw/impl/cpp/demangle.hpp:
 
 /opt/ros/lyrical/include/tf2_ros/tf2_ros/qos.hpp:
 
-/opt/ros/lyrical/lib/libjoint_saturation_limiter.so:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/subscription_content_filter_options.hpp:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/detail/add_guard_condition_to_rcl_wait_set.hpp:
-
-/opt/ros/lyrical/include/tf2/tf2/exceptions.hpp:
-
-/opt/ros/lyrical/include/tf2/tf2/time.hpp:
-
-/usr/include/c++/15/bits/predefined_ops.h:
-
-/opt/ros/lyrical/include/tf2/tf2/visibility_control.h:
-
-/opt/ros/lyrical/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.hpp:
-
-/usr/include/asm-generic/types.h:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:
-
-/opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__builder.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h:
-
-/opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__struct.hpp:
-
-/opt/ros/lyrical/include/rosidl_dynamic_typesupport/rosidl_dynamic_typesupport/api/dynamic_type.h:
-
-/usr/include/c++/15/bits/stl_algobase.h:
-
-/opt/ros/lyrical/include/rclcpp/rclcpp/duration.hpp:
-
-/opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__type_support.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
-/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/statistics_values.hpp:
-
-/opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
-
-/usr/include/c++/15/tr1/gamma.tcc:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp:
-
-/usr/include/c++/15/sstream:
-
-/opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/tf_message.hpp:
-
-/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_generator_c.so:
-
-/opt/ros/lyrical/lib/librcl.so:
-
-/opt/ros/lyrical/include/tf2_ros/tf2_ros/buffer_interface.hpp:
-
 /opt/ros/lyrical/include/tf2_ros/tf2_ros/visibility_control.hpp:
+
+/opt/ros/lyrical/include/tracetools/tracetools/config.h:
 
 /opt/ros/lyrical/include/rosidl_typesupport_introspection_cpp/rosidl_typesupport_introspection_cpp/message_introspection.hpp:
 
 /opt/ros/lyrical/include/tracetools/tracetools/tracetools.h:
 
 /usr/include/c++/15/bits/ranges_uninitialized.h:
-
-/opt/ros/lyrical/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp:
 
 /opt/ros/lyrical/include/tracetools/tracetools/visibility_control.h:
 
@@ -3100,10 +2708,6 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
-/opt/ros/lyrical/lib/librcl_interfaces__rosidl_typesupport_cpp.so:
-
-/opt/ros/lyrical/include/type_description_interfaces/type_description_interfaces/msg/detail/individual_type_description__struct.h:
-
 /opt/ros/lyrical/include/type_description_interfaces/type_description_interfaces/msg/detail/key_value__struct.h:
 
 /opt/ros/lyrical/include/rmw/rmw/message_sequence.h:
@@ -3113,8 +2717,6 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 /opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/state.hpp:
 
 /usr/include/asm-generic/bitsperlong.h:
-
-/opt/ros/lyrical/include/type_description_interfaces/type_description_interfaces/msg/rosidl_generator_c__visibility_control.h:
 
 /opt/ros/lyrical/include/type_description_interfaces/type_description_interfaces/srv/detail/get_type_description__struct.h:
 
@@ -3132,6 +2734,10 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/alloca.h:
 
+/opt/ros/lyrical/include/type_description_interfaces/type_description_interfaces/msg/rosidl_generator_c__visibility_control.h:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_introspection_c.so:
+
 /opt/ros/lyrical/include/rmw/rmw/security_options.h:
 
 /usr/include/asm-generic/errno-base.h:
@@ -3142,15 +2748,17 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/asm-generic/posix_types.h:
 
+/usr/include/asm-generic/types.h:
+
 /usr/include/c++/15/algorithm:
 
 /usr/include/c++/15/backward/auto_ptr.h:
 
+/opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_typesupport_fastrtps_c.so:
+
 /opt/ros/lyrical/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp:
 
 /usr/include/c++/15/bit:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench_stamped__struct.hpp:
 
 /usr/include/c++/15/bits/align.h:
 
@@ -3180,19 +2788,11 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/c++/15/bits/basic_string.h:
 
-/opt/ros/lyrical/lib/libaction_msgs__rosidl_typesupport_fastrtps_c.so:
-
-/usr/include/c++/15/bits/chrono_io.h:
-
 /opt/ros/lyrical/lib/libservice_msgs__rosidl_typesupport_cpp.so:
 
 /opt/ros/lyrical/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__type_support.hpp:
-
 /usr/include/c++/15/iosfwd:
-
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform__type_support.hpp:
 
 /usr/include/c++/15/bits/concept_check.h:
 
@@ -3210,13 +2810,19 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/c++/15/bits/formatfwd.h:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/wrench__type_support.hpp:
-
 /usr/include/c++/15/bits/fs_dir.h:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/subscription_content_filter_options.hpp:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/detail/add_guard_condition_to_rcl_wait_set.hpp:
+
+/opt/ros/lyrical/lib/libjoint_saturation_limiter.so:
 
 /usr/include/c++/15/bits/fs_ops.h:
 
 /usr/include/c++/15/bits/hash_bytes.h:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_cpp.so:
 
 /usr/include/c++/15/bits/hashtable.h:
 
@@ -3226,17 +2832,25 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /lib64/ld-linux-x86-64.so.2:
 
+/usr/include/c++/15/bits/ostream.h:
+
+/opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_typesupport_cpp.so:
+
 /opt/ros/lyrical/lib/libtype_description_interfaces__rosidl_typesupport_introspection_cpp.so:
 
 /opt/ros/lyrical/lib/libcontrol_msgs__rosidl_typesupport_cpp.so:
 
-/opt/ros/lyrical/include/rclcpp/rclcpp/wait_set_policies/detail/storage_policy_common.hpp:
+/opt/ros/lyrical/lib/libjoint_limits_helpers.so:
 
-/usr/include/c++/15/concepts:
+/opt/ros/lyrical/include/rclcpp/rclcpp/wait_set_policies/detail/storage_policy_common.hpp:
 
 /opt/ros/lyrical/include/class_loader/class_loader/interface_traits.hpp:
 
+/usr/include/c++/15/concepts:
+
 /usr/include/c++/15/bits/list.tcc:
+
+/usr/include/c++/15/bits/locale_classes.h:
 
 /usr/include/c++/15/bits/locale_conv.h:
 
@@ -3252,11 +2866,19 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/c++/15/bits/memory_resource.h:
 
-/usr/include/c++/15/bits/stl_function.h:
-
 /usr/include/x86_64-linux-gnu/sys/time.h:
 
+/usr/include/c++/15/bits/memoryfwd.h:
+
 /usr/include/c++/15/bits/monostate.h:
+
+/usr/include/c++/15/bits/move.h:
+
+/usr/include/c++/15/bits/unique_ptr.h:
+
+/opt/ros/lyrical/include/type_description_interfaces/type_description_interfaces/msg/detail/individual_type_description__struct.h:
+
+/opt/ros/lyrical/lib/librcl_interfaces__rosidl_typesupport_cpp.so:
 
 /usr/include/c++/15/bits/node_handle.h:
 
@@ -3266,19 +2888,19 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/c++/15/bits/ostream_insert.h:
 
+/usr/include/c++/15/bits/predefined_ops.h:
+
 /usr/include/c++/15/bits/ptr_traits.h:
-
-/opt/ros/lyrical/lib/librmw.so:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__builder.hpp:
-
-/usr/include/c++/15/bits/quoted_string.h:
 
 /usr/include/c++/15/bits/ranges_algobase.h:
 
 /usr/include/c++/15/bits/ranges_cmp.h:
 
+/opt/ros/lyrical/lib/librosidl_buffer.so:
+
 /usr/include/c++/15/bits/ranges_util.h:
+
+/usr/include/c++/15/bits/regex.h:
 
 /opt/ros/lyrical/lib/libtf2_msgs__rosidl_generator_py.so:
 
@@ -3289,12 +2911,6 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 /usr/include/c++/15/debug/debug.h:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
-
-/usr/include/c++/15/bits/regex_scanner.tcc:
-
-/usr/include/c++/15/bits/sstream.tcc:
-
-/usr/include/c++/15/bits/regex_automaton.h:
 
 /opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/state__builder.hpp:
 
@@ -3334,13 +2950,21 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/c++/15/bits/shared_ptr_atomic.h:
 
+/usr/include/c++/15/bits/regex_scanner.tcc:
+
+/usr/include/c++/15/bits/regex_automaton.h:
+
+/usr/include/c++/15/bits/sstream.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/sigstack.h:
+
 /usr/include/c++/15/bits/std_abs.h:
 
 /usr/include/c++/15/ios:
 
-/usr/include/c++/15/bits/nested_exception.h:
-
 /opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_names__builder.hpp:
+
+/usr/include/c++/15/bits/nested_exception.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
 
@@ -3354,15 +2978,23 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/c++/15/bits/stl_bvector.h:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point32__struct.hpp:
-
 /usr/include/linux/limits.h:
 
 /opt/ros/lyrical/lib/libaction_msgs__rosidl_typesupport_fastrtps_cpp.so:
 
 /usr/include/c++/15/bits/stl_construct.h:
 
+/usr/include/c++/15/bits/stl_heap.h:
+
+/usr/include/c++/15/bits/chrono_io.h:
+
+/opt/ros/lyrical/lib/libaction_msgs__rosidl_typesupport_fastrtps_c.so:
+
 /usr/include/c++/15/bits/stl_iterator_base_funcs.h:
+
+/usr/include/c++/15/bits/new_allocator.h:
+
+/opt/ros/lyrical/lib/librcl_interfaces__rosidl_typesupport_fastrtps_cpp.so:
 
 /usr/include/c++/15/bits/stl_iterator_base_types.h:
 
@@ -3414,13 +3046,25 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/c++/15/bits/string_view.tcc:
 
+/opt/ros/lyrical/include/pal_statistics_msgs/pal_statistics_msgs/msg/detail/statistics_values__builder.hpp:
+
+/usr/include/c++/15/bits/stringfwd.h:
+
+/usr/include/c++/15/bits/this_thread_sleep.h:
+
 /usr/include/c++/15/bits/unicode-data.h:
 
 /usr/include/c++/15/bits/unicode.h:
 
+/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_cpp.so:
+
 /usr/include/c++/15/bits/uniform_int_dist.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+
+/usr/include/c++/15/bits/unordered_set.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
 /usr/include/c++/15/bits/uses_allocator.h:
 
@@ -3433,6 +3077,14 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__struct.hpp:
 
 /usr/include/c++/15/cassert:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/type_adapter.hpp:
+
+/opt/ros/lyrical/lib/libmessage_filters.so:
+
+/opt/ros/lyrical/include/rclcpp/rclcpp/experimental/buffers/ring_buffer_implementation.hpp:
+
+/opt/ros/lyrical/lib/librcl_interfaces__rosidl_typesupport_fastrtps_c.so:
 
 /opt/ros/lyrical/include/rcpputils/rcpputils/shared_library.hpp:
 
@@ -3469,6 +3121,8 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 /usr/include/c++/15/ext/aligned_buffer.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/usr/include/c++/15/ext/numeric_traits.h:
 
 /opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__builder.hpp:
 
@@ -3520,9 +3174,15 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/c++/15/pstl/glue_memory_defs.h:
 
-/usr/include/c++/15/regex:
+/opt/ros/lyrical/include/rcl/rcl/allocator.h:
 
-/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/velocity_stamped__builder.hpp:
+/usr/include/c++/15/queue:
+
+/usr/include/c++/15/bits/stl_function.h:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_introspection_cpp.so:
+
+/usr/include/c++/15/regex:
 
 /usr/include/c++/15/tr1/riemann_zeta.tcc:
 
@@ -3610,25 +3270,11 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
-/usr/include/kdl/frames.hpp:
-
-/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__builder.hpp:
-
-/usr/include/kdl/frames.inl:
-
-/usr/include/kdl/utilities/hash_combine.h:
-
-/usr/include/kdl/utilities/kdl-config.h:
-
-/usr/include/x86_64-linux-gnu/c++/15/bits/error_constants.h:
-
-/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_generator_c.so:
-
-/usr/include/kdl/utilities/utility.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o:
 
 /usr/include/linux/close_range.h:
+
+/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_typesupport_cpp.so:
 
 /usr/include/linux/errno.h:
 
@@ -3746,6 +3392,8 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /opt/ros/lyrical/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so:
 
+/usr/include/x86_64-linux-gnu/bits/signum-generic.h:
+
 /usr/include/c++/15/bits/iterator_concepts.h:
 
 /usr/include/x86_64-linux-gnu/bits/sigthread.h:
@@ -3753,6 +3401,10 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 /opt/ros/lyrical/include/rclcpp/rclcpp/loaned_message.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
+
+/opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/transition__traits.hpp:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_fastrtps_cpp.so:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
@@ -3772,13 +3424,13 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
+/opt/ros/lyrical/lib/librosidl_typesupport_introspection_c.so:
+
+/opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_introspection_cpp.so:
+
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
-
-/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_introspection_c.so:
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
 /opt/ros/lyrical/lib/libtracetools.so:
 
@@ -3787,6 +3439,8 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /opt/ros/lyrical/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_cpp.so:
 
@@ -3806,6 +3460,8 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/cxxabi_tweaks.h:
 
+/usr/include/x86_64-linux-gnu/c++/15/bits/error_constants.h:
+
 /opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/topic_statistics_collector.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/gthr-default.h:
@@ -3816,11 +3472,25 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/time_members.h:
 
+/opt/ros/lyrical/include/rmw/rmw/names_and_types.h:
+
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/opt/ros/lyrical/include/rmw/rmw/visibility_control.h:
+
+/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/detail/robot_command__builder.hpp:
+
+/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_typesupport_fastrtps_cpp.so:
+
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
 /opt/ros/lyrical/lib/libcontrol_msgs__rosidl_typesupport_introspection_cpp.so:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
+
+/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_typesupport_c.so:
 
 /usr/include/x86_64-linux-gnu/sys/ucontext.h:
 
@@ -3833,6 +3503,16 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 /opt/ros/lyrical/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/include/syslimits.h:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.hpp:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_generator_c.so:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_generator_py.so:
+
+/opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__traits.hpp:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_c.so:
 
 /opt/ros/lyrical/lib/libaction_msgs__rosidl_typesupport_c.so:
 
@@ -3852,6 +3532,98 @@ include/swervebot_controllers/swerve_controller_parameters.hpp:
 
 /opt/ros/lyrical/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_c.so:
 
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__traits.hpp:
+
+/opt/ros/lyrical/lib/libcontrol_msgs__rosidl_generator_c.so:
+
 /opt/ros/lyrical/lib/libcontrol_msgs__rosidl_generator_py.so:
 
 /opt/ros/lyrical/lib/libcontrol_msgs__rosidl_typesupport_fastrtps_cpp.so:
+
+/opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_typesupport_c.so:
+
+/opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_typesupport_introspection_c.so:
+
+/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_generator_c.so:
+
+/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_generator_py.so:
+
+/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_c.so:
+
+/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_cpp.so:
+
+/opt/ros/lyrical/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so:
+
+/opt/ros/lyrical/lib/libhardware_interface.so:
+
+/opt/ros/lyrical/lib/liblibstatistics_collector.so:
+
+/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_generator_c.so:
+
+/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_c.so:
+
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+/opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_introspection_c.so:
+
+/opt/ros/lyrical/lib/libmock_components.so:
+
+/opt/ros/lyrical/lib/librclcpp.so:
+
+/opt/ros/lyrical/lib/libnav_msgs__rosidl_generator_c.so:
+
+/opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_c.so:
+
+/opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_introspection_c.so:
+
+/opt/ros/lyrical/lib/libpal_statistics.so:
+
+/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_generator_c.so:
+
+/opt/ros/lyrical/lib/libtype_description_interfaces__rosidl_typesupport_fastrtps_cpp.so:
+
+/opt/ros/lyrical/lib/librcl_lifecycle.so:
+
+/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_generator_py.so:
+
+/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_typesupport_introspection_c.so:
+
+/opt/ros/lyrical/lib/libpal_statistics_msgs__rosidl_typesupport_introspection_cpp.so:
+
+/opt/ros/lyrical/lib/librcl_action.so:
+
+/opt/ros/lyrical/lib/librcl_interfaces__rosidl_generator_py.so:
+
+/opt/ros/lyrical/lib/librcl_interfaces__rosidl_typesupport_c.so:
+
+/opt/ros/lyrical/lib/librcl_interfaces__rosidl_typesupport_introspection_cpp.so:
+
+/opt/ros/lyrical/lib/librclcpp_action.so:
+
+/opt/ros/lyrical/lib/librealtime_tools.so:
+
+/opt/ros/lyrical/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__builder.hpp:
+
+/usr/include/c++/15/bits/quoted_string.h:
+
+/opt/ros/lyrical/lib/librmw.so:
+
+/opt/ros/lyrical/lib/librmw_implementation.so:
+
+/opt/ros/lyrical/lib/librcl.so:
+
+/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_generator_c.so:
+
+/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_generator_py.so:
+
+/opt/ros/lyrical/include/hardware_interface/hardware_interface/introspection.hpp:
+
+/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_typesupport_fastrtps_c.so:
+
+/opt/ros/lyrical/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/constants.hpp:
+
+/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_typesupport_introspection_c.so:
+
+/usr/include/c++/15/bits/functional_hash.h:
+
+/opt/ros/lyrical/lib/librosgraph_msgs__rosidl_typesupport_introspection_cpp.so:

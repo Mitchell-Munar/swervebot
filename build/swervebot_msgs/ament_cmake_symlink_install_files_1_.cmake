@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_msgs" FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_type_description/swervebot_msgs/msg/RobotCommand.json" "DESTINATION" "share/swervebot_msgs/msg")

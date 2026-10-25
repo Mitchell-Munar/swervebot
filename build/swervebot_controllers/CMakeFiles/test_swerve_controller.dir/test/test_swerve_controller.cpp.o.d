@@ -863,14 +863,6 @@ CMakeFiles/test_swerve_controller.dir/test/test_swerve_controller.cpp.o: \
  /opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/state__traits.hpp \
  /opt/ros/lyrical/include/lifecycle_msgs/lifecycle_msgs/msg/detail/state__type_support.hpp \
  /opt/ros/lyrical/include/rclcpp/rclcpp/version.h \
- /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/twist.hpp \
- /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp \
- /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp \
- /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__builder.hpp \
- /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__traits.hpp \
- /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
- /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__type_support.hpp \
- /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
  /opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/odometry.hpp \
  /opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp \
  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__struct.hpp \
@@ -878,6 +870,8 @@ CMakeFiles/test_swerve_controller.dir/test/test_swerve_controller.cpp.o: \
  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.hpp \
  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp \
  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__struct.hpp \
+ /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp \
+ /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp \
  /opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/detail/odometry__builder.hpp \
  /opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/detail/odometry__traits.hpp \
  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__traits.hpp \
@@ -885,6 +879,8 @@ CMakeFiles/test_swerve_controller.dir/test/test_swerve_controller.cpp.o: \
  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/point__traits.hpp \
  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp \
  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__traits.hpp \
+ /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/twist__traits.hpp \
+ /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
  /opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/detail/odometry__type_support.hpp \
  /opt/ros/lyrical/include/nav_msgs/nav_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
  /opt/ros/lyrical/include/realtime_tools/realtime_tools/realtime_thread_safe_box.hpp \
@@ -900,6 +896,7 @@ CMakeFiles/test_swerve_controller.dir/test/test_swerve_controller.cpp.o: \
  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp \
  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp \
  /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__type_support.hpp \
+ /opt/ros/lyrical/include/geometry_msgs/geometry_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
  /opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/tf_message.hpp \
  /opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__struct.hpp \
  /opt/ros/lyrical/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__builder.hpp \
@@ -915,4 +912,10 @@ CMakeFiles/test_swerve_controller.dir/test/test_swerve_controller.cpp.o: \
  /opt/ros/lyrical/include/rsl/rsl/parameter_validators.hpp \
  /opt/ros/lyrical/include/rsl/rsl/algorithm.hpp \
  /opt/ros/lyrical/include/rsl/rsl/export.hpp /usr/include/tl/expected.hpp \
+ /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/robot_command.hpp \
+ /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/detail/robot_command__struct.hpp \
+ /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/detail/robot_command__builder.hpp \
+ /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/detail/robot_command__traits.hpp \
+ /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/detail/robot_command__type_support.hpp \
+ /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_cpp/swervebot_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
  /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include/swervebot_controllers/swerve_kinematics.hpp

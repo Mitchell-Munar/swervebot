@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_py/swervebot_msgs/swervebot_msgs_s__rosidl_typesupport_fastrtps_c.so" "TARGETS" "swervebot_msgs_s__rosidl_typesupport_fastrtps_c" "DESTINATION" "lib/python3.14/site-packages/swervebot_msgs")

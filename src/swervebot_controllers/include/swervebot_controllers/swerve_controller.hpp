@@ -10,13 +10,13 @@
 #include <vector>
 
 #include "controller_interface/controller_interface.hpp"
-#include "geometry_msgs/msg/twist.hpp"
 #include "nav_msgs/msg/odometry.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "realtime_tools/realtime_thread_safe_box.hpp"
 #include "tf2_ros/transform_broadcaster.hpp"
 
 #include "swervebot_controllers/swerve_controller_parameters.hpp"
+#include "swervebot_msgs/msg/robot_command.hpp"
 
 namespace swervebot_controllers
 {
@@ -37,7 +37,8 @@ private:
   // Only fixed-size values cross the executor/update boundary. No ROS messages or shared pointers.
   struct Command
   {
-    double vx = 0.0, omega = 0.0;
+    double vx = 0.0, vy = 0.0, omega = 0.0;
+    uint8_t mode = swervebot_msgs::msg::RobotCommand::ACKERMANN;
     bool unsupported = false;
     uint64_t policy_revision = 0;
     int64_t received_ns = 0, activation_ns = 0;
@@ -48,6 +49,12 @@ private:
     double vx = 0.0, vy = 0.0, omega = 0.0;
     int64_t stamp_ns = 0, activation_ns = 0;
   };
+  enum class Fault : uint8_t
+  {
+    NONE, FEEDBACK_UNAVAILABLE, FEEDBACK_NONFINITE, STEERING_RANGE,
+    TARGET_NONFINITE, COMMAND_WRITE, ODOMETRY_SOLVE
+  };
+  std::atomic<Fault> pending_fault_{Fault::NONE};
   static int64_t steady_now();
   void clear_references();
   bool stop_wheels();
@@ -63,7 +70,7 @@ private:
   std::vector<std::reference_wrapper<hardware_interface::LoanedStateInterface>>
   wheel_velocity_states_, actuator_position_states_, actuator_velocity_states_;
 
-  rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_sub_;
+  rclcpp::Subscription<swervebot_msgs::msg::RobotCommand>::SharedPtr cmd_vel_sub_;
   realtime_tools::RealtimeThreadSafeBox<Command> command_box_;
   realtime_tools::RealtimeThreadSafeBox<Telemetry> telemetry_box_;
   Command last_command_;

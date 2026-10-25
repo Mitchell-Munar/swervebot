@@ -198,6 +198,14 @@ test_swerve_controller: /opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_typesupp
 test_swerve_controller: /opt/ros/lyrical/lib/libdiagnostic_msgs__rosidl_generator_c.so
 test_swerve_controller: /opt/ros/lyrical/lib/libsensor_msgs__rosidl_typesupport_c.so
 test_swerve_controller: /opt/ros/lyrical/lib/libsensor_msgs__rosidl_generator_c.so
+test_swerve_controller: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_introspection_c.so
+test_swerve_controller: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_fastrtps_cpp.so
+test_swerve_controller: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_fastrtps_c.so
+test_swerve_controller: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_introspection_cpp.so
+test_swerve_controller: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_cpp.so
+test_swerve_controller: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_generator_py.so
+test_swerve_controller: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_c.so
+test_swerve_controller: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_generator_c.so
 test_swerve_controller: /opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_fastrtps_cpp.so
 test_swerve_controller: /opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_fastrtps_c.so
 test_swerve_controller: /opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_introspection_c.so

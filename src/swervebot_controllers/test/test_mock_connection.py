@@ -1,11 +1,11 @@
 """Exercise the installed controller against GenericSystem without Gazebo."""
 
+import math
 import time
 import unittest
 
 from ament_index_python.packages import get_package_share_directory
 from controller_manager_msgs.srv import ListControllers, ListHardwareInterfaces, SwitchController
-from geometry_msgs.msg import Twist
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -15,6 +15,7 @@ from nav_msgs.msg import Odometry
 import pytest
 import rclpy
 from sensor_msgs.msg import JointState
+from swervebot_msgs.msg import RobotCommand
 from tf2_msgs.msg import TFMessage
 
 
@@ -78,7 +79,7 @@ class TestMockConnection(unittest.TestCase):
                     self.odom_tf = transform
 
         tf_sub = self.node.create_subscription(TFMessage, '/tf', receive_tf, 10)
-        publisher = self.node.create_publisher(Twist, '/cmd_vel', 1)
+        publisher = self.node.create_publisher(RobotCommand, '/swervebot/cmd_raw', 1)
 
         def active():
             response = self.call(ListControllers, 'list_controllers', ListControllers.Request())
@@ -107,9 +108,9 @@ class TestMockConnection(unittest.TestCase):
                         for name in actuators))
 
         def drive(vx, vy, speed, angle):
-            command = Twist()
-            command.linear.x = vx
-            command.linear.y = vy
+            command = RobotCommand()
+            command.twist.linear.x = vx
+            command.twist.linear.y = vy
 
             def arrived():
                 publisher.publish(command)
@@ -146,6 +147,37 @@ class TestMockConnection(unittest.TestCase):
             self.assertTrue(matches(0.0, 0.0))
         drive(0.075, 0.0, 1.0, 0.0)
         drive(float('nan'), 0.0, 0.0, 0.0)
+        # Exercise both constrained modes through the installed controller and mock hardware.
+        for mode in (RobotCommand.CRAB_WALK, RobotCommand.ZERO_TURN):
+            command = RobotCommand()
+            command.mode = mode
+            command.twist.linear.x = 0.075 if mode == RobotCommand.CRAB_WALK else 0.0
+            command.twist.linear.y = 0.075 if mode == RobotCommand.CRAB_WALK else 0.0
+            command.twist.angular.z = 0.4 if mode == RobotCommand.ZERO_TURN else 0.0
+
+            def aligned():
+                publisher.publish(command)
+                positions = dict(zip(self.feedback.name, self.feedback.position))
+                velocities = dict(zip(self.feedback.name, self.feedback.velocity))
+                for i, (wheel, actuator) in enumerate(zip(wheels, actuators)):
+                    x = 0.13 if i < 2 else -0.13
+                    y = 0.12 if i % 2 == 0 else -0.12
+                    offset = 0.045 if i % 2 == 0 else -0.045
+                    px = command.twist.linear.x - command.twist.angular.z * y
+                    py = command.twist.linear.y + command.twist.angular.z * x
+                    angle = math.atan2(py, px)
+                    if angle > math.pi / 2:
+                        angle -= math.pi
+                    elif angle < -math.pi / 2:
+                        angle += math.pi
+                    rate = (px * math.cos(angle) + py * math.sin(angle) -
+                            offset * command.twist.angular.z) / 0.075
+                    if (abs(positions[actuator] - angle) > 0.01 or
+                            abs(velocities[wheel] - rate) > 0.02):
+                        return False
+                return True
+
+            self.wait_for(aligned)
         self.assertTrue(active())
         self.node.destroy_subscription(joint_sub)
         self.node.destroy_subscription(odom_sub)

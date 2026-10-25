@@ -1,0 +1,21 @@
+[1.221s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop': AMENT_PREFIX_PATH=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/python3.14/site-packages:/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/build --no-deps symlink_data --force
+[1.608s] running develop
+[1.735s] running egg_info
+[1.745s] writing swervebot_teleop.egg-info/PKG-INFO
+[1.746s] writing dependency_links to swervebot_teleop.egg-info/dependency_links.txt
+[1.746s] writing entry points to swervebot_teleop.egg-info/entry_points.txt
+[1.746s] writing requirements to swervebot_teleop.egg-info/requires.txt
+[1.746s] writing top-level names to swervebot_teleop.egg-info/top_level.txt
+[1.778s] reading manifest file 'swervebot_teleop.egg-info/SOURCES.txt'
+[1.780s] writing manifest file 'swervebot_teleop.egg-info/SOURCES.txt'
+[1.801s] running build_ext
+[1.801s] Creating /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/python3.14/site-packages/swervebot-teleop.egg-link (link to .)
+[1.801s] Installing teleop_node script to /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/swervebot_teleop
+[1.801s] 
+[1.801s] Installed /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop
+[1.801s] running symlink_data
+[1.802s] symbolically linking /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/resource/swervebot_teleop -> /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/share/ament_index/resource_index/packages
+[1.802s] symbolically linking /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/package.xml -> /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/share/swervebot_teleop
+[1.802s] symbolically linking /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/config/game_controller.yaml -> /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/share/swervebot_teleop/config
+[1.802s] symbolically linking /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/launch/teleop.launch.py -> /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/share/swervebot_teleop/launch
+[1.898s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop' returned '0': AMENT_PREFIX_PATH=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/python3.14/site-packages:/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/build --no-deps symlink_data --force

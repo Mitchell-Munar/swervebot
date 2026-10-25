@@ -18,6 +18,7 @@ find_package(rclcpp REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(realtime_tools REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(swervebot_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(angles REQUIRED)
@@ -50,6 +51,7 @@ target_link_libraries(swerve_controller PUBLIC
   ${controller_interface_TARGETS}
   ${hardware_interface_TARGETS}
   ${geometry_msgs_TARGETS}
+  ${swervebot_msgs_TARGETS}
   ${nav_msgs_TARGETS}
   ${rclcpp_TARGETS}
   ${rclcpp_lifecycle_TARGETS}
@@ -113,6 +115,7 @@ ament_export_dependencies(
   rclcpp_lifecycle
   realtime_tools
   geometry_msgs
+  swervebot_msgs
   nav_msgs
   tf2
   tf2_geometry_msgs

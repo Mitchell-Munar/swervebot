@@ -4,8 +4,8 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Joy
 from geometry_msgs.msg import Twist
-from std_msgs.msg import Int32
 from ament_index_python.packages import get_package_share_directory
+from swervebot_msgs.msg import RobotCommand
 
 class TeleopNode(Node):
     # Drive mode integer mapping constants
@@ -36,8 +36,7 @@ class TeleopNode(Node):
         self.last_button_states = {}
 
         # 5. ROS 2 Publishers & Subscribers
-        self.publisher_ = self.create_publisher(Twist, '/cmd_vel/teleop', 10)
-        self.mode_publisher_ = self.create_publisher(Int32, '/swervebot/drive_mode', 10)
+        self.command_publisher_ = self.create_publisher(RobotCommand, '/swervebot/cmd_raw', 10)
         self.subscription = self.create_subscription(
             Joy,
             '/joy',
@@ -109,16 +108,12 @@ class TeleopNode(Node):
         throttle = self.apply_deadzone(raw_throttle) * self.linear_scale
         steering = self.apply_deadzone(raw_steering) * self.angular_scale
 
-        # Construct and Publish Twist message
-        twist = Twist()
-        twist.linear.x = throttle
-        twist.angular.z = steering
-        self.publisher_.publish(twist)
+        command_msg = RobotCommand()
+        command_msg.twist.linear.x = throttle
+        command_msg.twist.angular.z = steering
+        command_msg.mode = active_mode
 
-        # Publish integer drive mode for the controller
-        mode_msg = Int32()
-        mode_msg.data = active_mode
-        self.mode_publisher_.publish(mode_msg)
+        self.command_publisher_.publish(command_msg)
 
 def main(args=None):
     rclpy.init(args=args)

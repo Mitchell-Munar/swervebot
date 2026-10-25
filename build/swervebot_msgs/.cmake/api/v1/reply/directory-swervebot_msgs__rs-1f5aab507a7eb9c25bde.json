@@ -1,0 +1,19 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "swervebot_msgs__rs",
+		"source" : "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/swervebot_msgs__rs"
+	}
+}

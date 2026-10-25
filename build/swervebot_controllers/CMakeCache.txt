@@ -654,6 +654,9 @@ swervebot_controllers_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 swervebot_controllers_SOURCE_DIR:STATIC=/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers
 
+//The directory containing a CMake configuration file for swervebot_msgs.
+swervebot_msgs_DIR:PATH=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake
+
 //The directory containing a CMake configuration file for tcb_span.
 tcb_span_DIR:PATH=/opt/ros/lyrical/share/tcb_span/cmake
 

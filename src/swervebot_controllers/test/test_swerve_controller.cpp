@@ -92,7 +92,7 @@ protected:
   void SetUp() override
   {
     node = std::make_shared<rclcpp::Node>("command_source");
-    publisher = node->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 1);
+    publisher = node->create_publisher<swervebot_msgs::msg::RobotCommand>("/swervebot/cmd_raw", 1);
     executor.add_node(node);
   }
   void TearDown() override
@@ -165,7 +165,9 @@ protected:
     return controller->update(rclcpp::Time(1, 0), rclcpp::Duration::from_seconds(0.01));
   }
 
-  void send(double vx, double vy = 0.0, double omega = 0.0)
+  void send(
+    double vx, double vy = 0.0, double omega = 0.0,
+    uint8_t mode = swervebot_msgs::msg::RobotCommand::ACKERMANN)
   {
     const auto deadline = std::chrono::steady_clock::now() + std::chrono::seconds(3);
     while (publisher->get_subscription_count() == 0 &&
@@ -175,10 +177,11 @@ protected:
       std::this_thread::sleep_for(std::chrono::milliseconds(5));
     }
     ASSERT_GT(publisher->get_subscription_count(), 0u);
-    geometry_msgs::msg::Twist command;
-    command.linear.x = vx;
-    command.linear.y = vy;
-    command.angular.z = omega;
+    swervebot_msgs::msg::RobotCommand command;
+    command.mode = mode;
+    command.twist.linear.x = vx;
+    command.twist.linear.y = vy;
+    command.twist.angular.z = omega;
     // Spin repeatedly so delivery is observed before inspecting the command interfaces.
     for (int i = 0; i < 10; ++i) {
       publisher->publish(command);
@@ -194,7 +197,7 @@ protected:
   bool activated = false;
   std::unique_ptr<SwerveController> controller;
   rclcpp::Node::SharedPtr node;
-  rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr publisher;
+  rclcpp::Publisher<swervebot_msgs::msg::RobotCommand>::SharedPtr publisher;
   rclcpp::executors::SingleThreadedExecutor executor;
   std::array<hardware_interface::CommandInterface::SharedPtr, 8> commands;
   std::array<hardware_interface::StateInterface::SharedPtr, 8> states;
@@ -511,4 +514,126 @@ TEST_F(SwerveControllerTest, SteeringCommandsRespectRateLimit)
   for (size_t i = 0; i < 4; ++i) {
     EXPECT_LE(std::abs(command(2 * i + 1)), 0.01 + 1e-12);
                                                                                         }
+}
+
+TEST_F(SwerveControllerTest, ModesRecoverRequestedMotionAfterAlignment)
+{
+  using Message = swervebot_msgs::msg::RobotCommand;
+  initialize();
+  ASSERT_EQ(controller->on_configure(state), CallbackReturn::SUCCESS);
+  bind();
+  activate();
+  const double x[4]{0.13, 0.13, -0.13, -0.13};
+  const double y[4]{0.12, -0.12, 0.12, -0.12};
+  // Deliberately change modes without resetting steering to cover transitions as well.
+  for (const auto & motion : std::array<std::array<double, 4>, 10>{{
+      {0.2, 0.0, 0.0, Message::CRAB_WALK}, {-0.2, 0.0, 0.0, Message::CRAB_WALK},
+      {0.0, 0.2, 0.0, Message::CRAB_WALK}, {0.0, -0.2, 0.0, Message::CRAB_WALK},
+      {0.2, 0.15, 0.0, Message::CRAB_WALK}, {-0.2, -0.15, 0.0, Message::CRAB_WALK},
+      {0.0, 0.0, 0.4, Message::ZERO_TURN}, {0.0, 0.0, -0.4, Message::ZERO_TURN},
+      {0.2, 0.0, 0.3, Message::ACKERMANN}, {0.0, 0.15, 0.0, Message::CRAB_WALK}}})
+  {
+    const auto mode = static_cast<uint8_t>(motion[3]);
+    // Forbidden planar components must be discarded even under the default stop policy.
+    send(mode == Message::ZERO_TURN ? 0.7 : motion[0],
+      mode == Message::ZERO_TURN ? 0.6 : motion[1],
+      mode == Message::CRAB_WALK ? 0.8 : motion[2], mode);
+    for (size_t tick = 0; tick < 40; ++tick) {
+      for (size_t i = 0; i < 4; ++i) {
+        const double previous = states[2 * i + 1]->get_optional().value();
+        EXPECT_LE(std::abs(command(2 * i + 1) - previous), 0.1 + 1e-12);
+        ASSERT_TRUE(states[2 * i + 1]->set_value(command(2 * i + 1)));
+      }
+      ASSERT_EQ(update(), return_type::OK);
+    }
+    std::array<double, 4> angles{}, rates{}, steering{};
+    for (size_t i = 0; i < 4; ++i) {
+      angles[i] = command(2 * i + 1);
+      rates[i] = command(2 * i);
+      EXPECT_LE(std::abs(angles[i]), M_PI_2);
+    }
+    std::array<double, 3> recovered{};
+    ASSERT_TRUE(swervebot_controllers::estimate_chassis_velocity(
+      x, y, 0.075, 0.045, angles, rates, steering, recovered));
+    for (size_t axis = 0; axis < 3; ++axis) {
+      EXPECT_NEAR(recovered[axis], motion[axis], 1e-9);
+    }
+    allocations = 0;
+    track_allocations = true;
+    const auto result = update();
+    track_allocations = false;
+    EXPECT_EQ(result, return_type::OK);
+    EXPECT_EQ(allocations, 0u);
+  }
+}
+
+TEST_F(SwerveControllerTest, InvalidModesAndNonfiniteDiscardedFieldsAlwaysStop)
+{
+  using Message = swervebot_msgs::msg::RobotCommand;
+  initialize({{"unsupported_command_policy", "ignore"}});
+  ASSERT_EQ(controller->on_configure(state), CallbackReturn::SUCCESS);
+  bind();
+  activate();
+  for (const auto mode : {Message::CRAB_WALK, Message::ZERO_TURN}) {
+    send(0.2, 0.1, 0.4, mode);
+    send(0.2, 0.1, 0.4, 255);
+    for (size_t i = 0; i < 4; ++i) {
+      EXPECT_DOUBLE_EQ(command(2 * i), 0.0);
+    }
+    send(0.2, 0.1, std::numeric_limits<double>::quiet_NaN(), mode);
+    for (size_t i = 0; i < 4; ++i) {
+      EXPECT_DOUBLE_EQ(command(2 * i), 0.0);
+    }
+    send(std::numeric_limits<double>::infinity(), 0.1, 0.4, mode);
+    for (size_t i = 0; i < 4; ++i) {
+      EXPECT_DOUBLE_EQ(command(2 * i), 0.0);
+    }
+    send(0.2, 0.1, 0.4, mode);
+    std::this_thread::sleep_for(std::chrono::milliseconds(170));
+    ASSERT_EQ(update(), return_type::OK);
+    for (size_t i = 0; i < 4; ++i) {
+      EXPECT_DOUBLE_EQ(command(2 * i), 0.0);
+      EXPECT_DOUBLE_EQ(command(2 * i + 1), states[2 * i + 1]->get_optional().value());
+    }
+  }
+}
+
+TEST_F(SwerveControllerTest, CrabToleratesSmallHardStopOvershootAndBoundsCommands)
+{
+  initialize();
+  ASSERT_EQ(controller->on_configure(state), CallbackReturn::SUCCESS);
+  bind();
+  // Gazebo can report a small overshoot while settling against the mechanical stop.
+  for (const double sign : {-1.0, 1.0}) {
+    for (size_t i = 0; i < 4; ++i) {
+      ASSERT_TRUE(states[2 * i + 1]->set_value(sign * (M_PI_2 + 5e-4)));
+    }
+    activate();
+    send(0.0, sign * 0.2, 0.0, swervebot_msgs::msg::RobotCommand::CRAB_WALK);
+    for (size_t i = 0; i < 4; ++i) {
+      EXPECT_LE(std::abs(command(2 * i + 1)), M_PI_2);
+      EXPECT_GT(std::abs(command(2 * i)), 2.0);
+    }
+    send(0.0, 0.0, 0.0, swervebot_msgs::msg::RobotCommand::CRAB_WALK);
+    for (size_t i = 0; i < 4; ++i) {
+      EXPECT_DOUBLE_EQ(command(2 * i), 0.0);
+      EXPECT_LE(std::abs(command(2 * i + 1)), M_PI_2);
+    }
+    ASSERT_EQ(controller->on_deactivate(state), CallbackReturn::SUCCESS);
+    activated = false;
+  }
+}
+
+TEST_F(SwerveControllerTest, RejectsSteeringBeyondHardStopTolerance)
+{
+  initialize();
+  ASSERT_EQ(controller->on_configure(state), CallbackReturn::SUCCESS);
+  bind();
+  activate();
+  send(0.0, 0.2, 0.0, swervebot_msgs::msg::RobotCommand::CRAB_WALK);
+  ASSERT_TRUE(states[1]->set_value(M_PI_2 + 0.01));
+  EXPECT_EQ(update(), return_type::ERROR);
+  for (size_t i = 0; i < 4; ++i) {
+    EXPECT_DOUBLE_EQ(command(2 * i), 0.0);
+                                                                        }
 }

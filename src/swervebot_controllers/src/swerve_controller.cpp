@@ -18,6 +18,9 @@ namespace swervebot_controllers
 {
 namespace
 {
+// Permit small measured overshoot at a hard stop (0.057 degrees), never out-of-range commands.
+constexpr double steering_feedback_tolerance = 1e-3;
+
 // Lyrical command limiters may throw runtime_error; report failure without logging in RT.
 bool write_command(hardware_interface::LoanedCommandInterface & interface, double value)
 {
@@ -125,8 +128,11 @@ controller_interface::CallbackReturn SwerveController::on_configure(const rclcpp
     (params_.unsupported_command_policy == "ignore" ? 1 : 0));
   timeout_ns_ = static_cast<int64_t>(params_.cmd_vel_timeout * 1e9);
   // Executor callbacks own message allocation. Only primitive values enter the RT mailbox.
-  cmd_vel_sub_ = get_node()->create_subscription<geometry_msgs::msg::Twist>(
-    "cmd_vel", rclcpp::QoS(1), [this](const geometry_msgs::msg::Twist & msg) {
+  cmd_vel_sub_ = get_node()->create_subscription<swervebot_msgs::msg::RobotCommand>(
+    "/swervebot/cmd_raw", rclcpp::QoS(1),
+    [this](const swervebot_msgs::msg::RobotCommand & message) {
+      using RobotCommand = swervebot_msgs::msg::RobotCommand;
+      const auto & msg = message.twist;
       const auto activation = activation_ns_.load();
       if (!active_.load()) {return;}
       Command command;
@@ -137,14 +143,28 @@ controller_interface::CallbackReturn SwerveController::on_configure(const rclcpp
       const bool finite = std::isfinite(msg.linear.x) && std::isfinite(msg.linear.y) &&
       std::isfinite(msg.linear.z) && std::isfinite(msg.angular.x) &&
       std::isfinite(msg.angular.y) && std::isfinite(msg.angular.z);
-      if (finite) {
+      if (finite && message.mode <= RobotCommand::ZERO_TURN) {
+        command.mode = message.mode;
         command.vx = std::abs(msg.linear.x) < epsilon ? 0.0 : msg.linear.x;
         command.omega = std::abs(msg.angular.z) < epsilon ? 0.0 : msg.angular.z;
-        command.unsupported = std::abs(msg.linear.y) >= epsilon ||
-        std::abs(msg.linear.z) >= epsilon || std::abs(msg.angular.x) >= epsilon ||
-        std::abs(msg.angular.y) >= epsilon || (command.vx == 0.0 && command.omega != 0.0);
+        command.vy = std::abs(msg.linear.y) < epsilon ? 0.0 : msg.linear.y;
+        // Project planar motion into the selected mode before applying unsupported-field policy.
+        if (command.mode == RobotCommand::CRAB_WALK) {
+          command.omega = 0.0;
+        } else if (command.mode == RobotCommand::ZERO_TURN) {
+          command.vx = command.vy = 0.0;
+        }
+        command.unsupported = std::abs(msg.linear.z) >= epsilon ||
+        std::abs(msg.angular.x) >= epsilon ||
+        std::abs(msg.angular.y) >= epsilon;
+        if (command.mode == RobotCommand::ACKERMANN) {
+          command.unsupported = command.unsupported || command.vy != 0.0 ||
+          (command.vx == 0.0 && command.omega != 0.0);
+          command.vy = 0.0;
+          if (command.vx == 0.0) {command.omega = 0.0;}
+        }
       }
-      // Nonfinite input always replaces the previous command with a stop, in either policy.
+      // Invalid mode or nonfinite input always replaces the previous command with a stop, in either policy.
       command_box_.set(command);
     });
   odom_pub_ = get_node()->create_publisher<nav_msgs::msg::Odometry>("odom", 10);
@@ -238,10 +258,13 @@ controller_interface::CallbackReturn SwerveController::on_activate(const rclcpp_
   }
   for (size_t i = 0; i < 4; ++i) {
     const auto value = actuator_position_states_[i].get().get_optional(1);
-    if (!value || !std::isfinite(*value) || std::abs(*value) > M_PI_2) {
+    if (!value || !std::isfinite(*value) ||
+      std::abs(*value) > M_PI_2 + steering_feedback_tolerance)
+    {
       ready = false;
     } else {
-      ready = write_command(actuator_position_commands_[i].get(), *value) && ready;
+      ready = write_command(actuator_position_commands_[i].get(),
+          std::clamp(*value, -M_PI_2, M_PI_2)) && ready;
     }
   }
   if (!ready) {
@@ -301,10 +324,17 @@ controller_interface::return_type SwerveController::update(
     const auto angle = actuator_position_states_[i].get().get_optional(1);
     const auto velocity = wheel_velocity_states_[i].get().get_optional(1);
     const auto rate = actuator_velocity_states_[i].get().get_optional(1);
-    if (!angle || !velocity || !rate || !std::isfinite(*angle) || !std::isfinite(*velocity) ||
-      !std::isfinite(*rate) ||
-      std::abs(*angle) > M_PI_2)
-    {
+    Fault fault = Fault::NONE;
+    if (!angle || !velocity || !rate) {
+      fault = Fault::FEEDBACK_UNAVAILABLE;
+    } else if (!std::isfinite(*angle) || !std::isfinite(*velocity) || !std::isfinite(*rate)) {
+      fault = Fault::FEEDBACK_NONFINITE;
+    } else if (std::abs(*angle) > M_PI_2 + steering_feedback_tolerance) {
+      fault = Fault::STEERING_RANGE;
+    }
+    if (fault != Fault::NONE) {
+      // The executor timer reports faults even after controller manager deactivates us.
+      pending_fault_.store(fault);
       (void)stop_wheels();
       return controller_interface::return_type::ERROR;
     }
@@ -321,7 +351,8 @@ controller_interface::return_type SwerveController::update(
     now >= last_command_.received_ns && now - last_command_.received_ns < timeout_ns_;
   const bool accepted = fresh && ((policy & 1) || !last_command_.unsupported);
   const double vx = accepted ? last_command_.vx : 0.0;
-  const double omega = accepted && vx != 0.0 ? last_command_.omega : 0.0;
+  const double vy = accepted ? last_command_.vy : 0.0;
+  const double omega = accepted ? last_command_.omega : 0.0;
   // Module positions relative to robot center (FL, FR, BL, BR)
   double l = params_.wheel_base;
   double w = params_.track_width;
@@ -334,7 +365,7 @@ controller_interface::return_type SwerveController::update(
   for (size_t i = 0; i < 4; ++i) {
     // Body axes are x forward, y left, z up. v_pivot = v_body + omega cross r_pivot.
     const double pivot_x = vx - omega * r_y[i];
-    const double pivot_y = omega * r_x[i];
+    const double pivot_y = vy + omega * r_x[i];
     target_angles[i] = std::atan2(pivot_y, pivot_x);
     double unused_speed = 0.0;
     optimizeSteeringAngle(target_angles[i], unused_speed, steering[i]);
@@ -351,11 +382,14 @@ controller_interface::return_type SwerveController::update(
     target_velocities[i] = (pivot_x * std::cos(steering[i]) +
       pivot_y * std::sin(steering[i]) - offset * (omega + steering_rates[i])) /
       params_.wheel_radius;
-    if (vx == 0.0 && omega == 0.0) {
+    if (vx == 0.0 && vy == 0.0 && omega == 0.0) {
       target_angles[i] = steering[i];
       target_velocities[i] = 0.0;
     }
+    // Feedback tolerance does not widen the physical steering command window.
+    target_angles[i] = std::clamp(target_angles[i], -M_PI_2, M_PI_2);
     if (!std::isfinite(target_angles[i]) || !std::isfinite(target_velocities[i])) {
+      pending_fault_.store(Fault::TARGET_NONFINITE);
       (void)stop_wheels();
       return controller_interface::return_type::ERROR;
     }
@@ -367,6 +401,7 @@ controller_interface::return_type SwerveController::update(
     const bool wheel_written = write_command(wheel_velocity_commands_[i].get(),
         target_velocities[i]);
     if (!steering_written || !wheel_written) {
+      pending_fault_.store(Fault::COMMAND_WRITE);
       (void)stop_wheels();
       return controller_interface::return_type::ERROR;
     }
@@ -377,6 +412,7 @@ controller_interface::return_type SwerveController::update(
   if (!estimate_chassis_velocity(r_x, r_y, params_.wheel_radius, params_.wheel_offset,
       steering, wheels, steering_rates, velocity))
   {
+    pending_fault_.store(Fault::ODOMETRY_SOLVE);
     (void)stop_wheels();
     return controller_interface::return_type::ERROR;
   }
@@ -400,6 +436,20 @@ controller_interface::return_type SwerveController::update(
 void SwerveController::publish_telemetry()
 {
   std::lock_guard<std::mutex> publication_lock(publication_mutex_);
+  const auto fault = pending_fault_.exchange(Fault::NONE);
+  if (fault != Fault::NONE) {
+    const char * reason = "unknown fault";
+    switch (fault) {
+      case Fault::FEEDBACK_UNAVAILABLE: reason = "feedback interface unavailable"; break;
+      case Fault::FEEDBACK_NONFINITE: reason = "nonfinite joint feedback"; break;
+      case Fault::STEERING_RANGE: reason = "steering feedback exceeds travel tolerance"; break;
+      case Fault::TARGET_NONFINITE: reason = "nonfinite wheel or steering target"; break;
+      case Fault::COMMAND_WRITE: reason = "hardware command write failed"; break;
+      case Fault::ODOMETRY_SOLVE: reason = "chassis velocity estimation failed"; break;
+      case Fault::NONE: break;
+    }
+    RCLCPP_ERROR(get_node()->get_logger(), "Controller update stopped: %s", reason);
+  }
   if (!active_.load()) {return;}
   const auto sample = telemetry_box_.try_get();
   if (!sample || sample->activation_ns != activation_ns_.load()) {return;}

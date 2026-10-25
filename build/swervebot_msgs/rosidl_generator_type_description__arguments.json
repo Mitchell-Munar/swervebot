@@ -1,0 +1,11 @@
+{
+  "package_name": "swervebot_msgs",
+  "output_dir": "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_generator_type_description/swervebot_msgs",
+  "idl_tuples": [
+    "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_adapter/swervebot_msgs:msg/RobotCommand.idl"
+  ],
+  "include_paths": [
+    "geometry_msgs:/opt/ros/lyrical/share/geometry_msgs/",
+    "std_msgs:/opt/ros/lyrical/share/std_msgs/"
+  ]
+}

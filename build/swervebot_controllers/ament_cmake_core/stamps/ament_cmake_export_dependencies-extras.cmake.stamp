@@ -1,6 +1,6 @@
 # generated from ament_cmake_export_dependencies/cmake/ament_cmake_export_dependencies-extras.cmake.in
 
-set(_exported_dependencies "fmt;rclcpp;rclcpp_lifecycle;rsl;tcb_span;tl-expected;controller_interface;hardware_interface;rclcpp;rclcpp_lifecycle;realtime_tools;geometry_msgs;nav_msgs;tf2;tf2_geometry_msgs;tf2_ros;angles;pluginlib")
+set(_exported_dependencies "fmt;rclcpp;rclcpp_lifecycle;rsl;tcb_span;tl-expected;controller_interface;hardware_interface;rclcpp;rclcpp_lifecycle;realtime_tools;geometry_msgs;swervebot_msgs;nav_msgs;tf2;tf2_geometry_msgs;tf2_ros;angles;pluginlib")
 
 find_package(ament_cmake_libraries QUIET REQUIRED)
 

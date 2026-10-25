@@ -5,6 +5,11 @@ libswerve_controller.so: \
   /opt/ros/lyrical/lib/libcontroller_interface.so \
   /opt/ros/lyrical/lib/libmock_components.so \
   /opt/ros/lyrical/lib/libhardware_interface.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_introspection_c.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_fastrtps_cpp.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_introspection_cpp.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_cpp.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_generator_py.so \
   /opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_fastrtps_cpp.so \
   /opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_introspection_c.so \
   /opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_introspection_cpp.so \
@@ -122,6 +127,9 @@ libswerve_controller.so: \
   /opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_generator_py.so \
   /opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_c.so \
   /opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_generator_c.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_fastrtps_c.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_c.so \
+  /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_generator_c.so \
   /opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_fastrtps_c.so \
   /opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_c.so \
   /opt/ros/lyrical/lib/libnav_msgs__rosidl_generator_c.so \
@@ -278,6 +286,16 @@ CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o:
 /opt/ros/lyrical/lib/libmock_components.so:
 
 /opt/ros/lyrical/lib/libhardware_interface.so:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_introspection_c.so:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_fastrtps_cpp.so:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_introspection_cpp.so:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_cpp.so:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_generator_py.so:
 
 /opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_fastrtps_cpp.so:
 
@@ -512,6 +530,12 @@ CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o:
 /opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_typesupport_c.so:
 
 /opt/ros/lyrical/lib/liblifecycle_msgs__rosidl_generator_c.so:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_fastrtps_c.so:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_c.so:
+
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_generator_c.so:
 
 /opt/ros/lyrical/lib/libnav_msgs__rosidl_typesupport_fastrtps_c.so:
 

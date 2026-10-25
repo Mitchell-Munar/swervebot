@@ -1,0 +1,148 @@
+[0.051s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs -- -j14 -l14
+[0.098s] -- Found ament_cmake: 2.8.8 (/opt/ros/lyrical/share/ament_cmake/cmake)
+[0.193s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.200s] -- Found rosidl_default_generators: 1.8.1 (/opt/ros/lyrical/share/rosidl_default_generators/cmake)
+[0.202s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.214s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.225s] -- Found rosidl_adapter: 5.2.1 (/opt/ros/lyrical/share/rosidl_adapter/cmake)
+[0.226s] -- Found geometry_msgs: 5.9.3 (/opt/ros/lyrical/share/geometry_msgs/cmake)
+[0.694s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.846s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.211s] -- Found Python3: /home/mmunar/.local/bin/python3.14 (found version "3.14.6") found components: Interpreter Development NumPy Development.Module Development.Embed
+[1.248s] -- Found Python3: /home/mmunar/.local/bin/python3.14 (found version "3.14.6") found components: Interpreter
+[1.249s] -- Found ament_lint_auto: 0.20.6 (/opt/ros/lyrical/share/ament_lint_auto/cmake)
+[1.257s] -- Added test 'lint_cmake' to check CMake code style
+[1.258s] -- Added test 'xmllint' to check XML markup files
+[1.259s] -- Configuring done (1.2s)
+[1.298s] -- Generating done (0.0s)
+[1.317s] -- Build files have been written to: /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs
+[1.356s] [  5%] Built target swervebot_msgs__rosidl_generator_type_description
+[1.356s] [  5%] Built target swervebot_msgs__rs
+[1.382s] [ 17%] Built target swervebot_msgs__cpp
+[1.383s] [ 22%] Built target swervebot_msgs__rosidl_generator_c
+[1.404s] [ 31%] Built target swervebot_msgs__rosidl_typesupport_introspection_c
+[1.407s] [ 54%] Built target swervebot_msgs__rosidl_typesupport_introspection_cpp
+[1.407s] [ 57%] Built target swervebot_msgs__rosidl_typesupport_fastrtps_c
+[1.407s] [ 57%] Built target swervebot_msgs__rosidl_typesupport_cpp
+[1.419s] [ 65%] Built target swervebot_msgs__rosidl_typesupport_c
+[1.436s] [ 74%] Built target swervebot_msgs__rosidl_typesupport_fastrtps_cpp
+[1.461s] [ 74%] Built target swervebot_msgs
+[1.486s] [ 77%] Built target swervebot_msgs__py
+[1.517s] [ 82%] Built target swervebot_msgs__rosidl_generator_py
+[1.526s] [ 82%] Built target ament_cmake_python_sync_swervebot_msgs
+[1.539s] [ 88%] Built target swervebot_msgs_s__rosidl_typesupport_introspection_c
+[1.541s] [ 94%] Built target swervebot_msgs_s__rosidl_typesupport_c
+[1.548s] [100%] Built target swervebot_msgs_s__rosidl_typesupport_fastrtps_c
+[1.714s] running egg_info
+[1.733s] writing swervebot_msgs.egg-info/PKG-INFO
+[1.734s] writing dependency_links to swervebot_msgs.egg-info/dependency_links.txt
+[1.734s] writing top-level names to swervebot_msgs.egg-info/top_level.txt
+[1.767s] reading manifest file 'swervebot_msgs.egg-info/SOURCES.txt'
+[1.768s] writing manifest file 'swervebot_msgs.egg-info/SOURCES.txt'
+[1.834s] [100%] Built target ament_cmake_python_build_swervebot_msgs_egg
+[1.849s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs -- -j14 -l14
+[1.851s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs
+[1.863s] -- Install configuration: ""
+[1.863s] -- Execute custom install script
+[1.863s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/ament_index/resource_index/rosidl_interfaces/swervebot_msgs
+[1.863s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/msg/RobotCommand.json
+[1.863s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/detail/robot_command__functions.h
+[1.864s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/detail/robot_command__struct.h
+[1.864s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/detail/robot_command__type_support.h
+[1.864s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/robot_command.h
+[1.864s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/rosidl_generator_c__visibility_control.h
+[1.864s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/environment/library_path.sh
+[1.864s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/environment/library_path.dsv
+[1.864s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/detail/robot_command__rosidl_typesupport_fastrtps_c.h
+[1.864s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[1.864s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/detail/robot_command__rosidl_typesupport_introspection_c.h
+[1.864s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[1.864s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/detail/robot_command__builder.hpp
+[1.865s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/detail/robot_command__struct.hpp
+[1.865s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/detail/robot_command__traits.hpp
+[1.865s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/detail/robot_command__type_support.hpp
+[1.865s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/robot_command.hpp
+[1.865s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[1.865s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/detail/robot_command__rosidl_typesupport_fastrtps_cpp.hpp
+[1.865s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[1.865s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/include/swervebot_msgs/swervebot_msgs/msg/detail/robot_command__rosidl_typesupport_introspection_cpp.hpp
+[1.865s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/environment/pythonpath.sh
+[1.865s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/environment/pythonpath.dsv
+[1.865s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/swervebot_msgs_s__rosidl_typesupport_fastrtps_c.so
+[1.865s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/swervebot_msgs_s__rosidl_typesupport_introspection_c.so
+[1.866s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/swervebot_msgs_s__rosidl_typesupport_c.so
+[1.866s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/rust/Cargo.toml
+[1.866s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/rust/build.rs
+[1.866s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/rust/src/lib.rs
+[1.866s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/rust/src/msg.rs
+[1.866s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/rust/src/msg/rmw.rs
+[1.866s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/msg/RobotCommand.idl
+[1.866s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/msg/RobotCommand.msg
+[1.866s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/ament_index/resource_index/package_run_dependencies/swervebot_msgs
+[1.866s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/ament_index/resource_index/parent_prefix_path/swervebot_msgs
+[1.866s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/environment/ament_prefix_path.sh
+[1.866s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/environment/ament_prefix_path.dsv
+[1.866s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/environment/path.sh
+[1.867s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/environment/path.dsv
+[1.867s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/local_setup.bash
+[1.867s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/local_setup.fish
+[1.867s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/local_setup.sh
+[1.867s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/local_setup.zsh
+[1.867s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/local_setup.dsv
+[1.867s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/package.dsv
+[1.880s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/ament_index/resource_index/packages/swervebot_msgs
+[1.880s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs-0.0.0-py3.14.egg-info/PKG-INFO
+[1.880s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs-0.0.0-py3.14.egg-info/SOURCES.txt
+[1.880s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs-0.0.0-py3.14.egg-info/dependency_links.txt
+[1.880s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs-0.0.0-py3.14.egg-info/top_level.txt
+[1.881s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/__init__.py
+[1.881s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/_swervebot_msgs_s.ep.rosidl_typesupport_c.c
+[1.881s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/_swervebot_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[1.881s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/_swervebot_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[1.881s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/msg/__init__.py
+[1.881s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/msg/_robot_command.py
+[1.881s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/msg/_robot_command_s.c
+[1.881s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/py.typed
+[1.881s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/swervebot_msgs_s__rosidl_typesupport_c.so
+[1.881s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/swervebot_msgs_s__rosidl_typesupport_fastrtps_c.so
+[1.881s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/swervebot_msgs_s__rosidl_typesupport_introspection_c.so
+[1.882s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/rosidl_cmake-extras.cmake
+[1.882s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.882s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.882s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[1.882s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[1.883s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[1.883s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[1.883s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake
+[1.883s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/swervebot_msgsConfig.cmake
+[1.883s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/swervebot_msgsConfig-version.cmake
+[1.883s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/package.xml
+[1.884s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_generator_c.so
+[1.884s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_fastrtps_c.so
+[1.884s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_introspection_c.so
+[1.884s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_c.so
+[1.884s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_fastrtps_cpp.so
+[1.884s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_introspection_cpp.so
+[1.886s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_typesupport_cpp.so
+[1.887s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/libswervebot_msgs__rosidl_generator_py.so
+[1.887s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/export_swervebot_msgs__rosidl_generator_cExport.cmake
+[1.887s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/export_swervebot_msgs__rosidl_generator_cExport-noconfig.cmake
+[1.887s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/export_swervebot_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[1.887s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/export_swervebot_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[1.887s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/swervebot_msgs__rosidl_typesupport_introspection_cExport.cmake
+[1.888s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/swervebot_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[1.888s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/swervebot_msgs__rosidl_typesupport_cExport.cmake
+[1.888s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/swervebot_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[1.888s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/export_swervebot_msgs__rosidl_generator_cppExport.cmake
+[1.888s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/export_swervebot_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[1.888s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/export_swervebot_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[1.888s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/swervebot_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[1.888s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/swervebot_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[1.888s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/swervebot_msgs__rosidl_typesupport_cppExport.cmake
+[1.888s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/swervebot_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[1.888s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/export_swervebot_msgs__rosidl_generator_pyExport.cmake
+[1.888s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/share/swervebot_msgs/cmake/export_swervebot_msgs__rosidl_generator_pyExport-noconfig.cmake
+[1.928s] Listing '/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs'...
+[1.928s] Compiling '/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/__init__.py'...
+[1.928s] Listing '/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_msgs/lib/python3.14/site-packages/swervebot_msgs/msg'...
+[1.937s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs

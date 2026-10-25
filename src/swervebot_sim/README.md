@@ -22,7 +22,7 @@ In another sourced terminal:
 ```bash
 ros2 control list_controllers
 ros2 control list_hardware_interfaces
-ros2 topic pub --rate 20 /cmd_vel geometry_msgs/msg/Twist '{linear: {x: 0.2}, angular: {z: 0.3}}'
+ros2 topic pub --rate 20 /swervebot/cmd_raw swervebot_msgs/msg/RobotCommand '{mode: 0, twist: {linear: {x: 0.2}, angular: {z: 0.3}}}'
 ```
 
 `linear.x` is forward/reverse speed in m/s and `angular.z` is body yaw rate in rad/s.
@@ -44,7 +44,7 @@ ros2 param set /swerve_controller unsupported_command_policy ignore
 ros2 param set /swerve_controller unsupported_command_policy stop
 ```
 
-Changes are live and validated; every actual policy change requires a fresh Twist.
+Changes are live and validated; every actual policy change requires a fresh RobotCommand.
 Both input sources use the same units and message contract. Joystick drivers,
 input arbitration, navigation adapters, crab walk, and turn-in-place are not included.
 Nonfinite inputs always stop. Commands expire after 0.5 monotonic seconds by default,
