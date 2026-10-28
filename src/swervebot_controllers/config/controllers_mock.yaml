@@ -1,23 +1,17 @@
+# Module order: front-left, front-right, back-left, back-right.
+# Distances in meters, steering angles in radians, joint rates in rad/s.
 controller_manager:
   ros__parameters:
-    update_rate: 100 # Hz
+    update_rate: 100
     use_sim_time: false
-
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
-
     swerve_controller:
       type: swervebot_controllers/SwerveController
 
 swerve_controller:
   ros__parameters:
-    # Robot Geometry (meters)
-    wheel_base: 0.26
-    track_width: 0.24
-    wheel_offset: 0.045
-    wheel_radius: 0.075
-
-    # Joint names matching the URDF exactly
+    # Every module array uses the same joint order.
     wheel_names:
       - wheel_front_left_joint
       - wheel_front_right_joint
@@ -29,19 +23,26 @@ swerve_controller:
       - actuator_back_left_joint
       - actuator_back_right_joint
 
-    # Interfaces
-    wheel_command_interfaces: ["velocity"]
-    wheel_state_interfaces: ["velocity", "position"]
-    actuator_command_interfaces: ["position"]
-    actuator_state_interfaces: ["position", "velocity"]
+    # Pivot coordinates and local-left signed wheel-center offsets.
+    module_x: [0.13, 0.13, -0.13, -0.13]
+    module_y: [0.12, -0.12, 0.12, -0.12]
+    wheel_radii: [0.075, 0.075, 0.075, 0.075]
+    wheel_offsets: [0.045, -0.045, 0.045, -0.045]
+    steering_continuous: [false, false, false, false]
+    steering_min: [-1.5707963267948966, -1.5707963267948966, -1.5707963267948966, -1.5707963267948966]
+    steering_max: [1.5707963267948966, 1.5707963267948966, 1.5707963267948966, 1.5707963267948966]
+    steering_velocity_limits: [10.0, 10.0, 10.0, 10.0]
 
-    # Stop when cmd_vel is no longer refreshed.
+    wheel_command_interfaces: [velocity]
+    wheel_state_interfaces: [velocity, position]
+    actuator_command_interfaces: [position]
+    actuator_state_interfaces: [position, velocity]
+
     cmd_vel_timeout: 0.5
-    max_steering_velocity: 10.0
-    # May also be changed live using ros2 param set /swerve_controller ...
-    unsupported_command_policy: "stop"
-
-    # ODOM
+    unsupported_command_policy: stop  # Only nonplanar components are unsupported.
+    command_epsilon: 1.0e-6
+    steering_feedback_tolerance: 0.001
+    odom_publish_rate: 50.0
     enable_odom_tf: true
-    odom_frame_id: "odom"
-    base_frame_id: "base_footprint"
+    odom_frame_id: odom
+    base_frame_id: base_footprint

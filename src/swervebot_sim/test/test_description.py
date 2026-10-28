@@ -47,3 +47,38 @@ def test_simulation_rejects_mixed_clocks():
     context.launch_configurations['use_sim_time'] = 'false'
     with pytest.raises(ValueError, match='forces use_sim_time=true'):
         module._launch_simulation(context)
+
+
+def test_controller_geometry_matches_robot():
+    """Check controller pivot coordinates, offsets, rolling radii and limits against Xacro."""
+    import yaml
+
+    description = Path(get_package_share_directory('swervebot_description'))
+    controller = Path(get_package_share_directory('swervebot_controllers'))
+    robot = ET.fromstring(xacro.process_file(
+        str(description / 'description/swervebot.urdf.xacro'),
+        mappings={'use_mock_hardware': 'true', 'use_sim': 'false'}).toxml())
+    joints = {joint.attrib['name']: joint for joint in robot.findall('joint')}
+    links = {link.attrib['name']: link for link in robot.findall('link')}
+    for filename in ('controllers.yaml', 'controllers_mock.yaml'):
+        with (controller / 'config' / filename).open(encoding='utf-8') as stream:
+            params = yaml.safe_load(stream)['swerve_controller']['ros__parameters']
+        assert params['base_frame_id'] == 'base_footprint'
+        for i, (wheel_name, steering_name) in enumerate(zip(
+                params['wheel_names'], params['actuator_names'])):
+            steering, wheel = joints[steering_name], joints[wheel_name]
+            pivot = [float(value) for value in steering.find('origin').attrib['xyz'].split()]
+            offset = [float(value) for value in wheel.find('origin').attrib['xyz'].split()]
+            assert pivot[:2] == pytest.approx([params['module_x'][i], params['module_y'][i]])
+            assert offset[0] == 0.0  # Longitudinal caster offset is outside the controller model.
+            assert offset[1] == pytest.approx(params['wheel_offsets'][i])
+            link = links[wheel.find('child').attrib['link']]
+            radius = float(link.find('collision/geometry/cylinder').attrib['radius'])
+            assert radius == pytest.approx(params['wheel_radii'][i])
+            assert steering.find('axis').attrib['xyz'] == '0 0 1'
+            limits = steering.find('limit').attrib
+            assert not params['steering_continuous'][i]
+            assert float(limits['lower']) == pytest.approx(params['steering_min'][i])
+            assert float(limits['upper']) == pytest.approx(params['steering_max'][i])
+            assert float(limits['velocity']) == pytest.approx(
+                params['steering_velocity_limits'][i])

@@ -18,12 +18,8 @@ find_package(rclcpp REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(realtime_tools REQUIRED)
 find_package(geometry_msgs REQUIRED)
-find_package(swervebot_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(angles REQUIRED)
 find_package(tf2 REQUIRED)
-find_package(tf2_geometry_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(generate_parameter_library REQUIRED)
@@ -48,18 +44,15 @@ target_include_directories(swerve_controller PUBLIC
 # Link the plugin and the generated parameter library.
 target_link_libraries(swerve_controller PUBLIC
   swerve_controller_parameters
-  ${controller_interface_TARGETS}
-  ${hardware_interface_TARGETS}
-  ${geometry_msgs_TARGETS}
-  ${swervebot_msgs_TARGETS}
-  ${nav_msgs_TARGETS}
-  ${rclcpp_TARGETS}
-  ${rclcpp_lifecycle_TARGETS}
-  ${realtime_tools_TARGETS}
-  ${pluginlib_TARGETS}
+  controller_interface::controller_interface
+  hardware_interface::hardware_interface
+  geometry_msgs::geometry_msgs__rosidl_typesupport_cpp
+  nav_msgs::nav_msgs__rosidl_typesupport_cpp
+  rclcpp::rclcpp
+  rclcpp_lifecycle::rclcpp_lifecycle
+  realtime_tools::realtime_tools
+  pluginlib::pluginlib
   tf2_ros::tf2_ros
-  ${tf2_geometry_msgs_TARGETS}
-  angles::angles
   tf2::tf2
 )
 
@@ -109,18 +102,16 @@ ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
 ament_export_include_directories(include)
 ament_export_libraries(swerve_controller)
 ament_export_dependencies(
+  generate_parameter_library
   controller_interface
   hardware_interface
   rclcpp
   rclcpp_lifecycle
   realtime_tools
   geometry_msgs
-  swervebot_msgs
   nav_msgs
   tf2
-  tf2_geometry_msgs
   tf2_ros
-  angles
   pluginlib
 )
 

@@ -7,6 +7,7 @@ import unittest
 
 from ament_index_python.packages import get_package_share_directory
 from controller_manager_msgs.srv import ListControllers, ListHardwareInterfaces
+from geometry_msgs.msg import Twist
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -19,7 +20,6 @@ from rclpy.parameter import Parameter
 from rclpy.qos import qos_profile_sensor_data
 from rosgraph_msgs.msg import Clock
 from sensor_msgs.msg import JointState
-from swervebot_msgs.msg import RobotCommand
 from tf2_msgs.msg import TFMessage
 
 
@@ -74,7 +74,7 @@ class TestSimulation(unittest.TestCase):
         return (transform.translation.x, transform.translation.y,
                 self.yaw(transform.rotation))
 
-    def run_for(self, seconds, vx=None, yaw=0.0, lateral=0.0, mode=RobotCommand.ACKERMANN):
+    def run_for(self, seconds, vx=None, yaw=0.0, lateral=0.0, nonplanar=0.0):
         """Publish at 50 Hz wall time while measuring the interval in simulation time."""
         start = self.sim_time
         deadline = time.monotonic() + max(15.0, 10 * seconds)
@@ -82,11 +82,11 @@ class TestSimulation(unittest.TestCase):
         while self.sim_time - start < seconds and time.monotonic() < deadline:
             now = time.monotonic()
             if vx is not None and now >= next_publish:
-                command = RobotCommand()
-                command.mode = mode
-                command.twist.linear.x = vx
-                command.twist.linear.y = lateral
-                command.twist.angular.z = yaw
+                command = Twist()
+                command.linear.z = nonplanar
+                command.linear.x = vx
+                command.linear.y = lateral
+                command.angular.z = yaw
                 self.publisher.publish(command)
                 next_publish = now + 0.02
             rclpy.spin_once(self.node, timeout_sec=0.01)
@@ -120,7 +120,7 @@ class TestSimulation(unittest.TestCase):
             self.node.create_subscription(JointState, '/joint_states',
                                           lambda m: setattr(self, 'joints', m), 10),
         ]
-        self.publisher = self.node.create_publisher(RobotCommand, '/swervebot/cmd_raw', 1)
+        self.publisher = self.node.create_publisher(Twist, '/cmd_vel', 1)
         self.wait_for(lambda: self.sim_time > 0 and self.truth is not None and
                       self.odom is not None and self.joints is not None)
         response = self.call(ListControllers, '/controller_manager/list_controllers',
@@ -169,24 +169,21 @@ class TestSimulation(unittest.TestCase):
             self.assertLess(sign * angles['actuator_back_left_joint'], 0.0)
             self.run_for(0.4, 0.0)
 
-        # Autonomous policy refuses lateral components; manual policy discards them while driving.
+        # The policy applies only to unsupported nonplanar components; all planar motion is valid.
         before = self.pose()
-        self.run_for(0.6, 0.2, lateral=0.5)
+        self.run_for(0.6, 0.2, nonplanar=0.5)
         self.assertLess(math.hypot(self.pose()[0] - before[0], self.pose()[1] - before[1]), 0.03)
         self.assertTrue(self.policy('ignore'))
         before = self.pose()
-        self.run_for(1.5, 0.2, lateral=0.5)
+        self.run_for(1.5, 0.2, nonplanar=0.5)
         distance = math.hypot(self.pose()[0] - before[0], self.pose()[1] - before[1])
         self.assertGreater(distance, 0.15)
         self.run_for(0.4, 0.0)
-        before = self.pose()
-        self.run_for(0.6, 0.0, yaw=0.5)
-        self.assertAlmostEqual(self.pose()[2], before[2], delta=0.03)
 
-        def align(mode, lateral=0.0, yaw=0.0):
+        def align(lateral=0.0, yaw=0.0):
             deadline = self.sim_time + 10.0
             while self.sim_time < deadline:
-                self.run_for(0.25, 0.0, lateral=lateral, yaw=yaw, mode=mode)
+                self.run_for(0.25, 0.0, lateral=lateral, yaw=yaw)
                 angles = {name: self.joints.position[i]
                           for i, name in enumerate(self.joints.name)}
                 errors = []
@@ -199,25 +196,27 @@ class TestSimulation(unittest.TestCase):
                         target -= math.pi
                     elif target < -math.pi / 2:
                         target += math.pi
-                    errors.append(abs(angles['actuator_' + corner + '_joint'] - target))
+                    difference = angles['actuator_' + corner + '_joint'] - target
+                    errors.append(abs(math.atan2(math.sin(2 * difference),
+                                                 math.cos(2 * difference))) / 2)
                 if max(errors) < 0.03:
                     return
             self.fail('Steering did not align for constrained motion')
 
         # Measure steady motion only after measured steering reaches its targets.
         for lateral in (0.15, -0.15):
-            align(RobotCommand.CRAB_WALK, lateral=lateral)
+            align(lateral=lateral)
             before = self.pose()
-            self.run_for(1.5, 0.0, lateral=lateral, mode=RobotCommand.CRAB_WALK)
+            self.run_for(1.5, 0.0, lateral=lateral)
             after = self.pose()
             body_y = -(after[0] - before[0]) * math.sin(before[2]) + \
                 (after[1] - before[1]) * math.cos(before[2])
             self.assertGreater(math.copysign(1.0, lateral) * body_y, 0.1)
             self.assertAlmostEqual(after[2], before[2], delta=0.1)
         for yaw in (0.3, -0.3):
-            align(RobotCommand.ZERO_TURN, yaw=yaw)
+            align(yaw=yaw)
             before = self.pose()
-            self.run_for(1.5, 0.0, yaw=yaw, mode=RobotCommand.ZERO_TURN)
+            self.run_for(1.5, 0.0, yaw=yaw)
             after = self.pose()
             delta = math.atan2(math.sin(after[2] - before[2]),
                                math.cos(after[2] - before[2]))

@@ -1,5 +1,6 @@
-import os
 from glob import glob
+import os
+
 from setuptools import find_packages, setup
 
 package_name = 'swervebot_teleop'
@@ -11,7 +12,7 @@ setup(
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
-        ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name, ['package.xml', 'README.md']),
         (os.path.join('share', package_name, 'config'), glob('config/*.yaml')),
         (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
     ],
@@ -20,7 +21,7 @@ setup(
     zip_safe=True,
     maintainer='Mitchell Munar',
     maintainer_email='munar.mitchell@gmail.com',
-    description='Joystick teleoperation, dynamic button remapping, drive mode state machine, and manual/autonomous control arbitration for swervebot.',
+    description='Joystick input and manual drive mode projection to standard chassis Twist.',
     license='Apache License 2.0',
     extras_require={
         'test': [

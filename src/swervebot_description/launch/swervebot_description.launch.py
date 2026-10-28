@@ -1,45 +1,28 @@
-import os
+"""Publish the robot model with an optional joint-state editing GUI."""
+
+from pathlib import Path
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.substitutions import Command
+from launch.actions import DeclareLaunchArgument
+from launch.conditions import IfCondition
+from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
 
 
 def generate_launch_description():
-    # Get the path to the URDF file
-    urdf_file = os.path.join(
-        get_package_share_directory('swervebot_description'),
-        'description',
-        'swervebot.urdf.xacro'
-    )
-
-    # Process the URDF file using xacro
-    urdf_content = ParameterValue(
-        Command(['xacro ', urdf_file]),
-        value_type=str
-    )
-
-    # Create a robot_state_publisher node
-    robot_state_publisher_node = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        name='robot_state_publisher',
-        output='screen',
-        parameters=[{'robot_description': urdf_content}]
-    )
-
-    # Create a joint_state_publisher_gui node
-    joint_state_publisher_gui_node = Node(
-        package='joint_state_publisher_gui',
-        executable='joint_state_publisher_gui',
-        name='joint_state_publisher_gui',
-        output='screen'
-    )
-
-    # Return the launch description with both nodes
+    """Expose the visualization clock without starting a hardware controller."""
+    share = Path(get_package_share_directory('swervebot_description'))
+    robot = ParameterValue(Command([
+        'xacro ', str(share / 'description/swervebot.urdf.xacro')]), value_type=str)
+    clock = ParameterValue(LaunchConfiguration('use_sim_time'), value_type=bool)
     return LaunchDescription([
-        robot_state_publisher_node,
-        joint_state_publisher_gui_node
+        DeclareLaunchArgument('use_sim_time', default_value='false'),
+        DeclareLaunchArgument('gui', default_value='true'),
+        Node(package='robot_state_publisher', executable='robot_state_publisher',
+             parameters=[{'robot_description': robot, 'use_sim_time': clock}], output='screen'),
+        Node(package='joint_state_publisher_gui', executable='joint_state_publisher_gui',
+             condition=IfCondition(LaunchConfiguration('gui')),
+             parameters=[{'use_sim_time': clock}], output='screen'),
     ])

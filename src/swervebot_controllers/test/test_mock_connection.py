@@ -6,6 +6,7 @@ import unittest
 
 from ament_index_python.packages import get_package_share_directory
 from controller_manager_msgs.srv import ListControllers, ListHardwareInterfaces, SwitchController
+from geometry_msgs.msg import Twist
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -15,7 +16,6 @@ from nav_msgs.msg import Odometry
 import pytest
 import rclpy
 from sensor_msgs.msg import JointState
-from swervebot_msgs.msg import RobotCommand
 from tf2_msgs.msg import TFMessage
 
 
@@ -26,6 +26,9 @@ def generate_test_description():
     return LaunchDescription([
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
             path + '/launch/controller_mock_test.launch.py')),
+        IncludeLaunchDescription(PythonLaunchDescriptionSource(
+            path + '/launch/controller_mock_test.launch.py'),
+            launch_arguments={'namespace': 'reuse'}.items()),
         launch_testing.actions.ReadyToTest(),
     ])
 
@@ -33,10 +36,12 @@ def generate_test_description():
 class TestMockConnection(unittest.TestCase):
     """Verify commands reach the mock hardware and lifecycle transitions remain safe."""
 
+    prefix = ''
+
     @classmethod
     def setUpClass(cls):
         rclpy.init()
-        cls.node = rclpy.create_node('mock_connection_test')
+        cls.node = rclpy.create_node('mock_connection_test', namespace=cls.prefix or '/')
 
     @classmethod
     def tearDownClass(cls):
@@ -52,7 +57,7 @@ class TestMockConnection(unittest.TestCase):
         self.fail('Timed out waiting for mock controller condition')
 
     def call(self, service_type, name, request):
-        client = self.node.create_client(service_type, '/controller_manager/' + name)
+        client = self.node.create_client(service_type, self.prefix + '/controller_manager/' + name)
         self.assertTrue(client.wait_for_service(timeout_sec=30.0))
         future = client.call_async(request)
         self.wait_for(future.done)
@@ -68,9 +73,10 @@ class TestMockConnection(unittest.TestCase):
         self.odom = None
         self.odom_tf = None
         joint_sub = self.node.create_subscription(
-            JointState, '/joint_states', lambda msg: setattr(self, 'feedback', msg), 10)
+            JointState, self.prefix + '/joint_states',
+            lambda msg: setattr(self, 'feedback', msg), 10)
         odom_sub = self.node.create_subscription(
-            Odometry, '/odom', lambda msg: setattr(self, 'odom', msg), 10)
+            Odometry, self.prefix + '/odom', lambda msg: setattr(self, 'odom', msg), 10)
 
         def receive_tf(msg):
             for transform in msg.transforms:
@@ -79,7 +85,7 @@ class TestMockConnection(unittest.TestCase):
                     self.odom_tf = transform
 
         tf_sub = self.node.create_subscription(TFMessage, '/tf', receive_tf, 10)
-        publisher = self.node.create_publisher(RobotCommand, '/swervebot/cmd_raw', 1)
+        publisher = self.node.create_publisher(Twist, self.prefix + '/cmd_vel', 1)
 
         def active():
             response = self.call(ListControllers, 'list_controllers', ListControllers.Request())
@@ -107,10 +113,11 @@ class TestMockConnection(unittest.TestCase):
                     all(abs(msg.position[msg.name.index(name)] - angle) < 0.01
                         for name in actuators))
 
-        def drive(vx, vy, speed, angle):
-            command = RobotCommand()
-            command.twist.linear.x = vx
-            command.twist.linear.y = vy
+        def drive(vx, vy, speed, angle, nonplanar=0.0):
+            command = Twist()
+            command.linear.x = vx
+            command.linear.y = vy
+            command.linear.z = nonplanar
 
             def arrived():
                 publisher.publish(command)
@@ -119,11 +126,11 @@ class TestMockConnection(unittest.TestCase):
             self.wait_for(arrived)
 
         drive(0.075, 0.0, 1.0, 0.0)
-        drive(0.075, 0.075, 0.0, 0.0)
+        drive(0.075, 0.0, 0.0, 0.0, nonplanar=0.1)
         drive(0.075, 0.0, 1.0, 0.0)
         # No more publications: the command expires and steering holds its feedback position.
         self.wait_for(lambda: matches(0.0, 0.0), 2.0)
-        drive(0.075, 0.075, 0.0, 0.0)
+        drive(0.075, 0.0, 0.0, 0.0, nonplanar=0.1)
         drive(0.0, 0.0, 0.0, 0.0)
         drive(0.075, 0.0, 1.0, 0.0)
 
@@ -147,13 +154,12 @@ class TestMockConnection(unittest.TestCase):
             self.assertTrue(matches(0.0, 0.0))
         drive(0.075, 0.0, 1.0, 0.0)
         drive(float('nan'), 0.0, 0.0, 0.0)
-        # Exercise both constrained modes through the installed controller and mock hardware.
-        for mode in (RobotCommand.CRAB_WALK, RobotCommand.ZERO_TURN):
-            command = RobotCommand()
-            command.mode = mode
-            command.twist.linear.x = 0.075 if mode == RobotCommand.CRAB_WALK else 0.0
-            command.twist.linear.y = 0.075 if mode == RobotCommand.CRAB_WALK else 0.0
-            command.twist.angular.z = 0.4 if mode == RobotCommand.ZERO_TURN else 0.0
+        # Exercise diagonal translation and turn-in-place through installed mock hardware.
+        for vx, vy, yaw in ((0.075, 0.075, 0.0), (0.0, 0.0, 0.4)):
+            command = Twist()
+            command.linear.x = vx
+            command.linear.y = vy
+            command.angular.z = yaw
 
             def aligned():
                 publisher.publish(command)
@@ -163,15 +169,15 @@ class TestMockConnection(unittest.TestCase):
                     x = 0.13 if i < 2 else -0.13
                     y = 0.12 if i % 2 == 0 else -0.12
                     offset = 0.045 if i % 2 == 0 else -0.045
-                    px = command.twist.linear.x - command.twist.angular.z * y
-                    py = command.twist.linear.y + command.twist.angular.z * x
+                    px = command.linear.x - command.angular.z * y
+                    py = command.linear.y + command.angular.z * x
                     angle = math.atan2(py, px)
                     if angle > math.pi / 2:
                         angle -= math.pi
                     elif angle < -math.pi / 2:
                         angle += math.pi
                     rate = (px * math.cos(angle) + py * math.sin(angle) -
-                            offset * command.twist.angular.z) / 0.075
+                            offset * command.angular.z) / 0.075
                     if (abs(positions[actuator] - angle) > 0.01 or
                             abs(velocities[wheel] - rate) > 0.02):
                         return False
@@ -183,3 +189,9 @@ class TestMockConnection(unittest.TestCase):
         self.node.destroy_subscription(odom_sub)
         self.node.destroy_subscription(tf_sub)
         self.node.destroy_publisher(publisher)
+
+
+class TestNamespacedMockConnection(TestMockConnection):
+    """Run the same installed-plugin checks under an independent robot namespace."""
+
+    prefix = '/reuse'

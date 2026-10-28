@@ -12,7 +12,7 @@ ROS 2 swerve drive mobile robot project (`swerve_bot`) for a 4-module platform (
 * **Real-Time Safety:** Strictly no memory allocations, `rclcpp` logging, or node parameters fetching inside the `update()` loop.
 * **Lifecycle Hooks:** `on_init`, `on_configure`, `on_activate`, and `on_deactivate` must safely manage hardware loans. Clear local reference vectors inside `on_activate` to prevent stale tracking data.
 * **Parameters:** Use the `generate_parameter_library` package for managing, declaring, and validating controller parameter YAML files.
-* **State Toggling:** Drive state toggles or controller mode shifts must be handled via a distinct boolean subscription or service, not encoded directly into the `geometry_msgs::msg::Twist` message.
+* **State Toggling:** Drive state toggles or controller mode shifts are handled by the custom teleop node. Used for manual operations.
 * **Imports:** Group standard library first, third-party second, local modules third.
 * **Error Handling:** Always catch specific exceptions; never use bare `except:`.
 * **Documentation & Review:** Add clear, concise comments to logical blocks of code explaining the functionality, mathematical formulas, and purpose of the lines to make the logic easily reviewable during pull requests. Focus especially on explaining math transitions inside the swerve kinematics and lifecycle management stages.

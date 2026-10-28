@@ -37,4 +37,6 @@ install(
   DESTINATION include
 )
 
+install(FILES README.md DESTINATION share/${PROJECT_NAME})
+
 ament_package()

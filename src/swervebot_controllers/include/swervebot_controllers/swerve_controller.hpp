@@ -10,13 +10,14 @@
 #include <vector>
 
 #include "controller_interface/controller_interface.hpp"
+#include "geometry_msgs/msg/twist.hpp"
 #include "nav_msgs/msg/odometry.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "realtime_tools/realtime_thread_safe_box.hpp"
 #include "tf2_ros/transform_broadcaster.hpp"
 
 #include "swervebot_controllers/swerve_controller_parameters.hpp"
-#include "swervebot_msgs/msg/robot_command.hpp"
+#include "swervebot_controllers/swerve_kinematics.hpp"
 
 namespace swervebot_controllers
 {
@@ -31,14 +32,12 @@ public:
   controller_interface::CallbackReturn on_deactivate(const rclcpp_lifecycle::State &) override;
   controller_interface::return_type update(
     const rclcpp::Time & time, const rclcpp::Duration & period) override;
-  void optimizeSteeringAngle(double & angle, double & velocity, double current_angle);
 
 private:
   // Only fixed-size values cross the executor/update boundary. No ROS messages or shared pointers.
   struct Command
   {
     double vx = 0.0, vy = 0.0, omega = 0.0;
-    uint8_t mode = swervebot_msgs::msg::RobotCommand::ACKERMANN;
     bool unsupported = false;
     uint64_t policy_revision = 0;
     int64_t received_ns = 0, activation_ns = 0;
@@ -70,14 +69,17 @@ private:
   std::vector<std::reference_wrapper<hardware_interface::LoanedStateInterface>>
   wheel_velocity_states_, actuator_position_states_, actuator_velocity_states_;
 
-  rclcpp::Subscription<swervebot_msgs::msg::RobotCommand>::SharedPtr cmd_vel_sub_;
+  rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_sub_;
   realtime_tools::RealtimeThreadSafeBox<Command> command_box_;
   realtime_tools::RealtimeThreadSafeBox<Telemetry> telemetry_box_;
   Command last_command_;
   std::atomic<bool> active_{false};
   std::atomic<int64_t> activation_ns_{0};
   int64_t timeout_ns_ = 0;
-  std::array<double, 4> steering_velocity_limits_{};
+  // Sized once in on_configure; update only overwrites existing elements.
+  std::vector<ModuleGeometry> modules_;
+  std::vector<ModuleState> feedback_;
+  std::vector<ModuleTarget> targets_;
 
   // Serializes executor publication with lifecycle publisher/configuration changes, never update().
   std::mutex publication_mutex_;

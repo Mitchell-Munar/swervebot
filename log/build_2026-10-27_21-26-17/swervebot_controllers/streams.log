@@ -1,0 +1,85 @@
+[0.018s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers -DPython3_EXECUTABLE=/usr/bin/python3 -DCMAKE_INSTALL_PREFIX=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers
+[0.053s] -- Found ament_cmake: 2.8.8 (/opt/ros/lyrical/share/ament_cmake/cmake)
+[0.371s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.375s] -- Found controller_interface: 6.10.1 (/opt/ros/lyrical/share/controller_interface/cmake)
+[0.388s] -- Found rosidl_generator_c: 5.2.1 (/opt/ros/lyrical/share/rosidl_generator_c/cmake)
+[0.390s] -- Found rosidl_generator_cpp: 5.2.1 (/opt/ros/lyrical/share/rosidl_generator_cpp/cmake)
+[0.395s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.400s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.524s] -- Found rmw_implementation_cmake: 7.10.2 (/opt/ros/lyrical/share/rmw_implementation_cmake/cmake)
+[0.525s] -- Found rmw_fastrtps_cpp: 9.4.10 (/opt/ros/lyrical/share/rmw_fastrtps_cpp/cmake)
+[0.539s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.606s] -- Found nav_msgs: 5.9.3 (/opt/ros/lyrical/share/nav_msgs/cmake)
+[0.619s] -- Found tf2: 0.45.10 (/opt/ros/lyrical/share/tf2/cmake)
+[0.621s] -- Found tf2_ros: 0.45.10 (/opt/ros/lyrical/share/tf2_ros/cmake)
+[0.654s] -- Found generate_parameter_library: 1.3.0 (/opt/ros/lyrical/share/generate_parameter_library/cmake)
+[0.655s] -- Found tcb_span: 2.0.3 (/opt/ros/lyrical/share/tcb_span/cmake)
+[0.657s] -- Found ament_cmake_gtest: 2.8.8 (/opt/ros/lyrical/share/ament_cmake_gtest/cmake)
+[0.657s] -- Found launch_testing_ament_cmake: 3.9.8 (/opt/ros/lyrical/share/launch_testing_ament_cmake/cmake)
+[0.663s] -- Found ament_lint_auto: 0.20.6 (/opt/ros/lyrical/share/ament_lint_auto/cmake)
+[0.780s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.781s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/include>;/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/
+[0.781s] -- Configured cppcheck exclude dirs and/or files: 
+[0.781s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.781s] -- Configured 'flake8' exclude dirs and/or files: 
+[0.781s] -- Added test 'lint_cmake' to check CMake code style
+[0.782s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.782s] -- Added test 'uncrustify' to check C / C++ code style
+[0.782s] -- Configured uncrustify additional arguments: 
+[0.782s] -- Added test 'xmllint' to check XML markup files
+[0.785s] -- Configuring done (0.7s)
+[0.813s] -- Generating done (0.0s)
+[0.848s] -- Build files have been written to: /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers
+[0.858s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers -DPython3_EXECUTABLE=/usr/bin/python3 -DCMAKE_INSTALL_PREFIX=/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers
+[0.861s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers -- -j14 -l14
+[0.942s] [ 20%] [1m[34mRunning `/opt/ros/lyrical/bin/generate_parameter_library_cpp /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers/include/swervebot_controllers/swerve_controller_parameters.hpp /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_controllers/config/swerve_controller_parameters.yaml `[0m
+[1.548s] [ 20%] Built target swerve_controller_parameters
+[1.613s] [ 40%] [32mBuilding CXX object CMakeFiles/swerve_controller.dir/src/swerve_controller.cpp.o[0m
+[11.877s] [ 60%] [1m[32mLinking CXX shared library libswerve_controller.so[0m
+[12.280s] [ 60%] Built target swerve_controller
+[12.337s] [ 80%] [32mBuilding CXX object CMakeFiles/test_swerve_controller.dir/test/test_swerve_controller.cpp.o[0m
+[18.582s] [100%] [1m[32mLinking CXX executable test_swerve_controller[0m
+[19.006s] [100%] Built target test_swerve_controller
+[19.033s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers -- -j14 -l14
+[19.058s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers
+[19.072s] -- Install configuration: ""
+[19.072s] -- Execute custom install script
+[19.072s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/include/swervebot_controllers/swerve_controller_parameters.hpp
+[19.073s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers//plugin.xml
+[19.073s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/config/controllers.yaml
+[19.073s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/config/controllers_mock.yaml
+[19.073s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/config/swerve_controller_parameters.yaml
+[19.073s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/launch/controller_mock_test.launch.py
+[19.074s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/include/swervebot_controllers/swerve_controller.hpp
+[19.074s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/include/swervebot_controllers/swerve_kinematics.hpp
+[19.074s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/plugin.xml
+[19.074s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/README.md
+[19.074s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/library_path.sh
+[19.074s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/library_path.dsv
+[19.075s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/package_run_dependencies/swervebot_controllers
+[19.075s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/parent_prefix_path/swervebot_controllers
+[19.075s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/ament_prefix_path.sh
+[19.075s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/ament_prefix_path.dsv
+[19.075s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/path.sh
+[19.075s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/environment/path.dsv
+[19.076s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.bash
+[19.076s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.fish
+[19.076s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.sh
+[19.076s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.zsh
+[19.076s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/local_setup.dsv
+[19.076s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/package.dsv
+[19.091s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/packages/swervebot_controllers
+[19.091s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/ament_index/resource_index/controller_interface__pluginlib__plugin/swervebot_controllers
+[19.092s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/ament_cmake_export_dependencies-extras.cmake
+[19.092s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/ament_cmake_export_targets-extras.cmake
+[19.092s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/ament_cmake_export_include_directories-extras.cmake
+[19.092s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/ament_cmake_export_libraries-extras.cmake
+[19.092s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/swervebot_controllersConfig.cmake
+[19.093s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/swervebot_controllersConfig-version.cmake
+[19.093s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/package.xml
+[19.093s] -- Installing: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/lib/libswerve_controller.so
+[19.099s] -- Set non-toolchain portion of runtime path of "/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/lib/libswerve_controller.so" to ""
+[19.099s] -- Old export file "/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/export_swervebot_controllersExport.cmake" will be replaced.  Removing files [/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/export_swervebot_controllersExport-noconfig.cmake].
+[19.099s] -- Installing: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/export_swervebot_controllersExport.cmake
+[19.099s] -- Installing: /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_controllers/share/swervebot_controllers/cmake/export_swervebot_controllersExport-noconfig.cmake
+[19.103s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_controllers
