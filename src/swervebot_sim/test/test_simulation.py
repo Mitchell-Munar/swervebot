@@ -96,8 +96,9 @@ class TestSimulation(unittest.TestCase):
         request = SetParametersAtomically.Request()
         parameter = Parameter('unsupported_command_policy', value=value)
         request.parameters = [parameter.to_parameter_msg()]
-        return self.call(SetParametersAtomically, '/swerve_controller/set_parameters_atomically',
-                         request).result.successful
+        return self.call(
+            SetParametersAtomically, '/swerve_drive_controller/set_parameters_atomically',
+            request).result.successful
 
     def test_driving_and_policies(self):
         self.sim_time = 0.0

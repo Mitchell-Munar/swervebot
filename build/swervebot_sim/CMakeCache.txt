@@ -256,7 +256,7 @@ Python3_EXECUTABLE:UNINITIALIZED=/usr/bin/python3
 SITE:STRING=MunarThinkpad
 
 //Path to a file.
-_launch_test_FILE_NAME:FILEPATH=/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_sim/test/test_simulation.py
+_launch_test_FILE_NAME:FILEPATH=/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_sim/test/test_lidar.py
 
 //Path to a library.
 _lib:FILEPATH=/opt/ros/lyrical/lib/libcontroller_manager_msgs__rosidl_typesupport_fastrtps_cpp.so

@@ -1,1 +1,1 @@
-ament_cmake_symlink_install_files("/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_bringup" FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/swervebot_bringup")
+ament_cmake_symlink_install_files("/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_bringup" FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/swervebot_bringup")

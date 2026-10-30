@@ -54,7 +54,7 @@ def test_controller_geometry_matches_robot():
     import yaml
 
     description = Path(get_package_share_directory('swervebot_description'))
-    controller = Path(get_package_share_directory('swervebot_controllers'))
+    controller = Path(get_package_share_directory('swerve_drive_controller'))
     robot = ET.fromstring(xacro.process_file(
         str(description / 'description/swervebot.urdf.xacro'),
         mappings={'use_mock_hardware': 'true', 'use_sim': 'false'}).toxml())
@@ -62,7 +62,7 @@ def test_controller_geometry_matches_robot():
     links = {link.attrib['name']: link for link in robot.findall('link')}
     for filename in ('controllers.yaml', 'controllers_mock.yaml'):
         with (controller / 'config' / filename).open(encoding='utf-8') as stream:
-            params = yaml.safe_load(stream)['swerve_controller']['ros__parameters']
+            params = yaml.safe_load(stream)['swerve_drive_controller']['ros__parameters']
         assert params['base_frame_id'] == 'base_footprint'
         for i, (wheel_name, steering_name) in enumerate(zip(
                 params['wheel_names'], params['actuator_names'])):

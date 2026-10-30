@@ -3,7 +3,7 @@
 <package format="3">
   <name>swervebot_description</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Robot-specific geometry and ros2_control description for swervebot</description>
   <maintainer email="Mitchell@todo.todo">Mitchell</maintainer>
   <license>TODO: License declaration</license>
 
@@ -12,6 +12,7 @@
   <exec_depend>ament_index_python</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>swerve_drive_controller</exec_depend>
   <exec_depend>xacro</exec_depend>
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>

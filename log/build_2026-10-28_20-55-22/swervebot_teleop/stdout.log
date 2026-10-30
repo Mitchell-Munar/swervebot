@@ -1,0 +1,16 @@
+running develop
+running egg_info
+writing swervebot_teleop.egg-info/PKG-INFO
+writing dependency_links to swervebot_teleop.egg-info/dependency_links.txt
+writing entry points to swervebot_teleop.egg-info/entry_points.txt
+writing requirements to swervebot_teleop.egg-info/requires.txt
+writing top-level names to swervebot_teleop.egg-info/top_level.txt
+reading manifest file 'swervebot_teleop.egg-info/SOURCES.txt'
+writing manifest file 'swervebot_teleop.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/python3.14/site-packages/swervebot-teleop.egg-link (link to .)
+Installing teleop_node script to /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/swervebot_teleop
+
+Installed /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop
+running symlink_data
+symbolically linking /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/README.md -> /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/share/swervebot_teleop

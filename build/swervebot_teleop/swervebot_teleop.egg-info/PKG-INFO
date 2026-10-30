@@ -1,7 +1,7 @@
 Metadata-Version: 2.4
 Name: swervebot_teleop
 Version: 0.0.0
-Summary: Joystick teleoperation, dynamic button remapping, drive mode state machine, and manual/autonomous control arbitration for swervebot.
+Summary: Joystick input and manual drive mode projection to standard chassis Twist.
 Maintainer: Mitchell Munar
 Maintainer-email: munar.mitchell@gmail.com
 License: Apache License 2.0

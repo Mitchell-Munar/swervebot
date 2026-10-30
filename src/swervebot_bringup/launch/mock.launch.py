@@ -14,7 +14,7 @@ from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
     """Keep robot integration here while the controller demo remains independent."""
-    controllers = Path(get_package_share_directory('swervebot_controllers'))
+    controllers = Path(get_package_share_directory('swerve_drive_controller'))
     description = Path(get_package_share_directory('swervebot_description'))
     config = LaunchConfiguration('controller_config')
     clock = ParameterValue(LaunchConfiguration('use_sim_time'), value_type=bool)
@@ -31,7 +31,7 @@ def generate_launch_description():
     spawner = Node(
         package='controller_manager', executable='spawner',
         parameters=[{'use_sim_time': clock}],
-        arguments=['joint_state_broadcaster', 'swerve_controller', '--controller-manager',
+        arguments=['joint_state_broadcaster', 'swerve_drive_controller', '--controller-manager',
                    '/controller_manager', '--controller-manager-timeout', '30',
                    '--param-file', config, '--activate-as-group'], output='screen')
 

@@ -1,1 +1,1 @@
-ament_cmake_symlink_install_files("/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_description" FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/swervebot_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_description" FILES "README.md" "DESTINATION" "share/swervebot_description")

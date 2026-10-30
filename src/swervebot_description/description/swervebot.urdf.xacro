@@ -1,20 +1,26 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="swervebot">
-    <!-- Include subsystem files -->
+    <!-- Load configuration once before defining components. -->
+    <xacro:include filename="$(find swervebot_description)/description/inertia.xacro" />
     <xacro:include filename="$(find swervebot_description)/description/swervebot_properties.xacro" />
     <xacro:include filename="$(find swervebot_description)/description/swervebot_base.xacro" />
     <xacro:include filename="$(find swervebot_description)/description/swervebot_module.xacro"/>
     <xacro:include filename="$(find swervebot_description)/description/swervebot_ros2_control.xacro"/>
+    <xacro:include filename="$(find swervebot_description)/description/swervebot_lidar.xacro"/>
 
     <xacro:arg name="use_sim" default="false"/>
     <xacro:arg name="use_mock_hardware" default="false"/>
 
-    <xacro:arg name="controller_config" default="$(find swervebot_controllers)/config/controllers.yaml"/>
+    <xacro:arg name="controller_config" default="$(find swerve_drive_controller)/config/controllers.yaml"/>
 
     <!-- Execute/Instantiate the macros -->
     <xacro:swervebot_base />
 
     <xacro:add_all_swerve_modules/>
+
+    <xacro:if value="${lidar_enabled}">
+        <xacro:swervebot_lidar use_sim="$(arg use_sim)" />
+    </xacro:if>
 
     <xacro:robot_control
         use_mock_hardware="$(arg use_mock_hardware)"

@@ -319,47 +319,53 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/swervebot_bringup" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(DIRECTORY "launch" "DESTINATION" "share/swervebot_bringup")
+ament_cmake_symlink_install_directory("/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_bringup" DIRECTORY "launch" "DESTINATION" "share/swervebot_bringup")
+
+# install(FILES "README.md" "DESTINATION" "share/swervebot_bringup")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/swervebot_bringup" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/swervebot_bringup" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_1_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/opt/ros/lyrical/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/swervebot_bringup/environment")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/swervebot_bringup" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_2_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/swervebot_bringup/environment")
+# install(FILES "/opt/ros/lyrical/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/swervebot_bringup/environment")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_3_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/opt/ros/lyrical/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/swervebot_bringup/environment")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/swervebot_bringup/environment")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_4_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/swervebot_bringup/environment")
+# install(FILES "/opt/ros/lyrical/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/swervebot_bringup/environment")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_5_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/swervebot_bringup")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/swervebot_bringup/environment")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_6_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/local_setup.fish" "DESTINATION" "share/swervebot_bringup")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/swervebot_bringup")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_7_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/swervebot_bringup")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/local_setup.fish" "DESTINATION" "share/swervebot_bringup")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_8_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/swervebot_bringup")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/swervebot_bringup")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_9_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/swervebot_bringup")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/swervebot_bringup")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_10_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/swervebot_bringup")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/swervebot_bringup")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_11_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_index/share/ament_index/resource_index/packages/swervebot_bringup" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/swervebot_bringup")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_12_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_core/swervebot_bringupConfig.cmake" "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_core/swervebot_bringupConfig-version.cmake" "DESTINATION" "share/swervebot_bringup/cmake")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_index/share/ament_index/resource_index/packages/swervebot_bringup" "DESTINATION" "share/ament_index/resource_index/packages")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_13_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_bringup/package.xml" "DESTINATION" "share/swervebot_bringup")
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_core/swervebot_bringupConfig.cmake" "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_core/swervebot_bringupConfig-version.cmake" "DESTINATION" "share/swervebot_bringup/cmake")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_14_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+
+# install(FILES "/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_bringup/package.xml" "DESTINATION" "share/swervebot_bringup")
+include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_bringup/ament_cmake_symlink_install_files_15_${CMAKE_INSTALL_CONFIG_NAME}.cmake")

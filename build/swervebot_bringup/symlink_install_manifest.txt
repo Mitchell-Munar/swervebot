@@ -1,3 +1,6 @@
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/launch/mock.launch.py
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/launch/simulation.launch.py
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/README.md
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/ament_index/resource_index/package_run_dependencies/swervebot_bringup
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/ament_index/resource_index/parent_prefix_path/swervebot_bringup
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/environment/ament_prefix_path.sh

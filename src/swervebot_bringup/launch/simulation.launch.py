@@ -11,7 +11,7 @@ from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
     """Forward the simulation's public settings without duplicating orchestration."""
-    controllers = Path(get_package_share_directory('swervebot_controllers'))
+    controllers = Path(get_package_share_directory('swerve_drive_controller'))
     simulation = Path(get_package_share_directory('swervebot_sim'))
     defaults = {'gui': 'true', 'paused': 'false', 'use_sim_time': 'true',
                 'controller_config': str(controllers / 'config/controllers.yaml')}

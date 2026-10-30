@@ -54550,3 +54550,261 @@ events:
         - "/usr/pkg"
         - "/opt"
 ...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:17 (find_package)"
+    name: "ament_cmake_pytest"
+    configs:
+      -
+        filename: "ament_cmake_pytestConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "ament_cmake_pytest-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "ament_cmake_pytest"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_description/CMakeFiles/pkgRedirects/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_description/CMakeFiles/pkgRedirects/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_sim_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_sim_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_sensors_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_sensors_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_gui_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_gui_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_transport_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_transport_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_physics_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_physics_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/sdformat_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/sdformat_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_rendering_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_rendering_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_plugin_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_plugin_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_fuel_tools_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_fuel_tools_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_msgs_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_msgs_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_common_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_common_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_math_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_math_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_utils_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_utils_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_tools_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_tools_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_ogre_next_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_ogre_next_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_dartsim_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_dartsim_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_cmake_vendor/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/opt/gz_cmake_vendor/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/share/ament_cmake_pytest/ament_cmake_pytestConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ros/lyrical/share/ament_cmake_pytest/ament_cmake_pytest-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/opt/ros/lyrical/share/ament_cmake_pytest/cmake/ament_cmake_pytestConfig.cmake"
+      mode: "config"
+      version: "2.8.8"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller"
+        - "/opt/ros/lyrical/opt/gz_sim_vendor"
+        - "/opt/ros/lyrical/opt/gz_sensors_vendor"
+        - "/opt/ros/lyrical/opt/gz_gui_vendor"
+        - "/opt/ros/lyrical/opt/gz_transport_vendor"
+        - "/opt/ros/lyrical/opt/gz_physics_vendor"
+        - "/opt/ros/lyrical/opt/sdformat_vendor"
+        - "/opt/ros/lyrical/opt/gz_rendering_vendor"
+        - "/opt/ros/lyrical/opt/gz_plugin_vendor"
+        - "/opt/ros/lyrical/opt/gz_fuel_tools_vendor"
+        - "/opt/ros/lyrical/opt/gz_msgs_vendor"
+        - "/opt/ros/lyrical/opt/gz_common_vendor"
+        - "/opt/ros/lyrical/opt/gz_math_vendor"
+        - "/opt/ros/lyrical/opt/gz_utils_vendor"
+        - "/opt/ros/lyrical/opt/gz_tools_vendor"
+        - "/opt/ros/lyrical/opt/gz_ogre_next_vendor"
+        - "/opt/ros/lyrical/opt/gz_dartsim_vendor"
+        - "/opt/ros/lyrical/opt/gz_cmake_vendor"
+        - "/opt/ros/lyrical"
+      ENV{PATH}:
+        - "/opt/ros/lyrical/opt/gz_msgs_vendor/bin"
+        - "/opt/ros/lyrical/opt/gz_tools_vendor/bin"
+        - "/opt/ros/lyrical/opt/gz_ogre_next_vendor/bin"
+        - "/opt/ros/lyrical/bin"
+        - "/home/mmunar/.local/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/home/mmunar/.local/share/JetBrains/Toolbox/scripts"
+      CMAKE_INSTALL_PREFIX: "/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+...

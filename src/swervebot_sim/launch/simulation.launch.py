@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import tempfile
+import xml.etree.ElementTree as ET
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
@@ -36,7 +37,7 @@ def _launch_simulation(context):
         config = yaml.safe_load(stream)
     # The Gazebo plugin needs a filename, not a launch parameter dictionary. Materialize a copy,
     # leaving the user's YAML untouched and giving manager/controllers the same clock selection.
-    for name in ('controller_manager', 'swerve_controller', 'joint_state_broadcaster'):
+    for name in ('controller_manager', 'swerve_drive_controller', 'joint_state_broadcaster'):
         parameters = config.setdefault(name, {}).setdefault('ros__parameters', {})
         parameters['use_sim_time'] = use_sim_time
     temporary = tempfile.TemporaryDirectory(prefix='swervebot_sim_')
@@ -67,8 +68,22 @@ def _launch_simulation(context):
         package='ros_gz_bridge', executable='parameter_bridge', name='simulation_bridge',
         parameters=[{'config_file': str(sim_share / 'config' / 'bridge.yaml'),
                      'use_sim_time': use_sim_time}], output='screen')
+    # Read the expanded sensor contract so properties remain the sole sensor configuration.
+    lidar_bridges = []
+    for sensor in ET.fromstring(robot_description).findall('gazebo/sensor'):
+        if sensor.attrib.get('type') == 'gpu_lidar':
+            topic = sensor.findtext('topic')
+            lidar_bridges.append(Node(
+                package='ros_gz_bridge', executable='parameter_bridge', name='lidar_bridge',
+                arguments=[f'{topic}@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan'],
+                parameters=[{'use_sim_time': use_sim_time,
+                             f'qos_overrides.{topic}.publisher.reliability': 'best_effort',
+                             f'qos_overrides.{topic}.publisher.durability': 'volatile',
+                             f'qos_overrides.{topic}.publisher.history': 'keep_last',
+                             f'qos_overrides.{topic}.publisher.depth': 5}],
+                output='screen'))
     # Gazebo owns the only controller manager. Do not launch a separate ros2_control_node here.
-    gz_args = ('-s ' if not gui else '') + ('-r ' if not paused else '')
+    gz_args = ('-s --headless-rendering ' if not gui else '') + ('-r ' if not paused else '')
     gz_args += '-v 3 ' + str(sim_share / 'worlds' / 'empty.sdf')
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(str(Path(get_package_share_directory('ros_gz_sim')) /
@@ -84,7 +99,7 @@ def _launch_simulation(context):
     spawner = Node(
         package='controller_manager', executable='spawner', output='screen',
         parameters=[{'use_sim_time': use_sim_time}],
-        arguments=['joint_state_broadcaster', 'swerve_controller',
+        arguments=['joint_state_broadcaster', 'swerve_drive_controller',
                    '--controller-manager', '/controller_manager',
                    '--controller-manager-timeout', '30', '--switch-timeout', '30',
                    '--param-file', str(config_path), '--activate-as-group'])
@@ -97,13 +112,14 @@ def _launch_simulation(context):
         RegisterEventHandler(OnProcessExit(
             target_action=spawner, on_exit=checked_exit('Controller activation'))),
         LogInfo(msg='Spawning one swervebot; paused startup requires Play to finish activation.'),
-        state_publisher, bridge, gazebo, spawn,
+        state_publisher, bridge, *lidar_bridges, gazebo, spawn,
     ]
 
 
 def generate_launch_description():
     """Expose simulation clock, GUI, pause, and controller-file choices."""
-    config = Path(get_package_share_directory('swervebot_controllers')) / 'config/controllers.yaml'
+    config = (Path(get_package_share_directory('swerve_drive_controller')) /
+              'config/controllers.yaml')
     return LaunchDescription([
         DeclareLaunchArgument('gui', default_value='true', description='Start Gazebo GUI'),
         DeclareLaunchArgument('paused', default_value='false', description='Start physics paused'),

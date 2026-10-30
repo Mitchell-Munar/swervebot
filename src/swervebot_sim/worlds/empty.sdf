@@ -6,6 +6,10 @@
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1.0</real_time_factor>
     </physics>
+    <!-- GPU lidar needs a world-level rendering sensor system, even without the GUI. -->
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
     <gravity>0 0 -9.81</gravity>
     <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
     <!-- UserCommands provides the create service used by ros_gz_sim to spawn our one robot. -->

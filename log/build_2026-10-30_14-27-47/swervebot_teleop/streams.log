@@ -1,0 +1,17 @@
+[0.813s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/python3.14/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/build --no-deps symlink_data
+[1.010s] running develop
+[1.113s] running egg_info
+[1.123s] writing swervebot_teleop.egg-info/PKG-INFO
+[1.123s] writing dependency_links to swervebot_teleop.egg-info/dependency_links.txt
+[1.124s] writing entry points to swervebot_teleop.egg-info/entry_points.txt
+[1.124s] writing requirements to swervebot_teleop.egg-info/requires.txt
+[1.124s] writing top-level names to swervebot_teleop.egg-info/top_level.txt
+[1.145s] reading manifest file 'swervebot_teleop.egg-info/SOURCES.txt'
+[1.146s] writing manifest file 'swervebot_teleop.egg-info/SOURCES.txt'
+[1.158s] running build_ext
+[1.158s] Creating /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/python3.14/site-packages/swervebot-teleop.egg-link (link to .)
+[1.158s] Installing teleop_node script to /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/swervebot_teleop
+[1.159s] 
+[1.159s] Installed /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop
+[1.159s] running symlink_data
+[1.203s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_teleop/lib/python3.14/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop/build --no-deps symlink_data

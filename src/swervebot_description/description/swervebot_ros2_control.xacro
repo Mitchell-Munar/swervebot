@@ -1,10 +1,30 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <!-- Include the properties file to access the defined properties -->
-    <xacro:include filename="$(find swervebot_description)/description/swervebot_properties.xacro" />
+    <!-- Configuration and inertia helpers are loaded by the assembly entrypoint. -->
+
+    <!-- One steering position interface and one drive velocity interface per module. -->
+    <xacro:macro name="module_control" params="name">
+        <joint name="actuator_${name}_joint">
+            <command_interface name="position">
+                <param name="min">${actuator_pos_min}</param>
+                <param name="max">${actuator_pos_max}</param>
+            </command_interface>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="wheel_${name}_joint">
+            <command_interface name="velocity"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+    </xacro:macro>
 
     <xacro:macro name="robot_control" params="use_mock_hardware use_sim controller_config">
 
+        <!-- Fail during expansion rather than emit two competing hardware implementations. -->
+        <xacro:if value="${use_mock_hardware and use_sim}">
+            <xacro:property name="invalid_hardware" value="${xacro.fatal('use_mock_hardware and use_sim are mutually exclusive')}" lazy_eval="false"/>
+        </xacro:if>
         <ros2_control name="SwerveBotSystem" type="system">
             <!-- Mock Hardware -->
             <xacro:if value="${use_mock_hardware}">
@@ -30,85 +50,10 @@
                 </hardware>
             </xacro:unless>
 
-            <!-- ============================================ -->
-            <!--             Module 1: Steering               -->
-            <!-- ============================================ -->
-
-            <joint name="actuator_${module_1}_joint">
-                <command_interface name="position">
-                    <param name="min">${actuator_pos_min}</param>
-                    <param name="max">${actuator_pos_max}</param>
-                </command_interface>
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-            </joint>
-
-            <!-- Module 1: Drive Wheel -->
-            <joint name="wheel_${module_1}_joint">
-                <command_interface name="velocity"/>
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-            </joint>
-
-            <!-- ============================================ -->
-            <!--             Module 2: Steering               -->
-            <!-- ============================================ -->
-
-            <joint name="actuator_${module_2}_joint">
-                <command_interface name="position">
-                    <param name="min">${actuator_pos_min}</param>
-                    <param name="max">${actuator_pos_max}</param>
-                </command_interface>
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-            </joint>
-
-            <!-- Module 2: Drive Wheel -->
-            <joint name="wheel_${module_2}_joint">
-                <command_interface name="velocity"/>
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-            </joint>
-
-            <!-- ============================================ -->
-            <!--             Module 3: Steering               -->
-            <!-- ============================================ -->
-
-            <joint name="actuator_${module_3}_joint">
-                <command_interface name="position">
-                    <param name="min">${actuator_pos_min}</param>
-                    <param name="max">${actuator_pos_max}</param>
-                </command_interface>
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-            </joint>
-
-            <!-- Module 3: Drive Wheel -->
-            <joint name="wheel_${module_3}_joint">
-                <command_interface name="velocity"/>
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-            </joint>
-
-            <!-- ============================================ -->
-            <!--             Module 4: Steering               -->
-            <!-- ============================================ -->
-
-            <joint name="actuator_${module_4}_joint">
-                <command_interface name="position">
-                    <param name="min">${actuator_pos_min}</param>
-                    <param name="max">${actuator_pos_max}</param>
-                </command_interface>
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-            </joint>
-
-            <!-- Module 4: Drive Wheel -->
-            <joint name="wheel_${module_4}_joint">
-                <command_interface name="velocity"/>
-                <state_interface name="position"/>
-                <state_interface name="velocity"/>
-            </joint>        
+            <xacro:module_control name="${module_1}"/>
+            <xacro:module_control name="${module_2}"/>
+            <xacro:module_control name="${module_3}"/>
+            <xacro:module_control name="${module_4}"/>
         </ros2_control>
 
         <!-- Model poses are diagnostics, never a second publisher of odom -> base TF. -->

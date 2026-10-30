@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/home/mmunar/Code/ROS2/swerve_bot/src/swerve_drive_controller" FILES "/opt/ros/lyrical/lib/python3.14/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/swerve_drive_controller/environment")

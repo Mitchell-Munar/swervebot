@@ -7,7 +7,7 @@ ROS 2 swerve drive mobile robot project (`swerve_bot`) for a 4-module platform (
 
 ## Code Style & Architecture
 * **Language/Framework:** ROS 2 (Lyrical Luth)
-* **Architecture Pattern:** Standard `ros2_control` real-time controller layout inheriting from `controller_interface::ControllerInterface`.
+* **Architecture Pattern:** Standard `ros2_control` real-time controller layout inheriting from `controller_interface::ControllerInterface`. Packages are to be designed for modularity and reuse. They should be parameterized and driven by configuration files (YAML) and launch files.
 * **Swerve Kinematics:** A single `geometry_msgs::msg::Twist` (`cmd_vel`) subscription handles chassis velocity, which is resolved via inverse kinematics inside the controller loop directly to individual wheel velocities and servo positions. Do not create separate subscriptions for individual servos.
 * **Real-Time Safety:** Strictly no memory allocations, `rclcpp` logging, or node parameters fetching inside the `update()` loop.
 * **Lifecycle Hooks:** `on_init`, `on_configure`, `on_activate`, and `on_deactivate` must safely manage hardware loans. Clear local reference vectors inside `on_activate` to prevent stale tracking data.

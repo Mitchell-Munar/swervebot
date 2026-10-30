@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     <!-- Include subsystem files -->
-    <xacro:include filename="$(find swervebot_description)/description/swervebot_properties.xacro" />
     <xacro:include filename="$(find swervebot_description)/description/swervebot_wheel.xacro" />
     <xacro:include filename="$(find swervebot_description)/description/swervebot_actuator.xacro" />
 
@@ -9,14 +8,14 @@
     <!--          Create One Swerve Module            -->
     <!-- ============================================ -->
 
-    <xacro:macro name="add_swerve_module" params="name actuator_x actuator_y actuator_z wheel_x wheel_y wheel_z">
+    <xacro:macro name="add_swerve_module" params="name actuator_x actuator_y actuator_z wheel_x wheel_y wheel_z parent_link:=chassis">
 
         <xacro:swervebot_actuator
             name="actuator_${name}"
             x="${actuator_x}"
             y="${actuator_y}"
             z="${actuator_z}"
-            parent_link="chassis" />
+            parent_link="${parent_link}" />
 
         <xacro:swervebot_wheel
             name="wheel_${name}"
@@ -39,42 +38,42 @@
         <!-- Front Left -->
         <xacro:add_swerve_module
             name="${module_1}"
-            actuator_x="${wheelbase / 2}"
-            actuator_y="${track_width / 2}"
-            actuator_z="${actuator_offset_z}"
-            wheel_x="${wheel_offset_x}"
-            wheel_y="${wheel_offset_y}"
-            wheel_z="${wheel_offset_z}"/>
+            actuator_x="${module_1_x}"
+            actuator_y="${module_1_y}"
+            actuator_z="${module_1_z}"
+            wheel_x="${module_1_wheel_x}"
+            wheel_y="${module_1_wheel_y}"
+            wheel_z="${module_1_wheel_z}"/>
 
         <!-- Front Right -->
         <xacro:add_swerve_module
             name="${module_2}"
-            actuator_x="${wheelbase / 2}"
-            actuator_y="${-track_width / 2}"
-            actuator_z="${actuator_offset_z}"
-            wheel_x="${wheel_offset_x}"
-            wheel_y="${-wheel_offset_y}"
-            wheel_z="${wheel_offset_z}"/>
+            actuator_x="${module_2_x}"
+            actuator_y="${module_2_y}"
+            actuator_z="${module_2_z}"
+            wheel_x="${module_2_wheel_x}"
+            wheel_y="${module_2_wheel_y}"
+            wheel_z="${module_2_wheel_z}"/>
 
         <!-- Back Left -->
         <xacro:add_swerve_module
             name="${module_3}"
-            actuator_x="${-wheelbase / 2}"
-            actuator_y="${track_width / 2}"
-            actuator_z="${actuator_offset_z}"
-            wheel_x="${-wheel_offset_x}"
-            wheel_y="${wheel_offset_y}"
-            wheel_z="${wheel_offset_z}"/>
+            actuator_x="${module_3_x}"
+            actuator_y="${module_3_y}"
+            actuator_z="${module_3_z}"
+            wheel_x="${module_3_wheel_x}"
+            wheel_y="${module_3_wheel_y}"
+            wheel_z="${module_3_wheel_z}"/>
 
         <!-- Back Right -->
         <xacro:add_swerve_module
             name="${module_4}"
-            actuator_x="${-wheelbase / 2}"
-            actuator_y="${-track_width / 2}"
-            actuator_z="${actuator_offset_z}"
-            wheel_x="${-wheel_offset_x}"
-            wheel_y="${-wheel_offset_y}"
-            wheel_z="${wheel_offset_z}"/>
+            actuator_x="${module_4_x}"
+            actuator_y="${module_4_y}"
+            actuator_z="${module_4_z}"
+            wheel_x="${module_4_wheel_x}"
+            wheel_y="${module_4_wheel_y}"
+            wheel_z="${module_4_wheel_z}"/>
 
     </xacro:macro>
 

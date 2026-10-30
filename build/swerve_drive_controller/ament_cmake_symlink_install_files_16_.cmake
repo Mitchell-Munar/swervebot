@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/home/mmunar/Code/ROS2/swerve_bot/src/swerve_drive_controller" FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swerve_drive_controller/ament_cmake_index/share/ament_index/resource_index/packages/swerve_drive_controller" "DESTINATION" "share/ament_index/resource_index/packages")

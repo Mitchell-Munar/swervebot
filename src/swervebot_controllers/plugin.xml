@@ -1,7 +1,0 @@
-<library path="swerve_controller">
-  <class name="swervebot_controllers/SwerveController"
-         type="swervebot_controllers::SwerveController"
-         base_class_type="controller_interface::ControllerInterface">
-    <description>Reusable planar Twist controller for configurable swerve module layouts.</description>
-  </class>
-</library>

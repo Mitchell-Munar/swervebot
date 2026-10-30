@@ -1,10 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <!-- Include the properties file to access the defined properties -->
-    <xacro:include filename="$(find swervebot_description)/description/swervebot_properties.xacro" />
-    <xacro:include filename="$(find swervebot_description)/description/inertia.xacro" />
+    <!-- Configuration and inertia helpers are loaded by the assembly entrypoint. -->
 
-    <xacro:macro name="swervebot_actuator" params="name x y z parent_link">
+    <xacro:macro name="swervebot_actuator" params="name x y z parent_link radius:=${actuator_radius} height:=${actuator_height} mass:=${actuator_mass}">
 
         <joint name="${name}_joint" type="revolute">
             <parent link="${parent_link}" />
@@ -20,7 +18,7 @@
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <cylinder radius="${actuator_radius}" length="${actuator_height}" />
+                    <cylinder radius="${radius}" length="${height}" />
                 </geometry>
                 <material name="actuator_material">
                     <color rgba="${actuator_color}" />
@@ -29,13 +27,13 @@
             <collision>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <cylinder radius="${actuator_radius}" length="${actuator_height}" />
+                    <cylinder radius="${radius}" length="${height}" />
                 </geometry>
             </collision>
             <inertial>
                 <origin xyz="0 0 0" rpy="0 0 0" />
-                <mass value="${actuator_mass}" />
-                <xacro:cylinder_inertia_values m="${actuator_mass}" r="${actuator_radius}" h="${actuator_height}" />
+                <mass value="${mass}" />
+                <xacro:cylinder_inertia_values m="${mass}" r="${radius}" h="${height}" />
             </inertial>
         </link>
     </xacro:macro>

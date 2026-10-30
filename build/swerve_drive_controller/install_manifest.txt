@@ -1,0 +1,3 @@
+/home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/lib/libswerve_drive_controller.so
+/home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/cmake/export_swerve_drive_controllerExport.cmake
+/home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/cmake/export_swerve_drive_controllerExport-noconfig.cmake

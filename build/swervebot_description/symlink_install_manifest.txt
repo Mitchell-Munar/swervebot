@@ -4,11 +4,13 @@
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description/share/swervebot_description/description/swervebot.urdf.xacro
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description/share/swervebot_description/description/swervebot_actuator.xacro
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description/share/swervebot_description/description/swervebot_base.xacro
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description/share/swervebot_description/description/swervebot_lidar.xacro
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description/share/swervebot_description/description/swervebot_module.xacro
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description/share/swervebot_description/description/swervebot_properties.xacro
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description/share/swervebot_description/description/swervebot_ros2_control.xacro
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description/share/swervebot_description/description/swervebot_wheel.xacro
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description/share/swervebot_description/launch/swervebot_description.launch.py
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description/share/swervebot_description/README.md
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description/share/ament_index/resource_index/package_run_dependencies/swervebot_description
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description/share/ament_index/resource_index/parent_prefix_path/swervebot_description
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_description/share/swervebot_description/environment/ament_prefix_path.sh
