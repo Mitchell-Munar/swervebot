@@ -1,0 +1,45 @@
+[0.023s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swerve_drive_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mmunar/Code/ROS2/swerve_bot/build/swerve_drive_controller -- -j14 -l14
+[0.130s] [ 20%] Built target swerve_drive_controller_parameters
+[0.183s] [ 60%] Built target swerve_drive_controller
+[0.231s] [100%] Built target test_swerve_drive_controller
+[0.250s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swerve_drive_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mmunar/Code/ROS2/swerve_bot/build/swerve_drive_controller -- -j14 -l14
+[0.268s] Invoking command in '/home/mmunar/Code/ROS2/swerve_bot/build/swerve_drive_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mmunar/Code/ROS2/swerve_bot/build/swerve_drive_controller
+[0.284s] -- Install configuration: ""
+[0.285s] -- Execute custom install script
+[0.285s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/include/swerve_drive_controller/swerve_drive_controller_parameters.hpp
+[0.286s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller//plugin.xml
+[0.286s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/config/controllers.yaml
+[0.286s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/config/controllers_mock.yaml
+[0.286s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/config/swerve_drive_controller_parameters.yaml
+[0.286s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/launch/controller_mock_test.launch.py
+[0.287s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/include/swerve_drive_controller/swerve_drive_controller.hpp
+[0.287s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/include/swerve_drive_controller/swerve_kinematics.hpp
+[0.287s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/plugin.xml
+[0.287s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/README.md
+[0.287s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/environment/library_path.sh
+[0.287s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/environment/library_path.dsv
+[0.288s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/ament_index/resource_index/package_run_dependencies/swerve_drive_controller
+[0.288s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/ament_index/resource_index/parent_prefix_path/swerve_drive_controller
+[0.288s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/environment/ament_prefix_path.sh
+[0.288s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/environment/ament_prefix_path.dsv
+[0.288s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/environment/path.sh
+[0.288s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/environment/path.dsv
+[0.289s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/local_setup.bash
+[0.289s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/local_setup.fish
+[0.289s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/local_setup.sh
+[0.289s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/local_setup.zsh
+[0.289s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/local_setup.dsv
+[0.289s] -- Symlinking: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/package.dsv
+[0.311s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/ament_index/resource_index/packages/swerve_drive_controller
+[0.312s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/ament_index/resource_index/controller_interface__pluginlib__plugin/swerve_drive_controller
+[0.312s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.312s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/cmake/ament_cmake_export_targets-extras.cmake
+[0.313s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.313s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/cmake/ament_cmake_export_libraries-extras.cmake
+[0.314s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/cmake/swerve_drive_controllerConfig.cmake
+[0.314s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/cmake/swerve_drive_controllerConfig-version.cmake
+[0.314s] -- Up-to-date symlink: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/package.xml
+[0.315s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/lib/libswerve_drive_controller.so
+[0.315s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/cmake/export_swerve_drive_controllerExport.cmake
+[0.315s] -- Up-to-date: /home/mmunar/Code/ROS2/swerve_bot/install/swerve_drive_controller/share/swerve_drive_controller/cmake/export_swerve_drive_controllerExport-noconfig.cmake
+[0.320s] Invoked command in '/home/mmunar/Code/ROS2/swerve_bot/build/swerve_drive_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mmunar/Code/ROS2/swerve_bot/build/swerve_drive_controller

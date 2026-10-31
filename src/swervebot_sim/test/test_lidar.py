@@ -29,7 +29,8 @@ def generate_test_description():
       </collision></link></model></sdf>"""
     return LaunchDescription([
         IncludeLaunchDescription(PythonLaunchDescriptionSource(str(path)),
-                                 launch_arguments={'gui': 'false'}.items()),
+                                 launch_arguments={'gui': 'false', 'simulation_config': str(
+                                     path.parent.parent / 'config/simulation_empty.yaml')}.items()),
         Node(package='ros_gz_sim', executable='create',
              arguments=['-world', 'swervebot_empty', '-string', obstacle, '-x', '2', '-z', '0.5']),
         launch_testing.actions.ReadyToTest(),

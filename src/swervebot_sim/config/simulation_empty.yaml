@@ -1,0 +1,2 @@
+# Controlled world for motion and lidar integration tests.
+world_file: empty.sdf

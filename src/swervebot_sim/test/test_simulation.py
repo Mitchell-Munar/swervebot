@@ -29,7 +29,8 @@ def generate_test_description():
     path = Path(get_package_share_directory('swervebot_sim')) / 'launch/simulation.launch.py'
     return LaunchDescription([
         IncludeLaunchDescription(PythonLaunchDescriptionSource(str(path)),
-                                 launch_arguments={'gui': 'false'}.items()),
+                                 launch_arguments={'gui': 'false', 'simulation_config': str(
+                                     path.parent.parent / 'config/simulation_empty.yaml')}.items()),
         launch_testing.actions.ReadyToTest(),
     ])
 

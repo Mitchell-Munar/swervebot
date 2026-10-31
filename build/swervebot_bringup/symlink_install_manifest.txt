@@ -1,3 +1,5 @@
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/launch/__pycache__/mock.launch.cpython-314.pyc
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/launch/__pycache__/simulation.launch.cpython-314.pyc
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/launch/mock.launch.py
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/launch/simulation.launch.py
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_bringup/share/swervebot_bringup/README.md

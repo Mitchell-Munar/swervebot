@@ -288,6 +288,9 @@ ament_cmake_lint_cmake_DIR:PATH=/opt/ros/lyrical/share/ament_cmake_lint_cmake/cm
 //The directory containing a CMake configuration file for ament_cmake_pep257.
 ament_cmake_pep257_DIR:PATH=/opt/ros/lyrical/share/ament_cmake_pep257/cmake
 
+//The directory containing a CMake configuration file for ament_cmake_pytest.
+ament_cmake_pytest_DIR:PATH=/opt/ros/lyrical/share/ament_cmake_pytest/cmake
+
 //The directory containing a CMake configuration file for ament_cmake_python.
 ament_cmake_python_DIR:PATH=/opt/ros/lyrical/share/ament_cmake_python/cmake
 

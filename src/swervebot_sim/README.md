@@ -74,3 +74,13 @@ launch's SIGTERM escalation. The motion tests validate runtime behavior; they do
 not certify clean dependency teardown. A related upstream ownership/teardown defect
 is tracked in [ros_gz issue 951](https://github.com/gazebosim/ros_gz/issues/951).
 This package does not patch system ROS/Gazebo libraries.
+
+## World selection
+
+Both simulation launch entrypoints default to `config/simulation.yaml`, selecting
+`test_room_1.sdf`. Set `world_file` to a filename under the installed package's
+`worlds` directory or an absolute SDF path. The SDF must contain one named world.
+Use `simulation_config:=/absolute/path/simulation.yaml` to select another YAML.
+Room models are installed and exported to Gazebo automatically. External worlds
+can supply additional model directories through `GZ_SIM_RESOURCE_PATH`.
+The spawn target and clock bridge follow the SDF world name automatically.

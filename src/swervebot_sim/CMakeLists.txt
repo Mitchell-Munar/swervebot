@@ -3,7 +3,7 @@ project(swervebot_sim)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY launch worlds config DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY launch worlds config models DESTINATION share/${PROJECT_NAME})
 install(FILES README.md DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)

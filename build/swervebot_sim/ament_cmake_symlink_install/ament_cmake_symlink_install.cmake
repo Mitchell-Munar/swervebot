@@ -319,8 +319,8 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(DIRECTORY "launch" "worlds" "config" "DESTINATION" "share/swervebot_sim")
-ament_cmake_symlink_install_directory("/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_sim" DIRECTORY "launch" "worlds" "config" "DESTINATION" "share/swervebot_sim")
+# install(DIRECTORY "launch" "worlds" "config" "models" "DESTINATION" "share/swervebot_sim")
+ament_cmake_symlink_install_directory("/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_sim" DIRECTORY "launch" "worlds" "config" "models" "DESTINATION" "share/swervebot_sim")
 
 # install(FILES "README.md" "DESTINATION" "share/swervebot_sim")
 include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_sim/ament_cmake_symlink_install_files_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")

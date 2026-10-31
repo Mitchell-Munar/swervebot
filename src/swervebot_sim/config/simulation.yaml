@@ -1,0 +1,2 @@
+# Relative paths select installed worlds; absolute SDF paths are also supported.
+world_file: test_room_1.sdf
