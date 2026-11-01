@@ -7,8 +7,6 @@
   <maintainer email="munar.mitchell@gmail.com">Mitchell Munar</maintainer>
   <license>Apache License 2.0</license>
 
-  <buildtool_depend>ament_python</buildtool_depend>
-
   <depend>rclpy</depend>
   <depend>geometry_msgs</depend>
   <depend>sensor_msgs</depend>

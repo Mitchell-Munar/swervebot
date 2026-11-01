@@ -74,6 +74,11 @@ def _launch_simulation(context):
                   'controller_config': str(config_path)},
     ).toxml()
 
+    # Spawn the exact description generated for this launch. A transient-local
+    # /robot_description from another publisher can reference deleted temp files.
+    description_path = Path(temporary.name) / 'swervebot.urdf'
+    description_path.write_text(robot_description, encoding='utf-8')
+
     def cleanup(_context):
         temporary.cleanup()
 
@@ -118,7 +123,7 @@ def _launch_simulation(context):
         }.items())
     spawn = Node(
         package='ros_gz_sim', executable='create', name='spawn_swervebot', output='screen',
-        arguments=['-world', world_name, '-topic', '/robot_description',
+        arguments=['-world', world_name, '-file', str(description_path),
                    '-name', 'swervebot', '-allow_renaming', 'false', '-z', '0.02'])
     spawner = Node(
         package='controller_manager', executable='spawner', output='screen',

@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_mapping" FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_mapping/ament_cmake_core/swervebot_mappingConfig.cmake" "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_mapping/ament_cmake_core/swervebot_mappingConfig-version.cmake" "DESTINATION" "share/swervebot_mapping/cmake")
