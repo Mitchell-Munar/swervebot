@@ -32,13 +32,14 @@ Build with `colcon build` and source `install/setup.bash`.
 ```
 ros2 launch swervebot_bringup autonomy.launch.py mode:=slam
 ros2 launch swervebot_teleop teleop.launch.py cmd_vel_topic:=cmd_vel_teleop
-ros2 run nav2_map_server map_saver_cli -f /absolute/writable/path/room
+ros2 run nav2_map_server map_saver_cli -f ~/Code/ROS2/swerve_bot/src/swervebot_navigation/maps/room
 ```
 
 Stop mapping and teleop, then restart with the saved map:
 
 ```
-ros2 launch swervebot_bringup autonomy.launch.py mode:=nav map:=/absolute/writable/path/room.yaml
+ros2 launch swervebot_bringup autonomy.launch.py mode:=nav \
+  map:=$HOME/Code/ROS2/swerve_bot/src/swervebot_navigation/maps/room.yaml
 ```
 
 Set **2D Pose Estimate** in RViz, then send a navigation goal. Manual commands on

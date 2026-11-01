@@ -40,7 +40,7 @@ def setup(context):
     actions.append(Node(package='rviz2', executable='rviz2',
                         condition=IfCondition(LaunchConfiguration('rviz')),
                         arguments=['-d', PathJoinSubstitution([
-                            FindPackageShare('swervebot_navigation'), 'rviz', 'navigation.rviz'])],
+                            FindPackageShare('swervebot_navigation'), 'rviz', 'mapping.rviz' if mode == 'slam' else 'navigation.rviz'])],
                         parameters=[{'use_sim_time': ParameterValue(clock, value_type=bool)}]))
     return actions
 

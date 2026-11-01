@@ -289,6 +289,9 @@ ament_cmake_lint_cmake_DIR:PATH=/opt/ros/lyrical/share/ament_cmake_lint_cmake/cm
 //The directory containing a CMake configuration file for ament_cmake_pep257.
 ament_cmake_pep257_DIR:PATH=/opt/ros/lyrical/share/ament_cmake_pep257/cmake
 
+//The directory containing a CMake configuration file for ament_cmake_pytest.
+ament_cmake_pytest_DIR:PATH=/opt/ros/lyrical/share/ament_cmake_pytest/cmake
+
 //The directory containing a CMake configuration file for ament_cmake_python.
 ament_cmake_python_DIR:PATH=/opt/ros/lyrical/share/ament_cmake_python/cmake
 
@@ -324,6 +327,9 @@ ament_pep257_BIN:FILEPATH=/opt/ros/lyrical/bin/ament_pep257
 
 //Path to a program.
 ament_xmllint_BIN:FILEPATH=/opt/ros/lyrical/bin/ament_xmllint
+
+//The directory containing a CMake configuration file for python3-yaml.
+python3-yaml_DIR:PATH=python3-yaml_DIR-NOTFOUND
 
 //Value Computed by CMake
 swervebot_navigation_BINARY_DIR:STATIC=/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_navigation

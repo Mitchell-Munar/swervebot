@@ -8,7 +8,8 @@ from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
     clock = {'use_sim_time': ParameterValue(LaunchConfiguration('use_sim_time'), value_type=bool)}
-    config = LaunchConfiguration('params_file')
-    actions = [DeclareLaunchArgument('use_sim_time', default_value='true'), DeclareLaunchArgument('params_file', default_value=PathJoinSubstitution([FindPackageShare('swervebot_navigation'),'config','twist_mux.yaml']))]
-    actions.append(Node(package='twist_mux', executable='twist_mux', name='twist_mux', parameters=[config, clock], remappings=[('cmd_vel_out','cmd_vel')], output='screen'))
+    # A distinct argument prevents the parent's Nav2 params_file overriding mux topics.
+    config = LaunchConfiguration('mux_params_file')
+    actions = [DeclareLaunchArgument('use_sim_time', default_value='true'), DeclareLaunchArgument('mux_params_file', default_value=PathJoinSubstitution([FindPackageShare('swervebot_navigation'),'config','twist_mux.yaml']))]
+    actions.append(Node(package='twist_mux', executable='twist_mux', name='twist_mux', parameters=[config, clock, {'use_stamped': False}], remappings=[('cmd_vel_out','cmd_vel')], output='screen'))
     return LaunchDescription(actions)

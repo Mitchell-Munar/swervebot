@@ -6,6 +6,7 @@
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_navigation/share/swervebot_navigation/launch/localization.launch.py
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_navigation/share/swervebot_navigation/launch/mux.launch.py
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_navigation/share/swervebot_navigation/launch/navigation.launch.py
+/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_navigation/share/swervebot_navigation/rviz/mapping.rviz
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_navigation/share/swervebot_navigation/rviz/navigation.rviz
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_navigation/share/ament_index/resource_index/package_run_dependencies/swervebot_navigation
 /home/mmunar/Code/ROS2/swerve_bot/install/swervebot_navigation/share/ament_index/resource_index/parent_prefix_path/swervebot_navigation
