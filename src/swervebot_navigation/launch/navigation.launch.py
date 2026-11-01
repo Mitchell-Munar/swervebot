@@ -3,12 +3,19 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
+from nav2_common.launch import RewrittenYaml
+from launch_ros.descriptions import ParameterFile
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
     clock = {'use_sim_time': ParameterValue(LaunchConfiguration('use_sim_time'), value_type=bool)}
-    config = LaunchConfiguration('params_file')
+    # Resolve upstream zone toggles to booleans and expand BT package paths.
+    config = ParameterFile(RewrittenYaml(
+        source_file=LaunchConfiguration('params_file'),
+        param_rewrites={},
+        value_rewrites={'KEEPOUT_ZONE_ENABLED': 'false', 'SPEED_ZONE_ENABLED': 'false'},
+        convert_types=True), allow_substs=True)
     actions = [DeclareLaunchArgument('use_sim_time', default_value='true'), DeclareLaunchArgument('params_file', default_value=PathJoinSubstitution([FindPackageShare('swervebot_navigation'),'config','nav2.yaml']))]
     actions.append(Node(package='nav2_controller', executable='controller_server', name='controller_server', parameters=[config, clock], remappings=[('cmd_vel','cmd_vel_raw')], output='screen'))
     actions.append(Node(package='nav2_planner', executable='planner_server', name='planner_server', parameters=[config, clock], remappings=[], output='screen'))

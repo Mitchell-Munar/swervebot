@@ -13,6 +13,8 @@ find_package(ament_cmake REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_cmake_pytest REQUIRED)
+  ament_add_pytest_test(test_navigation_launch test/test_navigation_launch.py
+    APPEND_ENV ROS_LOG_DIR=/tmp/swervebot_nav_test_log)
   ament_add_pytest_test(test_mux_launch test/test_mux_launch.py
     APPEND_ENV ROS_LOG_DIR=/tmp/swervebot_mux_test_log)
   find_package(ament_lint_auto REQUIRED)
