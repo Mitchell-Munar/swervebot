@@ -4,6 +4,7 @@
 /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_description/share/swervebot_description/description/swervebot.urdf.xacro
 /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_description/share/swervebot_description/description/swervebot_actuator.xacro
 /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_description/share/swervebot_description/description/swervebot_base.xacro
+/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_description/share/swervebot_description/description/swervebot_imu.xacro
 /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_description/share/swervebot_description/description/swervebot_lidar.xacro
 /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_description/share/swervebot_description/description/swervebot_module.xacro
 /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_description/share/swervebot_description/description/swervebot_properties.xacro

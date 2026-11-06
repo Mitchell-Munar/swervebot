@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="swervebot_imu" params="use_sim">
+    <link name="imu_link">
+      <visual><geometry><box size="0.02 0.02 0.003"/></geometry></visual>
+      <inertial><mass value="0.002"/><inertia ixx="0.00000007" ixy="0" ixz="0" iyy="0.00000007" iyz="0" izz="0.00000013"/></inertial>
+    </link>
+    <joint name="imu_joint" type="fixed">
+      <parent link="base_link"/><child link="imu_link"/>
+      <origin xyz="${imu_xyz}" rpy="${imu_rpy}"/>
+    </joint>
+    <xacro:if value="${use_sim}">
+      <gazebo reference="imu_joint"><preserveFixedJoint>true</preserveFixedJoint></gazebo>
+      <gazebo reference="imu_link">
+        <sensor name="board_imu" type="imu">
+          <always_on>true</always_on><update_rate>${imu_rate}</update_rate>
+          <topic>/imu/data_raw</topic><frame_id>imu_link</frame_id>
+          <imu>
+            <angular_velocity>
+              <x><noise type="gaussian"><mean>0</mean><stddev>0.001</stddev></noise></x>
+              <y><noise type="gaussian"><mean>0</mean><stddev>0.001</stddev></noise></y>
+              <z><noise type="gaussian"><mean>0</mean><stddev>0.001</stddev></noise></z>
+            </angular_velocity>
+            <linear_acceleration>
+              <x><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></x>
+              <y><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></y>
+              <z><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></z>
+            </linear_acceleration>
+          </imu>
+        </sensor>
+        <sensor name="board_magnetometer" type="magnetometer">
+          <always_on>true</always_on><update_rate>${mag_rate}</update_rate>
+          <topic>/imu/mag</topic><frame_id>imu_link</frame_id>
+          <magnetometer>
+            <x><noise type="gaussian"><mean>0</mean><stddev>0.0000002</stddev></noise></x>
+            <y><noise type="gaussian"><mean>0</mean><stddev>0.0000002</stddev></noise></y>
+            <z><noise type="gaussian"><mean>0</mean><stddev>0.0000002</stddev></noise></z>
+          </magnetometer>
+        </sensor>
+      </gazebo>
+    </xacro:if>
+  </xacro:macro>
+</robot>

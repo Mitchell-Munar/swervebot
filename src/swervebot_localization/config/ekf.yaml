@@ -1,0 +1,63 @@
+# Holonomic planar estimation. State mask order:
+# x y z roll pitch yaw vx vy vz vroll vpitch vyaw ax ay az
+# Fuse both wheel vx and vy: never impose a non-holonomic vy=0 observation.
+# Wheel absolute pose is excluded; slam_toolbox owns downstream map alignment.
+# Covariances come from the conditioner and Madgwick, not this EKF file.
+# two_d_mode constrains z/roll/pitch, leaving x/y/yaw free.
+# These are simulation starting values; hardware calibration remains required.
+ekf_filter_node:
+  ros__parameters:
+    frequency: 50.0
+    sensor_timeout: 0.3
+    two_d_mode: true
+    print_diagnostics: true
+    publish_tf: true
+    publish_acceleration: false
+    transform_time_offset: 0.0
+    transform_timeout: 0.0
+    map_frame: map
+    odom_frame: odom
+    base_link_frame: base_footprint
+    world_frame: odom
+    reset_on_time_jump: true
+    odom0: /wheel/odometry_conditioned
+    odom0_config:
+    - false
+    - false
+    - false
+    - false
+    - false
+    - false
+    - true
+    - true
+    - false
+    - false
+    - false
+    - true
+    - false
+    - false
+    - false
+    odom0_differential: false
+    odom0_relative: false
+    odom0_queue_size: 10
+    imu0: /imu/data
+    imu0_config:
+    - false
+    - false
+    - false
+    - false
+    - false
+    - true
+    - false
+    - false
+    - false
+    - false
+    - false
+    - true
+    - false
+    - false
+    - false
+    imu0_differential: false
+    imu0_relative: false
+    imu0_queue_size: 20
+    imu0_remove_gravitational_acceleration: false

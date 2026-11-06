@@ -25,7 +25,7 @@
                 <sensor name="rplidar_c1" type="gpu_lidar">
                     <topic>${lidar_topic}</topic>
                     <!-- Keep the ROS frame stable after Gazebo fixed-joint reduction. -->
-                    <gz_frame_id>laser_frame</gz_frame_id>
+                    <frame_id>laser_frame</frame_id>
                     <visualize>true</visualize>
                     <update_rate>${lidar_update_rate}</update_rate>
                     <ray>

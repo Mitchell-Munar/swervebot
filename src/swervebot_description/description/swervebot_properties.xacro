@@ -111,4 +111,9 @@
   <xacro:property name="module_4_wheel_y" value="${-1 * wheel_offset_y}"/>
   <xacro:property name="module_4_wheel_z" value="${wheel_offset_z}"/>
 
+  <!-- Board mounting relative to base_link; simulation design defaults. -->
+  <xacro:property name="imu_xyz" value="0 0 0"/>
+  <xacro:property name="imu_rpy" value="0 0 0"/>
+  <xacro:property name="imu_rate" value="100"/>
+  <xacro:property name="mag_rate" value="25"/>
 </robot>

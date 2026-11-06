@@ -2,6 +2,10 @@
 <sdf version="1.12">
   <world name="swervebot_empty">
     <!-- 1 kHz physics, with the controller sampled at 100 Hz. No remote Fuel assets. -->
+    <!-- ENU magnetic field in tesla; deterministic synthetic test environment. -->
+    <magnetic_field>0 0.00002 -0.000045</magnetic_field>
+    <plugin filename="gz-sim-magnetometer-system" name="gz::sim::systems::Magnetometer"/>
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
     <physics name="1ms" type="ignored">
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1.0</real_time_factor>

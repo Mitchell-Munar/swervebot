@@ -27,7 +27,8 @@ def setup(context):
 
     clock = LaunchConfiguration('use_sim_time')
     actions = [include('swervebot_sim', 'simulation.launch.py', use_sim_time=clock,
-                       gui=LaunchConfiguration('gui')),
+                       gui=LaunchConfiguration('gui'),
+                       enable_sensor_fusion=LaunchConfiguration('enable_sensor_fusion')),
                include('swervebot_navigation', 'mux.launch.py', use_sim_time=clock)]
     if mode == 'slam':
         actions.append(include('swervebot_mapping', 'mapping.launch.py', use_sim_time=clock,
@@ -46,7 +47,7 @@ def setup(context):
 
 
 def generate_launch_description():
-    defaults = {'mode': 'slam', 'use_sim_time': 'true', 'map': '', 'gui': 'true',
+    defaults = {'enable_sensor_fusion': 'false', 'mode': 'slam', 'use_sim_time': 'true', 'map': '', 'gui': 'true',
                 'rviz': 'true', 'params_file': PathJoinSubstitution([
                     FindPackageShare('swervebot_navigation'), 'config', 'nav2.yaml']),
                 'slam_params_file': PathJoinSubstitution([

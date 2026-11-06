@@ -47,6 +47,7 @@ def _launch_simulation(context):
     if not use_sim_time:
         raise ValueError('gz_ros2_control forces use_sim_time=true; false would mix ROS clocks')
     gui, paused = boolean('gui'), boolean('paused')
+    fusion = boolean('enable_sensor_fusion')
     config_source = Path(LaunchConfiguration('controller_config').perform(context))
     with config_source.open(encoding='utf-8') as stream:
         config = yaml.safe_load(stream)
@@ -55,6 +56,8 @@ def _launch_simulation(context):
     for name in ('controller_manager', 'swerve_drive_controller', 'joint_state_broadcaster'):
         parameters = config.setdefault(name, {}).setdefault('ros__parameters', {})
         parameters['use_sim_time'] = use_sim_time
+    if fusion:
+        config['swerve_drive_controller']['ros__parameters']['enable_odom_tf'] = False
     temporary = tempfile.TemporaryDirectory(prefix='swervebot_sim_')
     config_path = Path(temporary.name) / 'controllers.yaml'
     with config_path.open('w', encoding='utf-8') as stream:
@@ -131,7 +134,8 @@ def _launch_simulation(context):
         arguments=['joint_state_broadcaster', 'swerve_drive_controller',
                    '--controller-manager', '/controller_manager',
                    '--controller-manager-timeout', '30', '--switch-timeout', '30',
-                   '--param-file', str(config_path), '--activate-as-group'])
+                   '--param-file', str(config_path), '--activate-as-group'] +
+                  (['--controller-ros-args', '--remap odom:=/wheel/odometry'] if fusion else []))
     # Process completion and service waits replace arbitrary startup sleeps. In paused mode,
     # activation completes once the user starts physics (switching occurs on a simulation tick).
     return [
@@ -141,6 +145,9 @@ def _launch_simulation(context):
         RegisterEventHandler(OnProcessExit(
             target_action=spawner, on_exit=checked_exit('Controller activation'))),
         LogInfo(msg='Spawning one swervebot; paused startup requires Play to finish activation.'),
+        *([IncludeLaunchDescription(PythonLaunchDescriptionSource(str(
+            Path(get_package_share_directory('swervebot_localization')) /
+            'launch/localization.launch.py')))] if fusion else []),
         state_publisher, bridge, *lidar_bridges, gazebo, spawn,
     ]
 
@@ -153,6 +160,7 @@ def generate_launch_description():
         DeclareLaunchArgument('simulation_config', default_value=str(
             Path(get_package_share_directory('swervebot_sim')) / 'config/simulation.yaml'),
             description='YAML selecting a bundled or absolute world_file'),
+        DeclareLaunchArgument('enable_sensor_fusion', default_value='false'),
         DeclareLaunchArgument('gui', default_value='true', description='Start Gazebo GUI'),
         DeclareLaunchArgument('paused', default_value='false', description='Start physics paused'),
         DeclareLaunchArgument('use_sim_time', default_value='true',

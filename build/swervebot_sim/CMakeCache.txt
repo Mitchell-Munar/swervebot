@@ -256,7 +256,7 @@ SITE:STRING=MunarDesktop
 _launch_test_FILE_NAME:FILEPATH=/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_sim/test/test_lidar.py
 
 //Path to a library.
-_lib:FILEPATH=/opt/ros/lyrical/lib/libtf2_msgs__rosidl_typesupport_fastrtps_cpp.so
+_lib:FILEPATH=/opt/ros/lyrical/lib/libcontroller_manager_msgs__rosidl_typesupport_fastrtps_cpp.so
 
 //The directory containing a CMake configuration file for action_msgs.
 action_msgs_DIR:PATH=/opt/ros/lyrical/share/action_msgs/cmake
@@ -352,7 +352,7 @@ ament_xmllint_BIN:FILEPATH=/opt/ros/lyrical/bin/ament_xmllint
 builtin_interfaces_DIR:PATH=/opt/ros/lyrical/share/builtin_interfaces/cmake
 
 //The directory containing a CMake configuration file for controller_manager_msgs.
-controller_manager_msgs_DIR:PATH=controller_manager_msgs_DIR-NOTFOUND
+controller_manager_msgs_DIR:PATH=/opt/ros/lyrical/share/controller_manager_msgs/cmake
 
 //The directory containing a CMake configuration file for fastcdr.
 fastcdr_DIR:PATH=/opt/ros/lyrical/lib/x86_64-linux-gnu/cmake/fastcdr
@@ -362,6 +362,9 @@ geometry_msgs_DIR:PATH=/opt/ros/lyrical/share/geometry_msgs/cmake
 
 //The directory containing a CMake configuration file for launch_testing_ament_cmake.
 launch_testing_ament_cmake_DIR:PATH=/opt/ros/lyrical/share/launch_testing_ament_cmake/cmake
+
+//The directory containing a CMake configuration file for lifecycle_msgs.
+lifecycle_msgs_DIR:PATH=/opt/ros/lyrical/share/lifecycle_msgs/cmake
 
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/lyrical/share/nav_msgs/cmake

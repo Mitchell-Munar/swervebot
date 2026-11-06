@@ -13,6 +13,9 @@
 
     <xacro:arg name="controller_config" default="$(find swerve_drive_controller)/config/controllers.yaml"/>
 
+    <xacro:include filename="$(find swervebot_description)/description/swervebot_imu.xacro"/>
+    <xacro:swervebot_imu use_sim="$(arg use_sim)"/>
+
     <!-- Execute/Instantiate the macros -->
     <xacro:swervebot_base />
 

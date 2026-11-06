@@ -18,7 +18,7 @@ ROS 2 swerve drive mobile robot project (`swerve_bot`) for a 4-module platform (
 * **Documentation & Review:** Add clear, concise comments to logical blocks of code explaining the functionality, mathematical formulas, and purpose of the lines to make the logic easily reviewable during pull requests. Focus especially on explaining math transitions inside the swerve kinematics and lifecycle management stages.
 
 ## Key Directories
-* `src/swervebot_controllers/` - Custom C++ `ros2_control` swerve controller classes and real-time logic.
+* `src/swerve_drive_controller/` - Custom C++ `ros2_control` swerve controller classes and real-time logic.
 * `src/swervebot_description/` - Robot URDF and Xacro configuration files. Use standard standard Xacro URL namespaces (`http://www.ros.org/wiki/xacro`).
 * `src/swervebot_sim/` - Latest version of Gazebo simulation launch and world configurations. Ensure `use_sim_time` configuration is passed correctly through launch arguments.
 * `src/swervebot_bringup` - Top-level launch files combining the robot description, controller manager configurations, and simulation nodes.

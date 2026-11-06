@@ -1,0 +1,8 @@
+condition_measurements:
+  ros__parameters:
+    # Variance floors: vx/vy in (m/s)^2, yaw rate in (rad/s)^2.
+    # Equal x/y uncertainty preserves holonomic symmetry; tune from stationary
+    # and moving measurements rather than suppressing legitimate crab velocity.
+    wheel_variances: [0.04, 0.04, 0.01]
+    # Filtered gyro noise includes a conservative allowance for bias/model error.
+    gyro_variance_floor: 0.0001

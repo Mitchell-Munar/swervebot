@@ -15,10 +15,10 @@ resource/swervebot_teleop
 swervebot_teleop/__init__.py
 swervebot_teleop/py.typed
 swervebot_teleop/teleop_node.py
-swervebot_teleop.egg-info/PKG-INFO
-swervebot_teleop.egg-info/SOURCES.txt
-swervebot_teleop.egg-info/dependency_links.txt
-swervebot_teleop.egg-info/entry_points.txt
-swervebot_teleop.egg-info/requires.txt
-swervebot_teleop.egg-info/top_level.txt
-swervebot_teleop.egg-info/zip-safe
+test/test_copyright.py
+test/test_device_selection.py
+test/test_flake8.py
+test/test_modes.py
+test/test_mypy.py
+test/test_pep257.py
+test/test_xmllint.py

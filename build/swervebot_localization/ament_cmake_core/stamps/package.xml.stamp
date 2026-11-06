@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>swervebot_localization</name><version>0.0.0</version>
+  <description>Holonomic wheel velocity and magnetic IMU fusion.</description>
+  <maintainer email="munar.mitchell@gmail.com">Mitchell Munar</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>rclpy</exec_depend><exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend><exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend><exec_depend>ament_index_python</exec_depend>
+  <exec_depend>robot_localization</exec_depend>
+  <exec_depend>imu_filter_madgwick</exec_depend>
+  <test_depend>launch_testing_ament_cmake</test_depend>
+  <test_depend>tf2_msgs</test_depend>
+  <test_depend>tf2_ros_py</test_depend>
+  <test_depend>geometry_msgs</test_depend>
+  <test_depend>ament_cmake_pytest</test_depend>
+  <test_depend>python3-yaml</test_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

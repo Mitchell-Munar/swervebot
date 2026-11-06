@@ -1,1 +1,16 @@
-/home/mitchell_munar/Code/ROS2/swervebot/build/web_bridge_demo/package.xml
+<?xml version="1.0"?>
+<package format="3">
+  <name>web_bridge_demo</name>
+  <version>0.0.0</version>
+  <description>WebSocket connectivity demo with a hostname ping service.</description>
+  <maintainer email="munar.mitchell@gmail.com">Mitchell Munar</maintainer>
+  <license>Apache-2.0</license>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>foxglove_bridge</exec_depend>
+  <test_depend>python3-pytest</test_depend>
+  <export><build_type>ament_python</build_type></export>
+</package>
