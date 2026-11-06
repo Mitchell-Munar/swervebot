@@ -1,0 +1,46 @@
+[0.034s] Invoking command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mitchell_munar/Code/ROS2/swervebot/install/web_bridge_demo:/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_navigation -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation
+[0.146s] -- Found ament_cmake: 2.8.8 (/opt/ros/lyrical/share/ament_cmake/cmake)
+[0.149s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.152s] -- Found ament_cmake_pytest: 2.8.8 (/opt/ros/lyrical/share/ament_cmake_pytest/cmake)
+[0.285s] -- Found ament_lint_auto: 0.20.6 (/opt/ros/lyrical/share/ament_lint_auto/cmake)
+[0.340s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.340s] -- Configured 'flake8' exclude dirs and/or files: 
+[0.340s] -- Added test 'lint_cmake' to check CMake code style
+[0.340s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.341s] -- Added test 'xmllint' to check XML markup files
+[0.341s] -- Configuring done (0.3s)
+[0.343s] -- Generating done (0.0s)
+[0.344s] -- Build files have been written to: /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation
+[0.345s] Invoked command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mitchell_munar/Code/ROS2/swervebot/install/web_bridge_demo:/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_navigation -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation
+[0.346s] Invoking command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mitchell_munar/Code/ROS2/swervebot/install/web_bridge_demo:/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation -- -j24 -l24
+[0.360s] Invoked command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mitchell_munar/Code/ROS2/swervebot/install/web_bridge_demo:/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation -- -j24 -l24
+[0.360s] Invoking command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mitchell_munar/Code/ROS2/swervebot/install/web_bridge_demo:/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation
+[0.363s] -- Install configuration: ""
+[0.363s] -- Execute custom install script
+[0.363s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/config/nav2.yaml
+[0.363s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/config/twist_mux.yaml
+[0.363s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/launch/__pycache__/localization.launch.cpython-314.pyc
+[0.363s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/launch/__pycache__/mux.launch.cpython-314.pyc
+[0.363s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/launch/__pycache__/navigation.launch.cpython-314.pyc
+[0.363s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/launch/localization.launch.py
+[0.363s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/launch/mux.launch.py
+[0.363s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/launch/navigation.launch.py
+[0.363s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/rviz/mapping.rviz
+[0.363s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/rviz/navigation.rviz
+[0.363s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/ament_index/resource_index/package_run_dependencies/swervebot_navigation
+[0.363s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/ament_index/resource_index/parent_prefix_path/swervebot_navigation
+[0.363s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/environment/ament_prefix_path.sh
+[0.364s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/environment/ament_prefix_path.dsv
+[0.364s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/environment/path.sh
+[0.364s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/environment/path.dsv
+[0.364s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/local_setup.bash
+[0.364s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/local_setup.fish
+[0.364s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/local_setup.sh
+[0.364s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/local_setup.zsh
+[0.364s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/local_setup.dsv
+[0.364s] -- Symlinking: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/package.dsv
+[0.367s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/ament_index/resource_index/packages/swervebot_navigation
+[0.367s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/cmake/swervebot_navigationConfig.cmake
+[0.367s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/cmake/swervebot_navigationConfig-version.cmake
+[0.367s] -- Up-to-date symlink: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation/share/swervebot_navigation/package.xml
+[0.368s] Invoked command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mitchell_munar/Code/ROS2/swervebot/install/web_bridge_demo:/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation

@@ -34,3 +34,13 @@ be in [0,1); scales must be finite and nonnegative.
 Autonomous/manual arbitration is not provided. The downstream controller's watchdog
 stops when command updates cease. Test with `colcon test --packages-select
 swervebot_teleop` (pytest includes mode projection and input handling tests).
+
+Device selection is read from the profile's optional `device` mapping:
+`id` is a nonnegative integer (fallback 0), and `name` is a string (fallback empty).
+The bundled profile selects ID 1 for the Xbox setup. Set `name` to the exact SDL
+name to select independently of enumeration order; a nonempty name takes priority.
+Launch `device_id:=1` overrides the profile and clears its name; `device_name`
+overrides the name and takes priority if both launch overrides are supplied.
+Startup lists detected devices and warns when multiple devices are present.
+Enumeration failures do not prevent the driver from trying the configured device.
+Test forward motion with the left stick: Ackermann suppresses steering-only input.

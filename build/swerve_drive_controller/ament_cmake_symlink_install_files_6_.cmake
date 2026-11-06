@@ -1,1 +1,1 @@
-ament_cmake_symlink_install_files("/home/mmunar/Code/ROS2/swerve_bot/src/swerve_drive_controller" FILES "/opt/ros/lyrical/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/swerve_drive_controller/environment")
+ament_cmake_symlink_install_files("/home/mitchell_munar/Code/ROS2/swervebot/src/swerve_drive_controller" FILES "/opt/ros/lyrical/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/swerve_drive_controller/environment")

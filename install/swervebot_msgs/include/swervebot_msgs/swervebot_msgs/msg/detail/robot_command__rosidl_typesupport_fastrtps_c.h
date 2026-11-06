@@ -1,1 +1,0 @@
-/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_msgs/rosidl_typesupport_fastrtps_c/swervebot_msgs/msg/detail/robot_command__rosidl_typesupport_fastrtps_c.h

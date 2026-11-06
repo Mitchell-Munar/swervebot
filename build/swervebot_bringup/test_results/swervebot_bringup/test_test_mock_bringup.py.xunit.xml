@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="swervebot_bringup" tests="1" failures="0" time="0.075" errors="1" skipped="0">
+  <testcase classname="swervebot_bringup" name="test_test_mock_bringup.py.xunit.missing_result" time="0.075">
+    <error message="The test did not generate a result file:&#10;&#10;usage: python3 -m launch_testing.launch_test [-h]&#10;                                             [--package-name PACKAGE_NAME]&#10;                                             [-v] [-s] [--junit-xml XMLPATH]&#10;                                             launch_test_file&#10;                                             [launch_arguments ...]&#10;python3 -m launch_testing.launch_test: error: No module named 'controller_manager_msgs'&#10;"/>
+  </testcase>
+</testsuite>

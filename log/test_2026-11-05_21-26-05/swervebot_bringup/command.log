@@ -1,0 +1,2 @@
+Invoking command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+Invoked command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup' returned '8': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process

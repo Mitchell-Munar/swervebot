@@ -1,8 +1,8 @@
-# Install script for directory: /home/mmunar/Code/ROS2/swerve_bot/src/swervebot_mapping
+# Install script for directory: /home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_mapping
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_mapping")
+  set(CMAKE_INSTALL_PREFIX "/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_mapping")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,13 +43,13 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_mapping/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  include("/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_mapping/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_mapping/install_local_manifest.txt"
+  file(WRITE "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_mapping/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -65,6 +65,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_mapping/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_mapping/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

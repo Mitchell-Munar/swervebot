@@ -1,0 +1,268 @@
+[0.022s] Invoking command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+[0.026s] SetCTestConfiguration:BuildDirectory:/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup
+[0.026s] UpdateCTestConfiguration  from :/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/CTestConfiguration.ini
+[0.026s] Parse Config file:/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/CTestConfiguration.ini
+[0.026s] SetCMakeVariable:CTEST_SITE:MunarDesktop
+[0.026s] SetCMakeVariable:CTEST_SOURCE_DIRECTORY:/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup
+[0.026s] SetCMakeVariable:CTEST_BINARY_DIRECTORY:/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup
+[0.026s] SetCMakeVariable:CTEST_CONFIGURE_COMMAND:"/usr/bin/cmake" "/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup"
+[0.026s] SetCMakeVariable:CTEST_TEST_TIMEOUT:10000000
+[0.026s] UpdateCTestConfiguration  from :/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/CTestConfiguration.ini
+[0.026s] Parse Config file:/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/CTestConfiguration.ini
+[0.026s] SetCMakeVariable:CTEST_SITE:MunarDesktop
+[0.026s] SetCMakeVariable:CTEST_SOURCE_DIRECTORY:/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup
+[0.026s] SetCMakeVariable:CTEST_BINARY_DIRECTORY:/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup
+[0.026s] SetCMakeVariable:CTEST_CONFIGURE_COMMAND:"/usr/bin/cmake" "/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup"
+[0.027s] SetCTestConfiguration:BuildDirectory:/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup
+[0.027s] SetCTestConfiguration:SourceDirectory:/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup
+[0.027s] Test project /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup
+[0.027s] Constructing a list of tests
+[0.027s] Done constructing a list of tests
+[0.027s] Updating test list for fixtures
+[0.027s] Added 0 tests to meet fixture requirements
+[0.027s] Checking test dependency graph...
+[0.027s] Checking test dependency graph end
+[0.027s] test 1
+[0.027s]     Start 1: test_test_mock_bringup.py
+[0.027s] 
+[0.027s] 1: Test command: /usr/bin/python3 "-u" "/opt/ros/lyrical/share/ament_cmake_test/cmake/run_test.py" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/test_test_mock_bringup.py.xunit.xml" "--package-name" "swervebot_bringup" "--output-file" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/launch_test/test_test_mock_bringup.py.txt" "--env" "PYTHONDONTWRITEBYTECODE=1" "--command" "/usr/bin/python3" "-m" "launch_testing.launch_test" "/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup/test/test_mock_bringup.py" "--junit-xml=/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/test_test_mock_bringup.py.xunit.xml" "--package-name=swervebot_bringup"
+[0.027s] 1: Working Directory: /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup
+[0.027s] 1: Test timeout computed to be: 90
+[0.059s] 1: -- run_test.py: extra environment variables:
+[0.059s] 1:  - PYTHONDONTWRITEBYTECODE=1
+[0.059s] 1: -- run_test.py: invoking following command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup':
+[0.059s] 1:  - /usr/bin/python3 -m launch_testing.launch_test /home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup/test/test_mock_bringup.py --junit-xml=/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/test_test_mock_bringup.py.xunit.xml --package-name=swervebot_bringup
+[0.123s] 1: usage: python3 -m launch_testing.launch_test [-h]
+[0.123s] 1:                                              [--package-name PACKAGE_NAME]
+[0.123s] 1:                                              [-v] [-s] [--junit-xml XMLPATH]
+[0.123s] 1:                                              launch_test_file
+[0.123s] 1:                                              [launch_arguments ...]
+[0.123s] 1: python3 -m launch_testing.launch_test: error: No module named 'controller_manager_msgs'
+[0.134s] 1: -- run_test.py: return code 2
+[0.134s] 1: -- run_test.py: generate result file '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/test_test_mock_bringup.py.xunit.xml' with failed test
+[0.134s] 1: -- run_test.py: verify result file '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/test_test_mock_bringup.py.xunit.xml'
+[0.140s] 1/5 Test #1: test_test_mock_bringup.py ........***Failed    0.11 sec
+[0.140s] test 2
+[0.140s]     Start 2: flake8
+[0.140s] 
+[0.141s] 2: Test command: /usr/bin/python3 "-u" "/opt/ros/lyrical/share/ament_cmake_test/cmake/run_test.py" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/flake8.xunit.xml" "--package-name" "swervebot_bringup" "--output-file" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/ament_flake8/flake8.txt" "--command" "/opt/ros/lyrical/bin/ament_flake8" "--xunit-file" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/flake8.xunit.xml"
+[0.141s] 2: Working Directory: /home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup
+[0.141s] 2: Test timeout computed to be: 60
+[0.172s] 2: -- run_test.py: invoking following command in '/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup':
+[0.172s] 2:  - /opt/ros/lyrical/bin/ament_flake8 --xunit-file /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/flake8.xunit.xml
+[0.749s] 2: Traceback (most recent call last):
+[0.749s] 2:   File "/opt/ros/lyrical/bin/ament_flake8", line 33, in <module>
+[0.749s] 2:     sys.exit(load_entry_point('ament-flake8==0.20.6', 'console_scripts', 'ament_flake8')())
+[0.750s] 2:              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+[0.750s] 2:   File "/opt/ros/lyrical/lib/python3.14/site-packages/ament_flake8/main.py", line 32, in main
+[0.750s] 2:     rc, _ = main_with_errors(argv=argv)
+[0.750s] 2:             ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+[0.750s] 2:   File "/opt/ros/lyrical/lib/python3.14/site-packages/ament_flake8/main.py", line 89, in main_with_errors
+[0.750s] 2:     report = generate_flake8_report(
+[0.750s] 2:         args.config_file, args.paths, args.excludes,
+[0.750s] 2:         max_line_length=args.linelength)
+[0.750s] 2:   File "/opt/ros/lyrical/lib/python3.14/site-packages/ament_flake8/main.py", line 282, in generate_flake8_report
+[0.750s] 2:     report.report = style.check_files(paths)
+[0.750s] 2:                     ~~~~~~~~~~~~~~~~~^^^^^^^
+[0.750s] 2:   File "/usr/lib/python3/dist-packages/flake8/api/legacy.py", line 116, in check_files
+[0.750s] 2:     self._application.run_checks()
+[0.750s] 2:     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+[0.750s] 2:   File "/usr/lib/python3/dist-packages/flake8/main/application.py", line 103, in run_checks
+[0.750s] 2:     self.file_checker_manager.run()
+[0.750s] 2:     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+[0.750s] 2:   File "/usr/lib/python3/dist-packages/flake8/checker.py", line 235, in run
+[0.750s] 2:     self.run_parallel()
+[0.750s] 2:     ~~~~~~~~~~~~~~~~~^^
+[0.750s] 2:   File "/usr/lib/python3/dist-packages/flake8/checker.py", line 196, in run_parallel
+[0.750s] 2:     pool = _try_initialize_processpool(self.jobs, self.argv)
+[0.750s] 2:   File "/usr/lib/python3/dist-packages/flake8/checker.py", line 591, in _try_initialize_processpool
+[0.750s] 2:     return multiprocessing.Pool(job_count, _mp_init, initargs=(argv,))
+[0.750s] 2:            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0.750s] 2:   File "/usr/lib/python3.14/multiprocessing/context.py", line 119, in Pool
+[0.750s] 2:     return Pool(processes, initializer, initargs, maxtasksperchild,
+[0.751s] 2:                 context=self.get_context())
+[0.751s] 2:   File "/usr/lib/python3.14/multiprocessing/pool.py", line 215, in __init__
+[0.751s] 2:     self._repopulate_pool()
+[0.751s] 2:     ~~~~~~~~~~~~~~~~~~~~~^^
+[0.751s] 2:   File "/usr/lib/python3.14/multiprocessing/pool.py", line 306, in _repopulate_pool
+[0.751s] 2:     return self._repopulate_pool_static(self._ctx, self.Process,
+[0.751s] 2:            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+[0.751s] 2:                                         self._processes,
+[0.751s] 2:                                         ^^^^^^^^^^^^^^^^
+[0.751s] 2:     ...<3 lines>...
+[0.751s] 2:                                         self._maxtasksperchild,
+[0.751s] 2:                                         ^^^^^^^^^^^^^^^^^^^^^^^
+[0.751s] 2:                                         self._wrap_exception)
+[0.751s] 2:                                         ^^^^^^^^^^^^^^^^^^^^^
+[0.751s] 2:   File "/usr/lib/python3.14/multiprocessing/pool.py", line 329, in _repopulate_pool_static
+[0.751s] 2:     w.start()
+[0.751s] 2:     ~~~~~~~^^
+[0.751s] 2:   File "/usr/lib/python3.14/multiprocessing/process.py", line 121, in start
+[0.751s] 2:     self._popen = self._Popen(self)
+[0.751s] 2:                   ~~~~~~~~~~~^^^^^^
+[0.751s] 2:   File "/usr/lib/python3.14/multiprocessing/context.py", line 306, in _Popen
+[0.751s] 2:     return Popen(process_obj)
+[0.751s] 2:   File "/usr/lib/python3.14/multiprocessing/popen_forkserver.py", line 35, in __init__
+[0.751s] 2:     super().__init__(process_obj)
+[0.751s] 2:     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+[0.751s] 2:   File "/usr/lib/python3.14/multiprocessing/popen_fork.py", line 20, in __init__
+[0.751s] 2:     self._launch(process_obj)
+[0.751s] 2:     ~~~~~~~~~~~~^^^^^^^^^^^^^
+[0.751s] 2:   File "/usr/lib/python3.14/multiprocessing/popen_forkserver.py", line 51, in _launch
+[0.751s] 2:     self.sentinel, w = forkserver.connect_to_new_process(self._fds)
+[0.751s] 2:                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+[0.751s] 2:   File "/usr/lib/python3.14/multiprocessing/forkserver.py", line 89, in connect_to_new_process
+[0.751s] 2:     self.ensure_running()
+[0.751s] 2:     ~~~~~~~~~~~~~~~~~~~^^
+[0.751s] 2:   File "/usr/lib/python3.14/multiprocessing/forkserver.py", line 167, in ensure_running
+[0.751s] 2:     listener.bind(address)
+[0.751s] 2:     ~~~~~~~~~~~~~^^^^^^^^^
+[0.751s] 2: PermissionError: [Errno 1] Operation not permitted
+[0.751s] 2: Error in sys.excepthook:
+[0.751s] 2: Traceback (most recent call last):
+[0.751s] 2:   File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 238, in partial_apport_excepthook
+[0.751s] 2:     return apport_excepthook(binary, exc_type, exc_obj, exc_tb)
+[0.751s] 2:   File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 152, in apport_excepthook
+[0.751s] 2:     os.open(pr_filename, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o640), "wb"
+[0.751s] 2:     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0.751s] 2: OSError: [Errno 30] Read-only file system: '/var/crash/_opt_ros_lyrical_bin_ament_flake8.1000.crash'
+[0.751s] 2: 
+[0.751s] 2: Original exception was:
+[0.751s] 2: Traceback (most recent call last):
+[0.751s] 2:   File "/opt/ros/lyrical/bin/ament_flake8", line 33, in <module>
+[0.751s] 2:     sys.exit(load_entry_point('ament-flake8==0.20.6', 'console_scripts', 'ament_flake8')())
+[0.751s] 2:              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+[0.751s] 2:   File "/opt/ros/lyrical/lib/python3.14/site-packages/ament_flake8/main.py", line 32, in main
+[0.751s] 2:     rc, _ = main_with_errors(argv=argv)
+[0.751s] 2:             ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+[0.751s] 2:   File "/opt/ros/lyrical/lib/python3.14/site-packages/ament_flake8/main.py", line 89, in main_with_errors
+[0.751s] 2:     report = generate_flake8_report(
+[0.751s] 2:         args.config_file, args.paths, args.excludes,
+[0.751s] 2:         max_line_length=args.linelength)
+[0.751s] 2:   File "/opt/ros/lyrical/lib/python3.14/site-packages/ament_flake8/main.py", line 282, in generate_flake8_report
+[0.751s] 2:     report.report = style.check_files(paths)
+[0.751s] 2:                     ~~~~~~~~~~~~~~~~~^^^^^^^
+[0.751s] 2:   File "/usr/lib/python3/dist-packages/flake8/api/legacy.py", line 116, in check_files
+[0.751s] 2:     self._application.run_checks()
+[0.752s] 2:     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+[0.752s] 2:   File "/usr/lib/python3/dist-packages/flake8/main/application.py", line 103, in run_checks
+[0.752s] 2:     self.file_checker_manager.run()
+[0.752s] 2:     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+[0.752s] 2:   File "/usr/lib/python3/dist-packages/flake8/checker.py", line 235, in run
+[0.752s] 2:     self.run_parallel()
+[0.752s] 2:     ~~~~~~~~~~~~~~~~~^^
+[0.752s] 2:   File "/usr/lib/python3/dist-packages/flake8/checker.py", line 196, in run_parallel
+[0.752s] 2:     pool = _try_initialize_processpool(self.jobs, self.argv)
+[0.752s] 2:   File "/usr/lib/python3/dist-packages/flake8/checker.py", line 591, in _try_initialize_processpool
+[0.752s] 2:     return multiprocessing.Pool(job_count, _mp_init, initargs=(argv,))
+[0.752s] 2:            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0.752s] 2:   File "/usr/lib/python3.14/multiprocessing/context.py", line 119, in Pool
+[0.752s] 2:     return Pool(processes, initializer, initargs, maxtasksperchild,
+[0.752s] 2:                 context=self.get_context())
+[0.752s] 2:   File "/usr/lib/python3.14/multiprocessing/pool.py", line 215, in __init__
+[0.752s] 2:     self._repopulate_pool()
+[0.752s] 2:     ~~~~~~~~~~~~~~~~~~~~~^^
+[0.752s] 2:   File "/usr/lib/python3.14/multiprocessing/pool.py", line 306, in _repopulate_pool
+[0.752s] 2:     return self._repopulate_pool_static(self._ctx, self.Process,
+[0.752s] 2:            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+[0.752s] 2:                                         self._processes,
+[0.752s] 2:                                         ^^^^^^^^^^^^^^^^
+[0.752s] 2:     ...<3 lines>...
+[0.752s] 2:                                         self._maxtasksperchild,
+[0.752s] 2:                                         ^^^^^^^^^^^^^^^^^^^^^^^
+[0.752s] 2:                                         self._wrap_exception)
+[0.752s] 2:                                         ^^^^^^^^^^^^^^^^^^^^^
+[0.752s] 2:   File "/usr/lib/python3.14/multiprocessing/pool.py", line 329, in _repopulate_pool_static
+[0.752s] 2:     w.start()
+[0.752s] 2:     ~~~~~~~^^
+[0.752s] 2:   File "/usr/lib/python3.14/multiprocessing/process.py", line 121, in start
+[0.752s] 2:     self._popen = self._Popen(self)
+[0.752s] 2:                   ~~~~~~~~~~~^^^^^^
+[0.752s] 2:   File "/usr/lib/python3.14/multiprocessing/context.py", line 306, in _Popen
+[0.752s] 2:     return Popen(process_obj)
+[0.752s] 2:   File "/usr/lib/python3.14/multiprocessing/popen_forkserver.py", line 35, in __init__
+[0.752s] 2:     super().__init__(process_obj)
+[0.752s] 2:     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+[0.752s] 2:   File "/usr/lib/python3.14/multiprocessing/popen_fork.py", line 20, in __init__
+[0.752s] 2:     self._launch(process_obj)
+[0.752s] 2:     ~~~~~~~~~~~~^^^^^^^^^^^^^
+[0.752s] 2:   File "/usr/lib/python3.14/multiprocessing/popen_forkserver.py", line 51, in _launch
+[0.752s] 2:     self.sentinel, w = forkserver.connect_to_new_process(self._fds)
+[0.752s] 2:                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+[0.752s] 2:   File "/usr/lib/python3.14/multiprocessing/forkserver.py", line 89, in connect_to_new_process
+[0.752s] 2:     self.ensure_running()
+[0.752s] 2:     ~~~~~~~~~~~~~~~~~~~^^
+[0.752s] 2:   File "/usr/lib/python3.14/multiprocessing/forkserver.py", line 167, in ensure_running
+[0.752s] 2:     listener.bind(address)
+[0.752s] 2:     ~~~~~~~~~~~~~^^^^^^^^^
+[0.752s] 2: PermissionError: [Errno 1] Operation not permitted
+[0.779s] 2: -- run_test.py: return code 1
+[0.779s] 2: -- run_test.py: generate result file '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/flake8.xunit.xml' with failed test
+[0.779s] 2: -- run_test.py: verify result file '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/flake8.xunit.xml'
+[0.786s] 2/5 Test #2: flake8 ...........................***Failed    0.64 sec
+[0.786s] test 3
+[0.786s]     Start 3: lint_cmake
+[0.786s] 
+[0.786s] 3: Test command: /usr/bin/python3 "-u" "/opt/ros/lyrical/share/ament_cmake_test/cmake/run_test.py" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/lint_cmake.xunit.xml" "--package-name" "swervebot_bringup" "--output-file" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/ament_lint_cmake/lint_cmake.txt" "--command" "/opt/ros/lyrical/bin/ament_lint_cmake" "--xunit-file" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/lint_cmake.xunit.xml"
+[0.786s] 3: Working Directory: /home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup
+[0.786s] 3: Test timeout computed to be: 60
+[0.819s] 3: -- run_test.py: invoking following command in '/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup':
+[0.819s] 3:  - /opt/ros/lyrical/bin/ament_lint_cmake --xunit-file /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/lint_cmake.xunit.xml
+[0.853s] 3: 
+[0.853s] 3: No problems found
+[0.859s] 3: -- run_test.py: return code 0
+[0.859s] 3: -- run_test.py: verify result file '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/lint_cmake.xunit.xml'
+[0.865s] 3/5 Test #3: lint_cmake .......................   Passed    0.08 sec
+[0.865s] test 4
+[0.865s]     Start 4: pep257
+[0.865s] 
+[0.865s] 4: Test command: /usr/bin/python3 "-u" "/opt/ros/lyrical/share/ament_cmake_test/cmake/run_test.py" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/pep257.xunit.xml" "--package-name" "swervebot_bringup" "--output-file" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/ament_pep257/pep257.txt" "--command" "/opt/ros/lyrical/bin/ament_pep257" "--xunit-file" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/pep257.xunit.xml"
+[0.865s] 4: Working Directory: /home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup
+[0.865s] 4: Test timeout computed to be: 60
+[0.896s] 4: -- run_test.py: invoking following command in '/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup':
+[0.896s] 4:  - /opt/ros/lyrical/bin/ament_pep257 --xunit-file /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/pep257.xunit.xml
+[0.954s] 4: checking ./launch/autonomy.launch.py
+[0.954s] 4: checking ./launch/foxglove_bridge.launch.py
+[0.954s] 4: checking ./launch/mock.launch.py
+[0.954s] 4: checking ./launch/simulation.launch.py
+[0.954s] 4: checking ./test/test_mock_bringup.py
+[0.954s] 4: No problems found
+[0.963s] 4: -- run_test.py: return code 0
+[0.963s] 4: -- run_test.py: verify result file '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/pep257.xunit.xml'
+[0.970s] 4/5 Test #4: pep257 ...........................   Passed    0.10 sec
+[0.970s] test 5
+[0.970s]     Start 5: xmllint
+[0.970s] 
+[0.970s] 5: Test command: /usr/bin/python3 "-u" "/opt/ros/lyrical/share/ament_cmake_test/cmake/run_test.py" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/xmllint.xunit.xml" "--package-name" "swervebot_bringup" "--output-file" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/ament_xmllint/xmllint.txt" "--command" "/opt/ros/lyrical/bin/ament_xmllint" "--xunit-file" "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/xmllint.xunit.xml"
+[0.970s] 5: Working Directory: /home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup
+[0.970s] 5: Test timeout computed to be: 60
+[1.003s] 5: -- run_test.py: invoking following command in '/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup':
+[1.003s] 5:  - /opt/ros/lyrical/bin/ament_xmllint --xunit-file /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/xmllint.xunit.xml
+[1.046s] 5: Warning: failed to download schema from 'http://download.ros.org/schema/package_format3.xsd': <urlopen error [Errno -3] Temporary failure in name resolution>
+[1.048s] 5: File 'package.xml' is invalid:
+[1.048s] 5: I/O warning : failed to load "http://download.ros.org/schema/package_format3.xsd": No such file or directory
+[1.048s] 5: Schemas parser error : Failed to locate the main schema resource at 'http://download.ros.org/schema/package_format3.xsd'.
+[1.048s] 5: WXS schema http://download.ros.org/schema/package_format3.xsd failed to compile
+[1.048s] 5: 
+[1.048s] 5: 1 files are invalid
+[1.059s] 5: -- run_test.py: return code 1
+[1.059s] 5: -- run_test.py: verify result file '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/xmllint.xunit.xml'
+[1.066s] 5/5 Test #5: xmllint ..........................***Failed    0.10 sec
+[1.066s] 
+[1.066s] 40% tests passed, 3 tests failed out of 5
+[1.066s] 
+[1.066s] Label Time Summary:
+[1.066s] flake8         =   0.64 sec*proc (1 test)
+[1.066s] launch_test    =   0.11 sec*proc (1 test)
+[1.066s] lint_cmake     =   0.08 sec*proc (1 test)
+[1.066s] linter         =   0.93 sec*proc (4 tests)
+[1.067s] pep257         =   0.10 sec*proc (1 test)
+[1.067s] xmllint        =   0.10 sec*proc (1 test)
+[1.067s] 
+[1.067s] Total Test time (real) =   1.04 sec
+[1.067s] 
+[1.067s] The following tests FAILED:
+[1.067s] 	  1 - test_test_mock_bringup.py (Failed)                launch_test
+[1.067s] 	  2 - flake8 (Failed)                                   flake8 linter
+[1.067s] 	  5 - xmllint (Failed)                                  linter xmllint
+[1.069s] Invoked command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup' returned '8': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process

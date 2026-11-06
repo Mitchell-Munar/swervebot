@@ -1,0 +1,170 @@
+-- The C compiler identification is GNU 15.2.0
+-- The CXX compiler identification is GNU 15.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.8.8 (/opt/ros/lyrical/share/ament_cmake/cmake)
+-- Found launch_testing_ament_cmake: 3.9.8 (/opt/ros/lyrical/share/launch_testing_ament_cmake/cmake)
+-- Found ament_cmake_pytest: 2.8.8 (/opt/ros/lyrical/share/ament_cmake_pytest/cmake)
+-- Found ament_lint_auto: 0.20.6 (/opt/ros/lyrical/share/ament_lint_auto/cmake)
+-- Found rosidl_generator_c: 5.2.1 (/opt/ros/lyrical/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 5.2.1 (/opt/ros/lyrical/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Configured 'flake8' exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_sim
+-- Install configuration: ""
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/launch
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/launch/__pycache__
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/launch/__pycache__/simulation.launch.cpython-314.pyc
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/launch/simulation.launch.py
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/worlds
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/worlds/test_room_1.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/worlds/empty.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/config/simulation_empty.yaml
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/config/bridge.yaml
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/config/simulation.yaml
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_002
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_002/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_002/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_002/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_002/meshes/Cube_002.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_002/meshes/Cube_002.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_002/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_006
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_006/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_006/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_006/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_006/meshes/Cube_006.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_006/meshes/Cube_006.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_006/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_013
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_013/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_013/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_013/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_013/meshes/Cube_013.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_013/meshes/Cube_013.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_013/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_004
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_004/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_004/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_004/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_004/meshes/Cube_004.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_004/meshes/Cube_004.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_004/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_007
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_007/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_007/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_007/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_007/meshes/Cube_007.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_007/meshes/Cube_007.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_007/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_015
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_015/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_015/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_015/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_015/meshes/Cube_015.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_015/meshes/Cube_015.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_015/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_003
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_003/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_003/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_003/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_003/meshes/Cube_003.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_003/meshes/Cube_003.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_003/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_010
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_010/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_010/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_010/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_010/meshes/Cube_010.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_010/meshes/Cube_010.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_010/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_014
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_014/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_014/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_014/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_014/meshes/Cube_014.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_014/meshes/Cube_014.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_014/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube/meshes/Cube.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube/meshes/Cube.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_008
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_008/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_008/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_008/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_008/meshes/Cube_008.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_008/meshes/Cube_008.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_008/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_011
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_011/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_011/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_011/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_011/meshes/Cube_011.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_011/meshes/Cube_011.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_011/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_005
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_005/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_005/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_005/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_005/meshes/Cube_005.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_005/meshes/Cube_005.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_005/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_009
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_009/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_009/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_009/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_009/meshes/Cube_009.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_009/meshes/Cube_009.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_009/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_001
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_001/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_001/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_001/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_001/meshes/Cube_001.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_001/meshes/Cube_001.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_001/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_012
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_012/model.sdf
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_012/.blender_export
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_012/meshes
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_012/meshes/Cube_012.obj
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_012/meshes/Cube_012.mtl
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/models/Cube_012/model.config
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/README.md
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/ament_index/resource_index/package_run_dependencies/swervebot_sim
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/ament_index/resource_index/parent_prefix_path/swervebot_sim
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/environment/ament_prefix_path.sh
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/environment/ament_prefix_path.dsv
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/environment/path.sh
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/environment/path.dsv
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/local_setup.bash
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/local_setup.fish
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/local_setup.sh
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/local_setup.zsh
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/local_setup.dsv
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/package.dsv
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/ament_index/resource_index/packages/swervebot_sim
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/cmake/swervebot_simConfig.cmake
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/cmake/swervebot_simConfig-version.cmake
+-- Installing: /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_sim/share/swervebot_sim/package.xml

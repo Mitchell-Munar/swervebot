@@ -1,3 +1,9 @@
+# SDL device selection; omit this section to default to device 0.
+# A nonempty name takes precedence over the numeric ID.
+device:
+  id: 1
+  name: ""
+
 # Profile metadata
 profile_name: "game_controller"
 

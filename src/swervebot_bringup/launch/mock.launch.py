@@ -4,10 +4,13 @@ from pathlib import Path
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, EmitEvent, RegisterEventHandler
+from launch.actions import DeclareLaunchArgument, EmitEvent, IncludeLaunchDescription, RegisterEventHandler
+from launch.conditions import IfCondition
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.event_handlers import OnProcessExit
 from launch.events import Shutdown
-from launch.substitutions import Command, LaunchConfiguration
+from launch.substitutions import Command, LaunchConfiguration, PathJoinSubstitution
+from launch_ros.substitutions import FindPackageShare
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
 
@@ -44,6 +47,16 @@ def generate_launch_description():
         DeclareLaunchArgument('controller_config',
                               default_value=str(controllers / 'config/controllers_mock.yaml')),
         DeclareLaunchArgument('use_sim_time', default_value='false'),
+        DeclareLaunchArgument('enable_foxglove_bridge', default_value='true'),
+        DeclareLaunchArgument('foxglove_address', default_value='0.0.0.0'),
+        DeclareLaunchArgument('foxglove_port', default_value='8765'),
+        # Resolve the shared bridge launch at runtime and inherit this entrypoint's clock.
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(PathJoinSubstitution([
+                FindPackageShare('swervebot_bringup'), 'launch', 'foxglove_bridge.launch.py'])),
+            condition=IfCondition(LaunchConfiguration('enable_foxglove_bridge')),
+            launch_arguments={key: LaunchConfiguration(key) for key in
+                              ('foxglove_address', 'foxglove_port', 'use_sim_time')}.items()),
         RegisterEventHandler(OnProcessExit(target_action=spawner, on_exit=checked_exit)),
         publisher, manager, spawner,
     ])

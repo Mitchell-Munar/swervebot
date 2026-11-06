@@ -1,3 +1,3 @@
 # generated from colcon_core/shell/template/hook_prepend_value.sh.em
 
-_colcon_prepend_unique_value PYTHONPATH "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_teleop"
+_colcon_prepend_unique_value PYTHONPATH "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_teleop"

@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: web_bridge_demo
+Version: 0.0.0
+Summary: WebSocket connectivity demo with a hostname ping service.
+Maintainer: Mitchell Munar
+Maintainer-email: munar.mitchell@gmail.com
+License: Apache-2.0
+Requires-Dist: setuptools
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Dynamic: license
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary

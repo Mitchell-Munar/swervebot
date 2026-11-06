@@ -1,0 +1,25 @@
+[0.011s] Invoking command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mitchell_munar/Code/ROS2/swervebot/install/web_bridge_demo:/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop:/opt/ros/lyrical DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_navigation -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_navigation
+[0.116s] -- The C compiler identification is GNU 15.2.0
+[0.116s] -- The CXX compiler identification is GNU 15.2.0
+[0.116s] -- Detecting C compiler ABI info
+[0.116s] -- Detecting C compiler ABI info - done
+[0.116s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.116s] -- Detecting C compile features
+[0.116s] -- Detecting C compile features - done
+[0.121s] -- Detecting CXX compiler ABI info
+[0.157s] -- Detecting CXX compiler ABI info - done
+[0.163s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.164s] -- Detecting CXX compile features
+[0.164s] -- Detecting CXX compile features - done
+[0.168s] -- Found ament_cmake: 2.8.8 (/opt/ros/lyrical/share/ament_cmake/cmake)
+[0.315s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.327s] -- Found ament_cmake_pytest: 2.8.8 (/opt/ros/lyrical/share/ament_cmake_pytest/cmake)
+[0.466s] -- Found ament_lint_auto: 0.20.6 (/opt/ros/lyrical/share/ament_lint_auto/cmake)
+[0.529s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.529s] -- Configured 'flake8' exclude dirs and/or files: 
+[0.529s] -- Added test 'lint_cmake' to check CMake code style
+[0.530s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.531s] -- Added test 'xmllint' to check XML markup files
+[0.531s] -- Configuring done (0.5s)
+[0.534s] -- Generating done (0.0s)
+[0.534s] -- Build files have been written to: /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation

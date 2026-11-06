@@ -54,3 +54,19 @@ The TF chain is `map -> odom -> base_footprint -> base_link -> laser_frame`;
 verify with `ros2 run tf2_tools view_frames`.
 Navigation servers launch independently of localization so future exploration can
 combine `mapping.launch.py` and `navigation.launch.py` without AMCL/map_server.
+
+## Foxglove application bridge
+
+Mock, simulation, and autonomy bringup start one Foxglove bridge by default.
+Connect your application to `ws://<robot-host>:8765`. Set
+`enable_foxglove_bridge:=false` to disable it, or override `foxglove_address`
+(default `0.0.0.0`) and `foxglove_port` (default `8765`). The bridge inherits
+`use_sim_time` from the selected bringup entrypoint.
+
+To run the bridge independently:
+
+```bash
+ros2 launch swervebot_bringup foxglove_bridge.launch.py
+```
+
+Disable the integrated bridge when running a standalone instance on the same port.

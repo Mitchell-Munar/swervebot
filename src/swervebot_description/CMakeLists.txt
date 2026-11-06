@@ -33,12 +33,6 @@ install(
   DESTINATION share/${PROJECT_NAME}
 )
 
-# 2. Install C++ header files (.hpp) so other packages can find them
-install(
-  DIRECTORY include/
-  DESTINATION include
-)
-
 install(FILES README.md DESTINATION share/${PROJECT_NAME})
 
 ament_package()

@@ -2,7 +2,7 @@
 
 # since this file is sourced use the destination set at configure time
 # and override it with COLCON_CURRENT_PREFIX when provided
-set -l AMENT_CURRENT_PREFIX "/home/mmunar/Code/ROS2/swerve_bot/install/swervebot_mapping"
+set -l AMENT_CURRENT_PREFIX "/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_mapping"
 if test -n "$COLCON_CURRENT_PREFIX"
     set AMENT_CURRENT_PREFIX "$COLCON_CURRENT_PREFIX"
 end

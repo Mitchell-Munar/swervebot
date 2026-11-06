@@ -1,1 +1,1 @@
-ament_cmake_symlink_install_files("/home/mmunar/Code/ROS2/swerve_bot/src/swervebot_mapping" FILES "/home/mmunar/Code/ROS2/swerve_bot/build/swervebot_mapping/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/swervebot_mapping/environment")
+ament_cmake_symlink_install_files("/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_mapping" FILES "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_mapping/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/swervebot_mapping/environment")

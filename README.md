@@ -100,3 +100,34 @@ their scope. The controller and teleop could eventually use generic package name
 but `swervebot_controllers`, its C++ namespace, and plugin ID are retained to
 preserve discovery and downstream imports. `actuator_names` means steering joint
 names. No package, namespace, plugin, or existing launch file was renamed.
+
+## Web bridge demo
+
+`web_bridge_demo` provides a hostname ping service and Foxglove WebSocket bridge.
+Install the bridge, then build and source the workspace:
+
+```bash
+sudo apt install ros-lyrical-foxglove-bridge
+rosdep install --from-paths src --ignore-src -r -y
+colcon build
+source install/setup.bash
+ros2 launch web_bridge_demo web_bridge.launch.py
+```
+
+The bridge listens on `0.0.0.0:8765`. Override either launch argument as needed:
+
+```bash
+ros2 launch web_bridge_demo web_bridge.launch.py port:=8766 address:=127.0.0.1
+```
+
+A separate web app connects to `ws://<robot-host>:8765` using the Foxglove
+WebSocket protocol (`foxglove.websocket.v1`), with service discovery and calls
+enabled by the bridge defaults. Verify the ROS endpoint in another sourced terminal:
+
+```bash
+ros2 service call /web_ping std_srvs/srv/Trigger '{}'
+```
+
+Expect `success=True` and `message='pong from <hostname>'`. A Foxglove protocol
+client should receive an `advertiseServices` message containing `/web_ping`
+with type `std_srvs/srv/Trigger` after ROS graph discovery.

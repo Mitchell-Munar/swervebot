@@ -1,0 +1,9 @@
+-- run_test.py: invoking following command in '/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_bringup':
+ - /opt/ros/lyrical/bin/ament_lint_cmake --xunit-file /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/lint_cmake.xunit.xml
+
+
+No problems found
+
+
+-- run_test.py: return code 0
+-- run_test.py: verify result file '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_bringup/test_results/swervebot_bringup/lint_cmake.xunit.xml'

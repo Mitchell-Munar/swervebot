@@ -1,0 +1,22 @@
+[0.536s] Invoking command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_teleop': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop/lib/python3.14/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_teleop/build --no-deps symlink_data --force
+[0.645s] running develop
+[0.696s] running egg_info
+[0.702s] writing swervebot_teleop.egg-info/PKG-INFO
+[0.702s] writing dependency_links to swervebot_teleop.egg-info/dependency_links.txt
+[0.702s] writing entry points to swervebot_teleop.egg-info/entry_points.txt
+[0.702s] writing requirements to swervebot_teleop.egg-info/requires.txt
+[0.702s] writing top-level names to swervebot_teleop.egg-info/top_level.txt
+[0.714s] reading manifest file 'swervebot_teleop.egg-info/SOURCES.txt'
+[0.714s] writing manifest file 'swervebot_teleop.egg-info/SOURCES.txt'
+[0.720s] running build_ext
+[0.720s] Creating /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop/lib/python3.14/site-packages/swervebot-teleop.egg-link (link to .)
+[0.720s] Installing teleop_node script to /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop/lib/swervebot_teleop
+[0.720s] 
+[0.720s] Installed /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_teleop
+[0.720s] running symlink_data
+[0.720s] symbolically linking /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_teleop/resource/swervebot_teleop -> /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop/share/ament_index/resource_index/packages
+[0.720s] symbolically linking /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_teleop/package.xml -> /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop/share/swervebot_teleop
+[0.720s] symbolically linking /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_teleop/README.md -> /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop/share/swervebot_teleop
+[0.720s] symbolically linking /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_teleop/config/game_controller.yaml -> /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop/share/swervebot_teleop/config
+[0.721s] symbolically linking /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_teleop/launch/teleop.launch.py -> /home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop/share/swervebot_teleop/launch
+[0.742s] Invoked command in '/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_teleop' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mitchell_munar/Code/ROS2/swervebot/install/swervebot_teleop/lib/python3.14/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_teleop/build --no-deps symlink_data --force

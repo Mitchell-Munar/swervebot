@@ -53,4 +53,14 @@ def generate_launch_description():
                     FindPackageShare('swervebot_mapping'), 'config', 'slam.yaml'])}
     return LaunchDescription([
         *(DeclareLaunchArgument(k, default_value=v) for k, v in defaults.items()),
+        DeclareLaunchArgument('enable_foxglove_bridge', default_value='true'),
+        DeclareLaunchArgument('foxglove_address', default_value='0.0.0.0'),
+        DeclareLaunchArgument('foxglove_port', default_value='8765'),
+        # Resolve the shared bridge launch at runtime and inherit this entrypoint's clock.
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(PathJoinSubstitution([
+                FindPackageShare('swervebot_bringup'), 'launch', 'foxglove_bridge.launch.py'])),
+            condition=IfCondition(LaunchConfiguration('enable_foxglove_bridge')),
+            launch_arguments={key: LaunchConfiguration(key) for key in
+                              ('foxglove_address', 'foxglove_port', 'use_sim_time')}.items()),
         OpaqueFunction(function=setup)])
