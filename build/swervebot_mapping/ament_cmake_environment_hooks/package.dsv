@@ -1,5 +1,0 @@
-source;share/swervebot_mapping/local_setup.bash
-source;share/swervebot_mapping/local_setup.dsv
-source;share/swervebot_mapping/local_setup.fish
-source;share/swervebot_mapping/local_setup.sh
-source;share/swervebot_mapping/local_setup.zsh

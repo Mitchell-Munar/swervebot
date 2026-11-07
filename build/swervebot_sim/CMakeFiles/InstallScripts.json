@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_sim/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

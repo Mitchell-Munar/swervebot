@@ -1,1 +1,0 @@
-/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_description/ament_cmake_environment_hooks/local_setup.fish

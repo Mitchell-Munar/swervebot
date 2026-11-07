@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_sim" FILES "/opt/ros/lyrical/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/swervebot_sim/environment")

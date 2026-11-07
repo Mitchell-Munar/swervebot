@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_localization" FILES "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_localization/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/swervebot_localization")

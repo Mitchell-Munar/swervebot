@@ -1,9 +1,0 @@
-test_test_mock_bringup.py 0 0
-flake8 0 0
-lint_cmake 1 0.079567
-pep257 1 0.104269
-xmllint 0 0
----
-test_test_mock_bringup.py
-flake8
-xmllint

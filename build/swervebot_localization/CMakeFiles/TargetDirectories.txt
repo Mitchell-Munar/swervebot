@@ -1,9 +1,0 @@
-/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_localization/CMakeFiles/uninstall.dir
-/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_localization/CMakeFiles/swervebot_localization_uninstall.dir
-/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_localization/CMakeFiles/test.dir
-/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_localization/CMakeFiles/edit_cache.dir
-/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_localization/CMakeFiles/rebuild_cache.dir
-/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_localization/CMakeFiles/list_install_components.dir
-/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_localization/CMakeFiles/install.dir
-/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_localization/CMakeFiles/install/local.dir
-/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_localization/CMakeFiles/install/strip.dir

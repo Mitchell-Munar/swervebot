@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/mitchell_munar/Code/ROS2/swervebot/src/swervebot_navigation" FILES "/home/mitchell_munar/Code/ROS2/swervebot/build/swervebot_navigation/ament_cmake_environment_hooks/local_setup.fish" "DESTINATION" "share/swervebot_navigation")

@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/mitchell_munar/Code/ROS2/swervebot/src/swerve_drive_controller" FILES "/home/mitchell_munar/Code/ROS2/swervebot/src/swerve_drive_controller/package.xml" "DESTINATION" "share/swerve_drive_controller")

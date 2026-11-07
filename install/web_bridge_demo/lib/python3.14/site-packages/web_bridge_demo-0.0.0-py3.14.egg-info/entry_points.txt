@@ -1,2 +1,0 @@
-[console_scripts]
-ping_service_node = web_bridge_demo.ping_service_node:main
