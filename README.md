@@ -8,12 +8,14 @@ coordinates: **x forward, y left, z up**, with positive yaw counterclockwise.
 
 | Package | Responsibility |
 | --- | --- |
-| `swervebot_controllers` | Reusable `ros2_control` plugin, ROS-independent kinematics, standalone mock demo |
+| `swerve_drive_controller` | Reusable `ros2_control` plugin, ROS-independent kinematics, standalone mock demo |
 | `swervebot_teleop` | Joystick profiles, manual mode state, projection into chassis `Twist` |
 | `swervebot_description` | This robot's geometry, joint conventions, and hardware selection |
+| `swervebot_localization` | Sensor fusion and data filtering for position estimation |
+| `swervebot_mapping` | slam_toolbox configuration |
+| `swervebot_navigation` | Nav2 implementation, costmap, and global planner |
 | `swervebot_sim` | Gazebo world, bridge, spawning, and embedded controller manager |
 | `swervebot_bringup` | Robot-specific mock and simulation entrypoints |
-| `swervebot_msgs` | Legacy `RobotCommand` message retained for downstream migration |
 
 `Joy → teleop → cmd_vel (Twist) → controller → hardware command interfaces`.
 The controller also estimates measured chassis motion and publishes odometry/TF.
@@ -41,10 +43,6 @@ colcon --log-base /tmp/swerve-log build --base-paths src \
   --cmake-args -DPython3_EXECUTABLE=/usr/bin/python3
 source /tmp/swerve-install/setup.bash
 ```
-
-To reuse just the controller, copy `src/swervebot_controllers` into another
-workspace and build it against the ROS underlay. Neither the robot description nor
-custom messages, teleop, or Gazebo is required. Its own mock demo also works there.
 
 ## Run
 
@@ -82,24 +80,6 @@ For isolated builds, pass matching `--build-base`, `--install-base`, and
 log directory; set `ROS_LOG_DIR=/tmp/swerve-ros-log` when appropriate. Mock tests
 exercise root and namespaced controllers. Gazebo tests compare ground truth with
 odometry and require an available physics engine.
-
-## Migration and naming audit
-
-The controller now consumes `geometry_msgs/msg/Twist` on relative `cmd_vel`,
-replacing `/swervebot/cmd_raw` and `RobotCommand`. Move mode selection/projection to
-your command source; update publishers, remappings, and topic type together.
-`unsupported_command_policy` now concerns only nonplanar fields; lateral motion and
-yaw-only motion are valid controller commands.
-
-Geometry now uses per-module arrays instead of `wheel_base`, `track_width`,
-`wheel_radius`, `wheel_offset`, and `max_steering_velocity`. See the controller
-README for the migration table and example.
-
-Naming audit: robot-specific description, simulation, and bringup names describe
-their scope. The controller and teleop could eventually use generic package names,
-but `swervebot_controllers`, its C++ namespace, and plugin ID are retained to
-preserve discovery and downstream imports. `actuator_names` means steering joint
-names. No package, namespace, plugin, or existing launch file was renamed.
 
 ## Web bridge demo
 

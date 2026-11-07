@@ -5,6 +5,6 @@ imu_filter_madgwick:
     orientation_stddev: 0.05
     publish_tf: false
     remove_gravity_vector: false
-    use_mag: true
-    world_frame: enu
+    use_mag: false
+    world_frame: nwu
     zeta: 0.0

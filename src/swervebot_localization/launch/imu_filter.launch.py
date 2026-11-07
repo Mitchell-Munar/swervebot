@@ -1,4 +1,4 @@
-"""Estimate magnetic orientation without publishing a competing base transform."""
+"""Estimate relative 6-DOF orientation without publishing a competing base transform."""
 from pathlib import Path
 
 from ament_index_python.packages import get_package_share_directory
@@ -15,8 +15,8 @@ def generate_launch_description():
         DeclareLaunchArgument('use_sim_time', default_value='true'),
         DeclareLaunchArgument('imu_topic', default_value='/imu/data_raw'),
         DeclareLaunchArgument('filter_config', default_value=str(share / 'config/madgwick.yaml')),
-        DeclareLaunchArgument('output_topic', default_value='/imu/data'),
-        DeclareLaunchArgument('mag_topic', default_value='/mag'),
+        DeclareLaunchArgument('output_topic', default_value='/imu/data_prefiltered'),
+        DeclareLaunchArgument('mag_topic', default_value='/imu/mag'),
         Node(package='imu_filter_madgwick', executable='imu_filter_madgwick_node',
              name='imu_filter_madgwick', output='screen',
              parameters=[LaunchConfiguration('filter_config'),

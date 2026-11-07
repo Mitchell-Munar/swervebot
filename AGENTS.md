@@ -12,17 +12,18 @@ ROS 2 swerve drive mobile robot project (`swerve_bot`) for a 4-module platform (
 * **Real-Time Safety:** Strictly no memory allocations, `rclcpp` logging, or node parameters fetching inside the `update()` loop.
 * **Lifecycle Hooks:** `on_init`, `on_configure`, `on_activate`, and `on_deactivate` must safely manage hardware loans. Clear local reference vectors inside `on_activate` to prevent stale tracking data.
 * **Parameters:** Use the `generate_parameter_library` package for managing, declaring, and validating controller parameter YAML files.
-* **State Toggling:** Drive state toggles or controller mode shifts are handled by the custom teleop node. Used for manual operations.
 * **Imports:** Group standard library first, third-party second, local modules third.
 * **Error Handling:** Always catch specific exceptions; never use bare `except:`.
 * **Documentation & Review:** Add clear, concise comments to logical blocks of code explaining the functionality, mathematical formulas, and purpose of the lines to make the logic easily reviewable during pull requests. Focus especially on explaining math transitions inside the swerve kinematics and lifecycle management stages.
 
 ## Key Directories
-* `src/swerve_drive_controller/` - Custom C++ `ros2_control` swerve controller classes and real-time logic.
+* `src/swerve_drive_controller/` - Custom C++ `ros2_control` swerve controller classes and real-time logic. Added to the project from another repo. Do not modify without permission. Detailed explination must be provided for why it should be updated. 
 * `src/swervebot_description/` - Robot URDF and Xacro configuration files. Use standard standard Xacro URL namespaces (`http://www.ros.org/wiki/xacro`).
 * `src/swervebot_sim/` - Latest version of Gazebo simulation launch and world configurations. Ensure `use_sim_time` configuration is passed correctly through launch arguments.
 * `src/swervebot_bringup` - Top-level launch files combining the robot description, controller manager configurations, and simulation nodes.
+* `src/swervebot_teleop` - For managing connections and configurations of joystick controllers
 
 ## Common Workflows / Constraints
 * Request permission before modifying any existing parameter files (`.yaml`) or robot hardware configuration formats.
 * Real-time safety inside the update() loop (no smart pointers creation, no logging, no dynamic allocations).
+* Implement industry standard best practice. If a request/design/architecture does not follow industry standards raise awareness and confirm decision to continue as is or implement industry standard.
