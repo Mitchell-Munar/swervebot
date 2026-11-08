@@ -1,5 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="swervebot">
+    <xacro:arg name="use_sim" default="false"/>
+    <xacro:arg name="use_mock_hardware" default="false"/>
+    <xacro:arg name="controller_config" default="$(find swerve_drive_controller)/config/controllers.yaml"/>
+
+    <xacro:property name="use_sim" value="$(arg use_sim)"/>
+    <xacro:property name="use_mock_hardware" value="$(arg use_mock_hardware)"/>
+    <xacro:property name="controller_config" value="$(arg controller_config)"/>
+
     <!-- Load configuration once before defining components. -->
     <xacro:include filename="$(find swervebot_description)/description/inertia.xacro" />
     <xacro:include filename="$(find swervebot_description)/description/swervebot_properties.xacro" />
@@ -7,14 +15,9 @@
     <xacro:include filename="$(find swervebot_description)/description/swervebot_module.xacro"/>
     <xacro:include filename="$(find swervebot_description)/description/swervebot_ros2_control.xacro"/>
     <xacro:include filename="$(find swervebot_description)/description/swervebot_lidar.xacro"/>
-
-    <xacro:arg name="use_sim" default="false"/>
-    <xacro:arg name="use_mock_hardware" default="false"/>
-
-    <xacro:arg name="controller_config" default="$(find swerve_drive_controller)/config/controllers.yaml"/>
-
     <xacro:include filename="$(find swervebot_description)/description/swervebot_imu.xacro"/>
-    <xacro:swervebot_imu use_sim="$(arg use_sim)"/>
+
+    <xacro:swervebot_imu use_sim="${use_sim}"/>
 
     <!-- Execute/Instantiate the macros -->
     <xacro:swervebot_base />
@@ -22,12 +25,12 @@
     <xacro:add_all_swerve_modules/>
 
     <xacro:if value="${lidar_enabled}">
-        <xacro:swervebot_lidar use_sim="$(arg use_sim)" />
+        <xacro:swervebot_lidar use_sim="${use_sim}" />
     </xacro:if>
 
     <xacro:robot_control
-        use_mock_hardware="$(arg use_mock_hardware)"
-        use_sim="$(arg use_sim)"
-        controller_config="$(arg controller_config)"
+        use_mock_hardware="${use_mock_hardware}"
+        use_sim="${use_sim}"
+        controller_config="${controller_config}"
     />
 </robot>

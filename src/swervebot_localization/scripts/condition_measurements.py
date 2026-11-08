@@ -45,8 +45,10 @@ class Conditioner(Node):
                 msg.angular_velocity_covariance[index] = max(value, gyro_variance)
             imu_pub.publish(msg)
 
-        self.subscriptions_.append(self.create_subscription(
-            Imu, '/imu/data_filtered', imu_callback, qos_profile_sensor_data))
+        self.declare_parameter('use_imu', True)
+        if self.get_parameter('use_imu').value:
+            self.subscriptions_.append(self.create_subscription(
+                Imu, '/imu/data_prefiltered', imu_callback, qos_profile_sensor_data))
         publisher = self.create_publisher(Odometry, '/wheel/odometry_conditioned', 10)
         self.declare_parameter('wheel_variances', [0.04, 0.04, 0.01])
         variances = self.get_parameter('wheel_variances').value

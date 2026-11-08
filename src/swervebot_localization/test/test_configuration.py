@@ -14,7 +14,7 @@ def test_planar_input_selection():
     assert all(len(params[key + '_config']) == 15 for key in ('odom0', 'imu0'))
     assert [i for i, v in enumerate(params['odom0_config']) if v] == [6, 7, 11]
     assert not any(key.startswith('odom1') for key in params)
-    assert [i for i, v in enumerate(params['imu0_config']) if v] == [5, 11]
+    assert [i for i, v in enumerate(params['imu0_config']) if v] == [11]
     assert params['two_d_mode'] and params['publish_tf']
     assert params['world_frame'] == 'odom'
     assert params['base_link_frame'] == 'base_footprint'

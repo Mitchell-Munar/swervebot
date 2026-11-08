@@ -20,7 +20,7 @@ coordinates: **x forward, y left, z up**, with positive yaw counterclockwise.
 `Joy → teleop → cmd_vel (Twist) → controller → hardware command interfaces`.
 The controller also estimates measured chassis motion and publishes odometry/TF.
 Manual modes belong to teleop; autonomous callers can publish any planar Twist.
-Source arbitration is the integrating project's responsibility.
+Autonomy bringup provides twist_mux arbitration for manual and navigation commands.
 
 ## Dependencies and build
 
@@ -48,7 +48,7 @@ source /tmp/swerve-install/setup.bash
 
 ```bash
 # Controller-only GenericSystem demo
-ros2 launch swervebot_controllers controller_mock_test.launch.py
+ros2 launch swerve_drive_controller controller_mock_test.launch.py
 # Or the complete robot description with mock hardware
 ros2 launch swervebot_bringup mock.launch.py
 # Or Gazebo (one embedded controller manager)
@@ -111,3 +111,9 @@ ros2 service call /web_ping std_srvs/srv/Trigger '{}'
 Expect `success=True` and `message='pong from <hostname>'`. A Foxglove protocol
 client should receive an `advertiseServices` message containing `/web_ping`
 with type `std_srvs/srv/Trigger` after ROS graph discovery.
+
+## Mapping and navigation
+
+See [bringup instructions](src/swervebot_bringup/README.md#mapping-and-navigation)
+for SLAM, saving occupancy maps, and navigation. For matched IMU comparisons use
+`enable_sensor_fusion:=true` in both runs and toggle `use_imu:=true|false`.

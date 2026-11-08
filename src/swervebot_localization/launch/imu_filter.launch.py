@@ -16,7 +16,7 @@ def generate_launch_description():
         DeclareLaunchArgument('imu_topic', default_value='/imu/data_raw'),
         DeclareLaunchArgument('filter_config', default_value=str(share / 'config/madgwick.yaml')),
         DeclareLaunchArgument('output_topic', default_value='/imu/data_prefiltered'),
-        DeclareLaunchArgument('mag_topic', default_value='/imu/mag'),
+        DeclareLaunchArgument('mag_topic', default_value='/mag'),
         Node(package='imu_filter_madgwick', executable='imu_filter_madgwick_node',
              name='imu_filter_madgwick', output='screen',
              parameters=[LaunchConfiguration('filter_config'),

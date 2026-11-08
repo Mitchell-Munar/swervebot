@@ -47,18 +47,18 @@ ekf_filter_node:
     - false # x
     - false # y
     - false # z
-    - false # roll
-    - false # pitch
-    - false # yaw  <- Changed to false (Ignore relative/absolute yaw)
+    - true # roll
+    - true # pitch
+    - true # yaw  
     - false # vx
     - false # vy
     - false # vz
-    - false # vroll
-    - false # vpitch
-    - true  # vyaw <- Keep true (Fuse angular velocity directly)
-    - false # ax
-    - false # ay
-    - false # az
+    - true # vroll
+    - true # vpitch
+    - true  # vyaw 
+    - true # ax
+    - true # ay
+    - true # az
     imu0_differential: false
     imu0_relative: false
     imu0_queue_size: 20

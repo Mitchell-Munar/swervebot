@@ -28,3 +28,5 @@
 - Test simulation pause/resume, time reset and sensor dropout end to end.
 - Do not claim robust translational slip rejection: wheel + IMU lacks an independent translation reference during sustained slipping. Covariance floors are not slip detection.
 - Production readiness remains unverified until these checks pass.
+
+- need to add launch arguement for `use_sim` so it implements gazebo simulated noise for wheel odom and steering actuators

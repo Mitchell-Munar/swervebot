@@ -36,5 +36,6 @@
                 <xacro:cylinder_inertia_values m="${mass}" r="${radius}" h="${height}" />
             </inertial>
         </link>
+        
     </xacro:macro>
 </robot>

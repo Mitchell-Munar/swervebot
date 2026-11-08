@@ -147,7 +147,9 @@ def _launch_simulation(context):
         LogInfo(msg='Spawning one swervebot; paused startup requires Play to finish activation.'),
         *([IncludeLaunchDescription(PythonLaunchDescriptionSource(str(
             Path(get_package_share_directory('swervebot_localization')) /
-            'launch/localization.launch.py')))] if fusion else []),
+            'launch/localization.launch.py')), launch_arguments={
+                'use_sim_time': LaunchConfiguration('use_sim_time'),
+                'use_imu': LaunchConfiguration('use_imu')}.items())] if fusion else []),
         state_publisher, bridge, *lidar_bridges, gazebo, spawn,
     ]
 
@@ -161,6 +163,7 @@ def generate_launch_description():
             Path(get_package_share_directory('swervebot_sim')) / 'config/simulation.yaml'),
             description='YAML selecting a bundled or absolute world_file'),
         DeclareLaunchArgument('enable_sensor_fusion', default_value='false'),
+        DeclareLaunchArgument('use_imu', default_value='true'),
         DeclareLaunchArgument('gui', default_value='true', description='Start Gazebo GUI'),
         DeclareLaunchArgument('paused', default_value='false', description='Start physics paused'),
         DeclareLaunchArgument('use_sim_time', default_value='true',

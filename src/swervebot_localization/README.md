@@ -6,7 +6,7 @@ The estimation graph is:
 
 `BMI323 raw accel/gyro + BMM350 magnetic field -> Madgwick -> covariance conditioning -> EKF`
 
-The EKF preserves wheel vx, vy and yaw rate. It fuses Madgwick yaw and gyro yaw
+The EKF preserves wheel vx, vy and yaw rate. It fuses gyro yaw
 rate, excludes wheel absolute pose and linear acceleration, and uses planar mode
 only to constrain z, roll and pitch. No standalone laser odometry is launched,
 required, or fused. slam_toolbox consumes the scan and odometry transform downstream
@@ -47,8 +47,8 @@ ros2 launch swervebot_localization imu_filter.launch.py use_sim_time:=false
 ```
 
 It accepts `imu_topic`, `mag_topic`, `output_topic`, and `filter_config` arguments.
-Combined launch uses /imu/data_filtered internally and publishes conditioned
-/imu/data. Standalone Madgwick publishes /imu/data directly and retains driver gyro
+Combined launch uses /imu/data_prefiltered internally and publishes conditioned
+/imu/data. Standalone Madgwick defaults to /imu/data_prefiltered and retains driver gyro
 covariance. No filter broadcasts an orientation TF.
 
 ## Interfaces and tuning
@@ -96,3 +96,5 @@ when other ROS nodes are active. The synthetic runtime test and two focused test
 It does not validate the physical board, Gazebo
 noise fidelity, wall collisions or map quality. Test forward, reverse, crab,
 rotation and wall contact against Gazebo ground truth before production use.
+
+Set `use_imu:=false` to keep wheel conditioning and the EKF while disabling IMU processing. Integrated simulation forwards this argument when sensor fusion is enabled.

@@ -16,7 +16,7 @@ def generate_launch_description():
     controllers = Path(get_package_share_directory('swerve_drive_controller'))
     simulation = Path(get_package_share_directory('swervebot_sim'))
     defaults = {'simulation_config': str(simulation / 'config/simulation.yaml'),
-                'enable_sensor_fusion': 'false', 'gui': 'true', 'paused': 'false', 'use_sim_time': 'true',
+                'enable_sensor_fusion': 'false', 'use_imu': 'true', 'gui': 'true', 'paused': 'false', 'use_sim_time': 'true',
                 'controller_config': str(controllers / 'config/controllers.yaml')}
     return LaunchDescription([
         *(DeclareLaunchArgument(name, default_value=value) for name, value in defaults.items()),

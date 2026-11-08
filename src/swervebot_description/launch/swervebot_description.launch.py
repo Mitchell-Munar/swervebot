@@ -15,7 +15,10 @@ def generate_launch_description():
     """Expose the visualization clock without starting a hardware controller."""
     share = Path(get_package_share_directory('swervebot_description'))
     robot = ParameterValue(Command([
-        'xacro ', str(share / 'description/swervebot.urdf.xacro')]), value_type=str)
+        'xacro ', str(share / 'description/swervebot.urdf.xacro'),
+        ' use_sim:=false',
+        ' use_mock_hardware:=true',
+    ]), value_type=str),
     clock = ParameterValue(LaunchConfiguration('use_sim_time'), value_type=bool)
     return LaunchDescription([
         DeclareLaunchArgument('use_sim_time', default_value='false'),
